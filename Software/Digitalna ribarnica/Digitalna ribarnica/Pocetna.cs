@@ -27,8 +27,11 @@ namespace Digitalna_ribarnica
 
         private void button1_Click(object sender, EventArgs e)
         {
+            formPocetna pocetna = new formPocetna();
+            this.Hide();
             Prijava prijava = new Prijava();
             prijava.ShowDialog();
+            pocetna.ShowDialog();
         }
     }
 }

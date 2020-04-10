@@ -44,5 +44,12 @@ namespace Digitalna_ribarnica
             }
             
         }
+
+        private void labelRegistracija_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Registracija registracija = new Registracija();   
+            registracija.ShowDialog();
+        }
     }
 }

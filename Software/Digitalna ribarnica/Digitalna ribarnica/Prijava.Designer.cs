@@ -34,6 +34,7 @@
             this.txtLozinka = new System.Windows.Forms.TextBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.buttonPrijavi = new System.Windows.Forms.Button();
+            this.labelRegistracija = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsername
@@ -98,12 +99,24 @@
             this.buttonPrijavi.UseVisualStyleBackColor = true;
             this.buttonPrijavi.Click += new System.EventHandler(this.buttonPrijavi_Click);
             // 
+            // labelRegistracija
+            // 
+            this.labelRegistracija.AutoSize = true;
+            this.labelRegistracija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.labelRegistracija.Location = new System.Drawing.Point(219, 292);
+            this.labelRegistracija.Name = "labelRegistracija";
+            this.labelRegistracija.Size = new System.Drawing.Size(67, 13);
+            this.labelRegistracija.TabIndex = 3;
+            this.labelRegistracija.Text = "Registriraj se";
+            this.labelRegistracija.Click += new System.EventHandler(this.labelRegistracija_Click);
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(350, 379);
+            this.Controls.Add(this.labelRegistracija);
             this.Controls.Add(this.buttonPrijavi);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.txtLozinka);
@@ -125,5 +138,6 @@
         private System.Windows.Forms.TextBox txtLozinka;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button buttonPrijavi;
+        private System.Windows.Forms.Label labelRegistracija;
     }
 }
