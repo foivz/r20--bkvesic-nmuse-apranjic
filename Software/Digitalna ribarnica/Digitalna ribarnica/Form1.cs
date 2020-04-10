@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Digitalna_ribarnica
 {
-    public partial class Form1 : Form
+    public partial class formPocetna : Form
     {
-        public Form1()
+        
+        public formPocetna()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
