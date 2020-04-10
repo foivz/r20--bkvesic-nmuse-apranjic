@@ -12,6 +12,8 @@ namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form
     {
+
+
         
         public formPocetna()
         {
@@ -21,6 +23,12 @@ namespace Digitalna_ribarnica
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Prijava prijava = new Prijava();
+            prijava.ShowDialog();
         }
     }
 }
