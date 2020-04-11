@@ -13,9 +13,22 @@ namespace Digitalna_ribarnica
 {
     public partial class Prijava : Form
     {
+        public Label label_prijava;
+        public Button prijava_prijava;
+        public Button odjava_prijava;
+        public Button novosti;
         public Prijava()
         {
             InitializeComponent();
+        }
+
+        public Prijava(Label label,Button prijava, Button odjava,Button novosti)
+        {
+            InitializeComponent();
+            label_prijava = label;
+            prijava_prijava = prijava;
+            odjava_prijava = odjava;
+            this.novosti = novosti;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -30,13 +43,16 @@ namespace Digitalna_ribarnica
                 Autentifikator autentifikator = new Autentifikator();
                 if (autentifikator.prijava(txtKorIme.Text, txtLozinka.Text))
                 {
-                    MessageBox.Show("Uspješna prijava");
+                    //MessageBox.Show("Uspješna prijava");
+                    label_prijava.Text = "Dobro došli " + txtKorIme.Text;
+                    prijava_prijava.Visible = false;
+                    odjava_prijava.Visible = true;
+                    novosti.Visible = true;
                     Close();
                 }
                 else
                 {
                     MessageBox.Show("Pogrešna lozinka ili korisničko ime");
-                    Close();
                 }
             }
             else {
@@ -44,12 +60,13 @@ namespace Digitalna_ribarnica
             }
             
         }
-
         private void labelRegistracija_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
+            //this.Hide();
             Registracija registracija = new Registracija();   
             registracija.ShowDialog();
+       
         }
     }
 }
