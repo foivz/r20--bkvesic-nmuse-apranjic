@@ -35,6 +35,7 @@
             this.btnOdustani = new System.Windows.Forms.Button();
             this.buttonPrijavi = new System.Windows.Forms.Button();
             this.labelRegistracija = new System.Windows.Forms.Label();
+            this.labelCapsLock = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsername1
@@ -71,6 +72,7 @@
             this.txtKorIme.Name = "txtKorIme";
             this.txtKorIme.Size = new System.Drawing.Size(169, 20);
             this.txtKorIme.TabIndex = 0;
+            this.txtKorIme.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKorIme_KeyUp);
             // 
             // txtLozinka
             // 
@@ -80,6 +82,7 @@
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(169, 20);
             this.txtLozinka.TabIndex = 1;
+            this.txtLozinka.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtLozinka_KeyUp);
             // 
             // btnOdustani
             // 
@@ -121,12 +124,24 @@
             this.labelRegistracija.Text = "Registriraj se";
             this.labelRegistracija.Click += new System.EventHandler(this.labelRegistracija_Click);
             // 
+            // labelCapsLock
+            // 
+            this.labelCapsLock.AutoSize = true;
+            this.labelCapsLock.Font = new System.Drawing.Font("Open Sans Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCapsLock.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelCapsLock.Location = new System.Drawing.Point(207, 110);
+            this.labelCapsLock.Name = "labelCapsLock";
+            this.labelCapsLock.Size = new System.Drawing.Size(0, 22);
+            this.labelCapsLock.TabIndex = 4;
+            this.labelCapsLock.Visible = false;
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(669, 271);
+            this.Controls.Add(this.labelCapsLock);
             this.Controls.Add(this.labelRegistracija);
             this.Controls.Add(this.buttonPrijavi);
             this.Controls.Add(this.btnOdustani);
@@ -136,6 +151,7 @@
             this.Controls.Add(this.lblUsername1);
             this.Name = "Prijava";
             this.Text = "Prijava";
+            this.Load += new System.EventHandler(this.Prijava_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +166,6 @@
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button buttonPrijavi;
         private System.Windows.Forms.Label labelRegistracija;
+        private System.Windows.Forms.Label labelCapsLock;
     }
 }

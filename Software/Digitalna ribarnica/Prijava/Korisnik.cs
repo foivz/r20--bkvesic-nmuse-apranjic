@@ -12,10 +12,13 @@ namespace Prijava
 
         public string Lozinka { get; set; }
 
-        public Korisnik(string ime, string lozinka)
+        public int Tip { get; set; }
+
+        public Korisnik(string ime, string lozinka, int tip)
         {
             Ime = ime;
             Lozinka = lozinka;
+            Tip = tip;
         }
     }
 }

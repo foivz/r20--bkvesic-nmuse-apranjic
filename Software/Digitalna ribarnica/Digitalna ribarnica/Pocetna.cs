@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Threading;
 
 namespace Digitalna_ribarnica
 {
@@ -23,6 +25,7 @@ namespace Digitalna_ribarnica
         {
             button1.Visible = true;
             buttonOdjava.Visible = false;
+            buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
         }
         public Form activeForm = null;
@@ -55,13 +58,33 @@ namespace Digitalna_ribarnica
         private void buttonOdjava_Click(object sender, EventArgs e)
         {
             lblUsername.Text = "";
-            labelOdjava.Text = "Uspješno ste se odjavili";
+            labelOdjava.Text = "Uspješno ste se odjavili";   
             labelOdjava.AutoSize = true;
             labelOdjava.Visible = true;
             button1.Visible = true;
             buttonOdjava.Visible = false;
+            buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
+        }
 
+        private void buttonInstagram_Click(object sender, EventArgs e)
+        {
+            Process.Start("www.instagram.com/instagram/?hl=hr");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Process.Start("www.facebook.com");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Process.Start("www.twitter.com");
+        }
+
+        private void buttonRegistracija_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Registracija());
         }
     }
 }

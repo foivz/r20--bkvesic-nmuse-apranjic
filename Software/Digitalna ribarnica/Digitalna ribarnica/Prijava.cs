@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 using Prijava;
 
 namespace Digitalna_ribarnica
@@ -43,12 +44,37 @@ namespace Digitalna_ribarnica
                 Autentifikator autentifikator = new Autentifikator();
                 if (autentifikator.prijava(txtKorIme.Text, txtLozinka.Text))
                 {
-                    //MessageBox.Show("Uspješna prijava");
-                    label_prijava.Text = "Dobro došli " + txtKorIme.Text;
-                    prijava_prijava.Visible = false;
-                    odjava_prijava.Visible = true;
-                    novosti.Visible = true;
-                    Close();
+
+                    switch (autentifikator.tipKorisnika(txtKorIme.Text))
+                    {
+                        case 1:
+                            MessageBox.Show("Uspješna prijava ADMIN");
+                            label_prijava.Text = "Dobro došli " + txtKorIme.Text;
+                            prijava_prijava.Visible = false;
+                            odjava_prijava.Visible = true;
+                            novosti.Visible = true;
+                            Close();
+                            break;
+                        case 2:
+                            MessageBox.Show("Uspješna prijava KORISNIK");
+                            label_prijava.Text = "Dobro došli " + txtKorIme.Text;
+                            prijava_prijava.Visible = false;
+                            odjava_prijava.Visible = true;
+                            novosti.Visible = true;
+                            Close();
+                            break;
+                        case 3:
+                            MessageBox.Show("Uspješna prijava KUPAC");
+                            label_prijava.Text = "Dobro došli " + txtKorIme.Text;
+                            prijava_prijava.Visible = false;
+                            odjava_prijava.Visible = true;
+                            novosti.Visible = true;
+                            Close();
+                            break;
+                        default:
+                            MessageBox.Show("Blokiran račun");
+                            break;
+                    }
                 }
                 else
                 {
@@ -62,11 +88,58 @@ namespace Digitalna_ribarnica
         }
         private void labelRegistracija_Click(object sender, EventArgs e)
         {
-
+            /*
             //this.Hide();
             Registracija registracija = new Registracija();   
             registracija.ShowDialog();
-       
+            */
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+            {
+                form.openChildForm(new Registracija());
+            }
+        }
+
+        private void Prijava_Load(object sender, EventArgs e)
+        {
+            txtLozinka.PasswordChar = '\u25CF';
+            
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                labelCapsLock.Text = "Uključeno je pisanje VELIKIM SLOVIMA!";
+                labelCapsLock.Visible = true;
+            }
+            else
+            {
+                labelCapsLock.Visible = false;
+            }
+            
+        }
+
+        private void txtKorIme_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                labelCapsLock.Text = "Uključeno je pisanje VELIKIM SLOVIMA!";
+                labelCapsLock.Visible = true;
+            }
+            else
+            {
+                labelCapsLock.Visible = false;
+            }
+        }
+
+        private void txtLozinka_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                labelCapsLock.Text = "Uključeno je pisanje VELIKIM SLOVIMA!";
+                labelCapsLock.Visible = true;
+            }
+            else
+            {
+                labelCapsLock.Visible = false;
+            }
         }
     }
 }

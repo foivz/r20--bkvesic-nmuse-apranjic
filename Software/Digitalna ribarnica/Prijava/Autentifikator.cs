@@ -14,9 +14,9 @@ namespace Prijava
         public Autentifikator()
         {
             registriraniKorisnici = new List<Korisnik>();
-            registriraniKorisnici.Add(new Korisnik("bkvesic", "12345"));
-            registriraniKorisnici.Add(new Korisnik("nmuse", "12345"));
-            registriraniKorisnici.Add(new Korisnik("apranjic", "12345"));
+            registriraniKorisnici.Add(new Korisnik("bkvesic", "12345",1));
+            registriraniKorisnici.Add(new Korisnik("nmuse", "12345",2));
+            registriraniKorisnici.Add(new Korisnik("apranjic", "12345",3));
         }
 
         /// <summary>
@@ -62,6 +62,11 @@ namespace Prijava
                     return true;
             }
             return false;
+        }
+
+        public int tipKorisnika(string ime)
+        {
+            return registriraniKorisnici.Find(p => p.Ime == ime).Tip;
         }
 
 
