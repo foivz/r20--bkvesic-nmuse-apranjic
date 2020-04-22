@@ -25,6 +25,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `mydb`.`status`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`status` (
+  `id_status` INT NOT NULL AUTO_INCREMENT,
+  `naziv` VARCHAR(45) NULL,
+  PRIMARY KEY (`id_status`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `mydb`.`korisnik`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`korisnik` (
@@ -33,16 +43,22 @@ CREATE TABLE IF NOT EXISTS `mydb`.`korisnik` (
   `prezime` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `korisnicko_ime` VARCHAR(45) NOT NULL,
-  `status` INT NULL,
   `broj_mobitela` VARCHAR(45) NULL,
   `datum_rodenja` DATE NOT NULL,
   `slika` LONGBLOB NULL,
   `id_tip_korisnika` INT NOT NULL,
+  `id_status` INT NOT NULL,
   PRIMARY KEY (`id_korisnik`),
   INDEX `fk_korisnik_tip_korisnika1_idx` (`id_tip_korisnika` ASC),
+  INDEX `fk_korisnik_status1_idx` (`id_status` ASC),
   CONSTRAINT `fk_korisnik_tip_korisnika1`
     FOREIGN KEY (`id_tip_korisnika`)
     REFERENCES `mydb`.`tip_korisnika` (`id_tip`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_korisnik_status1`
+    FOREIGN KEY (`id_status`)
+    REFERENCES `mydb`.`status` (`id_status`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -54,6 +70,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`riba` (
   `id_riba` INT NOT NULL AUTO_INCREMENT,
   `naziv` VARCHAR(45) NOT NULL,
+  `slika` TEXT NOT NULL,
+  `mjerna_jedinica` TINYINT NOT NULL,
   PRIMARY KEY (`id_riba`))
 ENGINE = InnoDB;
 
@@ -73,10 +91,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`ponude` (
   `id_ponuda` INT NOT NULL AUTO_INCREMENT,
-  `cijena` INT NULL,
+  `cijena` INT NOT NULL,
+  `kolicina` INT NOT NULL,
   `opis` TEXT NULL,
   `dodatne_fotografije` TEXT NULL,
-  `trajanje_rezervacije` VARCHAR(45) NULL,
+  `trajanje_rezervacije` VARCHAR(45) NOT NULL,
   `id_riba` INT NOT NULL,
   `id_lokacija` INT NOT NULL,
   `id_korisnik` INT NOT NULL,
@@ -107,11 +126,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`rezervacije` (
   `id_rezervacije` INT NOT NULL AUTO_INCREMENT,
-  `datum_i_vrijeme` DATETIME NULL,
-  `potvrda_o_preuzimanju` TINYINT NULL,
-  `ponuditelj_odobrio` TINYINT NULL,
+  `datum_i_vrijeme` DATETIME NOT NULL,
+  `potvrda_o_preuzimanju` TINYINT NOT NULL,
+  `ponuditelj_odobrio` TINYINT NOT NULL,
   `id_kupac` INT NOT NULL,
   `id_ponuda` INT NOT NULL,
+  `kolicina` INT NOT NULL,
   PRIMARY KEY (`id_rezervacije`),
   INDEX `fk_rezervacije_korisnik1_idx` (`id_kupac` ASC),
   INDEX `fk_rezervacije_ponude1_idx` (`id_ponuda` ASC),
@@ -190,6 +210,42 @@ CREATE TABLE IF NOT EXISTS `mydb`.`dnevnik` (
   CONSTRAINT `fk_dnevnik_tip_radnje1`
     FOREIGN KEY (`id_tip_radnje`)
     REFERENCES `mydb`.`tip_radnje` (`id_tip_radnje`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`znacke`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`znacke` (
+  `id_znacke` INT NOT NULL AUTO_INCREMENT,
+  `naziv` VARCHAR(45) NOT NULL,
+  `opis` TEXT NOT NULL,
+  `slika` TEXT NOT NULL,
+  PRIMARY KEY (`id_znacke`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`ima_znacku`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`ima_znacku` (
+  `id_korisnik_znacka` INT NOT NULL AUTO_INCREMENT,
+  `datum_i_vrijeme` DATETIME NOT NULL,
+  `id_znacke` INT NOT NULL,
+  `id_korisnik` INT NOT NULL,
+  PRIMARY KEY (`id_korisnik_znacka`),
+  INDEX `fk_ima_znacku_znacke1_idx` (`id_znacke` ASC),
+  INDEX `fk_ima_znacku_korisnik1_idx` (`id_korisnik` ASC),
+  CONSTRAINT `fk_ima_znacku_znacke1`
+    FOREIGN KEY (`id_znacke`)
+    REFERENCES `mydb`.`znacke` (`id_znacke`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_ima_znacku_korisnik1`
+    FOREIGN KEY (`id_korisnik`)
+    REFERENCES `mydb`.`korisnik` (`id_korisnik`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
