@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prijava));
             this.lblUsername1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtKorIme = new System.Windows.Forms.TextBox();
@@ -36,6 +38,7 @@
             this.buttonPrijavi = new System.Windows.Forms.Button();
             this.labelRegistracija = new System.Windows.Forms.Label();
             this.labelCapsLock = new System.Windows.Forms.Label();
+            this.notifyPrijava = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // lblUsername1
@@ -72,7 +75,9 @@
             this.txtKorIme.Name = "txtKorIme";
             this.txtKorIme.Size = new System.Drawing.Size(169, 20);
             this.txtKorIme.TabIndex = 0;
+            this.txtKorIme.Enter += new System.EventHandler(this.txtKorIme_Enter);
             this.txtKorIme.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKorIme_KeyUp);
+            this.txtKorIme.Leave += new System.EventHandler(this.txtKorIme_Leave);
             // 
             // txtLozinka
             // 
@@ -135,6 +140,12 @@
             this.labelCapsLock.TabIndex = 4;
             this.labelCapsLock.Visible = false;
             // 
+            // notifyPrijava
+            // 
+            this.notifyPrijava.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyPrijava.Icon")));
+            this.notifyPrijava.Text = "notifyIcon1";
+            this.notifyPrijava.Visible = true;
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +163,7 @@
             this.Name = "Prijava";
             this.Text = "Prijava";
             this.Load += new System.EventHandler(this.Prijava_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Prijava_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +179,6 @@
         private System.Windows.Forms.Button buttonPrijavi;
         private System.Windows.Forms.Label labelRegistracija;
         private System.Windows.Forms.Label labelCapsLock;
+        private System.Windows.Forms.NotifyIcon notifyPrijava;
     }
 }

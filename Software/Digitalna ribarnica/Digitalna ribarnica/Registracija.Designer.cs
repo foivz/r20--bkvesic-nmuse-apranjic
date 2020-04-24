@@ -32,7 +32,6 @@
             this.btnOdustani = new System.Windows.Forms.Button();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.txtIme = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblIme = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKorIme = new System.Windows.Forms.TextBox();
@@ -54,7 +53,7 @@
             this.buttonRegistracija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegistracija.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonRegistracija.ForeColor = System.Drawing.Color.White;
-            this.buttonRegistracija.Location = new System.Drawing.Point(70, 342);
+            this.buttonRegistracija.Location = new System.Drawing.Point(318, 350);
             this.buttonRegistracija.Name = "buttonRegistracija";
             this.buttonRegistracija.Size = new System.Drawing.Size(128, 40);
             this.buttonRegistracija.TabIndex = 8;
@@ -66,7 +65,7 @@
             this.btnOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdustani.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdustani.ForeColor = System.Drawing.Color.White;
-            this.btnOdustani.Location = new System.Drawing.Point(207, 342);
+            this.btnOdustani.Location = new System.Drawing.Point(455, 350);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(86, 40);
             this.btnOdustani.TabIndex = 9;
@@ -76,35 +75,24 @@
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(174, 59);
+            this.txtPrezime.Location = new System.Drawing.Point(422, 67);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(119, 20);
             this.txtPrezime.TabIndex = 1;
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(174, 28);
+            this.txtIme.Location = new System.Drawing.Point(422, 36);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(119, 20);
             this.txtIme.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(86, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Lozinka";
             // 
             // lblIme
             // 
             this.lblIme.AutoSize = true;
             this.lblIme.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblIme.ForeColor = System.Drawing.Color.White;
-            this.lblIme.Location = new System.Drawing.Point(114, 26);
+            this.lblIme.Location = new System.Drawing.Point(361, 34);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(37, 20);
             this.lblIme.TabIndex = 10;
@@ -115,7 +103,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(38, 91);
+            this.label2.Location = new System.Drawing.Point(283, 99);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 20);
             this.label2.TabIndex = 12;
@@ -123,7 +111,7 @@
             // 
             // txtKorIme
             // 
-            this.txtKorIme.Location = new System.Drawing.Point(174, 91);
+            this.txtKorIme.Location = new System.Drawing.Point(422, 99);
             this.txtKorIme.Name = "txtKorIme";
             this.txtKorIme.Size = new System.Drawing.Size(119, 20);
             this.txtKorIme.TabIndex = 2;
@@ -133,7 +121,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(88, 219);
+            this.label3.Location = new System.Drawing.Point(333, 227);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 16;
@@ -141,7 +129,7 @@
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(174, 219);
+            this.txtLozinka.Location = new System.Drawing.Point(422, 227);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(119, 20);
             this.txtLozinka.TabIndex = 6;
@@ -151,7 +139,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(38, 252);
+            this.label4.Location = new System.Drawing.Point(283, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 20);
             this.label4.TabIndex = 17;
@@ -159,7 +147,7 @@
             // 
             // txtPonoviLozinku
             // 
-            this.txtPonoviLozinku.Location = new System.Drawing.Point(174, 252);
+            this.txtPonoviLozinku.Location = new System.Drawing.Point(422, 260);
             this.txtPonoviLozinku.Name = "txtPonoviLozinku";
             this.txtPonoviLozinku.Size = new System.Drawing.Size(119, 20);
             this.txtPonoviLozinku.TabIndex = 7;
@@ -169,7 +157,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(94, 122);
+            this.label5.Location = new System.Drawing.Point(339, 130);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 20);
             this.label5.TabIndex = 13;
@@ -177,7 +165,7 @@
             // 
             // txtAdresa
             // 
-            this.txtAdresa.Location = new System.Drawing.Point(174, 122);
+            this.txtAdresa.Location = new System.Drawing.Point(422, 130);
             this.txtAdresa.Name = "txtAdresa";
             this.txtAdresa.Size = new System.Drawing.Size(119, 20);
             this.txtAdresa.TabIndex = 3;
@@ -187,7 +175,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(86, 59);
+            this.label6.Location = new System.Drawing.Point(331, 67);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 20);
             this.label6.TabIndex = 11;
@@ -198,7 +186,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(95, 153);
+            this.label7.Location = new System.Drawing.Point(340, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 20);
             this.label7.TabIndex = 14;
@@ -206,7 +194,7 @@
             // 
             // txtMjesto
             // 
-            this.txtMjesto.Location = new System.Drawing.Point(174, 153);
+            this.txtMjesto.Location = new System.Drawing.Point(422, 161);
             this.txtMjesto.Name = "txtMjesto";
             this.txtMjesto.Size = new System.Drawing.Size(119, 20);
             this.txtMjesto.TabIndex = 4;
@@ -216,7 +204,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(47, 185);
+            this.label8.Location = new System.Drawing.Point(292, 193);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(106, 20);
             this.label8.TabIndex = 15;
@@ -224,7 +212,7 @@
             // 
             // txtMobitel
             // 
-            this.txtMobitel.Location = new System.Drawing.Point(174, 185);
+            this.txtMobitel.Location = new System.Drawing.Point(422, 193);
             this.txtMobitel.Name = "txtMobitel";
             this.txtMobitel.Size = new System.Drawing.Size(119, 20);
             this.txtMobitel.TabIndex = 5;
@@ -234,7 +222,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(353, 394);
+            this.ClientSize = new System.Drawing.Size(942, 497);
             this.Controls.Add(this.buttonRegistracija);
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.txtMobitel);
@@ -252,7 +240,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblIme);
             this.Name = "Registracija";
             this.Text = "Registracija";
@@ -267,7 +254,6 @@
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.TextBox txtIme;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblIme;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKorIme;

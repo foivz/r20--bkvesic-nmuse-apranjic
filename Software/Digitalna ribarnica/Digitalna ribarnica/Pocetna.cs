@@ -52,7 +52,7 @@ namespace Digitalna_ribarnica
             pocetna.ShowDialog();
             */
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
