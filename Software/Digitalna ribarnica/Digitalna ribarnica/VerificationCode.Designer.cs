@@ -50,6 +50,7 @@
             this.textBoxCode2.Name = "textBoxCode2";
             this.textBoxCode2.Size = new System.Drawing.Size(25, 20);
             this.textBoxCode2.TabIndex = 1;
+            this.textBoxCode2.TextChanged += new System.EventHandler(this.textBoxCode2_TextChanged);
             // 
             // textBoxCode3
             // 
@@ -58,6 +59,7 @@
             this.textBoxCode3.Name = "textBoxCode3";
             this.textBoxCode3.Size = new System.Drawing.Size(25, 20);
             this.textBoxCode3.TabIndex = 2;
+            this.textBoxCode3.TextChanged += new System.EventHandler(this.textBoxCode3_TextChanged);
             // 
             // textBox3
             // 
@@ -73,6 +75,7 @@
             this.textBoxCode5.Name = "textBoxCode5";
             this.textBoxCode5.Size = new System.Drawing.Size(25, 20);
             this.textBoxCode5.TabIndex = 4;
+            this.textBoxCode5.TextChanged += new System.EventHandler(this.textBoxCode5_TextChanged);
             // 
             // textBoxCode1
             // 
@@ -81,6 +84,7 @@
             this.textBoxCode1.Name = "textBoxCode1";
             this.textBoxCode1.Size = new System.Drawing.Size(25, 20);
             this.textBoxCode1.TabIndex = 0;
+            this.textBoxCode1.TextChanged += new System.EventHandler(this.textBoxCode1_TextChanged);
             // 
             // textBoxCode4
             // 
@@ -89,6 +93,7 @@
             this.textBoxCode4.Name = "textBoxCode4";
             this.textBoxCode4.Size = new System.Drawing.Size(25, 20);
             this.textBoxCode4.TabIndex = 3;
+            this.textBoxCode4.TextChanged += new System.EventHandler(this.textBoxCode4_TextChanged);
             // 
             // lblIme
             // 

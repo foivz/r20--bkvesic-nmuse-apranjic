@@ -38,7 +38,7 @@ namespace Digitalna_ribarnica
 
         private void VerificationCode_Load(object sender, EventArgs e)
         {
-
+            textBoxCode1.Focus();
         }
 
         private void buttonPotvrdi_Click(object sender, EventArgs e)
@@ -46,16 +46,19 @@ namespace Digitalna_ribarnica
             if ((textBoxCode1.Text == (code_number / 10000).ToString()) && (textBoxCode2.Text == ((code_number / 1000) % 10).ToString()) && (textBoxCode3.Text == ((code_number / 100) % 10).ToString()) && (textBoxCode4.Text == ((code_number % 100) / 10).ToString()) && (textBoxCode5.Text == (code_number % 10).ToString()))
             {
                 autentifikator.DodajKorisnika(Ime, Lozinka);
+                formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+                if (form != null)
+                {
+                    form.labelOdjava.Text = "Uspješna registracija!";
+                    form.labelOdjava.Visible = true;
+                }
+                notifyVerification.ShowBalloonTip(1000, "Registration", "Uspješno ste se registrirali!", ToolTipIcon.Info);
+                Close();
             }
-            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
-            if (form != null)
+            else
             {
-                form.labelOdjava.Text = "Uspješna registracija!";
-                form.labelOdjava.Visible = true;
+                notifyVerification.ShowBalloonTip(1000, "Registration", "Unijeli ste krivi kod!!!", ToolTipIcon.Error);
             }
-            notifyVerification.ShowBalloonTip(1000, "Registration", "Uspješno ste se registrirali!", ToolTipIcon.Info);
-            Close();
-
         }
 
         private void buttonOdustani_Click(object sender, EventArgs e)
@@ -78,6 +81,62 @@ namespace Digitalna_ribarnica
             //MessageBox.Show("Mail Send");
             code_number = broj;
             notifyVerification.ShowBalloonTip(1000, "Registration", "Kod za registraciju je ponovno poslan na Vaš mail!", ToolTipIcon.Info);
+        }
+
+        private void textBoxCode1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxCode1.Text.Length ==1)
+            {
+                textBoxCode2.Focus();
+            }
+        }
+
+        private void textBoxCode2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxCode2.Text.Length == 1)
+            {
+                textBoxCode3.Focus();
+            }
+            else if (textBoxCode2.Text.Length == 0)
+            {
+                textBoxCode1.Focus();
+            }
+        }
+
+        private void textBoxCode3_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxCode3.Text.Length == 1)
+            {
+                textBoxCode4.Focus();
+            }
+            else if (textBoxCode3.Text.Length == 0)
+            {
+                textBoxCode2.Focus();
+            }
+        }
+
+        private void textBoxCode4_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxCode4.Text.Length == 1)
+            {
+                textBoxCode5.Focus();
+            }
+            else if (textBoxCode4.Text.Length == 0)
+            {
+                textBoxCode3.Focus();
+            }
+        }
+
+        private void textBoxCode5_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxCode5.Text.Length == 1)
+            {
+                buttonPotvrdi.Focus();
+            }
+            else if (textBoxCode5.Text.Length == 0)
+            {
+                textBoxCode4.Focus();
+            }
         }
     }
 }
