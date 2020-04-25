@@ -125,6 +125,7 @@
             this.buttonOdustani.TabIndex = 6;
             this.buttonOdustani.Text = "Odustani";
             this.buttonOdustani.UseVisualStyleBackColor = true;
+            this.buttonOdustani.Click += new System.EventHandler(this.buttonOdustani_Click);
             // 
             // buttonSaljiPonovno
             // 
@@ -137,6 +138,7 @@
             this.buttonSaljiPonovno.TabIndex = 7;
             this.buttonSaljiPonovno.Text = "Pošalji ponovno";
             this.buttonSaljiPonovno.UseVisualStyleBackColor = true;
+            this.buttonSaljiPonovno.Click += new System.EventHandler(this.buttonSaljiPonovno_Click);
             // 
             // notifyVerification
             // 

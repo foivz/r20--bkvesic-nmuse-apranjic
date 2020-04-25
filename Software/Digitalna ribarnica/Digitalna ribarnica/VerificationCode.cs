@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.Net;
 using Prijava;
 
 namespace Digitalna_ribarnica
@@ -54,6 +56,28 @@ namespace Digitalna_ribarnica
             notifyVerification.ShowBalloonTip(1000, "Registration", "Uspješno ste se registrirali!", ToolTipIcon.Info);
             Close();
 
+        }
+
+        private void buttonOdustani_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void buttonSaljiPonovno_Click(object sender, EventArgs e)
+        {
+            Random code = new Random();
+            int broj = code.Next(10000, 99999);
+            MailMessage msg = new MailMessage("eribarnica@gmail.com", Email, "Digitalna ribarnica", "<br>Vaš kod za aktivaciju računa je: </br>" + broj);
+            msg.IsBodyHtml = true;
+            SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
+            sc.UseDefaultCredentials = false;
+            NetworkCredential cre = new NetworkCredential("eribarnica@gmail.com", ">H3/Wr9H");//your mail password
+            sc.Credentials = cre;
+            sc.EnableSsl = true;
+            sc.Send(msg);
+            //MessageBox.Show("Mail Send");
+            code_number = broj;
+            notifyVerification.ShowBalloonTip(1000, "Registration", "Kod za registraciju je ponovno poslan na Vaš mail!", ToolTipIcon.Info);
         }
     }
 }

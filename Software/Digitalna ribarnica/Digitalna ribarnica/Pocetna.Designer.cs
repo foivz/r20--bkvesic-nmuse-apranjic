@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPocetna));
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonRegistracija = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.buttonInstagram = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonOdjava = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,6 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
+            this.lblFollow = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblFollow);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonRegistracija);
@@ -80,6 +82,21 @@
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(919, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 89);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Prijava";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonRegistracija
             // 
@@ -121,21 +138,6 @@
             this.buttonInstagram.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonInstagram.UseVisualStyleBackColor = true;
             this.buttonInstagram.Click += new System.EventHandler(this.buttonInstagram_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(919, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 89);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Prijava";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonOdjava
             // 
@@ -267,6 +269,17 @@
             this.labelOdjava.TabIndex = 2;
             this.labelOdjava.Visible = false;
             // 
+            // lblFollow
+            // 
+            this.lblFollow.AutoSize = true;
+            this.lblFollow.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFollow.ForeColor = System.Drawing.Color.White;
+            this.lblFollow.Location = new System.Drawing.Point(402, 3);
+            this.lblFollow.Name = "lblFollow";
+            this.lblFollow.Size = new System.Drawing.Size(137, 20);
+            this.lblFollow.TabIndex = 11;
+            this.lblFollow.Text = "Pronađite nas na:";
+            // 
             // formPocetna
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -309,6 +322,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonNovosti;
         public System.Windows.Forms.Label labelOdjava;
+        private System.Windows.Forms.Label lblFollow;
     }
 }
 
