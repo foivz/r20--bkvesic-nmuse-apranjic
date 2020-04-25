@@ -9,15 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
+using Prijava;
 
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form
     {
+        Autentifikator autentifikator;
+        
 
         public formPocetna()
         {
             InitializeComponent();
+            autentifikator = new Autentifikator();
         }
 
 
@@ -52,7 +56,7 @@ namespace Digitalna_ribarnica
             pocetna.ShowDialog();
             */
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -84,7 +88,7 @@ namespace Digitalna_ribarnica
 
         private void buttonRegistracija_Click(object sender, EventArgs e)
         {
-            openChildForm(new Registracija());
+            openChildForm(new Registracija(autentifikator));
         }
     }
 }

@@ -65,6 +65,12 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="VerificationCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerificationCode.Designer.cs">
+      <DependentUpon>VerificationCode.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Pocetna.resx">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerificationCode.resx">
+      <DependentUpon>VerificationCode.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

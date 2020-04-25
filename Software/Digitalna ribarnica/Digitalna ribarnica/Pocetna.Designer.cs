@@ -42,10 +42,10 @@
             this.buttonPonude = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonNovosti = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
-            this.buttonNovosti = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
@@ -54,10 +54,10 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonRegistracija);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.buttonInstagram);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonOdjava);
             this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.panel3);
@@ -223,6 +223,19 @@
             this.panel4.Size = new System.Drawing.Size(251, 523);
             this.panel4.TabIndex = 2;
             // 
+            // buttonNovosti
+            // 
+            this.buttonNovosti.FlatAppearance.BorderSize = 0;
+            this.buttonNovosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNovosti.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonNovosti.Location = new System.Drawing.Point(-5, 138);
+            this.buttonNovosti.Name = "buttonNovosti";
+            this.buttonNovosti.Size = new System.Drawing.Size(250, 45);
+            this.buttonNovosti.TabIndex = 0;
+            this.buttonNovosti.Text = "Novosti";
+            this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonNovosti.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -253,19 +266,6 @@
             this.labelOdjava.Size = new System.Drawing.Size(0, 47);
             this.labelOdjava.TabIndex = 2;
             this.labelOdjava.Visible = false;
-            // 
-            // buttonNovosti
-            // 
-            this.buttonNovosti.FlatAppearance.BorderSize = 0;
-            this.buttonNovosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNovosti.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonNovosti.Location = new System.Drawing.Point(-5, 138);
-            this.buttonNovosti.Name = "buttonNovosti";
-            this.buttonNovosti.Size = new System.Drawing.Size(250, 45);
-            this.buttonNovosti.TabIndex = 0;
-            this.buttonNovosti.Text = "Novosti";
-            this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonNovosti.UseVisualStyleBackColor = true;
             // 
             // formPocetna
             // 
@@ -304,11 +304,11 @@
         private System.Windows.Forms.Panel panelStranice;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button buttonOdjava;
-        private System.Windows.Forms.Label labelOdjava;
         private System.Windows.Forms.Button buttonInstagram;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonNovosti;
+        public System.Windows.Forms.Label labelOdjava;
     }
 }
 

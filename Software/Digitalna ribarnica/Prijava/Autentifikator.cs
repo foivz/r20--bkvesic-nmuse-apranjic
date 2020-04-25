@@ -8,7 +8,7 @@ namespace Prijava
 {
     public class Autentifikator
     {
-        List<Korisnik> registriraniKorisnici;
+        public List<Korisnik> registriraniKorisnici { get; set; }
         private Korisnik korisnik;
 
         public Autentifikator()
@@ -69,6 +69,11 @@ namespace Prijava
             return registriraniKorisnici.Find(p => p.Ime == ime).Tip;
         }
 
+
+        public void DodajKorisnika(string korime, string lozinka)
+        {
+            registriraniKorisnici.Add(new Korisnik(korime,lozinka,3));
+        }
 
     }
 }

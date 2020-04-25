@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registracija));
             this.buttonRegistracija = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.txtPrezime = new System.Windows.Forms.TextBox();
@@ -46,6 +48,9 @@
             this.txtMjesto = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMobitel = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textEmail = new System.Windows.Forms.TextBox();
+            this.notifyRegistracija = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // buttonRegistracija
@@ -59,6 +64,7 @@
             this.buttonRegistracija.TabIndex = 8;
             this.buttonRegistracija.Text = "Registriraj se";
             this.buttonRegistracija.UseVisualStyleBackColor = true;
+            this.buttonRegistracija.Click += new System.EventHandler(this.buttonRegistracija_Click);
             // 
             // btnOdustani
             // 
@@ -121,7 +127,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(333, 227);
+            this.label3.Location = new System.Drawing.Point(333, 257);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
             this.label3.TabIndex = 16;
@@ -129,7 +135,7 @@
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(422, 227);
+            this.txtLozinka.Location = new System.Drawing.Point(422, 257);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(119, 20);
             this.txtLozinka.TabIndex = 6;
@@ -139,7 +145,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(283, 260);
+            this.label4.Location = new System.Drawing.Point(283, 290);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 20);
             this.label4.TabIndex = 17;
@@ -147,7 +153,7 @@
             // 
             // txtPonoviLozinku
             // 
-            this.txtPonoviLozinku.Location = new System.Drawing.Point(422, 260);
+            this.txtPonoviLozinku.Location = new System.Drawing.Point(422, 290);
             this.txtPonoviLozinku.Name = "txtPonoviLozinku";
             this.txtPonoviLozinku.Size = new System.Drawing.Size(119, 20);
             this.txtPonoviLozinku.TabIndex = 7;
@@ -217,6 +223,30 @@
             this.txtMobitel.Size = new System.Drawing.Size(119, 20);
             this.txtMobitel.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(350, 222);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 20);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Email";
+            // 
+            // textEmail
+            // 
+            this.textEmail.Location = new System.Drawing.Point(422, 224);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(119, 20);
+            this.textEmail.TabIndex = 5;
+            // 
+            // notifyRegistracija
+            // 
+            this.notifyRegistracija.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyRegistracija.Icon")));
+            this.notifyRegistracija.Text = "notifyIcon1";
+            this.notifyRegistracija.Visible = true;
+            // 
             // Registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +255,7 @@
             this.ClientSize = new System.Drawing.Size(942, 497);
             this.Controls.Add(this.buttonRegistracija);
             this.Controls.Add(this.btnOdustani);
+            this.Controls.Add(this.textEmail);
             this.Controls.Add(this.txtMobitel);
             this.Controls.Add(this.txtMjesto);
             this.Controls.Add(this.txtAdresa);
@@ -232,6 +263,7 @@
             this.Controls.Add(this.txtLozinka);
             this.Controls.Add(this.txtKorIme);
             this.Controls.Add(this.txtPrezime);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtIme);
@@ -243,6 +275,7 @@
             this.Controls.Add(this.lblIme);
             this.Name = "Registracija";
             this.Text = "Registracija";
+            this.Load += new System.EventHandler(this.Registracija_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +301,8 @@
         private System.Windows.Forms.TextBox txtMjesto;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMobitel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textEmail;
+        private System.Windows.Forms.NotifyIcon notifyRegistracija;
     }
 }
