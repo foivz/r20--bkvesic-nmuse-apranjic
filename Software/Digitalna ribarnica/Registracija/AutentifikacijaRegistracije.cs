@@ -130,14 +130,48 @@ namespace Registracija
                 if (brojMobitela[0] == '+')
                 {
                     if (brojMobitela.StartsWith("+385"))
-                        isNumeric = int.TryParse(brojMobitela.Substring(1, brojMobitela.Length - 1), out int n);
+                    {
+                        for (int i = 1; i < brojMobitela.Length; i++)
+                        {
+                            if (i != brojMobitela.Length - 1)
+                                isNumeric = int.TryParse(brojMobitela.Substring(i,1), out int n);
+                            else
+                                isNumeric = int.TryParse(brojMobitela.Substring(brojMobitela.Length-1),out int n);
+
+                            if (isNumeric)
+                                continue;
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                        //isNumeric = int.TryParse(brojMobitela.Substring(1, brojMobitela.Length - 1), out int n);
+                    }
                     else
                         return false;
                 }
                 else
                 {
                     if (brojMobitela.StartsWith("09"))
-                        isNumeric = int.TryParse(brojMobitela, out int n);
+                    {
+                        for (int i = 0; i < brojMobitela.Length; i++)
+                        {
+                            if (i != brojMobitela.Length - 1)
+                                isNumeric = int.TryParse(brojMobitela.Substring(i, 1), out int n);
+                            else
+                                isNumeric = int.TryParse(brojMobitela.Substring(brojMobitela.Length - 1), out int n);
+
+                            if (isNumeric)
+                                continue;
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        return true;
+                    }
+                        //isNumeric = int.TryParse(brojMobitela, out int n);
                     else
                         return false;
                 }
