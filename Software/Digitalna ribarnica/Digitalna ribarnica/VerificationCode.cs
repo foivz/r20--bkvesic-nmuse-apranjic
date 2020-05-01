@@ -53,6 +53,7 @@ namespace Digitalna_ribarnica
                 PrihvaceniUvjeti = terms_Of_Service.Prihvaceni;
                 if (PrihvaceniUvjeti)
                 {
+                    //TODO: dodati autentifikator.DodajKorisnika koji prima sve property te ih sprema u listu registrirani korisnika
                     autentifikator.DodajKorisnika(Ime, Lozinka);
                     formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                     if (form != null)
