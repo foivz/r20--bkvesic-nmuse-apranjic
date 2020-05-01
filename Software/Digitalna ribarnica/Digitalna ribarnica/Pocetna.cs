@@ -99,8 +99,11 @@ namespace Digitalna_ribarnica
 
         private void labelOdjava_VisibleChanged(object sender, EventArgs e)
         {
-            timerPocetna.Interval = 5000;
-            timerPocetna.Enabled = true;
+            if (labelOdjava.Visible == true)
+            {
+                timerPocetna.Interval = 5000;
+                timerPocetna.Enabled = true;
+            }
         }
     }
 }
