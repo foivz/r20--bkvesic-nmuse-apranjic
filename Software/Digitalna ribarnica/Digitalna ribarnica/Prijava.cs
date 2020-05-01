@@ -20,7 +20,7 @@ namespace Digitalna_ribarnica
         public Button novosti;
         public Button Registracija;
         Autentifikator autentifikator;
-        bool focus = false;
+        //bool focus = false;
         public Prijava()
         {
             InitializeComponent();

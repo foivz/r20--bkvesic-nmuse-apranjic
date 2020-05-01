@@ -41,6 +41,8 @@
             this.buttonOdustani = new System.Windows.Forms.Button();
             this.buttonSaljiPonovno = new System.Windows.Forms.Button();
             this.notifyVerification = new System.Windows.Forms.NotifyIcon(this.components);
+            this.labelObavijest = new System.Windows.Forms.Label();
+            this.timerLabel = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // textBoxCode2
@@ -151,12 +153,30 @@
             this.notifyVerification.Text = "notifyIcon1";
             this.notifyVerification.Visible = true;
             // 
+            // labelObavijest
+            // 
+            this.labelObavijest.AutoSize = true;
+            this.labelObavijest.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelObavijest.ForeColor = System.Drawing.Color.White;
+            this.labelObavijest.Location = new System.Drawing.Point(153, 234);
+            this.labelObavijest.Name = "labelObavijest";
+            this.labelObavijest.Size = new System.Drawing.Size(177, 20);
+            this.labelObavijest.TabIndex = 12;
+            this.labelObavijest.Text = "Mail je ponovno poslan";
+            this.labelObavijest.Visible = false;
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.Interval = 1000;
+            this.timerLabel.Tick += new System.EventHandler(this.timerLabel_Tick);
+            // 
             // VerificationCode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(515, 276);
+            this.Controls.Add(this.labelObavijest);
             this.Controls.Add(this.buttonOdustani);
             this.Controls.Add(this.buttonSaljiPonovno);
             this.Controls.Add(this.buttonPotvrdi);
@@ -188,5 +208,7 @@
         private System.Windows.Forms.Button buttonOdustani;
         private System.Windows.Forms.Button buttonSaljiPonovno;
         private System.Windows.Forms.NotifyIcon notifyVerification;
+        private System.Windows.Forms.Label labelObavijest;
+        private System.Windows.Forms.Timer timerLabel;
     }
 }

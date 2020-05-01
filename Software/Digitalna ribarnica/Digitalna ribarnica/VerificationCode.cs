@@ -20,6 +20,7 @@ namespace Digitalna_ribarnica
         string Ime;
         string Lozinka;
         Autentifikator autentifikator;
+        public bool PrihvaceniUvjeti { get; set; }
         public VerificationCode()
         {
             InitializeComponent();
@@ -39,21 +40,33 @@ namespace Digitalna_ribarnica
         private void VerificationCode_Load(object sender, EventArgs e)
         {
             textBoxCode1.Focus();
+            PrihvaceniUvjeti = false;
         }
 
         private void buttonPotvrdi_Click(object sender, EventArgs e)
         {
             if ((textBoxCode1.Text == (code_number / 10000).ToString()) && (textBoxCode2.Text == ((code_number / 1000) % 10).ToString()) && (textBoxCode3.Text == ((code_number / 100) % 10).ToString()) && (textBoxCode4.Text == ((code_number % 100) / 10).ToString()) && (textBoxCode5.Text == (code_number % 10).ToString()))
             {
-                autentifikator.DodajKorisnika(Ime, Lozinka);
-                formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
-                if (form != null)
+               
+                Terms_of_service terms_Of_Service = new Terms_of_service(PrihvaceniUvjeti);
+                terms_Of_Service.ShowDialog();
+                PrihvaceniUvjeti = terms_Of_Service.Prihvaceni;
+                if (PrihvaceniUvjeti)
                 {
-                    form.labelOdjava.Text = "Uspješna registracija!";
-                    form.labelOdjava.Visible = true;
+                    autentifikator.DodajKorisnika(Ime, Lozinka);
+                    formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+                    if (form != null)
+                    {
+                        form.labelOdjava.Text = "Uspješna registracija!";
+                        form.labelOdjava.Visible = true;
+                    }
+                    notifyVerification.ShowBalloonTip(1000, "Registration", "Uspješno ste se registrirali!", ToolTipIcon.Info);
+                    Close();
                 }
-                notifyVerification.ShowBalloonTip(1000, "Registration", "Uspješno ste se registrirali!", ToolTipIcon.Info);
-                Close();
+                else
+                {
+                    notifyVerification.ShowBalloonTip(1000, "Registration", "Morate prihvatit uvjete korištenja, inače Vas ne možemo registrirati", ToolTipIcon.Error);
+                }
             }
             else
             {
@@ -65,9 +78,12 @@ namespace Digitalna_ribarnica
         {
             Close();
         }
-
+        // ovdje se nalazi funkcionalnost za ponovno slanje email koda
         private void buttonSaljiPonovno_Click(object sender, EventArgs e)
         {
+            timerLabel.Interval = 5000;
+            timerLabel.Enabled = true;
+            labelObavijest.Visible = true;
             Random code = new Random();
             int broj = code.Next(10000, 99999);
             MailMessage msg = new MailMessage("eribarnica@gmail.com", Email, "Digitalna ribarnica", "<br>Vaš kod za aktivaciju računa je: </br>" + broj);
@@ -82,6 +98,14 @@ namespace Digitalna_ribarnica
             code_number = broj;
             notifyVerification.ShowBalloonTip(1000, "Registration", "Kod za registraciju je ponovno poslan na Vaš mail!", ToolTipIcon.Info);
         }
+
+        private void timerLabel_Tick(object sender, EventArgs e)
+        {
+            labelObavijest.Visible = false;
+            timerLabel.Stop();
+        }
+
+        //Ovaj dio ispod služi za fokusiranje pojedinih textboxova prilikom unosa pojedinog broja za verifikaciju koda
 
         private void textBoxCode1_TextChanged(object sender, EventArgs e)
         {
@@ -138,5 +162,7 @@ namespace Digitalna_ribarnica
                 textBoxCode4.Focus();
             }
         }
+
+ 
     }
 }

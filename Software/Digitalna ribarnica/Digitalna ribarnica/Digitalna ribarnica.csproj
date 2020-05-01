@@ -65,6 +65,12 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="Terms of service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terms of service.Designer.cs">
+      <DependentUpon>Terms of service.cs</DependentUpon>
+    </Compile>
     <Compile Include="VerificationCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terms of service.resx">
+      <DependentUpon>Terms of service.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerificationCode.resx">
       <DependentUpon>VerificationCode.cs</DependentUpon>
@@ -113,6 +122,10 @@
     <ProjectReference Include="..\Prijava\Prijava.csproj">
       <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
       <Name>Prijava</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Registracija\Registracija.csproj">
+      <Project>{893256ce-d8c3-4856-88bd-d2b18bc448f4}</Project>
+      <Name>Registracija</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,15 +8,15 @@ namespace Prijava
 {
     public class Korisnik
     {
-        public string Ime { get; set; }
+        public string KorIme { get; set; }
 
         public string Lozinka { get; set; }
 
         public int Tip { get; set; }
 
-        public Korisnik(string ime, string lozinka, int tip)
+        public Korisnik(string korime, string lozinka, int tip)
         {
-            Ime = ime;
+            KorIme = korime;
             Lozinka = lozinka;
             Tip = tip;
         }

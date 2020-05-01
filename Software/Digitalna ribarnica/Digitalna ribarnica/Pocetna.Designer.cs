@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPocetna));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFollow = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonRegistracija = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
-            this.lblFollow = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
@@ -69,13 +69,24 @@
             this.panel1.Size = new System.Drawing.Size(1034, 89);
             this.panel1.TabIndex = 0;
             // 
+            // lblFollow
+            // 
+            this.lblFollow.AutoSize = true;
+            this.lblFollow.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFollow.ForeColor = System.Drawing.Color.White;
+            this.lblFollow.Location = new System.Drawing.Point(443, 0);
+            this.lblFollow.Name = "lblFollow";
+            this.lblFollow.Size = new System.Drawing.Size(137, 20);
+            this.lblFollow.TabIndex = 11;
+            this.lblFollow.Text = "Pronađite nas na:";
+            // 
             // button6
             // 
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(514, 26);
+            this.button6.Location = new System.Drawing.Point(565, 18);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(53, 41);
             this.button6.TabIndex = 0;
@@ -117,7 +128,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(455, 26);
+            this.button5.Location = new System.Drawing.Point(506, 18);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(53, 41);
             this.button5.TabIndex = 0;
@@ -131,7 +142,7 @@
             this.buttonInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInstagram.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonInstagram.Image = ((System.Drawing.Image)(resources.GetObject("buttonInstagram.Image")));
-            this.buttonInstagram.Location = new System.Drawing.Point(396, 26);
+            this.buttonInstagram.Location = new System.Drawing.Point(447, 18);
             this.buttonInstagram.Name = "buttonInstagram";
             this.buttonInstagram.Size = new System.Drawing.Size(53, 41);
             this.buttonInstagram.TabIndex = 0;
@@ -268,17 +279,6 @@
             this.labelOdjava.Size = new System.Drawing.Size(0, 47);
             this.labelOdjava.TabIndex = 2;
             this.labelOdjava.Visible = false;
-            // 
-            // lblFollow
-            // 
-            this.lblFollow.AutoSize = true;
-            this.lblFollow.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblFollow.ForeColor = System.Drawing.Color.White;
-            this.lblFollow.Location = new System.Drawing.Point(402, 3);
-            this.lblFollow.Name = "lblFollow";
-            this.lblFollow.Size = new System.Drawing.Size(137, 20);
-            this.lblFollow.TabIndex = 11;
-            this.lblFollow.Text = "Pronađite nas na:";
             // 
             // formPocetna
             // 

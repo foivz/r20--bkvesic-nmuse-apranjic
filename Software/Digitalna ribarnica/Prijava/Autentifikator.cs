@@ -28,7 +28,7 @@ namespace Prijava
         private Korisnik dohvatiKorisnika(string ime)
         {
             //Ovdje treba dodati čitanje iz tablice "Korisnici" kada se Baza podataka napravi
-            if (!registriraniKorisnici.Exists(p => p.Ime == ime))
+            if (!registriraniKorisnici.Exists(p => p.KorIme == ime))
             {
                 return null;
             }
@@ -36,7 +36,7 @@ namespace Prijava
             {
                 foreach (Korisnik pojedinikorisnik in registriraniKorisnici)
                 {
-                    if (pojedinikorisnik.Ime == ime)
+                    if (pojedinikorisnik.KorIme == ime)
                     {
                         korisnik = pojedinikorisnik;
                         break;
@@ -56,7 +56,7 @@ namespace Prijava
         {
             if (dohvatiKorisnika(ime) != null)
             {
-                if (korisnik.Lozinka != lozinka && korisnik.Ime == ime)
+                if (korisnik.Lozinka != lozinka && korisnik.KorIme == ime)
                     return false;
                 else
                     return true;
@@ -66,13 +66,32 @@ namespace Prijava
 
         public int tipKorisnika(string ime)
         {
-            return registriraniKorisnici.Find(p => p.Ime == ime).Tip;
+            return registriraniKorisnici.Find(p => p.KorIme == ime).Tip;
         }
 
 
         public void DodajKorisnika(string korime, string lozinka)
         {
-            registriraniKorisnici.Add(new Korisnik(korime,lozinka,3));
+                registriraniKorisnici.Add(new Korisnik(korime, lozinka, 3));
+        }
+
+       
+        public void provjeriKorisnika(string korime)
+        {
+            if (korime.Length<5 || korime.Length>9)
+                throw new PrijavaException("Korisničko ime treba sadržavati između 5 i 9 znakova");
+        }
+        public void provjeriKorisnika1(string korime)
+        {
+            if (dohvatiKorisnika(korime) != null)
+                throw new PrijavaException("Korisnik s tim korisničkim imenom postoji");
+        }
+
+
+        public void provjeriKorisnika2(string korime)
+        {
+            if(!(korime.Contains('0') || korime.Contains('1')|| korime.Contains('2')|| korime.Contains('3')|| korime.Contains('4')|| korime.Contains('5')|| korime.Contains('6') || korime.Contains('7')|| korime.Contains('8') || korime.Contains('9')) || !korime.Any(x => char.IsLetter(x)))
+                 throw new PrijavaException("Korisničko ime treba sadržavati barem jedno slovo i jedan broj!");
         }
 
     }
