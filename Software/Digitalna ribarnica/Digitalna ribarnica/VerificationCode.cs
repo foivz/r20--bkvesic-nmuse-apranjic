@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
 using Prijava;
-
+using Registracija;
 namespace Digitalna_ribarnica
 {
     public partial class VerificationCode : Form
@@ -20,6 +20,7 @@ namespace Digitalna_ribarnica
         string Ime;
         string Lozinka;
         Autentifikator autentifikator;
+        Code Code; 
         public bool PrihvaceniUvjeti { get; set; }
         public VerificationCode()
         {
@@ -37,6 +38,17 @@ namespace Digitalna_ribarnica
             this.autentifikator = autentifikator;
         }
 
+        //TEST s istekom vremena
+        public VerificationCode(string ime, string lozinka, Code broj, string email, Autentifikator autentifikator)
+        {
+            InitializeComponent();
+            Ime = ime;
+            Lozinka = lozinka;
+            Code = broj;
+            Email = email;
+            this.autentifikator = autentifikator;
+        }
+
         private void VerificationCode_Load(object sender, EventArgs e)
         {
             textBoxCode1.Focus();
@@ -45,28 +57,36 @@ namespace Digitalna_ribarnica
 
         private void buttonPotvrdi_Click(object sender, EventArgs e)
         {
-            if ((textBoxCode1.Text == (code_number / 10000).ToString()) && (textBoxCode2.Text == ((code_number / 1000) % 10).ToString()) && (textBoxCode3.Text == ((code_number / 100) % 10).ToString()) && (textBoxCode4.Text == ((code_number % 100) / 10).ToString()) && (textBoxCode5.Text == (code_number % 10).ToString()))
-            {
-               
-                Terms_of_service terms_Of_Service = new Terms_of_service(PrihvaceniUvjeti);
-                terms_Of_Service.ShowDialog();
-                PrihvaceniUvjeti = terms_Of_Service.Prihvaceni;
-                if (PrihvaceniUvjeti)
+            //if ((textBoxCode1.Text == (code_number / 10000).ToString()) && (textBoxCode2.Text == ((code_number / 1000) % 10).ToString()) && (textBoxCode3.Text == ((code_number / 100) % 10).ToString()) && (textBoxCode4.Text == ((code_number % 100) / 10).ToString()) && (textBoxCode5.Text == (code_number % 10).ToString()))
+            if ((textBoxCode1.Text == (Code.Broj / 10000).ToString()) && (textBoxCode2.Text == ((Code.Broj / 1000) % 10).ToString()) && (textBoxCode3.Text == ((Code.Broj / 100) % 10).ToString()) && (textBoxCode4.Text == ((Code.Broj % 100) / 10).ToString()) && (textBoxCode5.Text == (Code.Broj % 10).ToString()))
                 {
-                    //TODO: dodati autentifikator.DodajKorisnika koji prima sve property te ih sprema u listu registrirani korisnika
-                    autentifikator.DodajKorisnika(Ime, Lozinka);
-                    formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
-                    if (form != null)
+                if (DateTime.Compare(DateTime.Now, Code.DatumIsteka) <= 0) //Ovdje provjervamo vrijedi li uneseni kod pomoću usporedbe trentunog datuma s datumom isteka koda
+                {
+                    //notifyVerification.ShowBalloonTip(1000, "Registration", "Kod jos vrijedi", ToolTipIcon.Info);
+                    Terms_of_service terms_Of_Service = new Terms_of_service(PrihvaceniUvjeti);
+                    terms_Of_Service.ShowDialog();
+                    PrihvaceniUvjeti = terms_Of_Service.Prihvaceni;
+                    if (PrihvaceniUvjeti)
                     {
-                        form.labelOdjava.Text = "Uspješna registracija!";
-                        form.labelOdjava.Visible = true;
+                        //TODO: dodati autentifikator.DodajKorisnika koji prima sve property te ih sprema u listu registrirani korisnika
+                        autentifikator.DodajKorisnika(Ime, Lozinka);
+                        formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+                        if (form != null)
+                        {
+                            form.labelOdjava.Text = "Uspješna registracija!";
+                            form.labelOdjava.Visible = true;
+                        }
+                        notifyVerification.ShowBalloonTip(1000, "Registration", "Uspješno ste se registrirali!", ToolTipIcon.Info);
+                        Close();
                     }
-                    notifyVerification.ShowBalloonTip(1000, "Registration", "Uspješno ste se registrirali!", ToolTipIcon.Info);
-                    Close();
+                    else
+                    {
+                        notifyVerification.ShowBalloonTip(1000, "Registration", "Morate prihvatit uvjete korištenja, inače Vas ne možemo registrirati", ToolTipIcon.Error);
+                    }
                 }
                 else
                 {
-                    notifyVerification.ShowBalloonTip(1000, "Registration", "Morate prihvatit uvjete korištenja, inače Vas ne možemo registrirati", ToolTipIcon.Error);
+                    notifyVerification.ShowBalloonTip(1000, "Registration", "Kod ne vrijedi", ToolTipIcon.Info);
                 }
             }
             else
@@ -87,6 +107,7 @@ namespace Digitalna_ribarnica
             labelObavijest.Visible = true;
             Random code = new Random();
             int broj = code.Next(10000, 99999);
+            Code noviCode = new Code(broj);
             MailMessage msg = new MailMessage("eribarnica@gmail.com", Email, "Digitalna ribarnica", "<br>Vaš kod za aktivaciju računa je: </br>" + broj);
             msg.IsBodyHtml = true;
             SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
@@ -96,7 +117,8 @@ namespace Digitalna_ribarnica
             sc.EnableSsl = true;
             sc.Send(msg);
             //MessageBox.Show("Mail Send");
-            code_number = broj;
+            //code_number = broj;
+            Code = noviCode;
             notifyVerification.ShowBalloonTip(1000, "Registration", "Kod za registraciju je ponovno poslan na Vaš mail!", ToolTipIcon.Info);
         }
 

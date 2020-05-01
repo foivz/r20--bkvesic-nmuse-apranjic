@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutentifikacijaRegistracije.cs" />
+    <Compile Include="Code.cs" />
     <Compile Include="RegistrationException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

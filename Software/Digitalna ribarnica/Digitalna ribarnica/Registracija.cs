@@ -42,8 +42,9 @@ namespace Digitalna_ribarnica
                     autentifikator.provjeriKorisnika(txtKorIme.Text);
                     autentifikator.provjeriKorisnika1(txtKorIme.Text);
                     autentifikator.provjeriKorisnika2(txtKorIme.Text);
-                    Random code = new Random();
-                    int broj = code.Next(10000, 99999);
+                    Random verificationCode = new Random();
+                    int broj = verificationCode.Next(10000, 99999);
+                    Code code = new Code(broj);
                     MailMessage msg = new MailMessage("eribarnica@gmail.com", textEmail.Text, "Digitalna ribarnica", "<br>Vaš kod za aktivaciju računa je: </br>" + broj);
                     msg.IsBodyHtml = true;
                     SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
@@ -55,12 +56,12 @@ namespace Digitalna_ribarnica
                     //MessageBox.Show("Mail Send");
                     notifyRegistracija.ShowBalloonTip(1000, "Code", "Kod za registraciju je poslan na Vaš mail!", ToolTipIcon.Info);
 
-
                     formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                     if (form != null)
                     {
                         //TODO dodati kontruktor VerificationCode koji prima sve podatke (ime, prezime, korime, adresa, mjesto, mobitel, email..)
-                        form.openChildForm(new VerificationCode(txtKorIme.Text, txtLozinka.Text, broj, textEmail.Text, autentifikator));
+                        //form.openChildForm(new VerificationCode(txtKorIme.Text, txtLozinka.Text, broj, textEmail.Text, autentifikator));
+                        form.openChildForm(new VerificationCode(txtKorIme.Text, txtLozinka.Text, code, textEmail.Text, autentifikator));
                     }
             }
             catch (RegistrationException ex)
