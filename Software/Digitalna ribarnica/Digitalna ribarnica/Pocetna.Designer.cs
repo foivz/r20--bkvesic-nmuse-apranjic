@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPocetna));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblFollow = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
+            this.timerPocetna = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
@@ -279,6 +281,12 @@
             this.labelOdjava.Size = new System.Drawing.Size(0, 47);
             this.labelOdjava.TabIndex = 2;
             this.labelOdjava.Visible = false;
+            this.labelOdjava.VisibleChanged += new System.EventHandler(this.labelOdjava_VisibleChanged);
+            // 
+            // timerPocetna
+            // 
+            this.timerPocetna.Interval = 1000;
+            this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
             // formPocetna
             // 
@@ -323,6 +331,7 @@
         private System.Windows.Forms.Button buttonNovosti;
         public System.Windows.Forms.Label labelOdjava;
         private System.Windows.Forms.Label lblFollow;
+        private System.Windows.Forms.Timer timerPocetna;
     }
 }
 

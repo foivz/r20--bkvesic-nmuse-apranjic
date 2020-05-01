@@ -71,6 +71,12 @@ namespace Digitalna_ribarnica
             buttonNovosti.Visible = false;
         }
 
+        private void timerPocetna_Tick(object sender, EventArgs e)
+        {
+            labelOdjava.Visible = false;
+            timerPocetna.Stop();
+        }
+
         private void buttonInstagram_Click(object sender, EventArgs e)
         {
             Process.Start("www.instagram.com/instagram/?hl=hr");
@@ -89,6 +95,12 @@ namespace Digitalna_ribarnica
         private void buttonRegistracija_Click(object sender, EventArgs e)
         {
             openChildForm(new Registracija(autentifikator));
+        }
+
+        private void labelOdjava_VisibleChanged(object sender, EventArgs e)
+        {
+            timerPocetna.Interval = 5000;
+            timerPocetna.Enabled = true;
         }
     }
 }
