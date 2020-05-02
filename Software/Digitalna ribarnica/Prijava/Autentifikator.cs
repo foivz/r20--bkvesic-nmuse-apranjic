@@ -78,8 +78,8 @@ namespace Prijava
        
         public void provjeriKorisnika(string korime)
         {
-            if (korime.Length<5 || korime.Length>9)
-                throw new PrijavaException("Korisničko ime treba sadržavati između 5 i 9 znakova");
+            if (korime.Length<5 || korime.Length>15)
+                throw new PrijavaException("Korisničko ime treba sadržavati između 5 i 15 znakova");
         }
         public void provjeriKorisnika1(string korime)
         {
