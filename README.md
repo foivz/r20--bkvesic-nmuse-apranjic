@@ -28,9 +28,9 @@ F08 | Kontaktiranje ponuditelja | Registrirani korisnik može kontaktirati ponud
 F09 | Promjena predefiniranih postavki | Administrator može mijenjati neke postavke koje su već sustavom definirane (minimalna količina, minimalna cijena). | Nikola Muše
 F10 | Administracija ponude ribe | Administrator može administrirati ponudu ribe (vrsta, količina, cijena, lokacija). Uređivanje i brisanje ponude. | Nikola Muše, Božo Kvesić
 F11 | Dodavanje kontakt podataka | Ponuditelj može dodati kontakt podatke - broj telefona ili mu se po defaultu postavlja broj telefona kojeg je unio prilikom registracije. | Nikola Muše
-F12 | Dodavanje fotografija i opisa ribe | Ponuditelj može dodavati fotografije i opise ribe. | Nikola Muše
+F12 | Dodavanje nove ribe i novih lokacija | Administrator može dodavati fotografije i lokacije ribe. | Nikola Muše
 F13 | Dodavanje i administracija ponude | Ponuditelj može dodati ponudu u kojoj navodi količinu, cijenu, vrstu ribe, lokaciju te po potrebi opis, dodatnu fotografiju i trajanje rezervacije. Ponuditelj nakon dodavanja ponude može ju naknadno uređivati i brisati. | Anabela Pranjić
-F14 | Pregled izvršenih narudžbi | Ponuditelj i kupac mogu pregledati izvršene narudžbe. | Božo Kvesić, Anabela Pranjić
+F14 | Pregled izvršenih rezervacija | Ponuditelj i kupac mogu pregledati izvršene rezervacije. | Božo Kvesić, Anabela Pranjić
 F15 | Slanje obavijesti ponuditelju | Sustav može poslati ponuditelju obavijest o rezervaciji koje se vide unutar aplikacije. Ako se obavijest ne pročita unutar 30 minuta od slanja, ponuditelj istu obavijest dobiva na mail. | Božo Kvesić
 F16 | Promjena količine dostupne ribe | Sustav mijenja količinu ribe u ponudi ukoliko ponuditelj odobri rezervaciju. | Anabela Pranjić
 F17 | Potvrđivanje preuzimanja ribe | Ponuditelj potvrđuje da je kupac preuzeo ribu. | Anabela Pranjić
