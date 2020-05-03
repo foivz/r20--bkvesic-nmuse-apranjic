@@ -38,16 +38,16 @@ namespace Registracija
         {
             
             //-------------IME NE SMIJE BITI PRAZNO------------------
-            if (ime.Length != 0)
+            if (ime.Length != 0 && IsNameSurnameValid(ime))
                 Ime = ime;
             else
-                throw new RegistrationException("Nije uneseno ime");
+                throw new RegistrationException("Nije uneseno ime ili je ime sadrži broj");
             //-------------------------------------------------------
             //------------PREZIME NE SMIJE BITI PRAZNO---------------
-            if (prezime.Length != 0)
+            if (prezime.Length != 0 && IsNameSurnameValid(prezime))
                 Prezime = prezime;
             else
-                throw new RegistrationException("Nije uneseno prezime");
+                throw new RegistrationException("Nije uneseno prezime ili prezime sadrži broj");
             //-------------------------------------------------------
             //------------ADRESA MORA BITI UNESENA-------------------
             if (adresa.Length != 0)
@@ -99,7 +99,25 @@ namespace Registracija
 
         }
 
+        public bool IsNameSurnameValid(string name)
+        {
+            bool IsNumeric;
+            for (int i = 0; i < name.Length; i++)
+            {
+                if (i != name.Length - 1)
+                    IsNumeric = int.TryParse(name.Substring(i, 1), out int n);
+                else
+                    IsNumeric = int.TryParse(name.Substring(name.Length - 1), out int n);
 
+                if (!IsNumeric)
+                    continue;
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public bool IsValidEmail(string email)
         {

@@ -81,7 +81,7 @@ namespace Digitalna_ribarnica
                     }
                     else
                     {
-                        notifyVerification.ShowBalloonTip(1000, "Registration", "Morate prihvatit uvjete korištenja, inače Vas ne možemo registrirati", ToolTipIcon.Error);
+                        notifyVerification.ShowBalloonTip(1000, "Registration", "Morate prihvatiti uvjete korištenja, inače Vas ne možemo registrirati", ToolTipIcon.Error);
                     }
                 }
                 else
