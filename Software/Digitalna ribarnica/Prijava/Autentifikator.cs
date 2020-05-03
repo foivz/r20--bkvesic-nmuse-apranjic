@@ -14,9 +14,9 @@ namespace Prijava
         public Autentifikator()
         {
             registriraniKorisnici = new List<Korisnik>();
-            registriraniKorisnici.Add(new Korisnik("bkvesic", "12345",1));
-            registriraniKorisnici.Add(new Korisnik("nmuse", "12345",2));
-            registriraniKorisnici.Add(new Korisnik("apranjic", "12345",3));
+            registriraniKorisnici.Add(new Korisnik("bkvesic", "12345",1, "bozo.kvesic1@gmail.com"));
+            registriraniKorisnici.Add(new Korisnik("nmuse", "12345",2,"nmuse@foi.hr"));
+            registriraniKorisnici.Add(new Korisnik("apranjic", "12345",3,"apranjic@foi.hr"));
         }
 
         /// <summary>
@@ -69,10 +69,21 @@ namespace Prijava
             return registriraniKorisnici.Find(p => p.KorIme == ime).Tip;
         }
 
-
-        public void DodajKorisnika(string korime, string lozinka)
+        public Korisnik findKorisnik(string email)
         {
-                registriraniKorisnici.Add(new Korisnik(korime, lozinka, 3));
+            return registriraniKorisnici.Find(p => p.Email == email);
+        }
+
+        public void postojiEmail(string email)
+        {
+            if(!registriraniKorisnici.Exists(p => p.Email == email))
+                throw new PrijavaException("Korisnik s tim mailom ne postoji u bazi registriranih korisnika");
+        }
+
+
+        public void DodajKorisnika(string korime, string lozinka, string email)
+        {
+                registriraniKorisnici.Add(new Korisnik(korime, lozinka, 3,email));
         }
 
        

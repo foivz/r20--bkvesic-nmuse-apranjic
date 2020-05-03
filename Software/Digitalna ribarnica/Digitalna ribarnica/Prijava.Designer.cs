@@ -39,6 +39,7 @@
             this.labelRegistracija = new System.Windows.Forms.Label();
             this.labelCapsLock = new System.Windows.Forms.Label();
             this.notifyPrijava = new System.Windows.Forms.NotifyIcon(this.components);
+            this.labelZaboravljenaLozinka = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblUsername1
@@ -109,9 +110,9 @@
             this.buttonPrijavi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrijavi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPrijavi.ForeColor = System.Drawing.Color.White;
-            this.buttonPrijavi.Location = new System.Drawing.Point(265, 176);
+            this.buttonPrijavi.Location = new System.Drawing.Point(249, 176);
             this.buttonPrijavi.Name = "buttonPrijavi";
-            this.buttonPrijavi.Size = new System.Drawing.Size(86, 40);
+            this.buttonPrijavi.Size = new System.Drawing.Size(102, 40);
             this.buttonPrijavi.TabIndex = 2;
             this.buttonPrijavi.Text = "Prijavi se";
             this.buttonPrijavi.UseVisualStyleBackColor = true;
@@ -146,6 +147,18 @@
             this.notifyPrijava.Text = "notifyIcon1";
             this.notifyPrijava.Visible = true;
             // 
+            // labelZaboravljenaLozinka
+            // 
+            this.labelZaboravljenaLozinka.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelZaboravljenaLozinka.AutoSize = true;
+            this.labelZaboravljenaLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.labelZaboravljenaLozinka.Location = new System.Drawing.Point(246, 219);
+            this.labelZaboravljenaLozinka.Name = "labelZaboravljenaLozinka";
+            this.labelZaboravljenaLozinka.Size = new System.Drawing.Size(105, 13);
+            this.labelZaboravljenaLozinka.TabIndex = 3;
+            this.labelZaboravljenaLozinka.Text = "Zaboravljena lozinka";
+            this.labelZaboravljenaLozinka.Click += new System.EventHandler(this.labelZaboravljenaLozinka_Click);
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +166,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(669, 271);
             this.Controls.Add(this.labelCapsLock);
+            this.Controls.Add(this.labelZaboravljenaLozinka);
             this.Controls.Add(this.labelRegistracija);
             this.Controls.Add(this.buttonPrijavi);
             this.Controls.Add(this.btnOdustani);
@@ -180,5 +194,6 @@
         private System.Windows.Forms.Label labelRegistracija;
         private System.Windows.Forms.Label labelCapsLock;
         private System.Windows.Forms.NotifyIcon notifyPrijava;
+        private System.Windows.Forms.Label labelZaboravljenaLozinka;
     }
 }

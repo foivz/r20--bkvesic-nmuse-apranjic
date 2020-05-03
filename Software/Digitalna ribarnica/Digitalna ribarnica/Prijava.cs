@@ -205,6 +205,14 @@ namespace Digitalna_ribarnica
             this.Refresh();
             */
         }
-        
+
+        private void labelZaboravljenaLozinka_Click(object sender, EventArgs e)
+        {
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+            {
+                form.openChildForm(new ZaboravljenaLozinkaEmail(autentifikator));
+            }
+        }
     }
 }

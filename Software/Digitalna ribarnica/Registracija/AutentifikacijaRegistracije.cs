@@ -41,7 +41,7 @@ namespace Registracija
             if (ime.Length != 0 && IsNameSurnameValid(ime))
                 Ime = ime;
             else
-                throw new RegistrationException("Nije uneseno ime ili je ime sadrži broj");
+                throw new RegistrationException("Nije uneseno ime ili ime sadrži broj");
             //-------------------------------------------------------
             //------------PREZIME NE SMIJE BITI PRAZNO---------------
             if (prezime.Length != 0 && IsNameSurnameValid(prezime))

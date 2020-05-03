@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NovaLozinka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NovaLozinka.Designer.cs">
+      <DependentUpon>NovaLozinka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pocetna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
       <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="PromijeniLozinku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromijeniLozinku.Designer.cs">
+      <DependentUpon>PromijeniLozinku.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registracija.cs">
       <SubType>Form</SubType>
@@ -77,11 +89,23 @@
     <Compile Include="VerificationCode.Designer.cs">
       <DependentUpon>VerificationCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="ZaboravljenaLozinkaEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZaboravljenaLozinkaEmail.Designer.cs">
+      <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="NovaLozinka.resx">
+      <DependentUpon>NovaLozinka.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pocetna.resx">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromijeniLozinku.resx">
+      <DependentUpon>PromijeniLozinku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VerificationCode.resx">
       <DependentUpon>VerificationCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaboravljenaLozinkaEmail.resx">
+      <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

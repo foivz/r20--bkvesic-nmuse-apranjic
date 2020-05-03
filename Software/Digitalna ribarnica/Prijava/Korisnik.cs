@@ -14,11 +14,14 @@ namespace Prijava
 
         public int Tip { get; set; }
 
-        public Korisnik(string korime, string lozinka, int tip)
+        public string Email { get; set; }
+
+        public Korisnik(string korime, string lozinka, int tip, string email)
         {
             KorIme = korime;
             Lozinka = lozinka;
             Tip = tip;
+            Email = email;
         }
     }
 }

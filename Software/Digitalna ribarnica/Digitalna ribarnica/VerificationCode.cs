@@ -69,7 +69,7 @@ namespace Digitalna_ribarnica
                     if (PrihvaceniUvjeti)
                     {
                         //TODO: dodati autentifikator.DodajKorisnika koji prima sve property te ih sprema u listu registrirani korisnika
-                        autentifikator.DodajKorisnika(Ime, Lozinka);
+                        autentifikator.DodajKorisnika(Ime, Lozinka,Email);
                         formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                         if (form != null)
                         {
