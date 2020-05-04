@@ -42,6 +42,7 @@ namespace Digitalna_ribarnica
                     autentifikator.provjeriKorisnika(txtKorIme.Text);
                     autentifikator.provjeriKorisnika1(txtKorIme.Text);
                     autentifikator.provjeriKorisnika2(txtKorIme.Text);
+                    autentifikator.NePostojiEmail(textEmail.Text);
                     Random verificationCode = new Random();
                     int broj = verificationCode.Next(10000, 99999);
                     Code code = new Code(broj);
@@ -61,7 +62,7 @@ namespace Digitalna_ribarnica
                     {
                         //TODO dodati kontruktor VerificationCode koji prima sve podatke (ime, prezime, korime, adresa, mjesto, mobitel, email..)
                         //form.openChildForm(new VerificationCode(txtKorIme.Text, txtLozinka.Text, broj, textEmail.Text, autentifikator));
-                        form.openChildForm(new VerificationCode(txtKorIme.Text, txtLozinka.Text, code, textEmail.Text, autentifikator));
+                        form.openChildForm(new VerificationCode(txtKorIme.Text, txtLozinka.Text, code, textEmail.Text, autentifikator,txtIme.Text,txtPrezime.Text,txtAdresa.Text,txtMjesto.Text,txtMobitel.Text));
                     }
             }
             catch (RegistrationException ex)

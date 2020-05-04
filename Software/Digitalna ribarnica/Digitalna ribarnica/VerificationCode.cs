@@ -16,8 +16,13 @@ namespace Digitalna_ribarnica
     public partial class VerificationCode : Form
     {
         int code_number;
-        string Email;
         string Ime;
+        string Prezime;
+        string Adresa;
+        string Mjesto;
+        string BrojMobitela;
+        string Email;
+        string KorIme;
         string Lozinka;
         Autentifikator autentifikator;
         Code Code; 
@@ -39,14 +44,19 @@ namespace Digitalna_ribarnica
         }
 
         //TEST s istekom vremena
-        public VerificationCode(string ime, string lozinka, Code broj, string email, Autentifikator autentifikator)
+        public VerificationCode(string korime, string lozinka, Code broj, string email, Autentifikator autentifikator, string ime, string prezime, string adresa, string mjesto, string brojmobitela)
         {
             InitializeComponent();
-            Ime = ime;
+            KorIme = korime;
             Lozinka = lozinka;
             Code = broj;
             Email = email;
             this.autentifikator = autentifikator;
+            Ime = ime;
+            Prezime = prezime;
+            Adresa = adresa;
+            Mjesto = mjesto;
+            BrojMobitela = brojmobitela;
         }
 
         private void VerificationCode_Load(object sender, EventArgs e)
@@ -69,7 +79,8 @@ namespace Digitalna_ribarnica
                     if (PrihvaceniUvjeti)
                     {
                         //TODO: dodati autentifikator.DodajKorisnika koji prima sve property te ih sprema u listu registrirani korisnika
-                        autentifikator.DodajKorisnika(Ime, Lozinka,Email);
+                        //autentifikator.DodajKorisnika(Ime, Lozinka,Email);
+                        autentifikator.DodajKorisnika(Ime, Prezime, KorIme, Adresa, Mjesto, BrojMobitela, Lozinka, Email);
                         formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                         if (form != null)
                         {

@@ -80,12 +80,22 @@ namespace Prijava
                 throw new PrijavaException("Korisnik s tim mailom ne postoji u bazi registriranih korisnika");
         }
 
+        public void NePostojiEmail(string email)
+        {
+            if (registriraniKorisnici.Exists(p => p.Email == email))
+                throw new PrijavaException("Korisnik s tim mailom je već registriran!");
+        }
 
+        /*
         public void DodajKorisnika(string korime, string lozinka, string email)
         {
                 registriraniKorisnici.Add(new Korisnik(korime, lozinka, 3,email));
         }
-
+        */
+        public void DodajKorisnika(string ime, string prezime, string korime, string adresa, string mjesto, string brojmobitela, string lozinka, string mail)
+        {
+            registriraniKorisnici.Add(new Korisnik(ime, prezime, korime, adresa, mjesto, brojmobitela, lozinka, mail, 3));
+        }
        
         public void provjeriKorisnika(string korime)
         {
