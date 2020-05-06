@@ -9,15 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
+using Prijava;
 
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form
     {
+        Autentifikator autentifikator;
+        
 
         public formPocetna()
         {
             InitializeComponent();
+            autentifikator = new Autentifikator();
         }
 
 
@@ -52,7 +56,7 @@ namespace Digitalna_ribarnica
             pocetna.ShowDialog();
             */
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -65,6 +69,12 @@ namespace Digitalna_ribarnica
             buttonOdjava.Visible = false;
             buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
+        }
+
+        private void timerPocetna_Tick(object sender, EventArgs e)
+        {
+            labelOdjava.Visible = false;
+            timerPocetna.Stop();
         }
 
         private void buttonInstagram_Click(object sender, EventArgs e)
@@ -84,7 +94,16 @@ namespace Digitalna_ribarnica
 
         private void buttonRegistracija_Click(object sender, EventArgs e)
         {
-            openChildForm(new Registracija());
+            openChildForm(new Registracija(autentifikator));
+        }
+
+        private void labelOdjava_VisibleChanged(object sender, EventArgs e)
+        {
+            if (labelOdjava.Visible == true)
+            {
+                timerPocetna.Interval = 5000;
+                timerPocetna.Enabled = true;
+            }
         }
     }
 }

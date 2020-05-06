@@ -19,13 +19,14 @@ namespace Digitalna_ribarnica
         public Button odjava_prijava;
         public Button novosti;
         public Button Registracija;
-        bool focus = false;
+        Autentifikator autentifikator;
+        //bool focus = false;
         public Prijava()
         {
             InitializeComponent();
         }
 
-        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija)
+        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici)
         {
             InitializeComponent();
             label_prijava = label;
@@ -33,6 +34,7 @@ namespace Digitalna_ribarnica
             odjava_prijava = odjava;
             this.novosti = novosti;
             Registracija = registracija;
+            autentifikator = korisnici;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -44,7 +46,6 @@ namespace Digitalna_ribarnica
         {
             if(txtKorIme.TextLength!=0 && txtLozinka.TextLength != 0)
             {
-                Autentifikator autentifikator = new Autentifikator();
                 if (autentifikator.prijava(txtKorIme.Text, txtLozinka.Text))
                 {
                     /*
@@ -204,6 +205,14 @@ namespace Digitalna_ribarnica
             this.Refresh();
             */
         }
-        
+
+        private void labelZaboravljenaLozinka_Click(object sender, EventArgs e)
+        {
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+            {
+                form.openChildForm(new ZaboravljenaLozinkaEmail(autentifikator));
+            }
+        }
     }
 }

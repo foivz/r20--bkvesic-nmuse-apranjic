@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digitalna ribarnica", "Digi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prijava", "Prijava\Prijava.csproj", "{C404D9AE-55C8-4ACB-9932-3D198BB005B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registracija", "Registracija\Registracija.csproj", "{893256CE-D8C3-4856-88BD-D2B18BC448F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C404D9AE-55C8-4ACB-9932-3D198BB005B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C404D9AE-55C8-4ACB-9932-3D198BB005B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C404D9AE-55C8-4ACB-9932-3D198BB005B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893256CE-D8C3-4856-88BD-D2B18BC448F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893256CE-D8C3-4856-88BD-D2B18BC448F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893256CE-D8C3-4856-88BD-D2B18BC448F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893256CE-D8C3-4856-88BD-D2B18BC448F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

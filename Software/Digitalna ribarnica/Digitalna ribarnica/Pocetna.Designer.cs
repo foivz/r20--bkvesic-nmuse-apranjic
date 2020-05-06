@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPocetna));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblFollow = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonRegistracija = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.buttonInstagram = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonOdjava = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -42,10 +44,11 @@
             this.buttonPonude = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonNovosti = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
-            this.buttonNovosti = new System.Windows.Forms.Button();
+            this.timerPocetna = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
@@ -53,11 +56,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblFollow);
             this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonRegistracija);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.buttonInstagram);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.buttonOdjava);
             this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.panel3);
@@ -67,19 +71,45 @@
             this.panel1.Size = new System.Drawing.Size(1034, 89);
             this.panel1.TabIndex = 0;
             // 
+            // lblFollow
+            // 
+            this.lblFollow.AutoSize = true;
+            this.lblFollow.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblFollow.ForeColor = System.Drawing.Color.White;
+            this.lblFollow.Location = new System.Drawing.Point(443, 0);
+            this.lblFollow.Name = "lblFollow";
+            this.lblFollow.Size = new System.Drawing.Size(137, 20);
+            this.lblFollow.TabIndex = 11;
+            this.lblFollow.Text = "Pronađite nas na:";
+            // 
             // button6
             // 
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(514, 26);
+            this.button6.Location = new System.Drawing.Point(565, 18);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(53, 41);
             this.button6.TabIndex = 0;
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.Location = new System.Drawing.Point(919, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 89);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Prijava";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonRegistracija
             // 
@@ -100,7 +130,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(455, 26);
+            this.button5.Location = new System.Drawing.Point(506, 18);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(53, 41);
             this.button5.TabIndex = 0;
@@ -114,28 +144,13 @@
             this.buttonInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInstagram.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonInstagram.Image = ((System.Drawing.Image)(resources.GetObject("buttonInstagram.Image")));
-            this.buttonInstagram.Location = new System.Drawing.Point(396, 26);
+            this.buttonInstagram.Location = new System.Drawing.Point(447, 18);
             this.buttonInstagram.Name = "buttonInstagram";
             this.buttonInstagram.Size = new System.Drawing.Size(53, 41);
             this.buttonInstagram.TabIndex = 0;
             this.buttonInstagram.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonInstagram.UseVisualStyleBackColor = true;
             this.buttonInstagram.Click += new System.EventHandler(this.buttonInstagram_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.Location = new System.Drawing.Point(919, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 89);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Prijava";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonOdjava
             // 
@@ -223,6 +238,19 @@
             this.panel4.Size = new System.Drawing.Size(251, 523);
             this.panel4.TabIndex = 2;
             // 
+            // buttonNovosti
+            // 
+            this.buttonNovosti.FlatAppearance.BorderSize = 0;
+            this.buttonNovosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNovosti.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonNovosti.Location = new System.Drawing.Point(-5, 138);
+            this.buttonNovosti.Name = "buttonNovosti";
+            this.buttonNovosti.Size = new System.Drawing.Size(250, 45);
+            this.buttonNovosti.TabIndex = 0;
+            this.buttonNovosti.Text = "Novosti";
+            this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonNovosti.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -253,19 +281,12 @@
             this.labelOdjava.Size = new System.Drawing.Size(0, 47);
             this.labelOdjava.TabIndex = 2;
             this.labelOdjava.Visible = false;
+            this.labelOdjava.VisibleChanged += new System.EventHandler(this.labelOdjava_VisibleChanged);
             // 
-            // buttonNovosti
+            // timerPocetna
             // 
-            this.buttonNovosti.FlatAppearance.BorderSize = 0;
-            this.buttonNovosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNovosti.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonNovosti.Location = new System.Drawing.Point(-5, 138);
-            this.buttonNovosti.Name = "buttonNovosti";
-            this.buttonNovosti.Size = new System.Drawing.Size(250, 45);
-            this.buttonNovosti.TabIndex = 0;
-            this.buttonNovosti.Text = "Novosti";
-            this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonNovosti.UseVisualStyleBackColor = true;
+            this.timerPocetna.Interval = 1000;
+            this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
             // formPocetna
             // 
@@ -304,11 +325,13 @@
         private System.Windows.Forms.Panel panelStranice;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button buttonOdjava;
-        private System.Windows.Forms.Label labelOdjava;
         private System.Windows.Forms.Button buttonInstagram;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button buttonNovosti;
+        public System.Windows.Forms.Label labelOdjava;
+        private System.Windows.Forms.Label lblFollow;
+        private System.Windows.Forms.Timer timerPocetna;
     }
 }
 
