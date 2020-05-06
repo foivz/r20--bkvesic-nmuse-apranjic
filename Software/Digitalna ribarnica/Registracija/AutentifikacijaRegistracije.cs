@@ -193,13 +193,15 @@ namespace Registracija
                     else
                         return false;
                 }
-
+                /*
                 if (isNumeric)
                 {
                     return true;
                 }
                 else
                     return false;
+                    //VISUAL STUDIO IMA WARNING DA OVAJ DIO PROVJERE NIKAD NIJE MOGUĆE PROVJERITI
+                */
             }
             else
                 return false;
