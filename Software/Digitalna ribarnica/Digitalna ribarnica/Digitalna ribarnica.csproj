@@ -45,21 +45,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Pocetna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Pocetna.Designer.cs">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prijava.Designer.cs">
+      <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Registracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registracija.Designer.cs">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Pocetna.resx">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prijava.resx">
+      <DependentUpon>Prijava.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registracija.resx">
+      <DependentUpon>Registracija.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prijava\Prijava.csproj">
+      <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
+      <Name>Prijava</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

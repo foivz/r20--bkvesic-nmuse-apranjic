@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace Digitalna_ribarnica
 {
-    public partial class formPocetna : Form
+    public partial class Registracija : Form
     {
-        
-        public formPocetna()
+        public Registracija()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnOdustani_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }
