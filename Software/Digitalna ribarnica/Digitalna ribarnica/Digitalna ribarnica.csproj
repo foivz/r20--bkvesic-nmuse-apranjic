@@ -45,27 +45,94 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="NovaLozinka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="NovaLozinka.Designer.cs">
+      <DependentUpon>NovaLozinka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pocetna.Designer.cs">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prijava.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prijava.Designer.cs">
+      <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="PromijeniLozinku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromijeniLozinku.Designer.cs">
+      <DependentUpon>PromijeniLozinku.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registracija.Designer.cs">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Terms of service.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Terms of service.Designer.cs">
+      <DependentUpon>Terms of service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VerificationCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerificationCode.Designer.cs">
+      <DependentUpon>VerificationCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZaboravljenaLozinkaEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZaboravljenaLozinkaEmail.Designer.cs">
+      <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="NovaLozinka.resx">
+      <DependentUpon>NovaLozinka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pocetna.resx">
+      <DependentUpon>Pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prijava.resx">
+      <DependentUpon>Prijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromijeniLozinku.resx">
+      <DependentUpon>PromijeniLozinku.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Registracija.resx">
+      <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Terms of service.resx">
+      <DependentUpon>Terms of service.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerificationCode.resx">
+      <DependentUpon>VerificationCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZaboravljenaLozinkaEmail.resx">
+      <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -74,6 +141,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prijava\Prijava.csproj">
+      <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
+      <Name>Prijava</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Registracija\Registracija.csproj">
+      <Project>{893256ce-d8c3-4856-88bd-d2b18bc448f4}</Project>
+      <Name>Registracija</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
