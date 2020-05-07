@@ -72,10 +72,13 @@
             // 
             this.txtKorIme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtKorIme.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtKorIme.Location = new System.Drawing.Point(278, 52);
             this.txtKorIme.Name = "txtKorIme";
-            this.txtKorIme.Size = new System.Drawing.Size(169, 20);
+            this.txtKorIme.Size = new System.Drawing.Size(169, 21);
             this.txtKorIme.TabIndex = 0;
+            this.txtKorIme.Text = "pperic13";
             this.txtKorIme.Enter += new System.EventHandler(this.txtKorIme_Enter);
             this.txtKorIme.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKorIme_KeyUp);
             this.txtKorIme.Leave += new System.EventHandler(this.txtKorIme_Leave);

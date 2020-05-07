@@ -81,17 +81,27 @@
             // 
             // txtPrezime
             // 
+            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtPrezime.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtPrezime.Location = new System.Drawing.Point(422, 67);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(119, 20);
+            this.txtPrezime.Size = new System.Drawing.Size(145, 21);
             this.txtPrezime.TabIndex = 1;
+            this.txtPrezime.Text = "Perić";
+            this.txtPrezime.Enter += new System.EventHandler(this.txtPrezime_Enter);
+            this.txtPrezime.Leave += new System.EventHandler(this.txtPrezime_Leave);
             // 
             // txtIme
             // 
+            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtIme.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtIme.Location = new System.Drawing.Point(422, 36);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(119, 20);
+            this.txtIme.Size = new System.Drawing.Size(145, 21);
             this.txtIme.TabIndex = 0;
+            this.txtIme.Text = "Pero";
+            this.txtIme.Enter += new System.EventHandler(this.txtIme_Enter);
+            this.txtIme.Leave += new System.EventHandler(this.txtIme_Leave);
             // 
             // lblIme
             // 
@@ -117,10 +127,15 @@
             // 
             // txtKorIme
             // 
+            this.txtKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtKorIme.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtKorIme.Location = new System.Drawing.Point(422, 99);
             this.txtKorIme.Name = "txtKorIme";
-            this.txtKorIme.Size = new System.Drawing.Size(119, 20);
+            this.txtKorIme.Size = new System.Drawing.Size(145, 21);
             this.txtKorIme.TabIndex = 2;
+            this.txtKorIme.Text = "pperic13";
+            this.txtKorIme.Enter += new System.EventHandler(this.txtKorIme_Enter);
+            this.txtKorIme.Leave += new System.EventHandler(this.txtKorIme_Leave);
             // 
             // label3
             // 
@@ -137,7 +152,7 @@
             // 
             this.txtLozinka.Location = new System.Drawing.Point(422, 257);
             this.txtLozinka.Name = "txtLozinka";
-            this.txtLozinka.Size = new System.Drawing.Size(119, 20);
+            this.txtLozinka.Size = new System.Drawing.Size(145, 20);
             this.txtLozinka.TabIndex = 7;
             // 
             // label4
@@ -155,7 +170,7 @@
             // 
             this.txtPonoviLozinku.Location = new System.Drawing.Point(422, 290);
             this.txtPonoviLozinku.Name = "txtPonoviLozinku";
-            this.txtPonoviLozinku.Size = new System.Drawing.Size(119, 20);
+            this.txtPonoviLozinku.Size = new System.Drawing.Size(145, 20);
             this.txtPonoviLozinku.TabIndex = 8;
             // 
             // label5
@@ -171,10 +186,15 @@
             // 
             // txtAdresa
             // 
+            this.txtAdresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtAdresa.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtAdresa.Location = new System.Drawing.Point(422, 130);
             this.txtAdresa.Name = "txtAdresa";
-            this.txtAdresa.Size = new System.Drawing.Size(119, 20);
+            this.txtAdresa.Size = new System.Drawing.Size(145, 21);
             this.txtAdresa.TabIndex = 3;
+            this.txtAdresa.Text = "ulica Pere Perica 30";
+            this.txtAdresa.Enter += new System.EventHandler(this.txtAdresa_Enter);
+            this.txtAdresa.Leave += new System.EventHandler(this.txtAdresa_Leave);
             // 
             // label6
             // 
@@ -200,10 +220,15 @@
             // 
             // txtMjesto
             // 
+            this.txtMjesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtMjesto.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtMjesto.Location = new System.Drawing.Point(422, 161);
             this.txtMjesto.Name = "txtMjesto";
-            this.txtMjesto.Size = new System.Drawing.Size(119, 20);
+            this.txtMjesto.Size = new System.Drawing.Size(145, 21);
             this.txtMjesto.TabIndex = 4;
+            this.txtMjesto.Text = "Staro Petrovo selo 10000";
+            this.txtMjesto.Enter += new System.EventHandler(this.txtMjesto_Enter);
+            this.txtMjesto.Leave += new System.EventHandler(this.txtMjesto_Leave);
             // 
             // label8
             // 
@@ -218,10 +243,15 @@
             // 
             // txtMobitel
             // 
+            this.txtMobitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtMobitel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtMobitel.Location = new System.Drawing.Point(422, 193);
             this.txtMobitel.Name = "txtMobitel";
-            this.txtMobitel.Size = new System.Drawing.Size(119, 20);
+            this.txtMobitel.Size = new System.Drawing.Size(145, 21);
             this.txtMobitel.TabIndex = 5;
+            this.txtMobitel.Text = "+38599123456789";
+            this.txtMobitel.Enter += new System.EventHandler(this.txtMobitel_Enter);
+            this.txtMobitel.Leave += new System.EventHandler(this.txtMobitel_Leave);
             // 
             // label1
             // 
@@ -236,10 +266,15 @@
             // 
             // textEmail
             // 
+            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textEmail.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textEmail.Location = new System.Drawing.Point(422, 224);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(119, 20);
+            this.textEmail.Size = new System.Drawing.Size(145, 21);
             this.textEmail.TabIndex = 6;
+            this.textEmail.Text = "pperic@gmail.com";
+            this.textEmail.Enter += new System.EventHandler(this.textEmail_Enter);
+            this.textEmail.Leave += new System.EventHandler(this.textEmail_Leave);
             // 
             // notifyRegistracija
             // 

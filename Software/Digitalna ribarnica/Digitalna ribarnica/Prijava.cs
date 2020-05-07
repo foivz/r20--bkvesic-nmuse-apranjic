@@ -196,6 +196,13 @@ namespace Digitalna_ribarnica
             focus = true;
             this.Refresh();
             */
+
+            //Placeholder
+            if (txtKorIme.Text == "pperic13")
+            {
+                txtKorIme.Text = "";
+                txtKorIme.ForeColor = Color.Black;
+            }
         }
 
         private void txtKorIme_Leave(object sender, EventArgs e)
@@ -204,6 +211,13 @@ namespace Digitalna_ribarnica
             focus = false;
             this.Refresh();
             */
+
+            //Placeholder
+            if (txtKorIme.Text == "")
+            {
+                txtKorIme.Text = "pperic13";
+                txtKorIme.ForeColor = Color.Silver;
+            }
         }
 
         private void labelZaboravljenaLozinka_Click(object sender, EventArgs e)

@@ -29,6 +29,12 @@ namespace Digitalna_ribarnica
             this.autentifikator = autentifikator;
         }
 
+        private void Registracija_Load(object sender, EventArgs e)
+        {
+            txtLozinka.PasswordChar = '\u25CF';
+            txtPonoviLozinku.PasswordChar = '\u25CF';
+        }
+
         private void btnOdustani_Click(object sender, EventArgs e)
         {
             Close();
@@ -78,11 +84,135 @@ namespace Digitalna_ribarnica
             
            
         }
-
-        private void Registracija_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Ovdje se nalaze implementirani eventhandleri koji upravljaju placeholderom na stranici registracija
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtIme_Enter(object sender, EventArgs e)
         {
-            txtLozinka.PasswordChar = '\u25CF';
-            txtPonoviLozinku.PasswordChar ='\u25CF';
+            if (txtIme.Text == "Pero")
+            {
+                txtIme.Text = "";
+                txtIme.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtIme_Leave(object sender, EventArgs e)
+        {
+            if (txtIme.Text == "")
+            {
+                txtIme.Text = "Pero";
+                txtIme.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtPrezime_Enter(object sender, EventArgs e)
+        {
+            if (txtPrezime.Text == "Perić")
+            {
+                txtPrezime.Text = "";
+                txtPrezime.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPrezime_Leave(object sender, EventArgs e)
+        {
+            if (txtPrezime.Text == "")
+            {
+                txtPrezime.Text = "Perić";
+                txtPrezime.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtKorIme_Enter(object sender, EventArgs e)
+        {
+            if (txtKorIme.Text == "pperic13")
+            {
+                txtKorIme.Text = "";
+                txtKorIme.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtKorIme_Leave(object sender, EventArgs e)
+        {
+            if (txtKorIme.Text == "")
+            {
+                txtKorIme.Text = "pperic13";
+                txtKorIme.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtAdresa_Enter(object sender, EventArgs e)
+        {
+            if (txtAdresa.Text == "ulica Pere Perica 30")
+            {
+                txtAdresa.Text = "";
+                txtAdresa.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtAdresa_Leave(object sender, EventArgs e)
+        {
+            if (txtAdresa.Text == "")
+            {
+                txtAdresa.Text = "ulica Pere Perica 30";
+                txtAdresa.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtMjesto_Enter(object sender, EventArgs e)
+        {
+            if (txtMjesto.Text == "Staro Petrovo selo 10000")
+            {
+                txtMjesto.Text = "";
+                txtMjesto.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtMjesto_Leave(object sender, EventArgs e)
+        {
+            if (txtMjesto.Text == "")
+            {
+                txtMjesto.Text = "Staro Petrovo selo 10000";
+                txtMjesto.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtMobitel_Enter(object sender, EventArgs e)
+        {
+            if (txtMobitel.Text == "+38599123456789")
+            {
+                txtMobitel.Text = "";
+                txtMobitel.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtMobitel_Leave(object sender, EventArgs e)
+        {
+            if (txtMobitel.Text == "")
+            {
+                txtMobitel.Text = "+38599123456789";
+                txtMobitel.ForeColor = Color.Silver;
+            }
+        }
+
+        private void textEmail_Enter(object sender, EventArgs e)
+        {
+            if (textEmail.Text == "pperic@gmail.com")
+            {
+                textEmail.Text = "";
+                textEmail.ForeColor = Color.Black;
+            }
+        }
+
+        private void textEmail_Leave(object sender, EventArgs e)
+        {
+            if (textEmail.Text == "")
+            {
+                textEmail.Text = "pperic@gmail.com";
+                textEmail.ForeColor = Color.Silver;
+            }
         }
     }
 }
