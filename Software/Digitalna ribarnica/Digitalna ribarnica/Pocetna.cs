@@ -32,7 +32,8 @@ namespace Digitalna_ribarnica
             buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
             Profilna.Visible = false;
-            pbxProfilna.Visible = false;        
+            pbxProfilna.Visible = false;
+            pbxLogo.Visible = true;
         }
         public Form activeForm = null;
         public void openChildForm(Form childForm)

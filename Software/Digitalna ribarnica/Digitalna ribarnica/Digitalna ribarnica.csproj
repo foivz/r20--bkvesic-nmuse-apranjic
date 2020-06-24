@@ -152,9 +152,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Baza\Baza.csproj">
       <Project>{995435a5-41eb-4598-8db3-31f7deb18cd7}</Project>
@@ -168,6 +166,9 @@
       <Project>{893256ce-d8c3-4856-88bd-d2b18bc448f4}</Project>
       <Name>Registracija</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinepngtools.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

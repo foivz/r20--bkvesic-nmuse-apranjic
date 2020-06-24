@@ -40,6 +40,7 @@
             this.buttonOdjava = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pbxProfilna = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonPonude = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,16 +51,18 @@
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
-            this.pbxProfilna = new System.Windows.Forms.PictureBox();
+            this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).BeginInit();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pbxLogo);
             this.panel1.Controls.Add(this.lblFollow);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button1);
@@ -190,6 +193,16 @@
             this.panel3.Size = new System.Drawing.Size(251, 89);
             this.panel3.TabIndex = 0;
             // 
+            // pbxProfilna
+            // 
+            this.pbxProfilna.Location = new System.Drawing.Point(12, 9);
+            this.pbxProfilna.MinimumSize = new System.Drawing.Size(50, 50);
+            this.pbxProfilna.Name = "pbxProfilna";
+            this.pbxProfilna.Size = new System.Drawing.Size(50, 50);
+            this.pbxProfilna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxProfilna.TabIndex = 0;
+            this.pbxProfilna.TabStop = false;
+            // 
             // button4
             // 
             this.button4.FlatAppearance.BorderSize = 0;
@@ -308,15 +321,16 @@
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
-            // pbxProfilna
+            // pbxLogo
             // 
-            this.pbxProfilna.Location = new System.Drawing.Point(12, 9);
-            this.pbxProfilna.MinimumSize = new System.Drawing.Size(50, 50);
-            this.pbxProfilna.Name = "pbxProfilna";
-            this.pbxProfilna.Size = new System.Drawing.Size(50, 50);
-            this.pbxProfilna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxProfilna.TabIndex = 0;
-            this.pbxProfilna.TabStop = false;
+            this.pbxLogo.Image = global::Digitalna_ribarnica.Properties.Resources.output_onlinepngtools;
+            this.pbxLogo.Location = new System.Drawing.Point(646, 18);
+            this.pbxLogo.MaximumSize = new System.Drawing.Size(75, 75);
+            this.pbxLogo.Name = "pbxLogo";
+            this.pbxLogo.Size = new System.Drawing.Size(75, 50);
+            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLogo.TabIndex = 12;
+            this.pbxLogo.TabStop = false;
             // 
             // formPocetna
             // 
@@ -329,6 +343,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Open Sans Semibold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formPocetna";
             this.Text = "Digitalna ribarnica";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPocetna_FormClosing);
@@ -336,10 +351,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panelStranice.ResumeLayout(false);
             this.panelStranice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -367,6 +383,7 @@
         private System.Windows.Forms.Timer timerPocetna;
         private System.Windows.Forms.Button Profilna;
         private System.Windows.Forms.PictureBox pbxProfilna;
+        private System.Windows.Forms.PictureBox pbxLogo;
     }
 }
 
