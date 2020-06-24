@@ -65,12 +65,16 @@ namespace Prijava
         {
             if (dohvatiKorisnika(ime) != null)
             {
+                /*
                 if (korisnik.Lozinka != lozinka && korisnik.KorIme == ime)
                     return false;
                 else
                     return true;
+                */
+                return BCrypt.Net.BCrypt.Verify(lozinka, korisnik.Lozinka);
             }
             return false;
+           
         }
 
         public int tipKorisnika(string ime)

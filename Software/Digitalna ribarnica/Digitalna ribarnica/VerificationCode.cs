@@ -95,13 +95,14 @@ namespace Digitalna_ribarnica
                         defaultSlika.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 
 
+                        string hash = BCrypt.Net.BCrypt.HashPassword(korisnik.Lozinka, BCrypt.Net.BCrypt.GenerateSalt(12));
                         parameters.Add("@ime", korisnik.Ime);
                         parameters.Add("@prezime", korisnik.Prezime);
                         parameters.Add("@email", korisnik.Email);
                         parameters.Add("@korime", korisnik.KorIme);
                         parameters.Add("@broj", korisnik.BrojMobitela);
                         parameters.Add("@datum", DateTime.Now);
-                        parameters.Add("@lozinka", korisnik.Lozinka);
+                        parameters.Add("@lozinka", hash);
                         parameters.Add("@adresa", korisnik.Adresa);
                         parameters.Add("@mjesto", korisnik.Mjesto);
                         parameters.Add("@slika", ms.ToArray());
