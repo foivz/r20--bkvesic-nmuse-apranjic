@@ -64,7 +64,8 @@ namespace Prijava
 
         public static int PromjeniLozinku(string lozinka,string email)
         {
-            string sqlUpit = $"UPDATE korisnici SET lozinka = '{lozinka}' WHERE email = '{email}'; ";
+            string hash = BCrypt.Net.BCrypt.HashPassword(lozinka, BCrypt.Net.BCrypt.GenerateSalt(12));
+            string sqlUpit = $"UPDATE korisnici SET lozinka = '{hash}' WHERE email = '{email}'; ";
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
 
