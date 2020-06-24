@@ -45,13 +45,17 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.buttonNovosti = new System.Windows.Forms.Button();
+            this.Profilna = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
+            this.pbxProfilna = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -179,6 +183,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.Controls.Add(this.pbxProfilna);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -230,6 +235,7 @@
             this.panel4.AutoScroll = true;
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.buttonNovosti);
+            this.panel4.Controls.Add(this.Profilna);
             this.panel4.Controls.Add(this.buttonPonude);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
@@ -250,6 +256,20 @@
             this.buttonNovosti.Text = "Novosti";
             this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNovosti.UseVisualStyleBackColor = true;
+            // 
+            // Profilna
+            // 
+            this.Profilna.FlatAppearance.BorderSize = 0;
+            this.Profilna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Profilna.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Profilna.Location = new System.Drawing.Point(-2, 416);
+            this.Profilna.Name = "Profilna";
+            this.Profilna.Size = new System.Drawing.Size(250, 45);
+            this.Profilna.TabIndex = 0;
+            this.Profilna.Text = "Korisnički račun";
+            this.Profilna.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Profilna.UseVisualStyleBackColor = true;
+            this.Profilna.Click += new System.EventHandler(this.Profilna_Click);
             // 
             // panel2
             // 
@@ -288,6 +308,16 @@
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
+            // pbxProfilna
+            // 
+            this.pbxProfilna.Location = new System.Drawing.Point(12, 9);
+            this.pbxProfilna.MinimumSize = new System.Drawing.Size(50, 50);
+            this.pbxProfilna.Name = "pbxProfilna";
+            this.pbxProfilna.Size = new System.Drawing.Size(50, 50);
+            this.pbxProfilna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxProfilna.TabIndex = 0;
+            this.pbxProfilna.TabStop = false;
+            // 
             // formPocetna
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -301,12 +331,15 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "formPocetna";
             this.Text = "Digitalna ribarnica";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPocetna_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panelStranice.ResumeLayout(false);
             this.panelStranice.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -332,6 +365,8 @@
         public System.Windows.Forms.Label labelOdjava;
         private System.Windows.Forms.Label lblFollow;
         private System.Windows.Forms.Timer timerPocetna;
+        private System.Windows.Forms.Button Profilna;
+        private System.Windows.Forms.PictureBox pbxProfilna;
     }
 }
 

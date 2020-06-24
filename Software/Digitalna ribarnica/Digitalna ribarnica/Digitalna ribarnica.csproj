@@ -8,9 +8,10 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Digitalna_ribarnica</RootNamespace>
     <AssemblyName>Digitalna ribarnica</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -63,6 +64,12 @@
     <Compile Include="Prijava.Designer.cs">
       <DependentUpon>Prijava.cs</DependentUpon>
     </Compile>
+    <Compile Include="Profil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profil.Designer.cs">
+      <DependentUpon>Profil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="PromijeniLozinku.cs">
       <SubType>Form</SubType>
@@ -103,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profil.resx">
+      <DependentUpon>Profil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PromijeniLozinku.resx">
       <DependentUpon>PromijeniLozinku.cs</DependentUpon>
@@ -146,6 +156,10 @@
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Baza\Baza.csproj">
+      <Project>{995435a5-41eb-4598-8db3-31f7deb18cd7}</Project>
+      <Name>Baza</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prijava\Prijava.csproj">
       <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
       <Name>Prijava</Name>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
 using Prijava;
-
+using Baza;
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form
@@ -31,6 +31,8 @@ namespace Digitalna_ribarnica
             buttonOdjava.Visible = false;
             buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
+            Profilna.Visible = false;
+            pbxProfilna.Visible = false;        
         }
         public Form activeForm = null;
         public void openChildForm(Form childForm)
@@ -56,7 +58,7 @@ namespace Digitalna_ribarnica
             pocetna.ShowDialog();
             */
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -69,6 +71,9 @@ namespace Digitalna_ribarnica
             buttonOdjava.Visible = false;
             buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
+            Profilna.Visible = false;
+            pbxProfilna.Visible = false;
+            openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
         }
 
         private void timerPocetna_Tick(object sender, EventArgs e)
@@ -104,6 +109,17 @@ namespace Digitalna_ribarnica
                 timerPocetna.Interval = 5000;
                 timerPocetna.Enabled = true;
             }
+        }
+
+        private void formPocetna_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DB.Instance.CloseConnection();
+            //MessageBox.Show("Konekcija na bazu zatvorena!");
+        }
+
+        private void Profilna_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Profil(autentifikator,pbxProfilna));
         }
     }
 }

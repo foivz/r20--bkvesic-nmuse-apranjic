@@ -9,7 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Prijava;
-
+using System.Data.Common;
+using System.IO;
+using Baza;
 namespace Digitalna_ribarnica
 {
     public partial class Prijava : Form
@@ -19,14 +21,16 @@ namespace Digitalna_ribarnica
         public Button odjava_prijava;
         public Button novosti;
         public Button Registracija;
+        public Button Korisnicki_racun;
         Autentifikator autentifikator;
+        public PictureBox Profilna;
         //bool focus = false;
         public Prijava()
         {
             InitializeComponent();
         }
 
-        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici)
+        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika)
         {
             InitializeComponent();
             label_prijava = label;
@@ -35,6 +39,8 @@ namespace Digitalna_ribarnica
             this.novosti = novosti;
             Registracija = registracija;
             autentifikator = korisnici;
+            this.Korisnicki_racun = Korisnicki_racun;
+            Profilna = profilnaSlika;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -72,30 +78,40 @@ namespace Digitalna_ribarnica
                             //MessageBox.Show("Uspješna prijava ADMIN");
                             notifyPrijava.ShowBalloonTip(1000, "Prijava", "Uspješna prijava ADMIN", ToolTipIcon.Info);
                             label_prijava.Text = "Dobro došli " + txtKorIme.Text;
+                            autentifikator.AktivanKorisnik = txtKorIme.Text;
+                            //MessageBox.Show(autentifikator.AktivanKorisnik);
                             prijava_prijava.Visible = false;
                             odjava_prijava.Visible = true;
                             novosti.Visible = true;
                             Registracija.Visible = false;
+                            Korisnicki_racun.Visible = true;
+                            postaviSlikuProfila();
                             Close();
                             break;
                         case 2:
                             //MessageBox.Show("Uspješna prijava KORISNIK");
                             notifyPrijava.ShowBalloonTip(1000, "Prijava", "Uspješna prijava KORISNIK", ToolTipIcon.Info);
                             label_prijava.Text = "Dobro došli " + txtKorIme.Text;
+                            autentifikator.AktivanKorisnik = txtKorIme.Text;
                             prijava_prijava.Visible = false;
                             odjava_prijava.Visible = true;
                             novosti.Visible = true;
                             Registracija.Visible = false;
+                            Korisnicki_racun.Visible = true;
+                            postaviSlikuProfila();
                             Close();
                             break;
                         case 3:
                             //MessageBox.Show("Uspješna prijava KUPAC");
                             notifyPrijava.ShowBalloonTip(1000, "Prijava", "Uspješna prijava KUPAC", ToolTipIcon.Info);
                             label_prijava.Text = "Dobro došli " + txtKorIme.Text;
+                            autentifikator.AktivanKorisnik = txtKorIme.Text;
                             prijava_prijava.Visible = false;
                             odjava_prijava.Visible = true;
                             novosti.Visible = true;
                             Registracija.Visible = false;
+                            Korisnicki_racun.Visible = true;
+                            postaviSlikuProfila();
                             Close();
                             break;
                         default:
@@ -115,6 +131,33 @@ namespace Digitalna_ribarnica
                 notifyPrijava.ShowBalloonTip(1000, "Prijava", "Ostavili ste prazno polje", ToolTipIcon.Error);
             }
             
+        }
+        public void postaviSlikuProfila()
+        {
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            //var rezultat = DB.Instance.DohvatiDataReader("SELECT * FROM Slika_test;");A}
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT * FROM korisnici WHERE korisnicko_ime='{autentifikator.AktivanKorisnik}';");
+            foreach (DbDataRecord item in rezultat)
+            {
+                var row = new Dictionary<string, object>();
+                for (int i = 0; i < item.FieldCount; i++)
+                {
+                    row.Add(item.GetName(i), item[i]);
+                }
+                returnMe.Add(row);
+            }
+
+            foreach (var item in returnMe)
+            {
+                if (item["slika"].ToString() != "")
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                    Image image = Image.FromStream(ms);
+                    Profilna.Visible = true;
+                    Profilna.Image = Image.FromStream(ms);
+                }
+            }
+            rezultat.Close();
         }
         private void labelRegistracija_Click(object sender, EventArgs e)
         {

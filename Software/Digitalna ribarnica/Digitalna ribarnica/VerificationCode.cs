@@ -11,6 +11,7 @@ using System.Net.Mail;
 using System.Net;
 using Prijava;
 using Registracija;
+using Baza;
 namespace Digitalna_ribarnica
 {
     public partial class VerificationCode : Form
@@ -81,6 +82,8 @@ namespace Digitalna_ribarnica
                         //TODO: dodati autentifikator.DodajKorisnika koji prima sve property te ih sprema u listu registrirani korisnika
                         //autentifikator.DodajKorisnika(Ime, Lozinka,Email);
                         autentifikator.DodajKorisnika(Ime, Prezime, KorIme, Adresa, Mjesto, BrojMobitela, Lozinka, Email);
+                        Korisnik korisnik = new Korisnik(Ime, Prezime, KorIme, Adresa, Mjesto, BrojMobitela, Lozinka, Email, 3);
+                        KorisnikRepository.Spremi(korisnik);
                         formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                         if (form != null)
                         {
