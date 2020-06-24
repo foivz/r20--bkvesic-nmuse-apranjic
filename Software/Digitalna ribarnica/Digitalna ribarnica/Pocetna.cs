@@ -73,7 +73,7 @@ namespace Digitalna_ribarnica
             buttonNovosti.Visible = false;
             Profilna.Visible = false;
             pbxProfilna.Visible = false;
-            openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
+            //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
         }
 
         private void timerPocetna_Tick(object sender, EventArgs e)
