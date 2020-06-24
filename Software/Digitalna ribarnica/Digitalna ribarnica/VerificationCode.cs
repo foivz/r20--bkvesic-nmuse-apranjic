@@ -12,6 +12,9 @@ using System.Net;
 using Prijava;
 using Registracija;
 using Baza;
+using System.IO;
+using System.Data.Common;
+
 namespace Digitalna_ribarnica
 {
     public partial class VerificationCode : Form
@@ -26,7 +29,8 @@ namespace Digitalna_ribarnica
         string KorIme;
         string Lozinka;
         Autentifikator autentifikator;
-        Code Code; 
+        Code Code;
+        Image defaultSlika;
         public bool PrihvaceniUvjeti { get; set; }
         public VerificationCode()
         {
@@ -83,7 +87,29 @@ namespace Digitalna_ribarnica
                         //autentifikator.DodajKorisnika(Ime, Lozinka,Email);
                         autentifikator.DodajKorisnika(Ime, Prezime, KorIme, Adresa, Mjesto, BrojMobitela, Lozinka, Email);
                         Korisnik korisnik = new Korisnik(Ime, Prezime, KorIme, Adresa, Mjesto, BrojMobitela, Lozinka, Email, 3);
-                        KorisnikRepository.Spremi(korisnik);
+                        //KorisnikRepository.Spremi(korisnik);
+
+                        var parameters = new Dictionary<string, object>();
+                        MemoryStream ms = new MemoryStream();
+                        dohhvatiDefaultSliku();
+                        defaultSlika.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+
+
+                        parameters.Add("@ime", korisnik.Ime);
+                        parameters.Add("@prezime", korisnik.Prezime);
+                        parameters.Add("@email", korisnik.Email);
+                        parameters.Add("@korime", korisnik.KorIme);
+                        parameters.Add("@broj", korisnik.BrojMobitela);
+                        parameters.Add("@datum", DateTime.Now);
+                        parameters.Add("@lozinka", korisnik.Lozinka);
+                        parameters.Add("@adresa", korisnik.Adresa);
+                        parameters.Add("@mjesto", korisnik.Mjesto);
+                        parameters.Add("@slika", ms.ToArray());
+                        parameters.Add("@tip", 2);
+                        parameters.Add("@status", 2);
+                        DB.Instance.ExecuteParamQuery("INSERT INTO [korisnici] ([ime], [prezime], [email], [korisnicko_ime], [broj_mobitela], [datum_rodenja], [lozinka], [adresa], [mjesto], [slika], [id_tip_korisnika], [id_status]) VALUES((@ime), (@prezime), (@email), (@korime), (@broj), (@datum), (@lozinka), (@adresa), (@mjesto), (@slika), (@tip), (@status));", parameters);
+
+
                         formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                         if (form != null)
                         {
@@ -107,6 +133,32 @@ namespace Digitalna_ribarnica
             {
                 notifyVerification.ShowBalloonTip(1000, "Registration", "Unijeli ste krivi kod!!!", ToolTipIcon.Error);
             }
+        }
+
+        public void dohhvatiDefaultSliku()
+        {
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            //var rezultat = DB.Instance.DohvatiDataReader("SELECT * FROM Slika_test;");A}
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT * FROM slike;");
+            foreach (DbDataRecord item in rezultat)
+            {
+                var row = new Dictionary<string, object>();
+                for (int i = 0; i < item.FieldCount; i++)
+                {
+                    row.Add(item.GetName(i), item[i]);
+                }
+                returnMe.Add(row);
+            }
+
+            foreach (var item in returnMe)
+            {
+                if (item["slika"].ToString() != "")
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                    defaultSlika = Image.FromStream(ms);
+                }
+            }
+            rezultat.Close();
         }
 
         private void buttonOdustani_Click(object sender, EventArgs e)

@@ -57,7 +57,7 @@ namespace Digitalna_ribarnica
             MemoryStream ms = new MemoryStream();
             var photo = pictureBox1.Image;
             photo.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-            DB.Instance.IzvrsiUpit($"INSERT INTO Slika_test (slika) VALUES ('{ms.ToArray()}');");
+            DB.Instance.IzvrsiUpit($"INSERT INTO slike (slika) VALUES ('{ms.ToArray()}');");
             */
             MemoryStream ms = new MemoryStream();
             var photo = pictureBox1.Image;
