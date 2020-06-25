@@ -19,11 +19,20 @@ namespace Digitalna_ribarnica
 
         private void RibeUSustavu_Load(object sender, EventArgs e)
         {
+            this.dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(0, 62, 87);
+            this.dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(225, 245, 254);
+            this.dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DarkBlue;
+            this.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.AntiqueWhite;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(179, 229, 252);
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = RibeRepository.DohvatiRibe();
             if(dataGridView1.RowCount>0)
                 dataGridView1.Rows[0].Selected = true;
             kalibrirajSlike();
+
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -102,6 +111,29 @@ namespace Digitalna_ribarnica
                     ((DataGridViewImageColumn)dataGridView1.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
                     break;
                 }
+        }
+
+        private void buttonPrijavi_Click(object sender, EventArgs e)
+        {
+            List<Riba> sveRibe = RibeRepository.DohvatiRibe();
+            var result = from riba in sveRibe
+                         orderby riba.Naziv ascending
+                         select riba;
+
+            dataGridView1.DataSource = result.ToList();
+            kalibrirajSlike();
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            this.dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(0, 62, 87);
+            this.dataGridView1.DefaultCellStyle.BackColor = Color.FromArgb(225, 245, 254);
+            this.dataGridView1.DefaultCellStyle.SelectionForeColor = Color.DarkBlue;
+            this.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.AntiqueWhite;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(179, 229, 252);
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
         }
     }
 }

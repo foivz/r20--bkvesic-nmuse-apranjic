@@ -31,34 +31,35 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPocetna));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbxLogo = new System.Windows.Forms.PictureBox();
             this.lblFollow = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonRegistracija = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.buttonInstagram = new System.Windows.Forms.Button();
             this.buttonOdjava = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pbxProfilna = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonPonude = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnRibe = new System.Windows.Forms.Button();
             this.buttonNovosti = new System.Windows.Forms.Button();
             this.Profilna = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
-            this.btnRibe = new System.Windows.Forms.Button();
-            this.pbxLogo = new System.Windows.Forms.PictureBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.buttonInstagram = new System.Windows.Forms.Button();
-            this.pbxProfilna = new System.Windows.Forms.PictureBox();
+            this.btnLokacija = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).BeginInit();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +80,17 @@
             this.panel1.Size = new System.Drawing.Size(1034, 89);
             this.panel1.TabIndex = 0;
             // 
+            // pbxLogo
+            // 
+            this.pbxLogo.Image = global::Digitalna_ribarnica.Properties.Resources.output_onlinepngtools;
+            this.pbxLogo.Location = new System.Drawing.Point(646, 18);
+            this.pbxLogo.MaximumSize = new System.Drawing.Size(75, 75);
+            this.pbxLogo.Name = "pbxLogo";
+            this.pbxLogo.Size = new System.Drawing.Size(75, 50);
+            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxLogo.TabIndex = 12;
+            this.pbxLogo.TabStop = false;
+            // 
             // lblFollow
             // 
             this.lblFollow.AutoSize = true;
@@ -89,6 +101,20 @@
             this.lblFollow.Size = new System.Drawing.Size(137, 20);
             this.lblFollow.TabIndex = 11;
             this.lblFollow.Text = "Pronađite nas na:";
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(565, 18);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(53, 41);
+            this.button6.TabIndex = 0;
+            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button1
             // 
@@ -117,6 +143,34 @@
             this.buttonRegistracija.Text = "Registracija";
             this.buttonRegistracija.UseVisualStyleBackColor = true;
             this.buttonRegistracija.Click += new System.EventHandler(this.buttonRegistracija_Click);
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(506, 18);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(53, 41);
+            this.button5.TabIndex = 0;
+            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // buttonInstagram
+            // 
+            this.buttonInstagram.FlatAppearance.BorderSize = 0;
+            this.buttonInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInstagram.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonInstagram.Image = ((System.Drawing.Image)(resources.GetObject("buttonInstagram.Image")));
+            this.buttonInstagram.Location = new System.Drawing.Point(447, 18);
+            this.buttonInstagram.Name = "buttonInstagram";
+            this.buttonInstagram.Size = new System.Drawing.Size(53, 41);
+            this.buttonInstagram.TabIndex = 0;
+            this.buttonInstagram.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonInstagram.UseVisualStyleBackColor = true;
+            this.buttonInstagram.Click += new System.EventHandler(this.buttonInstagram_Click);
             // 
             // buttonOdjava
             // 
@@ -151,6 +205,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(251, 89);
             this.panel3.TabIndex = 0;
+            // 
+            // pbxProfilna
+            // 
+            this.pbxProfilna.Location = new System.Drawing.Point(12, 9);
+            this.pbxProfilna.MinimumSize = new System.Drawing.Size(50, 50);
+            this.pbxProfilna.Name = "pbxProfilna";
+            this.pbxProfilna.Size = new System.Drawing.Size(50, 50);
+            this.pbxProfilna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxProfilna.TabIndex = 0;
+            this.pbxProfilna.TabStop = false;
             // 
             // button4
             // 
@@ -197,6 +261,7 @@
             this.panel4.AutoScroll = true;
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.btnRibe);
+            this.panel4.Controls.Add(this.btnLokacija);
             this.panel4.Controls.Add(this.buttonNovosti);
             this.panel4.Controls.Add(this.Profilna);
             this.panel4.Controls.Add(this.buttonPonude);
@@ -206,6 +271,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(251, 523);
             this.panel4.TabIndex = 2;
+            // 
+            // btnRibe
+            // 
+            this.btnRibe.FlatAppearance.BorderSize = 0;
+            this.btnRibe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRibe.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRibe.Location = new System.Drawing.Point(-2, 365);
+            this.btnRibe.Name = "btnRibe";
+            this.btnRibe.Size = new System.Drawing.Size(250, 45);
+            this.btnRibe.TabIndex = 0;
+            this.btnRibe.Text = "Ribe u sustavu";
+            this.btnRibe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRibe.UseVisualStyleBackColor = true;
+            this.btnRibe.Click += new System.EventHandler(this.btnRibe_Click);
             // 
             // buttonNovosti
             // 
@@ -271,82 +350,19 @@
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
-            // btnRibe
+            // btnLokacija
             // 
-            this.btnRibe.FlatAppearance.BorderSize = 0;
-            this.btnRibe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRibe.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRibe.Location = new System.Drawing.Point(-2, 365);
-            this.btnRibe.Name = "btnRibe";
-            this.btnRibe.Size = new System.Drawing.Size(250, 45);
-            this.btnRibe.TabIndex = 0;
-            this.btnRibe.Text = "Ribe u sustavu";
-            this.btnRibe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRibe.UseVisualStyleBackColor = true;
-            this.btnRibe.Click += new System.EventHandler(this.btnRibe_Click);
-            // 
-            // pbxLogo
-            // 
-            this.pbxLogo.Image = global::Digitalna_ribarnica.Properties.Resources.output_onlinepngtools;
-            this.pbxLogo.Location = new System.Drawing.Point(646, 18);
-            this.pbxLogo.MaximumSize = new System.Drawing.Size(75, 75);
-            this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(75, 50);
-            this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbxLogo.TabIndex = 12;
-            this.pbxLogo.TabStop = false;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(565, 18);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(53, 41);
-            this.button6.TabIndex = 0;
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(506, 18);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 41);
-            this.button5.TabIndex = 0;
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // buttonInstagram
-            // 
-            this.buttonInstagram.FlatAppearance.BorderSize = 0;
-            this.buttonInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInstagram.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonInstagram.Image = ((System.Drawing.Image)(resources.GetObject("buttonInstagram.Image")));
-            this.buttonInstagram.Location = new System.Drawing.Point(447, 18);
-            this.buttonInstagram.Name = "buttonInstagram";
-            this.buttonInstagram.Size = new System.Drawing.Size(53, 41);
-            this.buttonInstagram.TabIndex = 0;
-            this.buttonInstagram.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonInstagram.UseVisualStyleBackColor = true;
-            this.buttonInstagram.Click += new System.EventHandler(this.buttonInstagram_Click);
-            // 
-            // pbxProfilna
-            // 
-            this.pbxProfilna.Location = new System.Drawing.Point(12, 9);
-            this.pbxProfilna.MinimumSize = new System.Drawing.Size(50, 50);
-            this.pbxProfilna.Name = "pbxProfilna";
-            this.pbxProfilna.Size = new System.Drawing.Size(50, 50);
-            this.pbxProfilna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbxProfilna.TabIndex = 0;
-            this.pbxProfilna.TabStop = false;
+            this.btnLokacija.FlatAppearance.BorderSize = 0;
+            this.btnLokacija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLokacija.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLokacija.Location = new System.Drawing.Point(-2, 314);
+            this.btnLokacija.Name = "btnLokacija";
+            this.btnLokacija.Size = new System.Drawing.Size(250, 45);
+            this.btnLokacija.TabIndex = 0;
+            this.btnLokacija.Text = "Lokacije";
+            this.btnLokacija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLokacija.UseVisualStyleBackColor = true;
+            this.btnLokacija.Click += new System.EventHandler(this.btnLokacija_Click);
             // 
             // formPocetna
             // 
@@ -366,12 +382,12 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panelStranice.ResumeLayout(false);
             this.panelStranice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,6 +417,7 @@
         private System.Windows.Forms.PictureBox pbxProfilna;
         private System.Windows.Forms.PictureBox pbxLogo;
         private System.Windows.Forms.Button btnRibe;
+        private System.Windows.Forms.Button btnLokacija;
     }
 }
 

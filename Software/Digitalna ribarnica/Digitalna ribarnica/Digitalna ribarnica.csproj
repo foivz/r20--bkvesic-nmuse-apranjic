@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodajLokacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajLokacije.Designer.cs">
+      <DependentUpon>DodajLokacije.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajRibu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="ZaboravljenaLozinkaEmail.Designer.cs">
       <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DodajLokacije.resx">
+      <DependentUpon>DodajLokacije.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajRibu.resx">
       <DependentUpon>DodajRibu.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +188,10 @@
     <ProjectReference Include="..\Baza\Baza.csproj">
       <Project>{995435a5-41eb-4598-8db3-31f7deb18cd7}</Project>
       <Name>Baza</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lokacije\Lokacije.csproj">
+      <Project>{681cb769-455e-4801-9865-cf031aefb695}</Project>
+      <Name>Lokacije</Name>
     </ProjectReference>
     <ProjectReference Include="..\Prijava\Prijava.csproj">
       <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>

@@ -25,13 +25,14 @@ namespace Digitalna_ribarnica
         Autentifikator autentifikator;
         public PictureBox Profilna;
         public Button RibeUSustavu;
+        public Button Lokacija;
         //bool focus = false;
         public Prijava()
         {
             InitializeComponent();
         }
 
-        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe)
+        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe,Button lokacija)
         {
             InitializeComponent();
             label_prijava = label;
@@ -43,6 +44,7 @@ namespace Digitalna_ribarnica
             this.Korisnicki_racun = Korisnicki_racun;
             Profilna = profilnaSlika;
             RibeUSustavu = ribe;
+            Lokacija = lokacija;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -88,6 +90,7 @@ namespace Digitalna_ribarnica
                             Registracija.Visible = false;
                             Korisnicki_racun.Visible = true;
                             RibeUSustavu.Visible = true;
+                            Lokacija.Visible = true;
                             postaviSlikuProfila();
                             Close();
                             break;
