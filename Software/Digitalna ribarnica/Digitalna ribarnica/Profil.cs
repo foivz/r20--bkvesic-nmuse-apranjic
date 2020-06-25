@@ -42,6 +42,7 @@ namespace Digitalna_ribarnica
                     pictureBox1.Load(openFileDialog1.FileName);
                 }
                 extension = Path.GetExtension(openFileDialog1.FileName);
+                btnSpremi.Enabled = true;
             }
             catch (Exception)
             {
@@ -133,6 +134,7 @@ namespace Digitalna_ribarnica
                 }
             }
             rezultat.Close();
+            btnSpremi.Enabled = false;
             /*
             foreach (var item in rezultat)
             {
