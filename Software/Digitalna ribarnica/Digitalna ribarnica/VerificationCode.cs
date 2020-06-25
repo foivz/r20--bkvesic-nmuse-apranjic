@@ -139,7 +139,6 @@ namespace Digitalna_ribarnica
         public void dohhvatiDefaultSliku()
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            //var rezultat = DB.Instance.DohvatiDataReader("SELECT * FROM Slika_test;");A}
             var rezultat = DB.Instance.DohvatiDataReader($"SELECT * FROM slike;");
             foreach (DbDataRecord item in rezultat)
             {

@@ -34,6 +34,7 @@ namespace Digitalna_ribarnica
             Profilna.Visible = false;
             pbxProfilna.Visible = false;
             pbxLogo.Visible = true;
+            btnRibe.Visible = false;
         }
         public Form activeForm = null;
         public void openChildForm(Form childForm)
@@ -59,7 +60,7 @@ namespace Digitalna_ribarnica
             pocetna.ShowDialog();
             */
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -74,6 +75,7 @@ namespace Digitalna_ribarnica
             buttonNovosti.Visible = false;
             Profilna.Visible = false;
             pbxProfilna.Visible = false;
+            btnRibe.Visible = false;
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
@@ -123,6 +125,11 @@ namespace Digitalna_ribarnica
         private void Profilna_Click(object sender, EventArgs e)
         {
             openChildForm(new Profil(autentifikator,pbxProfilna));
+        }
+
+        private void btnRibe_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RibeUSustavu());
         }
     }
 }

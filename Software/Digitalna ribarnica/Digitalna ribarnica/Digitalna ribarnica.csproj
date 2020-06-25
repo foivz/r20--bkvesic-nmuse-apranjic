@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DodajRibu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajRibu.Designer.cs">
+      <DependentUpon>DodajRibu.cs</DependentUpon>
+    </Compile>
     <Compile Include="NovaLozinka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,12 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="RibeUSustavu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RibeUSustavu.Designer.cs">
+      <DependentUpon>RibeUSustavu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Terms of service.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +117,9 @@
     <Compile Include="ZaboravljenaLozinkaEmail.Designer.cs">
       <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DodajRibu.resx">
+      <DependentUpon>DodajRibu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NovaLozinka.resx">
       <DependentUpon>NovaLozinka.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RibeUSustavu.resx">
+      <DependentUpon>RibeUSustavu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Terms of service.resx">
       <DependentUpon>Terms of service.cs</DependentUpon>
@@ -169,6 +187,10 @@
     <ProjectReference Include="..\Registracija\Registracija.csproj">
       <Project>{893256ce-d8c3-4856-88bd-d2b18bc448f4}</Project>
       <Name>Registracija</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RibeUSustavu\RibeUSustavu.csproj">
+      <Project>{b61fbbe0-0c61-4edf-98ad-cd502c2b699c}</Project>
+      <Name>RibeUSustavu</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
