@@ -252,6 +252,7 @@ namespace Digitalna_ribarnica
                 txtKorIme.Text = "";
                 txtKorIme.ForeColor = Color.Black;
             }
+            txtKorIme.ForeColor = Color.FromArgb(165, 243, 212);
         }
 
         private void txtKorIme_Leave(object sender, EventArgs e)

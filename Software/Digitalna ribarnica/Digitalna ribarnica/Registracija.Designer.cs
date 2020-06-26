@@ -156,6 +156,7 @@
             // txtLozinka
             // 
             this.txtLozinka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.txtLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(243)))), ((int)(((byte)(212)))));
             this.txtLozinka.Location = new System.Drawing.Point(142, 245);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(145, 20);
@@ -175,6 +176,7 @@
             // txtPonoviLozinku
             // 
             this.txtPonoviLozinku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(158)))), ((int)(((byte)(103)))));
+            this.txtPonoviLozinku.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(243)))), ((int)(((byte)(212)))));
             this.txtPonoviLozinku.Location = new System.Drawing.Point(142, 278);
             this.txtPonoviLozinku.Name = "txtPonoviLozinku";
             this.txtPonoviLozinku.Size = new System.Drawing.Size(145, 20);

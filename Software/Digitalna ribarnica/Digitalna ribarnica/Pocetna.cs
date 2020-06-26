@@ -36,6 +36,7 @@ namespace Digitalna_ribarnica
             pbxLogo.Visible = true;
             btnRibe.Visible = false;
             btnLokacija.Visible = false;
+            buttonOdjava.ForeColor = Color.FromArgb(4, 136, 133);
         }
         public Form activeForm = null;
         public void openChildForm(Form childForm)

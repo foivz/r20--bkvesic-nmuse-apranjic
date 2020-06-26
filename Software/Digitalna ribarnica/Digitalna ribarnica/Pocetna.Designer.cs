@@ -95,7 +95,7 @@
             // 
             this.lblFollow.AutoSize = true;
             this.lblFollow.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblFollow.ForeColor = System.Drawing.Color.White;
+            this.lblFollow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.lblFollow.Location = new System.Drawing.Point(434, 6);
             this.lblFollow.Name = "lblFollow";
             this.lblFollow.Size = new System.Drawing.Size(137, 20);
@@ -193,6 +193,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.lblUsername.Location = new System.Drawing.Point(287, 38);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(0, 15);
@@ -360,7 +361,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelOdjava.AutoSize = true;
             this.labelOdjava.Font = new System.Drawing.Font("Open Sans Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelOdjava.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.labelOdjava.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.labelOdjava.Location = new System.Drawing.Point(188, 181);
             this.labelOdjava.Name = "labelOdjava";
             this.labelOdjava.Size = new System.Drawing.Size(0, 47);

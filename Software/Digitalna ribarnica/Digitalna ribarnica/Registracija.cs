@@ -115,6 +115,7 @@ namespace Digitalna_ribarnica
                 txtPrezime.Text = "";
                 txtPrezime.ForeColor = Color.Black;
             }
+            txtPrezime.ForeColor = Color.FromArgb(165, 243, 212);
         }
 
         private void txtPrezime_Leave(object sender, EventArgs e)
@@ -133,6 +134,7 @@ namespace Digitalna_ribarnica
                 txtKorIme.Text = "";
                 txtKorIme.ForeColor = Color.Black;
             }
+            txtKorIme.ForeColor = Color.FromArgb(165, 243, 212);
         }
 
         private void txtKorIme_Leave(object sender, EventArgs e)
@@ -151,6 +153,7 @@ namespace Digitalna_ribarnica
                 txtAdresa.Text = "";
                 txtAdresa.ForeColor = Color.Black;
             }
+            txtAdresa.ForeColor = Color.FromArgb(165, 243, 212);
         }
 
         private void txtAdresa_Leave(object sender, EventArgs e)
@@ -169,6 +172,7 @@ namespace Digitalna_ribarnica
                 txtMjesto.Text = "";
                 txtMjesto.ForeColor = Color.Black;
             }
+            txtMjesto.ForeColor = Color.FromArgb(165, 243, 212);
         }
 
         private void txtMjesto_Leave(object sender, EventArgs e)
@@ -187,6 +191,7 @@ namespace Digitalna_ribarnica
                 txtMobitel.Text = "";
                 txtMobitel.ForeColor = Color.Black;
             }
+            txtMobitel.ForeColor = Color.FromArgb(165, 243, 212);
         }
 
         private void txtMobitel_Leave(object sender, EventArgs e)
@@ -205,6 +210,7 @@ namespace Digitalna_ribarnica
                 textEmail.Text = "";
                 textEmail.ForeColor = Color.Black;
             }
+            textEmail.ForeColor = Color.FromArgb(165, 243, 212);
         }
 
         private void textEmail_Leave(object sender, EventArgs e)
