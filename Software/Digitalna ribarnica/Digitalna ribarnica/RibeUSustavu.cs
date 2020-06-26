@@ -66,6 +66,7 @@ namespace Digitalna_ribarnica
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
             {
+                notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Uspješno ste obrisali ribu!", ToolTipIcon.Info);
                 form.openChildForm(new RibeUSustavu());
             }
         }

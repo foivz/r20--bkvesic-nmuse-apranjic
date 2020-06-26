@@ -12,6 +12,7 @@ namespace Digitalna_ribarnica
 {
     public partial class DodajLokacije : Form
     {
+        private bool azuriraj = false;
         public DodajLokacije()
         {
             InitializeComponent();
@@ -34,7 +35,10 @@ namespace Digitalna_ribarnica
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (txtDodaj.Text.ToString() != "")
+            {
                 LokacijeRepozitory.dodajLokacij(txtDodaj.Text);
+                notifyLokacija.ShowBalloonTip(1000, "Lokacije u sustavu", "Uspješno ste dodali novu lokaciju!", ToolTipIcon.Info);
+            }
             Osjezi();
         }
 
@@ -50,17 +54,30 @@ namespace Digitalna_ribarnica
             if (odabranaLokacija != null)
             {
                 LokacijeRepozitory.obrisiLokaciju(odabranaLokacija);
+                notifyLokacija.ShowBalloonTip(1000, "Lokacije u sustavu", "Uspješno ste obrisali odabranu lokaciju!", ToolTipIcon.Info);
             }
             Osjezi();
         }
 
         private void btnAzuriraj_Click(object sender, EventArgs e)
         {
+            azuriraj = false;
             Lokacije.Lokacije odabranaLokacija = dgvLokacije.CurrentRow.DataBoundItem as Lokacije.Lokacije;
             if (odabranaLokacija != null)
             {
+                azuriraj = true;
                 LokacijeRepozitory.azurirajLokaciju(odabranaLokacija,txtDodaj.Text);
             }
+            else
+            {
+                azuriraj = false;
+            }
+
+            if (azuriraj)
+                notifyLokacija.ShowBalloonTip(1000, "Lokacije u sustavu", "Uspješno ste ažurirali lokaciju!", ToolTipIcon.Info);
+            else
+                notifyLokacija.ShowBalloonTip(1000, "Lokacije u sustavu", "Neuspješno ažuriranje", ToolTipIcon.Error);
+
             Osjezi();
         }
 

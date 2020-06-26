@@ -35,6 +35,7 @@ namespace Digitalna_ribarnica
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
             {
+                notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Odustali ste od dodavanja/ažuriranja ribe", ToolTipIcon.Info);
                 form.openChildForm(new RibeUSustavu());
             }
             Close();
@@ -120,6 +121,7 @@ namespace Digitalna_ribarnica
                     parametersAzuriranje.Add("@mjerna_jedinica", 1);
                 parametersAzuriranje.Add("@id_riba", Riba.id);
                 RibeRepository.AzurirajRibu(parametersAzuriranje);
+                notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Uspješno ste ažurirali ribu!", ToolTipIcon.Info);
             }
             else
             {
@@ -152,6 +154,7 @@ namespace Digitalna_ribarnica
                 else if (radioButton2.Checked == true)
                     parameters.Add("@mjerna_jedinica", 1);
                 RibeRepository.DodajNovuRibu(parameters);
+                notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Uspješno ste dodali ribu!", ToolTipIcon.Info);
             }
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
