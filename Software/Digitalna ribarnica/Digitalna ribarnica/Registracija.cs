@@ -96,6 +96,7 @@ namespace Digitalna_ribarnica
                 txtIme.Text = "";
                 txtIme.ForeColor = Color.Black;
             }
+            txtIme.ForeColor=Color.FromArgb(165, 243, 212);
         }
 
         private void txtIme_Leave(object sender, EventArgs e)

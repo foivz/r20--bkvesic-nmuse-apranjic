@@ -48,7 +48,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername1.AutoSize = true;
             this.lblUsername1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUsername1.ForeColor = System.Drawing.Color.White;
+            this.lblUsername1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.lblUsername1.Location = new System.Drawing.Point(157, 52);
             this.lblUsername1.Name = "lblUsername1";
             this.lblUsername1.Size = new System.Drawing.Size(115, 20);
@@ -61,7 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.label1.Location = new System.Drawing.Point(207, 87);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
@@ -72,8 +72,9 @@
             // 
             this.txtKorIme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKorIme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.txtKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtKorIme.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtKorIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
             this.txtKorIme.Location = new System.Drawing.Point(278, 52);
             this.txtKorIme.Name = "txtKorIme";
             this.txtKorIme.Size = new System.Drawing.Size(169, 21);
@@ -87,6 +88,8 @@
             // 
             this.txtLozinka.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtLozinka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.txtLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
             this.txtLozinka.Location = new System.Drawing.Point(278, 87);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(169, 20);
@@ -98,8 +101,8 @@
             this.btnOdustani.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdustani.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnOdustani.ForeColor = System.Drawing.Color.White;
-            this.btnOdustani.Location = new System.Drawing.Point(357, 176);
+            this.btnOdustani.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.btnOdustani.Location = new System.Drawing.Point(361, 176);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(86, 40);
             this.btnOdustani.TabIndex = 2;
@@ -112,7 +115,7 @@
             this.buttonPrijavi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonPrijavi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrijavi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPrijavi.ForeColor = System.Drawing.Color.White;
+            this.buttonPrijavi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
             this.buttonPrijavi.Location = new System.Drawing.Point(249, 176);
             this.buttonPrijavi.Name = "buttonPrijavi";
             this.buttonPrijavi.Size = new System.Drawing.Size(102, 40);
@@ -125,8 +128,8 @@
             // 
             this.labelRegistracija.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelRegistracija.AutoSize = true;
-            this.labelRegistracija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.labelRegistracija.Location = new System.Drawing.Point(376, 219);
+            this.labelRegistracija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
+            this.labelRegistracija.Location = new System.Drawing.Point(371, 219);
             this.labelRegistracija.Name = "labelRegistracija";
             this.labelRegistracija.Size = new System.Drawing.Size(67, 13);
             this.labelRegistracija.TabIndex = 3;
@@ -154,7 +157,7 @@
             // 
             this.labelZaboravljenaLozinka.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelZaboravljenaLozinka.AutoSize = true;
-            this.labelZaboravljenaLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.labelZaboravljenaLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
             this.labelZaboravljenaLozinka.Location = new System.Drawing.Point(246, 219);
             this.labelZaboravljenaLozinka.Name = "labelZaboravljenaLozinka";
             this.labelZaboravljenaLozinka.Size = new System.Drawing.Size(105, 13);

@@ -39,6 +39,8 @@
             // 
             // textEmail
             // 
+            this.textEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
+            this.textEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
             this.textEmail.Location = new System.Drawing.Point(315, 143);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(179, 20);
@@ -48,7 +50,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.label1.Location = new System.Drawing.Point(200, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 20);
@@ -59,8 +61,8 @@
             // 
             this.buttonOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOdustani.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonOdustani.ForeColor = System.Drawing.Color.White;
-            this.buttonOdustani.Location = new System.Drawing.Point(408, 169);
+            this.buttonOdustani.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.buttonOdustani.Location = new System.Drawing.Point(408, 179);
             this.buttonOdustani.Name = "buttonOdustani";
             this.buttonOdustani.Size = new System.Drawing.Size(86, 40);
             this.buttonOdustani.TabIndex = 21;
@@ -72,8 +74,8 @@
             // 
             this.buttonPotvrdi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPotvrdi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPotvrdi.ForeColor = System.Drawing.Color.White;
-            this.buttonPotvrdi.Location = new System.Drawing.Point(315, 169);
+            this.buttonPotvrdi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.buttonPotvrdi.Location = new System.Drawing.Point(315, 179);
             this.buttonPotvrdi.Name = "buttonPotvrdi";
             this.buttonPotvrdi.Size = new System.Drawing.Size(86, 40);
             this.buttonPotvrdi.TabIndex = 20;

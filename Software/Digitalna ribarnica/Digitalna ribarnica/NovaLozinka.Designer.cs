@@ -41,6 +41,7 @@
             // 
             // txtPonoviLozinku
             // 
+            this.txtPonoviLozinku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.txtPonoviLozinku.Location = new System.Drawing.Point(300, 129);
             this.txtPonoviLozinku.Name = "txtPonoviLozinku";
             this.txtPonoviLozinku.Size = new System.Drawing.Size(119, 20);
@@ -48,6 +49,7 @@
             // 
             // txtLozinka
             // 
+            this.txtLozinka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.txtLozinka.Location = new System.Drawing.Point(300, 96);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(119, 20);
@@ -57,7 +59,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.label4.Location = new System.Drawing.Point(161, 127);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 20);
@@ -68,7 +70,7 @@
             // 
             this.labelNovaLozinka.AutoSize = true;
             this.labelNovaLozinka.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNovaLozinka.ForeColor = System.Drawing.Color.White;
+            this.labelNovaLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.labelNovaLozinka.Location = new System.Drawing.Point(173, 94);
             this.labelNovaLozinka.Name = "labelNovaLozinka";
             this.labelNovaLozinka.Size = new System.Drawing.Size(103, 20);
@@ -79,7 +81,7 @@
             // 
             this.buttonOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOdustani.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonOdustani.ForeColor = System.Drawing.Color.White;
+            this.buttonOdustani.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
             this.buttonOdustani.Location = new System.Drawing.Point(334, 168);
             this.buttonOdustani.Name = "buttonOdustani";
             this.buttonOdustani.Size = new System.Drawing.Size(86, 40);
@@ -92,7 +94,7 @@
             // 
             this.buttonPotvrdi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPotvrdi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPotvrdi.ForeColor = System.Drawing.Color.White;
+            this.buttonPotvrdi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
             this.buttonPotvrdi.Location = new System.Drawing.Point(241, 168);
             this.buttonPotvrdi.Name = "buttonPotvrdi";
             this.buttonPotvrdi.Size = new System.Drawing.Size(86, 40);

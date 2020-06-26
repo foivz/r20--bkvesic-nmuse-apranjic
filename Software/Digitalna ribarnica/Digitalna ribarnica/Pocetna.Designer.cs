@@ -47,13 +47,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnRibe = new System.Windows.Forms.Button();
+            this.btnLokacija = new System.Windows.Forms.Button();
             this.buttonNovosti = new System.Windows.Forms.Button();
             this.Profilna = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
-            this.btnLokacija = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panel3.SuspendLayout();
@@ -83,10 +83,10 @@
             // pbxLogo
             // 
             this.pbxLogo.Image = global::Digitalna_ribarnica.Properties.Resources.output_onlinepngtools;
-            this.pbxLogo.Location = new System.Drawing.Point(646, 18);
+            this.pbxLogo.Location = new System.Drawing.Point(653, 12);
             this.pbxLogo.MaximumSize = new System.Drawing.Size(75, 75);
             this.pbxLogo.Name = "pbxLogo";
-            this.pbxLogo.Size = new System.Drawing.Size(75, 50);
+            this.pbxLogo.Size = new System.Drawing.Size(75, 61);
             this.pbxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxLogo.TabIndex = 12;
             this.pbxLogo.TabStop = false;
@@ -96,7 +96,7 @@
             this.lblFollow.AutoSize = true;
             this.lblFollow.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFollow.ForeColor = System.Drawing.Color.White;
-            this.lblFollow.Location = new System.Drawing.Point(443, 0);
+            this.lblFollow.Location = new System.Drawing.Point(434, 6);
             this.lblFollow.Name = "lblFollow";
             this.lblFollow.Size = new System.Drawing.Size(137, 20);
             this.lblFollow.TabIndex = 11;
@@ -108,7 +108,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(565, 18);
+            this.button6.Location = new System.Drawing.Point(525, 29);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(53, 41);
             this.button6.TabIndex = 0;
@@ -123,6 +123,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.button1.Location = new System.Drawing.Point(919, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(115, 89);
@@ -136,6 +137,7 @@
             this.buttonRegistracija.FlatAppearance.BorderSize = 0;
             this.buttonRegistracija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegistracija.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRegistracija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.buttonRegistracija.Location = new System.Drawing.Point(798, 0);
             this.buttonRegistracija.Name = "buttonRegistracija";
             this.buttonRegistracija.Size = new System.Drawing.Size(115, 89);
@@ -150,9 +152,9 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(506, 18);
+            this.button5.Location = new System.Drawing.Point(475, 21);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(53, 41);
+            this.button5.Size = new System.Drawing.Size(59, 54);
             this.button5.TabIndex = 0;
             this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button5.UseVisualStyleBackColor = true;
@@ -164,9 +166,9 @@
             this.buttonInstagram.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInstagram.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonInstagram.Image = ((System.Drawing.Image)(resources.GetObject("buttonInstagram.Image")));
-            this.buttonInstagram.Location = new System.Drawing.Point(447, 18);
+            this.buttonInstagram.Location = new System.Drawing.Point(439, 27);
             this.buttonInstagram.Name = "buttonInstagram";
-            this.buttonInstagram.Size = new System.Drawing.Size(53, 41);
+            this.buttonInstagram.Size = new System.Drawing.Size(41, 41);
             this.buttonInstagram.TabIndex = 0;
             this.buttonInstagram.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonInstagram.UseVisualStyleBackColor = true;
@@ -198,7 +200,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
             this.panel3.Controls.Add(this.pbxProfilna);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -221,6 +223,7 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(230)))), ((int)(((byte)(164)))));
             this.button4.Location = new System.Drawing.Point(-5, 472);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(250, 45);
@@ -234,6 +237,7 @@
             this.buttonPonude.FlatAppearance.BorderSize = 0;
             this.buttonPonude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPonude.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPonude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
             this.buttonPonude.Location = new System.Drawing.Point(-2, 87);
             this.buttonPonude.Name = "buttonPonude";
             this.buttonPonude.Size = new System.Drawing.Size(250, 45);
@@ -247,6 +251,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.Location = new System.Drawing.Point(-2, 36);
             this.button2.Name = "button2";
@@ -277,6 +282,7 @@
             this.btnRibe.FlatAppearance.BorderSize = 0;
             this.btnRibe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRibe.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRibe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
             this.btnRibe.Location = new System.Drawing.Point(-2, 365);
             this.btnRibe.Name = "btnRibe";
             this.btnRibe.Size = new System.Drawing.Size(250, 45);
@@ -286,11 +292,27 @@
             this.btnRibe.UseVisualStyleBackColor = true;
             this.btnRibe.Click += new System.EventHandler(this.btnRibe_Click);
             // 
+            // btnLokacija
+            // 
+            this.btnLokacija.FlatAppearance.BorderSize = 0;
+            this.btnLokacija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLokacija.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnLokacija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
+            this.btnLokacija.Location = new System.Drawing.Point(-2, 314);
+            this.btnLokacija.Name = "btnLokacija";
+            this.btnLokacija.Size = new System.Drawing.Size(250, 45);
+            this.btnLokacija.TabIndex = 0;
+            this.btnLokacija.Text = "Lokacije";
+            this.btnLokacija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLokacija.UseVisualStyleBackColor = true;
+            this.btnLokacija.Click += new System.EventHandler(this.btnLokacija_Click);
+            // 
             // buttonNovosti
             // 
             this.buttonNovosti.FlatAppearance.BorderSize = 0;
             this.buttonNovosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovosti.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonNovosti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
             this.buttonNovosti.Location = new System.Drawing.Point(-5, 138);
             this.buttonNovosti.Name = "buttonNovosti";
             this.buttonNovosti.Size = new System.Drawing.Size(250, 45);
@@ -304,6 +326,7 @@
             this.Profilna.FlatAppearance.BorderSize = 0;
             this.Profilna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Profilna.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Profilna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(210)))), ((int)(((byte)(157)))));
             this.Profilna.Location = new System.Drawing.Point(-2, 416);
             this.Profilna.Name = "Profilna";
             this.Profilna.Size = new System.Drawing.Size(250, 45);
@@ -349,20 +372,6 @@
             // 
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
-            // 
-            // btnLokacija
-            // 
-            this.btnLokacija.FlatAppearance.BorderSize = 0;
-            this.btnLokacija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLokacija.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnLokacija.Location = new System.Drawing.Point(-2, 314);
-            this.btnLokacija.Name = "btnLokacija";
-            this.btnLokacija.Size = new System.Drawing.Size(250, 45);
-            this.btnLokacija.TabIndex = 0;
-            this.btnLokacija.Text = "Lokacije";
-            this.btnLokacija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnLokacija.UseVisualStyleBackColor = true;
-            this.btnLokacija.Click += new System.EventHandler(this.btnLokacija_Click);
             // 
             // formPocetna
             // 

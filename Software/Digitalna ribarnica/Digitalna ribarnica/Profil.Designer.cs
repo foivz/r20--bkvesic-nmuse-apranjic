@@ -54,10 +54,10 @@
             this.btnSpremi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnSpremi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpremi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSpremi.ForeColor = System.Drawing.Color.White;
-            this.btnSpremi.Location = new System.Drawing.Point(416, 398);
+            this.btnSpremi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.btnSpremi.Location = new System.Drawing.Point(399, 366);
             this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(86, 40);
+            this.btnSpremi.Size = new System.Drawing.Size(102, 40);
             this.btnSpremi.TabIndex = 3;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
@@ -68,8 +68,8 @@
             this.btnDodajSliku.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnDodajSliku.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodajSliku.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDodajSliku.ForeColor = System.Drawing.Color.White;
-            this.btnDodajSliku.Location = new System.Drawing.Point(266, 398);
+            this.btnDodajSliku.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.btnDodajSliku.Location = new System.Drawing.Point(274, 366);
             this.btnDodajSliku.Name = "btnDodajSliku";
             this.btnDodajSliku.Size = new System.Drawing.Size(108, 40);
             this.btnDodajSliku.TabIndex = 3;

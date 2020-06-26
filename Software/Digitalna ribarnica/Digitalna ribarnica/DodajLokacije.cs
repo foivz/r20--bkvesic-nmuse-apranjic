@@ -19,14 +19,15 @@ namespace Digitalna_ribarnica
 
         private void DodajLokacije_Load(object sender, EventArgs e)
         {
-            this.dgvLokacije.DefaultCellStyle.ForeColor = Color.FromArgb(0, 62, 87);
-            this.dgvLokacije.DefaultCellStyle.BackColor = Color.FromArgb(225, 245, 254);
-            this.dgvLokacije.DefaultCellStyle.SelectionForeColor = Color.DarkBlue;
-            this.dgvLokacije.DefaultCellStyle.SelectionBackColor = Color.AntiqueWhite;
-            this.dgvLokacije.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
-            this.dgvLokacije.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(179, 229, 252);
+            this.dgvLokacije.DefaultCellStyle.ForeColor = Color.FromArgb(1, 131, 131);
+            this.dgvLokacije.DefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
+            this.dgvLokacije.DefaultCellStyle.SelectionForeColor = Color.FromArgb(66, 230, 164);
+            this.dgvLokacije.DefaultCellStyle.SelectionBackColor = Color.FromArgb(35, 57, 63);
+            this.dgvLokacije.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
+            this.dgvLokacije.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(66, 230, 164);
             this.dgvLokacije.EnableHeadersVisualStyles = false;
-            this.dgvLokacije.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
+            this.dgvLokacije.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
+            this.dgvLokacije.RowHeadersDefaultCellStyle.ForeColor = Color.FromArgb(66, 230, 164);
             Osjezi();
         }
 
@@ -107,14 +108,20 @@ namespace Digitalna_ribarnica
 
         private void dgvLokacije_SelectionChanged(object sender, EventArgs e)
         {
-            this.dgvLokacije.DefaultCellStyle.ForeColor = Color.FromArgb(0, 62, 87);
-            this.dgvLokacije.DefaultCellStyle.BackColor = Color.FromArgb(225, 245, 254);
-            this.dgvLokacije.DefaultCellStyle.SelectionForeColor = Color.DarkBlue;
-            this.dgvLokacije.DefaultCellStyle.SelectionBackColor = Color.AntiqueWhite;
-            this.dgvLokacije.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
-            this.dgvLokacije.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(179, 229, 252);
+            this.dgvLokacije.DefaultCellStyle.ForeColor = Color.FromArgb(1, 131, 131);
+            this.dgvLokacije.DefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
+            this.dgvLokacije.DefaultCellStyle.SelectionForeColor = Color.FromArgb(66, 230, 164);
+            this.dgvLokacije.DefaultCellStyle.SelectionBackColor = Color.FromArgb(35, 57, 63);
+            this.dgvLokacije.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
+            this.dgvLokacije.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(66, 230, 164);
             this.dgvLokacije.EnableHeadersVisualStyles = false;
-            this.dgvLokacije.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(15, 141, 217);
+            this.dgvLokacije.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
+            this.dgvLokacije.RowHeadersDefaultCellStyle.ForeColor = Color.FromArgb(66, 230, 164);
+        }
+
+        private void txtDodaj_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
