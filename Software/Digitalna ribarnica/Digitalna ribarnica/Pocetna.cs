@@ -139,5 +139,10 @@ namespace Digitalna_ribarnica
         {
             openChildForm(new DodajLokacije());
         }
+
+        private void buttonPonude_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PregledPonuda());
+        }
     }
 }

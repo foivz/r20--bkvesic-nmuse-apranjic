@@ -73,6 +73,12 @@
     <Compile Include="Pocetna.Designer.cs">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="PregledPonuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PregledPonuda.Designer.cs">
+      <DependentUpon>PregledPonuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prijava.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <EmbeddedResource Include="Pocetna.resx">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PregledPonuda.resx">
+      <DependentUpon>PregledPonuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prijava.resx">
       <DependentUpon>Prijava.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +201,10 @@
     <ProjectReference Include="..\Lokacije\Lokacije.csproj">
       <Project>{681cb769-455e-4801-9865-cf031aefb695}</Project>
       <Name>Lokacije</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ponude\Ponude.csproj">
+      <Project>{1fb0c138-1351-49c3-a94c-8f80978c17d6}</Project>
+      <Name>Ponude</Name>
     </ProjectReference>
     <ProjectReference Include="..\Prijava\Prijava.csproj">
       <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>

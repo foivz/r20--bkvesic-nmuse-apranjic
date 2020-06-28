@@ -246,6 +246,7 @@
             this.buttonPonude.Text = "Ponude";
             this.buttonPonude.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonPonude.UseVisualStyleBackColor = true;
+            this.buttonPonude.Click += new System.EventHandler(this.buttonPonude_Click);
             // 
             // button2
             // 
