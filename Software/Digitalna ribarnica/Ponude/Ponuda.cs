@@ -16,7 +16,28 @@ namespace Ponude
 		private int kolicina;
 		private string mjerna;
 		private string id;
+		private string ime;
+		private string lokacija;
 
+		public string Lokacija
+		{
+			get { return lokacija; }
+			set
+			{
+				lokacija = value;
+				PrikazUC.ucLokacija.Text = lokacija;
+			}
+		}
+
+		public string Ime
+		{
+			get { return ime; }
+			set
+			{
+				ime = value;
+				PrikazUC.ucPonuditelj.Text = ime;
+			}
+		}
 		public string ID
 		{
 			get { return id; }

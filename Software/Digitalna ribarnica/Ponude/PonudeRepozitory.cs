@@ -17,7 +17,8 @@ namespace Ponude
 
             _ponude.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"select ponude.*, ribe.mjerna_jedinica, ribe.naziv, ribe.slika from ponude, ribe WHERE ponude.id_riba=ribe.id_riba AND ponude.status=1");
+            var rezultat = DB.Instance.DohvatiDataReader("select ponude.*, ribe.mjerna_jedinica, ribe.naziv, ribe.slika, lokacije.naziv AS lokacija, korisnici.ime, korisnici.prezime from ponude, ribe, lokacije, korisnici WHERE ponude.id_riba = ribe.id_riba AND ponude.id_lokacija = lokacije.id_lokacija AND ponude.id_korisnik = korisnici.id_korisnik AND ponude.status = 1");
+            
             foreach (DbDataRecord item in rezultat)
             {
                 var row = new Dictionary<string, object>();
@@ -60,6 +61,8 @@ namespace Ponude
                     ponuda.Mjerna = "kom";
                 ponuda.Kolicina = int.Parse(item["kolicina"].ToString());
                 ponuda.Cijena = float.Parse(item["cijena"].ToString());
+                ponuda.Ime = item["ime"] + " " + item["prezime"];
+                ponuda.Lokacija = item["lokacija"].ToString();
                 _ponude.Add(ponuda);
             }
             rezultat.Close();
