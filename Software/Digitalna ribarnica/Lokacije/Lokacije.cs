@@ -15,5 +15,19 @@ namespace Lokacije
         [DisplayName("Naziv")]
         public string Naziv { get; set; }
 
+        public override string ToString()
+        {
+            return Naziv;
+        }
+
+        public Lokacije()
+        {
+
+        }
+
+        public Lokacije(string naziv)
+        {
+            Naziv = naziv;
+        }
     }
 }

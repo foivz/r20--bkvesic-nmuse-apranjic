@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ponude;
+using Lokacije;
 namespace Digitalna_ribarnica
 {
     public partial class PregledPonuda : Form
@@ -16,49 +17,46 @@ namespace Digitalna_ribarnica
         public PregledPonuda()
         {
             InitializeComponent();
-            /*
-            this.Controls.Add(artikl.PrikazUC);
-            artikl.PrikazUC.Location = new Point(460, 225);
-            
-            this.flowLayoutPanel1.Controls.Add(artikl.PrikazUC);
-            this.Controls.Remove(artikl.PrikazUC);
-
-            Ponuda novi = new Ponuda();
-            novi.Naziv = "Druga";
-            this.flowLayoutPanel1.Controls.Add(novi.PrikazUC);
-            this.Controls.Remove(novi.PrikazUC);
-
-            Ponuda novi1 = new Ponuda();
-            novi1.Naziv = "Treca";
-            this.flowLayoutPanel1.Controls.Add(novi1.PrikazUC);
-            this.Controls.Remove(novi1.PrikazUC);
-            Ponuda novi2 = new Ponuda();
-            novi2.Naziv = "4";
-            this.flowLayoutPanel1.Controls.Add(novi2.PrikazUC);
-            this.Controls.Remove(novi2.PrikazUC);
-
-            Ponuda novi3 = new Ponuda();
-            novi3.Naziv = "5";
-            this.flowLayoutPanel1.Controls.Add(novi3.PrikazUC);
-            this.Controls.Remove(novi3.PrikazUC);
-            Ponuda novi4 = new Ponuda();
-            novi4.Naziv = "6";
-            this.flowLayoutPanel1.Controls.Add(novi4.PrikazUC);
-            this.Controls.Remove(novi4.PrikazUC);
-            Ponuda novi5 = new Ponuda();
-            novi5.Naziv = "7";
-            this.flowLayoutPanel1.Controls.Add(novi5.PrikazUC);
-            this.Controls.Remove(novi5.PrikazUC);
-            Ponuda novi6 = new Ponuda();
-            novi6.Naziv = "8";
-            this.flowLayoutPanel1.Controls.Add(novi6.PrikazUC);
-            this.Controls.Remove(novi6.PrikazUC);
-            Ponuda novi7 = new Ponuda();
-            novi7.Naziv = "9";
-            this.flowLayoutPanel1.Controls.Add(novi7.PrikazUC);
-            this.Controls.Remove(novi7.PrikazUC);
-            */
             ponude = PonudeRepozitory.DohvatiPonude();
+            DodajPonude(ponude);
+        }
+
+        private void txtFiltriraj_TextChanged(object sender, EventArgs e)
+        {
+            List<Ponuda> svePonude = PonudeRepozitory.DohvatiPonude();
+            string filter = txtFiltriraj.Text.ToLower();
+            double broj = 0;
+            if (filter != null)
+            {
+                if (double.TryParse(filter, out broj))
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Cijena==broj || ponude.Kolicina==broj || ponude.ID==filter
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+                else
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Naziv.ToLower().Contains(filter) || ponude.Ime.ToLower().Contains(filter) || ponude.Lokacija.ToLower().Contains(filter) || ponude.Mjerna.ToLower().Contains(filter)
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+
+            }
+            else
+            {
+                var result = from ponude in svePonude
+                             select ponude;
+                ObrisiPonude();
+                DodajPonude(result);
+            }
+        }
+
+        private void DodajPonude(IEnumerable<Ponuda> ponude)
+        {
             foreach (var item in ponude)
             {
                 Ponuda ponuda = new Ponuda();
@@ -73,6 +71,134 @@ namespace Digitalna_ribarnica
                 this.flowLayoutPanel1.Controls.Add(ponuda.PrikazUC);
                 this.Controls.Remove(ponuda.PrikazUC);
             }
+        }
+
+        private void ObrisiPonude()
+        {
+            List<int> index = new List<int>();
+            int brojac = 0;
+            foreach (UCPonuda item in flowLayoutPanel1.Controls)
+            {
+               index.Add(flowLayoutPanel1.Controls.GetChildIndex(item));
+            }
+
+            foreach (var item in index)
+            {
+                flowLayoutPanel1.Controls.RemoveAt(item - brojac);
+                brojac++;
+            }
+        }
+
+        private void btnSortiraj_Click(object sender, EventArgs e)
+        {
+            List<Ponuda> svePonude = PonudeRepozitory.DohvatiPonude();
+            string lokacije = cmbLokacije.SelectedItem.ToString();
+            double cijenaMin = -1;
+            double cijenaMax = -1;
+            bool radioButtonAscending = radioButton1.Checked;
+            bool radioButtonDescending = radioButton2.Checked;
+            if (txtMin.Text != "")
+                cijenaMin = double.Parse(txtMin.Text);
+            if (txtMax.Text != "")
+                cijenaMax = double.Parse(txtMax.Text);
+            if(lokacije!=null && cijenaMax!=-1 && cijenaMin!=-1)
+            {
+                if (radioButtonAscending && lokacije!="Sve lokacije")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije && ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+                else if(lokacije=="Sve lokacije" && radioButtonAscending)
+                {
+                    var result = from ponude in svePonude
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+                else if(lokacije == "Sve lokacije" && radioButtonDescending)
+                {
+                    var result = from ponude in svePonude
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+                else
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije && ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+            }
+            else if(lokacije!=null && (cijenaMin==-1 || cijenaMax==-1))
+            {
+                if (radioButtonAscending && lokacije!="Sve lokacije")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonAscending)
+                {
+                    var result = from ponude in svePonude
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonDescending)
+                {
+                    var result = from ponude in svePonude
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+                else
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result);
+                }
+            }
+        }
+
+        private void PregledPonuda_Load(object sender, EventArgs e)
+        {
+            List<Lokacije.Lokacije> lokacije = new List<Lokacije.Lokacije>();
+            lokacije.Add(new Lokacije.Lokacije("Sve lokacije"));    
+            foreach (var item in LokacijeRepozitory.dohvatiLokacije())
+            {
+                lokacije.Add(item);
+            }
+          
+            cmbLokacije.DataSource = lokacije;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked == true)
+                radioButton2.Checked = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked == true)
+                radioButton1.Checked = false;
         }
     }
 }

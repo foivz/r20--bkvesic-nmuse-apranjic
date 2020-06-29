@@ -194,7 +194,7 @@
             // ucLokacija
             // 
             this.ucLokacija.AutoSize = true;
-            this.ucLokacija.Location = new System.Drawing.Point(105, 213);
+            this.ucLokacija.Location = new System.Drawing.Point(102, 213);
             this.ucLokacija.Name = "ucLokacija";
             this.ucLokacija.Size = new System.Drawing.Size(35, 13);
             this.ucLokacija.TabIndex = 9;
