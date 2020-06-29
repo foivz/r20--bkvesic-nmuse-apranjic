@@ -115,6 +115,7 @@ namespace Digitalna_ribarnica
                 else if(lokacije=="Sve lokacije" && radioButtonAscending)
                 {
                     var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax
                                  orderby ponude.Cijena ascending
                                  select ponude;
                     ObrisiPonude();
@@ -123,6 +124,7 @@ namespace Digitalna_ribarnica
                 else if(lokacije == "Sve lokacije" && radioButtonDescending)
                 {
                     var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax
                                  orderby ponude.Cijena descending
                                  select ponude;
                     ObrisiPonude();
