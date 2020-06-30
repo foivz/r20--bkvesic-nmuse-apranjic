@@ -49,10 +49,9 @@
             // 
             this.txtFiltriraj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
             this.txtFiltriraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.txtFiltriraj.Location = new System.Drawing.Point(123, 113);
-            this.txtFiltriraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFiltriraj.Location = new System.Drawing.Point(92, 92);
             this.txtFiltriraj.Name = "txtFiltriraj";
-            this.txtFiltriraj.Size = new System.Drawing.Size(244, 22);
+            this.txtFiltriraj.Size = new System.Drawing.Size(184, 20);
             this.txtFiltriraj.TabIndex = 13;
             this.txtFiltriraj.TextChanged += new System.EventHandler(this.txtFiltriraj_TextChanged);
             // 
@@ -61,10 +60,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(141)))), ((int)(((byte)(134)))));
-            this.label2.Location = new System.Drawing.Point(27, 111);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(20, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "Filtriraj";
             // 
@@ -73,10 +71,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(131)))), ((int)(((byte)(111)))));
-            this.label1.Location = new System.Drawing.Point(99, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(74, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(478, 36);
+            this.label1.Size = new System.Drawing.Size(389, 29);
             this.label1.TabIndex = 12;
             this.label1.Text = "Administracija lokacija u sustavu";
             // 
@@ -86,10 +83,9 @@
             this.btnObrisi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObrisi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(220)))), ((int)(((byte)(161)))));
-            this.btnObrisi.Location = new System.Drawing.Point(495, 508);
-            this.btnObrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnObrisi.Location = new System.Drawing.Point(365, 413);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(152, 50);
+            this.btnObrisi.Size = new System.Drawing.Size(114, 41);
             this.btnObrisi.TabIndex = 8;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
@@ -101,10 +97,9 @@
             this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
-            this.btnDodaj.Location = new System.Drawing.Point(29, 508);
-            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDodaj.Location = new System.Drawing.Point(22, 413);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(155, 49);
+            this.btnDodaj.Size = new System.Drawing.Size(116, 40);
             this.btnDodaj.TabIndex = 9;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -116,10 +111,9 @@
             this.btnAzuriraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAzuriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAzuriraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
-            this.btnAzuriraj.Location = new System.Drawing.Point(211, 508);
-            this.btnAzuriraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAzuriraj.Location = new System.Drawing.Point(158, 413);
             this.btnAzuriraj.Name = "btnAzuriraj";
-            this.btnAzuriraj.Size = new System.Drawing.Size(155, 50);
+            this.btnAzuriraj.Size = new System.Drawing.Size(116, 41);
             this.btnAzuriraj.TabIndex = 10;
             this.btnAzuriraj.Text = "Ažuriraj";
             this.btnAzuriraj.UseVisualStyleBackColor = true;
@@ -136,11 +130,9 @@
             this.groupBox1.Controls.Add(this.btnDodaj);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnAzuriraj);
-            this.groupBox1.Location = new System.Drawing.Point(207, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(168, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(697, 598);
+            this.groupBox1.Size = new System.Drawing.Size(510, 486);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
@@ -150,10 +142,9 @@
             this.btnSortiraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSortiraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSortiraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(220)))), ((int)(((byte)(161)))));
-            this.btnSortiraj.Location = new System.Drawing.Point(404, 101);
-            this.btnSortiraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSortiraj.Location = new System.Drawing.Point(297, 82);
             this.btnSortiraj.Name = "btnSortiraj";
-            this.btnSortiraj.Size = new System.Drawing.Size(136, 37);
+            this.btnSortiraj.Size = new System.Drawing.Size(102, 30);
             this.btnSortiraj.TabIndex = 16;
             this.btnSortiraj.Text = "Sortiraj";
             this.btnSortiraj.UseVisualStyleBackColor = true;
@@ -163,11 +154,10 @@
             // 
             this.dgvLokacije.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.dgvLokacije.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLokacije.Location = new System.Drawing.Point(29, 153);
-            this.dgvLokacije.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLokacije.Location = new System.Drawing.Point(22, 124);
             this.dgvLokacije.Name = "dgvLokacije";
             this.dgvLokacije.RowHeadersWidth = 51;
-            this.dgvLokacije.Size = new System.Drawing.Size(617, 294);
+            this.dgvLokacije.Size = new System.Drawing.Size(463, 239);
             this.dgvLokacije.TabIndex = 15;
             this.dgvLokacije.SelectionChanged += new System.EventHandler(this.dgvLokacije_SelectionChanged);
             // 
@@ -175,10 +165,9 @@
             // 
             this.txtDodaj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
             this.txtDodaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.txtDodaj.Location = new System.Drawing.Point(29, 465);
-            this.txtDodaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDodaj.Location = new System.Drawing.Point(22, 378);
             this.txtDodaj.Name = "txtDodaj";
-            this.txtDodaj.Size = new System.Drawing.Size(335, 22);
+            this.txtDodaj.Size = new System.Drawing.Size(252, 20);
             this.txtDodaj.TabIndex = 14;
             this.txtDodaj.TextChanged += new System.EventHandler(this.txtDodaj_TextChanged);
             // 
@@ -190,12 +179,11 @@
             // 
             // DodajLokacije
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1087, 642);
+            this.ClientSize = new System.Drawing.Size(815, 522);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DodajLokacije";
             this.Text = "DodajLokacije";
             this.Load += new System.EventHandler(this.DodajLokacije_Load);

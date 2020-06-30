@@ -53,7 +53,8 @@
             this.lblUsername1.AutoSize = true;
             this.lblUsername1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblUsername1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
-            this.lblUsername1.Location = new System.Drawing.Point(8, 60);
+            this.lblUsername1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsername1.Location = new System.Drawing.Point(12, 61);
             this.lblUsername1.Name = "lblUsername1";
             this.lblUsername1.Size = new System.Drawing.Size(115, 20);
             this.lblUsername1.TabIndex = 0;
@@ -64,7 +65,8 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
-            this.label1.Location = new System.Drawing.Point(58, 95);
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(54, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 0;
@@ -74,7 +76,7 @@
             // 
             this.txtKorIme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.txtKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtKorIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtKorIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.txtKorIme.Location = new System.Drawing.Point(129, 60);
             this.txtKorIme.Name = "txtKorIme";
             this.txtKorIme.Size = new System.Drawing.Size(169, 21);
@@ -127,7 +129,7 @@
             this.labelRegistracija.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelRegistracija.AutoSize = true;
             this.labelRegistracija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
-            this.labelRegistracija.Location = new System.Drawing.Point(209, 195);
+            this.labelRegistracija.Location = new System.Drawing.Point(219, 196);
             this.labelRegistracija.Name = "labelRegistracija";
             this.labelRegistracija.Size = new System.Drawing.Size(67, 13);
             this.labelRegistracija.TabIndex = 3;

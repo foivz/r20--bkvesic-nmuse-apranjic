@@ -85,7 +85,7 @@
             // 
             this.txtPrezime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(129)))), ((int)(((byte)(124)))));
             this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtPrezime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(243)))), ((int)(((byte)(212)))));
+            this.txtPrezime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.txtPrezime.Location = new System.Drawing.Point(142, 55);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(145, 21);
@@ -98,7 +98,7 @@
             // 
             this.txtIme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(126)))), ((int)(((byte)(126)))));
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(243)))), ((int)(((byte)(212)))));
+            this.txtIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.txtIme.Location = new System.Drawing.Point(142, 24);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(145, 21);
@@ -133,7 +133,7 @@
             // 
             this.txtKorIme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
             this.txtKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtKorIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(243)))), ((int)(((byte)(212)))));
+            this.txtKorIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.txtKorIme.Location = new System.Drawing.Point(142, 87);
             this.txtKorIme.Name = "txtKorIme";
             this.txtKorIme.Size = new System.Drawing.Size(145, 21);
@@ -197,7 +197,7 @@
             // 
             this.txtAdresa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(136)))), ((int)(((byte)(119)))));
             this.txtAdresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtAdresa.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtAdresa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.txtAdresa.Location = new System.Drawing.Point(142, 118);
             this.txtAdresa.Name = "txtAdresa";
             this.txtAdresa.Size = new System.Drawing.Size(145, 21);
@@ -232,7 +232,7 @@
             // 
             this.txtMjesto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(139)))), ((int)(((byte)(117)))));
             this.txtMjesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtMjesto.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtMjesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.txtMjesto.Location = new System.Drawing.Point(142, 149);
             this.txtMjesto.Name = "txtMjesto";
             this.txtMjesto.Size = new System.Drawing.Size(145, 21);
@@ -256,7 +256,7 @@
             // 
             this.txtMobitel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.txtMobitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txtMobitel.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.txtMobitel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.txtMobitel.Location = new System.Drawing.Point(142, 181);
             this.txtMobitel.Name = "txtMobitel";
             this.txtMobitel.Size = new System.Drawing.Size(145, 21);
@@ -280,7 +280,7 @@
             // 
             this.textEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(150)))), ((int)(((byte)(109)))));
             this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textEmail.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.textEmail.Location = new System.Drawing.Point(142, 212);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(145, 21);

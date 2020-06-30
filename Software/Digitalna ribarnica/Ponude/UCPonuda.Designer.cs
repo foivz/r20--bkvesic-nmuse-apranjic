@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.ucLokacija = new System.Windows.Forms.Label();
             this.ucPonuditelj = new System.Windows.Forms.Label();
             this.ucID = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.ucKolicina = new System.Windows.Forms.Label();
             this.ucCijena = new System.Windows.Forms.Label();
             this.ucNaziv = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
             this.SuspendLayout();
@@ -71,9 +71,20 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
+            this.label6.Location = new System.Drawing.Point(133, 146);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "kn";
+            // 
             // ucLokacija
             // 
             this.ucLokacija.AutoSize = true;
+            this.ucLokacija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
             this.ucLokacija.Location = new System.Drawing.Point(102, 213);
             this.ucLokacija.Name = "ucLokacija";
             this.ucLokacija.Size = new System.Drawing.Size(35, 13);
@@ -83,6 +94,7 @@
             // ucPonuditelj
             // 
             this.ucPonuditelj.AutoSize = true;
+            this.ucPonuditelj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
             this.ucPonuditelj.Location = new System.Drawing.Point(102, 193);
             this.ucPonuditelj.Name = "ucPonuditelj";
             this.ucPonuditelj.Size = new System.Drawing.Size(35, 13);
@@ -92,6 +104,7 @@
             // ucID
             // 
             this.ucID.AutoSize = true;
+            this.ucID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
             this.ucID.Location = new System.Drawing.Point(6, 19);
             this.ucID.Name = "ucID";
             this.ucID.Size = new System.Drawing.Size(35, 13);
@@ -101,6 +114,7 @@
             // ucMjerna
             // 
             this.ucMjerna.AutoSize = true;
+            this.ucMjerna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
             this.ucMjerna.Location = new System.Drawing.Point(133, 172);
             this.ucMjerna.Name = "ucMjerna";
             this.ucMjerna.Size = new System.Drawing.Size(35, 13);
@@ -110,6 +124,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
             this.label5.Location = new System.Drawing.Point(42, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
@@ -119,6 +134,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
             this.label4.Location = new System.Drawing.Point(42, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 13);
@@ -128,6 +144,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
             this.label2.Location = new System.Drawing.Point(42, 172);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
@@ -137,6 +154,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.label3.Location = new System.Drawing.Point(42, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
@@ -146,6 +164,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
             this.label1.Location = new System.Drawing.Point(42, 146);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 13);
@@ -179,6 +198,7 @@
             // ucKolicina
             // 
             this.ucKolicina.AutoSize = true;
+            this.ucKolicina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
             this.ucKolicina.Location = new System.Drawing.Point(92, 172);
             this.ucKolicina.Name = "ucKolicina";
             this.ucKolicina.Size = new System.Drawing.Size(35, 13);
@@ -188,6 +208,7 @@
             // ucCijena
             // 
             this.ucCijena.AutoSize = true;
+            this.ucCijena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
             this.ucCijena.Location = new System.Drawing.Point(92, 146);
             this.ucCijena.Name = "ucCijena";
             this.ucCijena.Size = new System.Drawing.Size(35, 13);
@@ -197,20 +218,12 @@
             // ucNaziv
             // 
             this.ucNaziv.AutoSize = true;
+            this.ucNaziv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.ucNaziv.Location = new System.Drawing.Point(92, 124);
             this.ucNaziv.Name = "ucNaziv";
             this.ucNaziv.Size = new System.Drawing.Size(35, 13);
             this.ucNaziv.TabIndex = 0;
             this.ucNaziv.Text = "label1";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(133, 146);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "kn";
             // 
             // UCPonuda
             // 

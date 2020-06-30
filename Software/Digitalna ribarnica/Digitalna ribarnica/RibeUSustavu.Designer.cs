@@ -48,11 +48,10 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 159);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 129);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(508, 281);
+            this.dataGridView1.Size = new System.Drawing.Size(545, 263);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -62,10 +61,9 @@
             this.btnAzuriraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAzuriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnAzuriraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
-            this.btnAzuriraj.Location = new System.Drawing.Point(168, 463);
-            this.btnAzuriraj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAzuriraj.Location = new System.Drawing.Point(256, 408);
             this.btnAzuriraj.Name = "btnAzuriraj";
-            this.btnAzuriraj.Size = new System.Drawing.Size(115, 49);
+            this.btnAzuriraj.Size = new System.Drawing.Size(86, 40);
             this.btnAzuriraj.TabIndex = 4;
             this.btnAzuriraj.Text = "Ažuriraj";
             this.btnAzuriraj.UseVisualStyleBackColor = true;
@@ -77,10 +75,9 @@
             this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(141)))), ((int)(((byte)(134)))));
-            this.btnDodaj.Location = new System.Drawing.Point(31, 463);
-            this.btnDodaj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDodaj.Location = new System.Drawing.Point(152, 408);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(115, 49);
+            this.btnDodaj.Size = new System.Drawing.Size(86, 40);
             this.btnDodaj.TabIndex = 4;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -92,10 +89,9 @@
             this.btnObrisi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObrisi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(220)))), ((int)(((byte)(161)))));
-            this.btnObrisi.Location = new System.Drawing.Point(373, 463);
-            this.btnObrisi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnObrisi.Location = new System.Drawing.Point(485, 408);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(115, 49);
+            this.btnObrisi.Size = new System.Drawing.Size(86, 40);
             this.btnObrisi.TabIndex = 4;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = true;
@@ -106,10 +102,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(131)))), ((int)(((byte)(111)))));
-            this.label1.Location = new System.Drawing.Point(80, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(131, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(424, 36);
+            this.label1.Size = new System.Drawing.Size(344, 29);
             this.label1.TabIndex = 5;
             this.label1.Text = "Administracija riba u sustavu";
             // 
@@ -117,10 +112,9 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.textBox1.Location = new System.Drawing.Point(111, 127);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(270, 100);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(244, 22);
+            this.textBox1.Size = new System.Drawing.Size(184, 20);
             this.textBox1.TabIndex = 6;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -129,10 +123,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(141)))), ((int)(((byte)(134)))));
-            this.label2.Location = new System.Drawing.Point(29, 127);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(209, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 25);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Filtriraj";
             // 
@@ -146,11 +139,9 @@
             this.groupBox1.Controls.Add(this.btnAzuriraj);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Location = new System.Drawing.Point(223, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(149, 30);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(571, 539);
+            this.groupBox1.Size = new System.Drawing.Size(602, 482);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -160,10 +151,9 @@
             this.buttonPrijavi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrijavi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPrijavi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(220)))), ((int)(((byte)(161)))));
-            this.buttonPrijavi.Location = new System.Drawing.Point(403, 118);
-            this.buttonPrijavi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPrijavi.Location = new System.Drawing.Point(469, 93);
             this.buttonPrijavi.Name = "buttonPrijavi";
-            this.buttonPrijavi.Size = new System.Drawing.Size(136, 37);
+            this.buttonPrijavi.Size = new System.Drawing.Size(102, 30);
             this.buttonPrijavi.TabIndex = 7;
             this.buttonPrijavi.Text = "Sortiraj";
             this.buttonPrijavi.UseVisualStyleBackColor = true;
@@ -177,13 +167,12 @@
             // 
             // RibeUSustavu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(992, 613);
+            this.ClientSize = new System.Drawing.Size(995, 562);
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "RibeUSustavu";
             this.Text = "RibeUSustavu";
             this.Load += new System.EventHandler(this.RibeUSustavu_Load);

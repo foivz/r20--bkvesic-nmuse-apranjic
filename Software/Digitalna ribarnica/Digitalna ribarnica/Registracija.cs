@@ -94,9 +94,9 @@ namespace Digitalna_ribarnica
             if (txtIme.Text == "Pero")
             {
                 txtIme.Text = "";
-                txtIme.ForeColor = Color.Black;
+                txtIme.ForeColor = Color.FromArgb(210, 249, 233);
             }
-            txtIme.ForeColor=Color.FromArgb(165, 243, 212);
+            txtIme.ForeColor=Color.FromArgb(210, 249, 233);
         }
 
         private void txtIme_Leave(object sender, EventArgs e)
@@ -104,8 +104,9 @@ namespace Digitalna_ribarnica
             if (txtIme.Text == "")
             {
                 txtIme.Text = "Pero";
-                txtIme.ForeColor = Color.Silver;
+                txtIme.ForeColor = Color.FromArgb(210, 249, 233);
             }
+            txtIme.ForeColor = Color.FromArgb(210, 249, 233);
         }
 
         private void txtPrezime_Enter(object sender, EventArgs e)
@@ -113,9 +114,9 @@ namespace Digitalna_ribarnica
             if (txtPrezime.Text == "Perić")
             {
                 txtPrezime.Text = "";
-                txtPrezime.ForeColor = Color.Black;
+                txtPrezime.ForeColor = Color.FromArgb(210, 249, 233);
             }
-            txtPrezime.ForeColor = Color.FromArgb(165, 243, 212);
+            txtPrezime.ForeColor = Color.FromArgb(210, 249, 233);
         }
 
         private void txtPrezime_Leave(object sender, EventArgs e)
@@ -123,8 +124,10 @@ namespace Digitalna_ribarnica
             if (txtPrezime.Text == "")
             {
                 txtPrezime.Text = "Perić";
-                txtPrezime.ForeColor = Color.Silver;
+                txtPrezime.ForeColor = Color.FromArgb(210, 249, 233);
             }
+            txtPrezime.ForeColor = Color.FromArgb(210, 249, 233);
+
         }
 
         private void txtKorIme_Enter(object sender, EventArgs e)
@@ -132,9 +135,9 @@ namespace Digitalna_ribarnica
             if (txtKorIme.Text == "pperic13")
             {
                 txtKorIme.Text = "";
-                txtKorIme.ForeColor = Color.Black;
+                txtKorIme.ForeColor = Color.FromArgb(210, 249, 233);
             }
-            txtKorIme.ForeColor = Color.FromArgb(165, 243, 212);
+            txtKorIme.ForeColor = Color.FromArgb(210, 249, 233);
         }
 
         private void txtKorIme_Leave(object sender, EventArgs e)
@@ -142,8 +145,10 @@ namespace Digitalna_ribarnica
             if (txtKorIme.Text == "")
             {
                 txtKorIme.Text = "pperic13";
-                txtKorIme.ForeColor = Color.Silver;
+                txtKorIme.ForeColor = Color.FromArgb(210, 249, 233);
             }
+            txtKorIme.ForeColor = Color.FromArgb(210, 249, 233);
+
         }
 
         private void txtAdresa_Enter(object sender, EventArgs e)
@@ -151,9 +156,9 @@ namespace Digitalna_ribarnica
             if (txtAdresa.Text == "ulica Pere Perica 30")
             {
                 txtAdresa.Text = "";
-                txtAdresa.ForeColor = Color.Black;
+                txtAdresa.ForeColor = Color.FromArgb(210, 249, 233);
             }
-            txtAdresa.ForeColor = Color.FromArgb(165, 243, 212);
+            txtAdresa.ForeColor = Color.FromArgb(210, 249, 233);
         }
 
         private void txtAdresa_Leave(object sender, EventArgs e)
@@ -161,8 +166,10 @@ namespace Digitalna_ribarnica
             if (txtAdresa.Text == "")
             {
                 txtAdresa.Text = "ulica Pere Perica 30";
-                txtAdresa.ForeColor = Color.Silver;
+                txtAdresa.ForeColor = Color.FromArgb(210, 249, 233);
             }
+            txtAdresa.ForeColor = Color.FromArgb(210, 249, 233);
+
         }
 
         private void txtMjesto_Enter(object sender, EventArgs e)
@@ -170,9 +177,9 @@ namespace Digitalna_ribarnica
             if (txtMjesto.Text == "Staro Petrovo selo 10000")
             {
                 txtMjesto.Text = "";
-                txtMjesto.ForeColor = Color.Black;
+                txtMjesto.ForeColor = Color.FromArgb(210, 249, 233);
             }
-            txtMjesto.ForeColor = Color.FromArgb(165, 243, 212);
+            txtMjesto.ForeColor = Color.FromArgb(210, 249, 233);
         }
 
         private void txtMjesto_Leave(object sender, EventArgs e)
@@ -180,8 +187,10 @@ namespace Digitalna_ribarnica
             if (txtMjesto.Text == "")
             {
                 txtMjesto.Text = "Staro Petrovo selo 10000";
-                txtMjesto.ForeColor = Color.Silver;
+                txtMjesto.ForeColor = Color.FromArgb(210, 249, 233);
             }
+            txtMjesto.ForeColor = Color.FromArgb(210, 249, 233);
+
         }
 
         private void txtMobitel_Enter(object sender, EventArgs e)
@@ -189,9 +198,9 @@ namespace Digitalna_ribarnica
             if (txtMobitel.Text == "+38599123456789")
             {
                 txtMobitel.Text = "";
-                txtMobitel.ForeColor = Color.Black;
+                txtMobitel.ForeColor = Color.FromArgb(210, 249, 233);
             }
-            txtMobitel.ForeColor = Color.FromArgb(165, 243, 212);
+            txtMobitel.ForeColor = Color.FromArgb(210, 249, 233);
         }
 
         private void txtMobitel_Leave(object sender, EventArgs e)
@@ -199,8 +208,10 @@ namespace Digitalna_ribarnica
             if (txtMobitel.Text == "")
             {
                 txtMobitel.Text = "+38599123456789";
-                txtMobitel.ForeColor = Color.Silver;
+                txtMobitel.ForeColor = Color.FromArgb(210, 249, 233);
             }
+            txtMobitel.ForeColor = Color.FromArgb(210, 249, 233);
+
         }
 
         private void textEmail_Enter(object sender, EventArgs e)
@@ -208,9 +219,9 @@ namespace Digitalna_ribarnica
             if (textEmail.Text == "pperic@gmail.com")
             {
                 textEmail.Text = "";
-                textEmail.ForeColor = Color.Black;
+                textEmail.ForeColor = Color.FromArgb(210, 249, 233);
             }
-            textEmail.ForeColor = Color.FromArgb(165, 243, 212);
+            textEmail.ForeColor = Color.FromArgb(210, 249, 233);
         }
 
         private void textEmail_Leave(object sender, EventArgs e)
@@ -218,8 +229,10 @@ namespace Digitalna_ribarnica
             if (textEmail.Text == "")
             {
                 textEmail.Text = "pperic@gmail.com";
-                textEmail.ForeColor = Color.Silver;
+                textEmail.ForeColor = Color.FromArgb(210, 249, 233);
             }
+            textEmail.ForeColor = Color.FromArgb(210, 249, 233);
+
         }
     }
 }

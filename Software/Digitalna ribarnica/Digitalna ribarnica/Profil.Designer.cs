@@ -32,12 +32,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnDodajSliku = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(238, 37);
+            this.pictureBox1.Location = new System.Drawing.Point(63, 18);
             this.pictureBox1.MaximumSize = new System.Drawing.Size(300, 300);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(300, 300);
@@ -55,7 +57,7 @@
             this.btnSpremi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpremi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
-            this.btnSpremi.Location = new System.Drawing.Point(399, 366);
+            this.btnSpremi.Location = new System.Drawing.Point(261, 343);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(102, 40);
             this.btnSpremi.TabIndex = 3;
@@ -69,7 +71,7 @@
             this.btnDodajSliku.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodajSliku.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajSliku.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
-            this.btnDodajSliku.Location = new System.Drawing.Point(274, 366);
+            this.btnDodajSliku.Location = new System.Drawing.Point(63, 343);
             this.btnDodajSliku.Name = "btnDodajSliku";
             this.btnDodajSliku.Size = new System.Drawing.Size(108, 40);
             this.btnDodajSliku.TabIndex = 3;
@@ -77,19 +79,29 @@
             this.btnDodajSliku.UseVisualStyleBackColor = true;
             this.btnDodajSliku.Click += new System.EventHandler(this.btnDodajSliku_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnSpremi);
+            this.groupBox1.Controls.Add(this.btnDodajSliku);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Location = new System.Drawing.Point(132, 23);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(427, 398);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
             // Profil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnDodajSliku);
-            this.Controls.Add(this.btnSpremi);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(690, 450);
+            this.Controls.Add(this.groupBox1);
             this.Name = "Profil";
             this.Text = "Profil";
             this.Load += new System.EventHandler(this.Profil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -100,5 +112,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnDodajSliku;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
