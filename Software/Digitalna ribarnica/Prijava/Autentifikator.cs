@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,18 @@ namespace Prijava
     {
         public List<Korisnik> registriraniKorisnici { get; set; }
         private Korisnik korisnik;
-
+        public string AktivanKorisnik { get; set; }
         public Autentifikator()
         {
+
             registriraniKorisnici = new List<Korisnik>();
+            /*
             registriraniKorisnici.Add(new Korisnik("bkvesic", "12345",1, "bozo.kvesic1@gmail.com"));
             registriraniKorisnici.Add(new Korisnik("nmuse", "12345",2,"nmuse@foi.hr"));
             registriraniKorisnici.Add(new Korisnik("apranjic", "12345",3,"apranjic@foi.hr"));
+            */
+            registriraniKorisnici.Clear();
+            registriraniKorisnici = KorisnikRepository.DohvatiSveKorisnike();
         }
 
         /// <summary>
@@ -27,6 +33,9 @@ namespace Prijava
 
         private Korisnik dohvatiKorisnika(string ime)
         {
+            //PROVJERA KORISNIKA 
+            registriraniKorisnici.Clear();
+            registriraniKorisnici = KorisnikRepository.DohvatiSveKorisnike();
             //Ovdje treba dodati čitanje iz tablice "Korisnici" kada se Baza podataka napravi
             if (!registriraniKorisnici.Exists(p => p.KorIme == ime))
             {
@@ -56,12 +65,16 @@ namespace Prijava
         {
             if (dohvatiKorisnika(ime) != null)
             {
+                /*
                 if (korisnik.Lozinka != lozinka && korisnik.KorIme == ime)
                     return false;
                 else
                     return true;
+                */
+                return BCrypt.Net.BCrypt.Verify(lozinka, korisnik.Lozinka);
             }
             return false;
+           
         }
 
         public int tipKorisnika(string ime)

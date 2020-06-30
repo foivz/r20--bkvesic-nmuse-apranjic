@@ -35,6 +35,7 @@
             // 
             // richTerms
             // 
+            this.richTerms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.richTerms.Location = new System.Drawing.Point(12, 12);
             this.richTerms.Name = "richTerms";
             this.richTerms.Size = new System.Drawing.Size(719, 341);
@@ -43,10 +44,11 @@
             // 
             // buttonOdbijam
             // 
-            this.buttonOdbijam.BackColor = System.Drawing.Color.CadetBlue;
+            this.buttonOdbijam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
             this.buttonOdbijam.FlatAppearance.BorderSize = 0;
             this.buttonOdbijam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOdbijam.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonOdbijam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(200)))), ((int)(((byte)(154)))));
             this.buttonOdbijam.Location = new System.Drawing.Point(489, 359);
             this.buttonOdbijam.Name = "buttonOdbijam";
             this.buttonOdbijam.Size = new System.Drawing.Size(122, 45);
@@ -58,10 +60,11 @@
             // 
             // buttonPrihvacam
             // 
-            this.buttonPrihvacam.BackColor = System.Drawing.Color.CadetBlue;
+            this.buttonPrihvacam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
             this.buttonPrihvacam.FlatAppearance.BorderSize = 0;
             this.buttonPrihvacam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrihvacam.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonPrihvacam.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(200)))), ((int)(((byte)(154)))));
             this.buttonPrihvacam.Location = new System.Drawing.Point(617, 359);
             this.buttonPrihvacam.Name = "buttonPrihvacam";
             this.buttonPrihvacam.Size = new System.Drawing.Size(114, 45);

@@ -10,18 +10,22 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
 using Prijava;
-
+using Baza;
+using INSform;
 namespace Digitalna_ribarnica
 {
-    public partial class formPocetna : Form
+    public partial class formPocetna : Form, Iform
     {
         Autentifikator autentifikator;
-        
-
+        public Form nova { get; set; }
+        public Panel panel { get; set; }
+        public Form activeForm = null;
         public formPocetna()
         {
             InitializeComponent();
             autentifikator = new Autentifikator();
+            nova = activeForm;
+            panel = panelStranice;
         }
 
 
@@ -31,8 +35,17 @@ namespace Digitalna_ribarnica
             buttonOdjava.Visible = false;
             buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
+            Profilna.Visible = false;
+            pbxProfilna.Visible = false;
+            pbxLogo.Visible = true;
+            btnRibe.Visible = false;
+            btnLokacija.Visible = false;
+            buttonOdjava.ForeColor = Color.FromArgb(4, 136, 133);
         }
-        public Form activeForm = null;
+     
+
+    
+
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -56,7 +69,7 @@ namespace Digitalna_ribarnica
             pocetna.ShowDialog();
             */
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -69,6 +82,13 @@ namespace Digitalna_ribarnica
             buttonOdjava.Visible = false;
             buttonRegistracija.Visible = true;
             buttonNovosti.Visible = false;
+            Profilna.Visible = false;
+            pbxProfilna.Visible = false;
+            btnRibe.Visible = false;
+            btnLokacija.Visible = false;
+            //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
+            if (activeForm != null)
+                activeForm.Close();
         }
 
         private void timerPocetna_Tick(object sender, EventArgs e)
@@ -104,6 +124,32 @@ namespace Digitalna_ribarnica
                 timerPocetna.Interval = 5000;
                 timerPocetna.Enabled = true;
             }
+        }
+
+        private void formPocetna_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DB.Instance.CloseConnection();
+            //MessageBox.Show("Konekcija na bazu zatvorena!");
+        }
+
+        private void Profilna_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Profil(autentifikator,pbxProfilna));
+        }
+
+        private void btnRibe_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RibeUSustavu());
+        }
+
+        private void btnLokacija_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DodajLokacije());
+        }
+
+        private void buttonPonude_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PregledPonuda(this));
         }
     }
 }

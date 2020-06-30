@@ -47,6 +47,7 @@
             // 
             // textBoxCode2
             // 
+            this.textBoxCode2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(136)))), ((int)(((byte)(119)))));
             this.textBoxCode2.Location = new System.Drawing.Point(204, 121);
             this.textBoxCode2.MaxLength = 1;
             this.textBoxCode2.Name = "textBoxCode2";
@@ -56,6 +57,7 @@
             // 
             // textBoxCode3
             // 
+            this.textBoxCode3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.textBoxCode3.Location = new System.Drawing.Point(235, 121);
             this.textBoxCode3.MaxLength = 1;
             this.textBoxCode3.Name = "textBoxCode3";
@@ -72,6 +74,8 @@
             // 
             // textBoxCode5
             // 
+            this.textBoxCode5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
+            this.textBoxCode5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
             this.textBoxCode5.Location = new System.Drawing.Point(297, 121);
             this.textBoxCode5.MaxLength = 1;
             this.textBoxCode5.Name = "textBoxCode5";
@@ -81,6 +85,7 @@
             // 
             // textBoxCode1
             // 
+            this.textBoxCode1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(129)))), ((int)(((byte)(124)))));
             this.textBoxCode1.Location = new System.Drawing.Point(173, 121);
             this.textBoxCode1.MaxLength = 1;
             this.textBoxCode1.Name = "textBoxCode1";
@@ -90,6 +95,7 @@
             // 
             // textBoxCode4
             // 
+            this.textBoxCode4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
             this.textBoxCode4.Location = new System.Drawing.Point(266, 121);
             this.textBoxCode4.MaxLength = 1;
             this.textBoxCode4.Name = "textBoxCode4";
@@ -101,7 +107,7 @@
             // 
             this.lblIme.AutoSize = true;
             this.lblIme.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblIme.ForeColor = System.Drawing.Color.White;
+            this.lblIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.lblIme.Location = new System.Drawing.Point(37, 119);
             this.lblIme.Name = "lblIme";
             this.lblIme.Size = new System.Drawing.Size(130, 20);
@@ -112,7 +118,7 @@
             // 
             this.buttonPotvrdi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPotvrdi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPotvrdi.ForeColor = System.Drawing.Color.White;
+            this.buttonPotvrdi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.buttonPotvrdi.Location = new System.Drawing.Point(173, 164);
             this.buttonPotvrdi.Name = "buttonPotvrdi";
             this.buttonPotvrdi.Size = new System.Drawing.Size(86, 40);
@@ -125,7 +131,7 @@
             // 
             this.buttonOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOdustani.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonOdustani.ForeColor = System.Drawing.Color.White;
+            this.buttonOdustani.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
             this.buttonOdustani.Location = new System.Drawing.Point(266, 164);
             this.buttonOdustani.Name = "buttonOdustani";
             this.buttonOdustani.Size = new System.Drawing.Size(86, 40);
@@ -138,7 +144,7 @@
             // 
             this.buttonSaljiPonovno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSaljiPonovno.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonSaljiPonovno.ForeColor = System.Drawing.Color.White;
+            this.buttonSaljiPonovno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
             this.buttonSaljiPonovno.Location = new System.Drawing.Point(12, 224);
             this.buttonSaljiPonovno.Name = "buttonSaljiPonovno";
             this.buttonSaljiPonovno.Size = new System.Drawing.Size(135, 40);
@@ -157,7 +163,7 @@
             // 
             this.labelObavijest.AutoSize = true;
             this.labelObavijest.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelObavijest.ForeColor = System.Drawing.Color.White;
+            this.labelObavijest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
             this.labelObavijest.Location = new System.Drawing.Point(153, 234);
             this.labelObavijest.Name = "labelObavijest";
             this.labelObavijest.Size = new System.Drawing.Size(177, 20);

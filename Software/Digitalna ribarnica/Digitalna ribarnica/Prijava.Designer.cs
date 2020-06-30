@@ -40,16 +40,21 @@
             this.labelCapsLock = new System.Windows.Forms.Label();
             this.notifyPrijava = new System.Windows.Forms.NotifyIcon(this.components);
             this.labelZaboravljenaLozinka = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsername1
             // 
-            this.lblUsername1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUsername1.AutoSize = true;
             this.lblUsername1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblUsername1.ForeColor = System.Drawing.Color.White;
-            this.lblUsername1.Location = new System.Drawing.Point(157, 52);
+            this.lblUsername1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
+            this.lblUsername1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsername1.Location = new System.Drawing.Point(12, 61);
             this.lblUsername1.Name = "lblUsername1";
             this.lblUsername1.Size = new System.Drawing.Size(115, 20);
             this.lblUsername1.TabIndex = 0;
@@ -57,12 +62,11 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(207, 87);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(54, 95);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 0;
@@ -70,21 +74,23 @@
             // 
             // txtKorIme
             // 
-            this.txtKorIme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKorIme.Location = new System.Drawing.Point(278, 52);
+            this.txtKorIme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
+            this.txtKorIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.txtKorIme.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
+            this.txtKorIme.Location = new System.Drawing.Point(129, 60);
             this.txtKorIme.Name = "txtKorIme";
-            this.txtKorIme.Size = new System.Drawing.Size(169, 20);
+            this.txtKorIme.Size = new System.Drawing.Size(169, 21);
             this.txtKorIme.TabIndex = 0;
+            this.txtKorIme.Text = "pperic13";
             this.txtKorIme.Enter += new System.EventHandler(this.txtKorIme_Enter);
             this.txtKorIme.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtKorIme_KeyUp);
             this.txtKorIme.Leave += new System.EventHandler(this.txtKorIme_Leave);
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLozinka.Location = new System.Drawing.Point(278, 87);
+            this.txtLozinka.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.txtLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtLozinka.Location = new System.Drawing.Point(129, 95);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(169, 20);
             this.txtLozinka.TabIndex = 1;
@@ -95,8 +101,8 @@
             this.btnOdustani.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdustani.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnOdustani.ForeColor = System.Drawing.Color.White;
-            this.btnOdustani.Location = new System.Drawing.Point(357, 176);
+            this.btnOdustani.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.btnOdustani.Location = new System.Drawing.Point(199, 152);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(86, 40);
             this.btnOdustani.TabIndex = 2;
@@ -109,8 +115,8 @@
             this.buttonPrijavi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.buttonPrijavi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPrijavi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPrijavi.ForeColor = System.Drawing.Color.White;
-            this.buttonPrijavi.Location = new System.Drawing.Point(249, 176);
+            this.buttonPrijavi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.buttonPrijavi.Location = new System.Drawing.Point(87, 152);
             this.buttonPrijavi.Name = "buttonPrijavi";
             this.buttonPrijavi.Size = new System.Drawing.Size(102, 40);
             this.buttonPrijavi.TabIndex = 2;
@@ -122,8 +128,8 @@
             // 
             this.labelRegistracija.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelRegistracija.AutoSize = true;
-            this.labelRegistracija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.labelRegistracija.Location = new System.Drawing.Point(376, 219);
+            this.labelRegistracija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
+            this.labelRegistracija.Location = new System.Drawing.Point(219, 196);
             this.labelRegistracija.Name = "labelRegistracija";
             this.labelRegistracija.Size = new System.Drawing.Size(67, 13);
             this.labelRegistracija.TabIndex = 3;
@@ -151,33 +157,64 @@
             // 
             this.labelZaboravljenaLozinka.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.labelZaboravljenaLozinka.AutoSize = true;
-            this.labelZaboravljenaLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.labelZaboravljenaLozinka.Location = new System.Drawing.Point(246, 219);
+            this.labelZaboravljenaLozinka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
+            this.labelZaboravljenaLozinka.Location = new System.Drawing.Point(84, 195);
             this.labelZaboravljenaLozinka.Name = "labelZaboravljenaLozinka";
             this.labelZaboravljenaLozinka.Size = new System.Drawing.Size(105, 13);
             this.labelZaboravljenaLozinka.TabIndex = 3;
             this.labelZaboravljenaLozinka.Text = "Zaboravljena lozinka";
             this.labelZaboravljenaLozinka.Click += new System.EventHandler(this.labelZaboravljenaLozinka_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(922, 428);
+            this.panel1.TabIndex = 5;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.groupBox1);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(922, 428);
+            this.panel8.TabIndex = 9;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.buttonPrijavi);
+            this.groupBox1.Controls.Add(this.btnOdustani);
+            this.groupBox1.Controls.Add(this.labelRegistracija);
+            this.groupBox1.Controls.Add(this.txtKorIme);
+            this.groupBox1.Controls.Add(this.txtLozinka);
+            this.groupBox1.Controls.Add(this.lblUsername1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelZaboravljenaLozinka);
+            this.groupBox1.Location = new System.Drawing.Point(297, 44);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(353, 284);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
             // Prijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(669, 271);
+            this.ClientSize = new System.Drawing.Size(922, 428);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelCapsLock);
-            this.Controls.Add(this.labelZaboravljenaLozinka);
-            this.Controls.Add(this.labelRegistracija);
-            this.Controls.Add(this.buttonPrijavi);
-            this.Controls.Add(this.btnOdustani);
-            this.Controls.Add(this.txtLozinka);
-            this.Controls.Add(this.txtKorIme);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblUsername1);
             this.Name = "Prijava";
             this.Text = "Prijava";
             this.Load += new System.EventHandler(this.Prijava_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Prijava_Paint);
+            this.panel1.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +232,8 @@
         private System.Windows.Forms.Label labelCapsLock;
         private System.Windows.Forms.NotifyIcon notifyPrijava;
         private System.Windows.Forms.Label labelZaboravljenaLozinka;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace RibeUSustavu
+{
+    public class Riba
+    {
+        [DisplayName("ID ribe")]
+        public int id { get; set; }
+        [DisplayName("Naziv")]
+        public string Naziv { get; set; }
+        [DisplayName("Slika ribe")]
+        public Image SlikaRibe { get; set; }
+        [DisplayName("Jedinica prodaje")]
+        public string MjernaJedinica { get; set; }
+
+
+    }
+}
