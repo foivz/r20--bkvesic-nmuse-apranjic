@@ -11,17 +11,21 @@ using System.Diagnostics;
 using System.Threading;
 using Prijava;
 using Baza;
+using INSform;
 namespace Digitalna_ribarnica
 {
-    public partial class formPocetna : Form
+    public partial class formPocetna : Form, Iform
     {
         Autentifikator autentifikator;
-        
-
+        public Form nova { get; set; }
+        public Panel panel { get; set; }
+        public Form activeForm = null;
         public formPocetna()
         {
             InitializeComponent();
             autentifikator = new Autentifikator();
+            nova = activeForm;
+            panel = panelStranice;
         }
 
 
@@ -38,7 +42,10 @@ namespace Digitalna_ribarnica
             btnLokacija.Visible = false;
             buttonOdjava.ForeColor = Color.FromArgb(4, 136, 133);
         }
-        public Form activeForm = null;
+     
+
+    
+
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -142,7 +149,7 @@ namespace Digitalna_ribarnica
 
         private void buttonPonude_Click(object sender, EventArgs e)
         {
-            openChildForm(new PregledPonuda());
+            openChildForm(new PregledPonuda(this));
         }
     }
 }

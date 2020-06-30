@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using INSform;
 namespace Ponude
 {
     public class Ponuda
@@ -97,13 +97,17 @@ namespace Ponude
 				PrikazUC.ucFotografija.Image = fotografija;
 			}
 		}
-
+		/*
 		public Ponuda()
 		{
 			PrikazUC = new UCPonuda();
 			PrikazUC.LoadPonuda(this);
 		}
-
-
+		*/
+		public Ponuda(Iform iform)
+		{
+			PrikazUC = new UCPonuda(iform);
+			PrikazUC.LoadPonuda(this);
+		}
 	}
 }

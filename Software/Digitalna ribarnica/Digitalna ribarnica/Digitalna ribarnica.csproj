@@ -198,6 +198,10 @@
       <Project>{995435a5-41eb-4598-8db3-31f7deb18cd7}</Project>
       <Name>Baza</Name>
     </ProjectReference>
+    <ProjectReference Include="..\INSform\INSform.csproj">
+      <Project>{7a77ea37-d108-414a-abf4-b04cd1517d2e}</Project>
+      <Name>INSform</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Lokacije\Lokacije.csproj">
       <Project>{681cb769-455e-4801-9865-cf031aefb695}</Project>
       <Name>Lokacije</Name>

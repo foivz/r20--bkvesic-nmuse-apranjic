@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1FB0C138-1351-49C3-A94C-8F80978C17D6}</ProjectGuid>
+    <ProjectGuid>{7A77EA37-D108-414A-ABF4-B04CD1517D2E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ponude</RootNamespace>
-    <AssemblyName>Ponude</AssemblyName>
+    <RootNamespace>INSform</RootNamespace>
+    <AssemblyName>INSform</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,39 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ponuda.cs" />
-    <Compile Include="PonudeRepozitory.cs" />
+    <Compile Include="IForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DetaljiPonude.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetaljiPonude.Designer.cs">
-      <DependentUpon>DetaljiPonude.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCPonuda.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCPonuda.Designer.cs">
-      <DependentUpon>UCPonuda.cs</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="DetaljiPonude.resx">
-      <DependentUpon>DetaljiPonude.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCPonuda.resx">
-      <DependentUpon>UCPonuda.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Baza\Baza.csproj">
-      <Project>{995435a5-41eb-4598-8db3-31f7deb18cd7}</Project>
-      <Name>Baza</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\INSform\INSform.csproj">
-      <Project>{7a77ea37-d108-414a-abf4-b04cd1517d2e}</Project>
-      <Name>INSform</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

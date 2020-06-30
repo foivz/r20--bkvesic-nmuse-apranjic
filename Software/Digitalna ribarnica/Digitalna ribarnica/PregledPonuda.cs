@@ -9,21 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ponude;
 using Lokacije;
+using INSform;
 namespace Digitalna_ribarnica
 {
     public partial class PregledPonuda : Form
     {
         public List<Ponuda> ponude = new List<Ponuda>();
-        public PregledPonuda()
+        Iform Iform;
+        public PregledPonuda(Iform novo)
         {
             InitializeComponent();
-            ponude = PonudeRepozitory.DohvatiPonude();
-            DodajPonude(ponude);
+            ponude = PonudeRepozitory.DohvatiPonude(novo);
+            DodajPonude(ponude, novo);
+            Iform = novo;
         }
 
         private void txtFiltriraj_TextChanged(object sender, EventArgs e)
         {
-            List<Ponuda> svePonude = PonudeRepozitory.DohvatiPonude();
+            List<Ponuda> svePonude = PonudeRepozitory.DohvatiPonude(Iform);
             string filter = txtFiltriraj.Text.ToLower();
             double broj = 0;
             if (filter != null)
@@ -34,7 +37,7 @@ namespace Digitalna_ribarnica
                                  where ponude.Cijena==broj || ponude.Kolicina==broj || ponude.ID==filter
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result,Iform);
                 }
                 else
                 {
@@ -42,7 +45,7 @@ namespace Digitalna_ribarnica
                                  where ponude.Naziv.ToLower().Contains(filter) || ponude.Ime.ToLower().Contains(filter) || ponude.Lokacija.ToLower().Contains(filter) || ponude.Mjerna.ToLower().Contains(filter)
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result,Iform);
                 }
 
             }
@@ -51,15 +54,15 @@ namespace Digitalna_ribarnica
                 var result = from ponude in svePonude
                              select ponude;
                 ObrisiPonude();
-                DodajPonude(result);
+                DodajPonude(result,Iform);
             }
         }
 
-        private void DodajPonude(IEnumerable<Ponuda> ponude)
+        private void DodajPonude(IEnumerable<Ponuda> ponude, Iform iform)
         {
             foreach (var item in ponude)
             {
-                Ponuda ponuda = new Ponuda();
+                Ponuda ponuda = new Ponuda(iform);
                 ponuda.ID = item.ID;
                 ponuda.Kolicina = item.Kolicina;
                 ponuda.Mjerna = item.Mjerna;
@@ -91,7 +94,7 @@ namespace Digitalna_ribarnica
 
         private void btnSortiraj_Click(object sender, EventArgs e)
         {
-            List<Ponuda> svePonude = PonudeRepozitory.DohvatiPonude();
+            List<Ponuda> svePonude = PonudeRepozitory.DohvatiPonude(Iform);
             string lokacije = cmbLokacije.SelectedItem.ToString();
             double cijenaMin = -1;
             double cijenaMax = -1;
@@ -110,7 +113,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena ascending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
                 else if(lokacije=="Sve lokacije" && radioButtonAscending)
                 {
@@ -119,7 +122,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena ascending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
                 else if(lokacije == "Sve lokacije" && radioButtonDescending)
                 {
@@ -128,7 +131,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena descending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
                 else
                 {
@@ -137,7 +140,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena descending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
             }
             else if(lokacije!=null && (cijenaMin==-1 || cijenaMax==-1))
@@ -149,7 +152,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena ascending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
                 else if (lokacije == "Sve lokacije" && radioButtonAscending)
                 {
@@ -157,7 +160,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena ascending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
                 else if (lokacije == "Sve lokacije" && radioButtonDescending)
                 {
@@ -165,7 +168,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena descending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
                 else
                 {
@@ -174,7 +177,7 @@ namespace Digitalna_ribarnica
                                  orderby ponude.Cijena descending
                                  select ponude;
                     ObrisiPonude();
-                    DodajPonude(result);
+                    DodajPonude(result, Iform);
                 }
             }
         }

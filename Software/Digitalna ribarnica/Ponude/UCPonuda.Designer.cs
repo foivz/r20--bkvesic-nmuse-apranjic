@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ucLokacija = new System.Windows.Forms.Label();
+            this.ucPonuditelj = new System.Windows.Forms.Label();
             this.ucID = new System.Windows.Forms.Label();
             this.ucMjerna = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,16 +43,14 @@
             this.ucKolicina = new System.Windows.Forms.Label();
             this.ucCijena = new System.Windows.Forms.Label();
             this.ucNaziv = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ucPonuditelj = new System.Windows.Forms.Label();
-            this.ucLokacija = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.ucLokacija);
             this.groupBox1.Controls.Add(this.ucPonuditelj);
             this.groupBox1.Controls.Add(this.ucID);
@@ -69,6 +71,24 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
+            // ucLokacija
+            // 
+            this.ucLokacija.AutoSize = true;
+            this.ucLokacija.Location = new System.Drawing.Point(102, 213);
+            this.ucLokacija.Name = "ucLokacija";
+            this.ucLokacija.Size = new System.Drawing.Size(35, 13);
+            this.ucLokacija.TabIndex = 9;
+            this.ucLokacija.Text = "label7";
+            // 
+            // ucPonuditelj
+            // 
+            this.ucPonuditelj.AutoSize = true;
+            this.ucPonuditelj.Location = new System.Drawing.Point(102, 193);
+            this.ucPonuditelj.Name = "ucPonuditelj";
+            this.ucPonuditelj.Size = new System.Drawing.Size(35, 13);
+            this.ucPonuditelj.TabIndex = 8;
+            this.ucPonuditelj.Text = "label6";
+            // 
             // ucID
             // 
             this.ucID.AutoSize = true;
@@ -86,6 +106,24 @@
             this.ucMjerna.Size = new System.Drawing.Size(35, 13);
             this.ucMjerna.TabIndex = 6;
             this.ucMjerna.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(42, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Lokacija:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(42, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Ponuditelj:";
             // 
             // label2
             // 
@@ -127,6 +165,7 @@
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDetalji.UseVisualStyleBackColor = true;
+            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
             // ucFotografija
             // 
@@ -164,41 +203,14 @@
             this.ucNaziv.TabIndex = 0;
             this.ucNaziv.Text = "label1";
             // 
-            // label4
+            // label6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 194);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Ponuditelj:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 213);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Lokacija:";
-            // 
-            // ucPonuditelj
-            // 
-            this.ucPonuditelj.AutoSize = true;
-            this.ucPonuditelj.Location = new System.Drawing.Point(102, 193);
-            this.ucPonuditelj.Name = "ucPonuditelj";
-            this.ucPonuditelj.Size = new System.Drawing.Size(35, 13);
-            this.ucPonuditelj.TabIndex = 8;
-            this.ucPonuditelj.Text = "label6";
-            // 
-            // ucLokacija
-            // 
-            this.ucLokacija.AutoSize = true;
-            this.ucLokacija.Location = new System.Drawing.Point(102, 213);
-            this.ucLokacija.Name = "ucLokacija";
-            this.ucLokacija.Size = new System.Drawing.Size(35, 13);
-            this.ucLokacija.TabIndex = 9;
-            this.ucLokacija.Text = "label7";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(133, 146);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(19, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "kn";
             // 
             // UCPonuda
             // 
@@ -231,5 +243,6 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label ucLokacija;
         public System.Windows.Forms.Label ucPonuditelj;
+        private System.Windows.Forms.Label label6;
     }
 }
