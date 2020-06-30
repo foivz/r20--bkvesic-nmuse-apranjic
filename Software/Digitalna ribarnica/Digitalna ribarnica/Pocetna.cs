@@ -57,7 +57,8 @@ namespace Digitalna_ribarnica
             panelStranice.Controls.Add(childForm);
             panelStranice.Tag = childForm;
             childForm.BringToFront();
-            childForm.Show();
+            if(childForm!=null)
+                childForm.Show();
         }
         private void button1_Click(object sender, EventArgs e)
         {

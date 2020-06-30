@@ -41,12 +41,15 @@ namespace Prijava
             List<Korisnik> lista = new List<Korisnik>();
             string sqlUpit = $"SELECT * FROM korisnici";
             SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
-            while (dr.Read())
+            if (dr != null)
             {
-                Korisnik korisnik = DohvatiKorisnika(dr);
-                lista.Add(korisnik);
+                while (dr.Read())
+                {
+                    Korisnik korisnik = DohvatiKorisnika(dr);
+                    lista.Add(korisnik);
+                }
+                dr.Close();     //DataReader treba obavezno zatvoriti nakon uporabe.
             }
-            dr.Close();     //DataReader treba obavezno zatvoriti nakon uporabe.
             return lista;
         }
         

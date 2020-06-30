@@ -20,17 +20,18 @@ namespace Ponude
             _ponude.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
             var rezultat = DB.Instance.DohvatiDataReader("select ponude.*, ribe.mjerna_jedinica, ribe.naziv, ribe.slika, lokacije.naziv AS lokacija, korisnici.ime, korisnici.prezime from ponude, ribe, lokacije, korisnici WHERE ponude.id_riba = ribe.id_riba AND ponude.id_lokacija = lokacije.id_lokacija AND ponude.id_korisnik = korisnici.id_korisnik AND ponude.status = 1");
-            
-            foreach (DbDataRecord item in rezultat)
+            if (rezultat != null)
             {
-                var row = new Dictionary<string, object>();
-                for (int i = 0; i < item.FieldCount; i++)
+                foreach (DbDataRecord item in rezultat)
                 {
-                    row.Add(item.GetName(i), item[i]);
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
                 }
-                returnMe.Add(row);
             }
-
             foreach (var item in returnMe)
             {
                 
@@ -68,7 +69,8 @@ namespace Ponude
                 ponuda.Lokacija = item["lokacija"].ToString();
                 _ponude.Add(ponuda);
             }
-            rezultat.Close();
+            if(rezultat!=null)
+                rezultat.Close();
             return _ponude;
         }
 
