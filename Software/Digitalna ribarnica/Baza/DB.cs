@@ -33,7 +33,17 @@ namespace Baza
         {
             ConnectionString = @"Data Source = 31.147.204.119\PISERVER,1433; Initial Catalog = PI20_001_DB; User=PI20_001_User; Password='H;T&)d%q'";
             Connection = new SqlConnection(ConnectionString);
-            Connection.Open();
+            try
+            {
+                Connection.Open();
+            }
+            catch (Exception)
+            {
+
+                System.Windows.Forms.MessageBox.Show("Nije moguće spajanje s bazom. Provjerite internetsku vezu!");
+                System.Windows.Forms.Application.Exit();
+            }
+           
         }
 
         public void CloseConnection()
@@ -46,8 +56,18 @@ namespace Baza
 
         public SqlDataReader DohvatiDataReader(string sqlUpit)
         {
-            SqlCommand command = new SqlCommand(sqlUpit, Connection);
-            return command.ExecuteReader();
+            try
+            {
+                SqlCommand command = new SqlCommand(sqlUpit, Connection);
+                return command.ExecuteReader();
+            }
+            catch (Exception)
+            {
+
+                System.Windows.Forms.Application.Exit();
+            }
+            SqlDataReader reader = null;
+            return reader;
         }
 
         public object DohvatiVrijednost(string sqlUpit)

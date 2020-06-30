@@ -16,16 +16,19 @@ namespace Lokacije
             _lokacije.Clear();
             string sqlUpit= $"SELECT * FROM lokacije;";
             SqlDataReader rezultat = DB.Instance.DohvatiDataReader(sqlUpit);
-            while (rezultat.Read())
+            if (rezultat != null)
             {
-                Lokacije lokacija = new Lokacije();
-                lokacija.id =int.Parse(rezultat["id_lokacija"].ToString());
-                lokacija.Naziv = rezultat["naziv"].ToString();
-                _lokacije.Add(lokacija);
-                
-            }
+                while (rezultat.Read())
+                {
+                    Lokacije lokacija = new Lokacije();
+                    lokacija.id = int.Parse(rezultat["id_lokacija"].ToString());
+                    lokacija.Naziv = rezultat["naziv"].ToString();
+                    _lokacije.Add(lokacija);
 
-            rezultat.Close();
+                }
+
+                rezultat.Close();
+            }
             return _lokacije;
         }
 
