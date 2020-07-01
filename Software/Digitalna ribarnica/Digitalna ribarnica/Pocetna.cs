@@ -96,7 +96,7 @@ namespace Digitalna_ribarnica
 
         }
 
-        private void zatvoriForme()
+        public void zatvoriForme()
         {
             FormCollection fc = Application.OpenForms;
             List<Form> aktivne = new List<Form>();

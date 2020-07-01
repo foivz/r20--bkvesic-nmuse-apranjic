@@ -87,16 +87,20 @@ namespace Digitalna_ribarnica
 
             var parameters = new Dictionary<string, object>();
             if (float.TryParse(txtCijena.Text, out float cijena))
-                parameters.Add("@cijena", float.TryParse(txtCijena.Text, out float cijena1));
+                parameters.Add("@cijena",cijena);
             else
                 MessageBox.Show("Niste unije broj kod cijene");
 
             if (int.TryParse(txtKolicina.Text, out int kolicina))
-                parameters.Add("@kolicina", int.TryParse(txtKolicina.Text, out int kolicina1));
+                parameters.Add("@kolicina", kolicina);
             else
                 MessageBox.Show("Niste unijeli broj kod količine");
 
             parameters.Add("@opis", rtbxOpis.Text);
+            if(int.TryParse(txtSati.Text, out int sati))
+                parameters.Add("@sati", sati);
+            else
+                MessageBox.Show("Niste unijeli broj kod sati");
             if (extension != "")
             {
                 switch (extension)
@@ -128,14 +132,17 @@ namespace Digitalna_ribarnica
 
 
 
-            if ((float.TryParse(txtCijena.Text, out float cijena2)) && (int.TryParse(txtKolicina.Text, out int kolicina2))) 
+            if ((float.TryParse(txtCijena.Text, out float cijena2)) && (int.TryParse(txtKolicina.Text, out int kolicina2)) && (int.TryParse(txtSati.Text, out int sati2))) 
             {
                 //DB.Instance.ExecuteParamQuery("INSERT INTO [Slika_test] ([slika]) VALUES (@slika);", parameters);
                 if (extension != "")
-                    DB.Instance.ExecuteParamQuery("INSERT INTO [ponude]([cijena], [kolicina], [opis], [dodatna_fotografija], [id_riba], [id_lokacija], [id_korisnik]) VALUES((@cijena), (@kolicina), (@opis), (@slika), (@idriba), (@idlokacija), (@idkorisnika)); ", parameters);
+                    DB.Instance.ExecuteParamQuery("INSERT INTO [ponude]([cijena], [kolicina], [opis], [trajanje_rezervacije_u_satima], [dodatna_fotografija], [id_riba], [id_lokacija], [id_korisnik]) VALUES((@cijena), (@kolicina), (@opis), (@sati), (@slika), (@idriba), (@idlokacija), (@idkorisnika)); ", parameters);
                 else
-                    DB.Instance.ExecuteParamQuery("INSERT INTO [ponude]([cijena], [kolicina], [opis], [id_riba], [id_lokacija], [id_korisnik]) VALUES((@cijena), (@kolicina), (@opis), (@idriba), (@idlokacija), (@idkorisnika)); ", parameters);
-
+                    DB.Instance.ExecuteParamQuery("INSERT INTO [ponude]([cijena], [kolicina], [opis], [trajanje_rezervacije_u_satima], [id_riba], [id_lokacija], [id_korisnik]) VALUES((@cijena), (@kolicina), (@opis), (@sati), (@idriba), (@idlokacija), (@idkorisnika)); ", parameters);
+                notifyPonuda.ShowBalloonTip(1000, "Kreiranje ponude", "Uspješno ste kreirali ponudu", ToolTipIcon.Info);
+                formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+                if (form != null)
+                    form.zatvoriForme();
                 Close();
             }
 
