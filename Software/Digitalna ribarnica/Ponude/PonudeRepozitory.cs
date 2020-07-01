@@ -96,6 +96,56 @@ namespace Ponude
             rezultat.Close();
             return opis;
         }
+
+
+        public static void UnesiZahtjevZaRezervaciju(int idKorisnika, int idPonuda, int kolicina)
+        {
+            string sqlUpit = "";
+            var parameters = new Dictionary<string, object>();
+            parameters.Add("@idKorisnika", idKorisnika);
+            parameters.Add("@idponuda", idPonuda);
+            parameters.Add("@kolicina", kolicina);
+            parameters.Add("@datum", DateTime.Now);
+            DB.Instance.ExecuteParamQuery("INSERT INTO [zahtjevi] ([id_korisnik], [id_ponuda], [kolicina], [datum_vrijeme]) VALUES((@idKorisnika), (@idponuda), (@kolicina), (@datum));", parameters);
+        }
+
+        public static int ProvjeriKorisnikaIZahtjev(int idKorisnika, int idPonuda)
+        {
+            int id = 0;
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat=DB.Instance.DohvatiDataReader($"SELECT * FROM zahtjevi WHERE id_korisnik='{idKorisnika}' AND id_ponuda='{idPonuda}';");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+
+            foreach (var item in returnMe)
+            {
+                id= int.Parse(item["id_zahtjev"].ToString());
+            }
+            rezultat.Close();
+            return id;
+        }
+
+
+        public static void AzurirajZahtjev(int idKorisnika, int idPonuda, int kolicina)
+        {
+            string sqlUpit = "";
+            var parameters = new Dictionary<string, object>();
+            parameters.Add("@idKorisnika", idKorisnika);
+            parameters.Add("@idponuda", idPonuda);
+            parameters.Add("@kolicina", kolicina);
+            parameters.Add("@datum", DateTime.Now);
+            DB.Instance.ExecuteParamQuery("UPDATE [zahtjevi] SET [kolicina] = (@kolicina), datum_vrijeme = (@datum) WHERE [id_korisnik] = (@idKorisnika) AND [id_ponuda] = (@idponuda);", parameters);
+        }
     }
 
 

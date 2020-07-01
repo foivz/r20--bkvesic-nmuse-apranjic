@@ -20,6 +20,9 @@ namespace RibeUSustavu
         [DisplayName("Jedinica prodaje")]
         public string MjernaJedinica { get; set; }
 
-
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

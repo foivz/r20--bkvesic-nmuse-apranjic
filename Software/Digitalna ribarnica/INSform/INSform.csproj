@@ -45,5 +45,11 @@
     <Compile Include="IForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Prijava\Prijava.csproj">
+      <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
+      <Name>Prijava</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

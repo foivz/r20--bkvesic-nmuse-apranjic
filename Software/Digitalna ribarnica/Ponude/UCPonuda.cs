@@ -46,7 +46,7 @@ namespace Ponude
 
         private void btnDetalji_Click(object sender, EventArgs e)
         {
-            openChildForm(new DetaljiPonude(ponuda));
+            openChildForm(new DetaljiPonude(ponuda, Iform));
         }
     }
 }

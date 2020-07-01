@@ -42,6 +42,7 @@
             this.txtMax = new System.Windows.Forms.TextBox();
             this.txtMin = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnKreiraj = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -198,6 +199,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnKreiraj);
             this.groupBox2.Controls.Add(this.flowLayoutPanel1);
             this.groupBox2.Controls.Add(this.txtFiltriraj);
             this.groupBox2.Controls.Add(this.groupBox1);
@@ -207,6 +209,20 @@
             this.groupBox2.Size = new System.Drawing.Size(994, 404);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
+            // 
+            // btnKreiraj
+            // 
+            this.btnKreiraj.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnKreiraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKreiraj.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKreiraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.btnKreiraj.Location = new System.Drawing.Point(43, 15);
+            this.btnKreiraj.Name = "btnKreiraj";
+            this.btnKreiraj.Size = new System.Drawing.Size(169, 40);
+            this.btnKreiraj.TabIndex = 24;
+            this.btnKreiraj.Text = "Kreiraj ponudu";
+            this.btnKreiraj.UseVisualStyleBackColor = true;
+            this.btnKreiraj.Click += new System.EventHandler(this.btnKreiraj_Click);
             // 
             // PregledPonuda
             // 
@@ -242,5 +258,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.Button btnKreiraj;
     }
 }

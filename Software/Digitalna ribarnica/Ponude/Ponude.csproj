@@ -77,6 +77,10 @@
       <Project>{7a77ea37-d108-414a-abf4-b04cd1517d2e}</Project>
       <Name>INSform</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Prijava\Prijava.csproj">
+      <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
+      <Name>Prijava</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

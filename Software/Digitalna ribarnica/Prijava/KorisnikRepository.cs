@@ -52,6 +52,22 @@ namespace Prijava
             }
             return lista;
         }
+
+        public static int DohvatiIdKorisnika(string korime)
+        {
+            int id = 0;
+            string sqlUpit = $"SELECT id_korisnik FROM korisnici WHERE korisnicko_ime='{korime}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    id = int.Parse(dr["id_korisnik"].ToString());
+                }
+                dr.Close(); 
+            }
+            return id;
+        }
         
 
         public static int Spremi(Korisnik korisnik)

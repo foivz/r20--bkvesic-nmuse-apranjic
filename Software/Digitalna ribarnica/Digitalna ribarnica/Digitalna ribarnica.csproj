@@ -55,6 +55,12 @@
     <Compile Include="DodajLokacije.Designer.cs">
       <DependentUpon>DodajLokacije.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajPonudu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajPonudu.Designer.cs">
+      <DependentUpon>DodajPonudu.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajRibu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="DodajLokacije.resx">
       <DependentUpon>DodajLokacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajPonudu.resx">
+      <DependentUpon>DodajPonudu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DodajRibu.resx">
       <DependentUpon>DodajRibu.cs</DependentUpon>

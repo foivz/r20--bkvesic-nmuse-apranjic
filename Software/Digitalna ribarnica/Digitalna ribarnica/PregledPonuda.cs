@@ -192,6 +192,10 @@ namespace Digitalna_ribarnica
             }
           
             cmbLokacije.DataSource = lokacije;
+            if (Iform.autentifikator.AktivanKorisnik != null)
+                btnKreiraj.Visible = true;
+            else
+                btnKreiraj.Visible = false;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -204,6 +208,13 @@ namespace Digitalna_ribarnica
         {
             if (radioButton2.Checked == true)
                 radioButton1.Checked = false;
+        }
+
+        private void btnKreiraj_Click(object sender, EventArgs e)
+        {
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+                form.openChildForm(new DodajPonudu(Iform));
         }
     }
 }

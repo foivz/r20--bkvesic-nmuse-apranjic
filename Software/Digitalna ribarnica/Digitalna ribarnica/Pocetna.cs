@@ -16,7 +16,7 @@ namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form, Iform
     {
-        Autentifikator autentifikator;
+        public Autentifikator autentifikator { get; set; }
         public Form nova { get; set; }
         public Panel panel { get; set; }
         public Form activeForm = null;
@@ -48,14 +48,14 @@ namespace Digitalna_ribarnica
 
         public void openChildForm(Form childForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
+            if (nova != null)
+                nova.Close();
+            nova = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelStranice.Controls.Add(childForm);
-            panelStranice.Tag = childForm;
+            panel.Controls.Add(childForm);
+            panel.Tag = childForm;
             childForm.BringToFront();
             if(childForm!=null)
                 childForm.Show();
@@ -69,6 +69,7 @@ namespace Digitalna_ribarnica
             prijava.ShowDialog();
             pocetna.ShowDialog();
             */
+            zatvoriForme();
             labelOdjava.Visible = false;
             openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija));
         }
@@ -90,6 +91,28 @@ namespace Digitalna_ribarnica
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
+            autentifikator.AktivanKorisnik = null;
+            zatvoriForme();
+
+        }
+
+        private void zatvoriForme()
+        {
+            FormCollection fc = Application.OpenForms;
+            List<Form> aktivne = new List<Form>();
+            foreach (Form frm in fc)
+            {
+                if (frm.Name != "formPocetna")
+                {
+                    //frm.Close();
+                    aktivne.Add(frm);
+                }
+            }
+
+            foreach (var item in aktivne)
+            {
+                item.Close();
+            }
         }
 
         private void timerPocetna_Tick(object sender, EventArgs e)
@@ -115,6 +138,7 @@ namespace Digitalna_ribarnica
 
         private void buttonRegistracija_Click(object sender, EventArgs e)
         {
+            zatvoriForme();
             openChildForm(new Registracija(autentifikator));
         }
 
