@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AzurirajFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AzurirajFormu.Designer.cs">
+      <DependentUpon>AzurirajFormu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ponuda.cs" />
     <Compile Include="PonudeRepozitory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,8 +71,17 @@
     <Compile Include="UCUrediPonude.Designer.cs">
       <DependentUpon>UCUrediPonude.cs</DependentUpon>
     </Compile>
+    <Compile Include="UrediPonudu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrediPonudu.Designer.cs">
+      <DependentUpon>UrediPonudu.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AzurirajFormu.resx">
+      <DependentUpon>AzurirajFormu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetaljiPonude.resx">
       <DependentUpon>DetaljiPonude.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCUrediPonude.resx">
       <DependentUpon>UCUrediPonude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrediPonudu.resx">
+      <DependentUpon>UrediPonudu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -86,9 +104,17 @@
       <Project>{7a77ea37-d108-414a-abf4-b04cd1517d2e}</Project>
       <Name>INSform</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lokacije\Lokacije.csproj">
+      <Project>{681cb769-455e-4801-9865-cf031aefb695}</Project>
+      <Name>Lokacije</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prijava\Prijava.csproj">
       <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
       <Name>Prijava</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RibeUSustavu\RibeUSustavu.csproj">
+      <Project>{b61fbbe0-0c61-4edf-98ad-cd502c2b699c}</Project>
+      <Name>RibeUSustavu</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

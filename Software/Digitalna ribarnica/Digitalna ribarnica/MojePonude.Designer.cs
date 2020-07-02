@@ -49,6 +49,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "MojePonude";
             this.Text = "MojePonude";
+            this.Load += new System.EventHandler(this.MojePonude_Load);
             this.ResumeLayout(false);
 
         }

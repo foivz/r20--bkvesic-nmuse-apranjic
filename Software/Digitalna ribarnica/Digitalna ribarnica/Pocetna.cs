@@ -21,7 +21,9 @@ namespace Digitalna_ribarnica
         public Panel panel { get; set; }
         public Form activeForm = null;
         bool podizbronik = true;
+
         bool podizbornikPonude = true;
+
         public formPocetna()
         {
             InitializeComponent();

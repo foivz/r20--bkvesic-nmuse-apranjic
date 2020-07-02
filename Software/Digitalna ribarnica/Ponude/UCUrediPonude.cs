@@ -46,8 +46,7 @@ namespace Ponude
 
         private void btnDetalji_Click(object sender, EventArgs e)
         {
-            //openChildForm(new DetaljiPonude(ponuda, Iform));
-            //OVDJE DODDATI KOD ZA CRUD NA PONUDAMA 
+            openChildForm(new UrediPonudu(ponuda, Iform));
         }
     }
 }

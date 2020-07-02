@@ -45,5 +45,9 @@ namespace Digitalna_ribarnica
                 this.Controls.Remove(ponuda.PrikaziUrediPonudeUC);
             }
         }
+
+        private void MojePonude_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

@@ -174,6 +174,12 @@ namespace Ponude
             DB.Instance.ExecuteParamQuery("INSERT INTO [zahtjevi] ([id_korisnik], [id_ponuda], [kolicina], [datum_vrijeme]) VALUES((@idKorisnika), (@idponuda), (@kolicina), (@datum));", parameters);
         }
 
+        public static void ObrisiPonudu(int id)
+        {
+            string sqlUpit = $"DELETE FROM ponude WHERE id_ponuda={id};";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
         public static int ProvjeriKorisnikaIZahtjev(int idKorisnika, int idPonuda)
         {
             int id = 0;
