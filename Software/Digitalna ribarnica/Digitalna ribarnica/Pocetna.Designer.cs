@@ -55,6 +55,10 @@
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btnMojePonude = new System.Windows.Forms.Button();
+            this.btnMojeRezervacije = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
@@ -62,6 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).BeginInit();
             this.panel4.SuspendLayout();
             this.panelStranice.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -246,29 +251,31 @@
             // 
             // buttonPonude
             // 
+            this.buttonPonude.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPonude.FlatAppearance.BorderSize = 0;
             this.buttonPonude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPonude.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPonude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
-            this.buttonPonude.Location = new System.Drawing.Point(0, 140);
+            this.buttonPonude.Location = new System.Drawing.Point(0, 69);
             this.buttonPonude.Name = "buttonPonude";
-            this.buttonPonude.Size = new System.Drawing.Size(250, 45);
+            this.buttonPonude.Size = new System.Drawing.Size(251, 33);
             this.buttonPonude.TabIndex = 0;
-            this.buttonPonude.Text = "Ponude";
+            this.buttonPonude.Text = "Sve ponude";
             this.buttonPonude.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonPonude.UseVisualStyleBackColor = true;
             this.buttonPonude.Click += new System.EventHandler(this.buttonPonude_Click);
             // 
             // button2
             // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(0, 89);
+            this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 45);
+            this.button2.Size = new System.Drawing.Size(251, 45);
             this.button2.TabIndex = 0;
             this.button2.Text = "Početna";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -277,12 +284,13 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.btnRibe);
             this.panel4.Controls.Add(this.btnLokacija);
+            this.panel4.Controls.Add(this.button8);
             this.panel4.Controls.Add(this.buttonNovosti);
             this.panel4.Controls.Add(this.Profilna);
-            this.panel4.Controls.Add(this.buttonPonude);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 89);
@@ -322,13 +330,14 @@
             // 
             // buttonNovosti
             // 
+            this.buttonNovosti.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonNovosti.FlatAppearance.BorderSize = 0;
             this.buttonNovosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovosti.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonNovosti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.buttonNovosti.Location = new System.Drawing.Point(-3, 191);
+            this.buttonNovosti.Location = new System.Drawing.Point(0, 45);
             this.buttonNovosti.Name = "buttonNovosti";
-            this.buttonNovosti.Size = new System.Drawing.Size(250, 45);
+            this.buttonNovosti.Size = new System.Drawing.Size(251, 45);
             this.buttonNovosti.TabIndex = 0;
             this.buttonNovosti.Text = "Novosti";
             this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -386,6 +395,66 @@
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.buttonPonude);
+            this.panel7.Controls.Add(this.btnMojeRezervacije);
+            this.panel7.Controls.Add(this.btnMojePonude);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 135);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(251, 105);
+            this.panel7.TabIndex = 2;
+            // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.button8.Location = new System.Drawing.Point(0, 90);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(251, 45);
+            this.button8.TabIndex = 0;
+            this.button8.Text = "Ponude";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // btnMojePonude
+            // 
+            this.btnMojePonude.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMojePonude.FlatAppearance.BorderSize = 0;
+            this.btnMojePonude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMojePonude.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnMojePonude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.btnMojePonude.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMojePonude.Location = new System.Drawing.Point(0, 0);
+            this.btnMojePonude.Name = "btnMojePonude";
+            this.btnMojePonude.Size = new System.Drawing.Size(251, 32);
+            this.btnMojePonude.TabIndex = 0;
+            this.btnMojePonude.Text = "Moje Ponude";
+            this.btnMojePonude.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMojePonude.UseVisualStyleBackColor = true;
+            this.btnMojePonude.Click += new System.EventHandler(this.btnMojePonude_Click);
+            // 
+            // btnMojeRezervacije
+            // 
+            this.btnMojeRezervacije.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMojeRezervacije.FlatAppearance.BorderSize = 0;
+            this.btnMojeRezervacije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMojeRezervacije.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnMojeRezervacije.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.btnMojeRezervacije.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMojeRezervacije.Location = new System.Drawing.Point(0, 32);
+            this.btnMojeRezervacije.Name = "btnMojeRezervacije";
+            this.btnMojeRezervacije.Size = new System.Drawing.Size(251, 37);
+            this.btnMojeRezervacije.TabIndex = 0;
+            this.btnMojeRezervacije.Text = "Moje rezervacije";
+            this.btnMojeRezervacije.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMojeRezervacije.UseVisualStyleBackColor = true;
+            // 
             // formPocetna
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -412,6 +481,7 @@
             this.panel4.ResumeLayout(false);
             this.panelStranice.ResumeLayout(false);
             this.panelStranice.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -443,6 +513,10 @@
         private System.Windows.Forms.Button btnRibe;
         private System.Windows.Forms.Button btnLokacija;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnMojeRezervacije;
+        private System.Windows.Forms.Button btnMojePonude;
+        private System.Windows.Forms.Button button8;
     }
 }
 

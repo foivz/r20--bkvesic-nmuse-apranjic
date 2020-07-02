@@ -67,6 +67,12 @@
     <Compile Include="DodajRibu.Designer.cs">
       <DependentUpon>DodajRibu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MojePonude.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MojePonude.Designer.cs">
+      <DependentUpon>MojePonude.cs</DependentUpon>
+    </Compile>
     <Compile Include="NovaLozinka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DodajRibu.resx">
       <DependentUpon>DodajRibu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MojePonude.resx">
+      <DependentUpon>MojePonude.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NovaLozinka.resx">
       <DependentUpon>NovaLozinka.cs</DependentUpon>

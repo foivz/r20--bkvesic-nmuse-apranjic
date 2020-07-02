@@ -1,6 +1,6 @@
 ﻿namespace Ponude
 {
-    partial class UCPonuda
+    partial class UCUrediPonude
     {
         /// <summary> 
         /// Required designer variable.
@@ -67,8 +67,8 @@
             this.groupBox1.Controls.Add(this.ucNaziv);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(201, 269);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.Size = new System.Drawing.Size(209, 272);
+            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // label6
@@ -179,9 +179,9 @@
             this.btnDetalji.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
             this.btnDetalji.Location = new System.Drawing.Point(5, 229);
             this.btnDetalji.Name = "btnDetalji";
-            this.btnDetalji.Size = new System.Drawing.Size(190, 34);
+            this.btnDetalji.Size = new System.Drawing.Size(198, 34);
             this.btnDetalji.TabIndex = 4;
-            this.btnDetalji.Text = "Detalji";
+            this.btnDetalji.Text = "Uredi";
             this.btnDetalji.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDetalji.UseVisualStyleBackColor = true;
             this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
@@ -225,13 +225,13 @@
             this.ucNaziv.TabIndex = 0;
             this.ucNaziv.Text = "label1";
             // 
-            // UCPonuda
+            // UCUrediPonude
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
-            this.Name = "UCPonuda";
-            this.Size = new System.Drawing.Size(213, 275);
+            this.Name = "UCUrediPonude";
+            this.Size = new System.Drawing.Size(219, 278);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).EndInit();
@@ -242,20 +242,20 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.Label ucNaziv;
-        public System.Windows.Forms.Label ucKolicina;
-        public System.Windows.Forms.Label ucCijena;
-        private System.Windows.Forms.Button btnDetalji;
-        public System.Windows.Forms.PictureBox ucFotografija;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Label ucLokacija;
+        public System.Windows.Forms.Label ucPonuditelj;
+        public System.Windows.Forms.Label ucID;
+        public System.Windows.Forms.Label ucMjerna;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label ucMjerna;
-        public System.Windows.Forms.Label ucID;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.Label ucLokacija;
-        public System.Windows.Forms.Label ucPonuditelj;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnDetalji;
+        public System.Windows.Forms.PictureBox ucFotografija;
+        public System.Windows.Forms.Label ucKolicina;
+        public System.Windows.Forms.Label ucCijena;
+        public System.Windows.Forms.Label ucNaziv;
     }
 }

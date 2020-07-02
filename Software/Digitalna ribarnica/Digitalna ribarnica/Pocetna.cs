@@ -20,6 +20,8 @@ namespace Digitalna_ribarnica
         public Form nova { get; set; }
         public Panel panel { get; set; }
         public Form activeForm = null;
+        bool podizbronik = true;
+        bool podizbornikPonude = true;
         public formPocetna()
         {
             InitializeComponent();
@@ -41,6 +43,9 @@ namespace Digitalna_ribarnica
             btnRibe.Visible = false;
             btnLokacija.Visible = false;
             buttonOdjava.ForeColor = Color.FromArgb(4, 136, 133);
+            panel7.Visible = false;
+            btnMojePonude.Visible = false;
+            btnMojeRezervacije.Visible = false;
         }
      
 
@@ -71,7 +76,7 @@ namespace Digitalna_ribarnica
             */
             zatvoriForme();
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -88,6 +93,8 @@ namespace Digitalna_ribarnica
             pbxProfilna.Visible = false;
             btnRibe.Visible = false;
             btnLokacija.Visible = false;
+            btnMojePonude.Visible = false;
+            btnMojeRezervacije.Visible = false;
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
@@ -175,6 +182,25 @@ namespace Digitalna_ribarnica
         private void buttonPonude_Click(object sender, EventArgs e)
         {
             openChildForm(new PregledPonuda(this));
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (podizbornikPonude)
+            {
+                panel7.Visible = true;
+                podizbornikPonude = false;
+            }
+            else
+            {
+                panel7.Visible = false;
+                podizbornikPonude = true;
+            }
+        }
+
+        private void btnMojePonude_Click(object sender, EventArgs e)
+        {
+            openChildForm(new MojePonude(this));
         }
     }
 }

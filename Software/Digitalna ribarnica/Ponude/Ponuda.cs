@@ -10,6 +10,7 @@ namespace Ponude
     public class Ponuda
     {
 		public UCPonuda PrikazUC = null;
+		public UCUrediPonude PrikaziUrediPonudeUC = null;
 		private string naziv;
 		private Image fotografija;
 		private float cijena;
@@ -18,14 +19,22 @@ namespace Ponude
 		private string id;
 		private string ime;
 		private string lokacija;
-
+		int zastava = 0;
 		public string Lokacija
 		{
 			get { return lokacija; }
 			set
 			{
-				lokacija = value;
-				PrikazUC.ucLokacija.Text = lokacija;
+				if (zastava == 1)
+				{
+					lokacija = value;
+					PrikazUC.ucLokacija.Text = lokacija;
+				}
+				else
+				{
+					lokacija = value;
+					PrikaziUrediPonudeUC.ucLokacija.Text = lokacija;
+				}
 			}
 		}
 
@@ -34,8 +43,16 @@ namespace Ponude
 			get { return ime; }
 			set
 			{
-				ime = value;
-				PrikazUC.ucPonuditelj.Text = ime;
+				if (zastava == 1)
+				{
+					ime = value;
+					PrikazUC.ucPonuditelj.Text = ime;
+				}
+				else
+				{
+					ime = value;
+					PrikaziUrediPonudeUC.ucPonuditelj.Text = ime;
+				}
 			}
 		}
 		public string ID
@@ -43,8 +60,16 @@ namespace Ponude
 			get { return id; }
 			set
 			{
-				id = value;
-				PrikazUC.ucID.Text = id;
+				if (zastava == 1)
+				{
+					id = value;
+					PrikazUC.ucID.Text = id;
+				}
+				else
+				{
+					id = value;
+					PrikaziUrediPonudeUC.ucID.Text = id;
+				}
 			}
 		}
 
@@ -53,17 +78,33 @@ namespace Ponude
 			get { return mjerna; }
 			set
 			{
-				mjerna = value;
-				PrikazUC.ucMjerna.Text = mjerna;
+				if (zastava == 1)
+				{
+					mjerna = value;
+					PrikazUC.ucMjerna.Text = mjerna;
+				}
+				else
+				{
+					mjerna = value;
+					PrikaziUrediPonudeUC.ucMjerna.Text = mjerna;
+				}
 			}
 		}
 		public float Cijena
 		{
 			get { return cijena; }
 			set 
-			{ 
-				cijena = value;
-				PrikazUC.ucCijena.Text = cijena.ToString();
+			{
+				if (zastava == 1)
+				{
+					cijena = value;
+					PrikazUC.ucCijena.Text = cijena.ToString();
+				}
+				else
+				{
+					cijena = value;
+					PrikaziUrediPonudeUC.ucCijena.Text = cijena.ToString();
+				}
 			}
 		}
 
@@ -72,8 +113,16 @@ namespace Ponude
 			get { return kolicina; }
 			set
 			{
-				kolicina = value;
-				PrikazUC.ucKolicina.Text = kolicina.ToString();
+				if (zastava == 1)
+				{
+					kolicina = value;
+					PrikazUC.ucKolicina.Text = kolicina.ToString();
+				}
+				else
+				{
+					kolicina = value;
+					PrikaziUrediPonudeUC.ucKolicina.Text = kolicina.ToString();
+				}
 			}
 		}
 
@@ -82,9 +131,16 @@ namespace Ponude
 			get { return naziv; }
 			set
 			{
-				naziv = value;
-				PrikazUC.ucNaziv.Text = naziv;
-
+				if (zastava == 1)
+				{
+					naziv = value;
+					PrikazUC.ucNaziv.Text = naziv;
+				}
+				else
+				{
+					naziv = value;
+					PrikaziUrediPonudeUC.ucNaziv.Text = naziv;
+				}
 			}
 		}
 
@@ -93,8 +149,16 @@ namespace Ponude
 			get { return fotografija; }
 			set
 			{
-				fotografija = value;
-				PrikazUC.ucFotografija.Image = fotografija;
+				if (zastava == 1)
+				{
+					fotografija = value;
+					PrikazUC.ucFotografija.Image = fotografija;
+				}
+				else
+				{
+					fotografija = value;
+					PrikaziUrediPonudeUC.ucFotografija.Image = fotografija;
+				}
 			}
 		}
 		/*
@@ -104,10 +168,19 @@ namespace Ponude
 			PrikazUC.LoadPonuda(this);
 		}
 		*/
-		public Ponuda(Iform iform)
+		public Ponuda(Iform iform, int i=1)
 		{
-			PrikazUC = new UCPonuda(iform);
-			PrikazUC.LoadPonuda(this);
+			zastava = i;
+			if (i == 1)
+			{
+				PrikazUC = new UCPonuda(iform);
+				PrikazUC.LoadPonuda(this);
+			}
+			else
+			{
+				PrikaziUrediPonudeUC = new UCUrediPonude(iform);
+				PrikaziUrediPonudeUC.LoadPonuda(this);
+			}
 		}
 	}
 }

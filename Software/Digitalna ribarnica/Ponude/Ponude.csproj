@@ -59,6 +59,12 @@
     <Compile Include="UCPonuda.Designer.cs">
       <DependentUpon>UCPonuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCUrediPonude.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUrediPonude.Designer.cs">
+      <DependentUpon>UCUrediPonude.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DetaljiPonude.resx">
@@ -66,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCPonuda.resx">
       <DependentUpon>UCPonuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUrediPonude.resx">
+      <DependentUpon>UCUrediPonude.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
