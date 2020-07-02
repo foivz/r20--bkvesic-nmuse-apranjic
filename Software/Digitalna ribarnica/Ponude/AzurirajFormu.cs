@@ -143,7 +143,7 @@ namespace Ponude
                     DB.Instance.ExecuteParamQuery("UPDATE [ponude] SET [cijena]=(@cijena), [kolicina]=(@kolicina), [opis]=(@opis), [trajanje_rezervacije_u_satima]=(@sati), [dodatna_fotografija]=(@slika), [id_riba]=(@idriba), [id_lokacija]=(@idlokacija), [id_korisnik]=(@idkorisnika) WHERE [id_ponuda]=(@idponuda); ", parameters);
                 else
                     DB.Instance.ExecuteParamQuery("UPDATE [ponude] SET [cijena]=(@cijena), [kolicina]=(@kolicina), [opis]=(@opis), [trajanje_rezervacije_u_satima]=(@sati), [id_riba]=(@idriba), [id_lokacija]=(@idlokacija), [id_korisnik]=(@idkorisnika) WHERE [id_ponuda]=(@idponuda);", parameters);
-                notifyPonuda.ShowBalloonTip(1000, "Kreiranje ponude", "Uspješno ste kreirali ponudu", ToolTipIcon.Info);
+                notifyPonuda.ShowBalloonTip(1000, "Ažuriranje ponude", "Uspješno ste ažurirali ponudu", ToolTipIcon.Info);
                 UrediPonudu form = Application.OpenForms.OfType<UrediPonudu>().FirstOrDefault();
                 if (form != null)
                     form.zatvoriForme();
