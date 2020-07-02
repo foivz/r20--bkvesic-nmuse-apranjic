@@ -13,6 +13,8 @@ namespace Ponude
     public class PonudeRepozitory
     {
         public static List<Ponuda> _ponude = new List<Ponuda>();
+
+        public static List<Zahtjev> _zahtjevi = new List<Zahtjev>();
         static Iform Iform;
         public static List<Ponuda> DohvatiPonude(Iform nova)
         {
@@ -216,6 +218,50 @@ namespace Ponude
             parameters.Add("@kolicina", kolicina);
             parameters.Add("@datum", DateTime.Now);
             DB.Instance.ExecuteParamQuery("UPDATE [zahtjevi] SET [kolicina] = (@kolicina), datum_vrijeme = (@datum) WHERE [id_korisnik] = (@idKorisnika) AND [id_ponuda] = (@idponuda);", parameters);
+        }
+
+        public static List<Zahtjev> DohvatiZahtjeve(Iform nova,int id)
+        {
+            Iform = nova;
+            _zahtjevi.Clear();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT korisnici.slika, korisnici.ime, korisnici.prezime, zahtjevi.kolicina, ponude.kolicina AS MAX, ponude.trajanje_rezervacije_u_satima, zahtjevi.id_zahtjev FROM korisnici, zahtjevi, ponude WHERE korisnici.id_korisnik = zahtjevi.id_korisnik AND ponude.id_ponuda = zahtjevi.id_ponuda AND ponude.id_ponuda = {id} AND zahtjevi.status = 1 AND ponude.status = 1");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
+
+                Zahtjev zahtjev = new Zahtjev(nova);
+
+                try
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                    zahtjev.Fotografija = Image.FromStream(ms);
+                }
+                catch (Exception)
+                {
+                    zahtjev.Fotografija = null;
+                }
+                zahtjev.Ime = item["ime"] + " " + item["prezime"];
+                zahtjev.Kolicina = int.Parse(item["kolicina"].ToString());
+                zahtjev.Max = item["MAX"].ToString();
+                zahtjev.BrojSatiDana = item["trajanje_rezervacije_u_satima"].ToString();
+                zahtjev.ID = int.Parse(item["id_zahtjev"].ToString());
+                _zahtjevi.Add(zahtjev);
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return _zahtjevi;
         }
     }
 

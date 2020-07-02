@@ -87,6 +87,7 @@
             this.button2.TabIndex = 26;
             this.button2.Text = "Pogledaj zahtjeve";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnObrisi
             // 
@@ -143,7 +144,7 @@
             this.ucMjerna.AutoSize = true;
             this.ucMjerna.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ucMjerna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
-            this.ucMjerna.Location = new System.Drawing.Point(395, 96);
+            this.ucMjerna.Location = new System.Drawing.Point(372, 96);
             this.ucMjerna.Name = "ucMjerna";
             this.ucMjerna.Size = new System.Drawing.Size(66, 24);
             this.ucMjerna.TabIndex = 18;
@@ -198,7 +199,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
-            this.label6.Location = new System.Drawing.Point(381, 74);
+            this.label6.Location = new System.Drawing.Point(357, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(32, 24);
             this.label6.TabIndex = 17;
@@ -222,9 +223,9 @@
             this.ucKolicina.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
             this.ucKolicina.Location = new System.Drawing.Point(323, 96);
             this.ucKolicina.Name = "ucKolicina";
-            this.ucKolicina.Size = new System.Drawing.Size(66, 24);
+            this.ucKolicina.Size = new System.Drawing.Size(43, 24);
             this.ucKolicina.TabIndex = 10;
-            this.ucKolicina.Text = "label1";
+            this.ucKolicina.Text = "300";
             // 
             // ucCijena
             // 
@@ -233,9 +234,9 @@
             this.ucCijena.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
             this.ucCijena.Location = new System.Drawing.Point(309, 74);
             this.ucCijena.Name = "ucCijena";
-            this.ucCijena.Size = new System.Drawing.Size(66, 24);
+            this.ucCijena.Size = new System.Drawing.Size(43, 24);
             this.ucCijena.TabIndex = 11;
-            this.ucCijena.Text = "label1";
+            this.ucCijena.Text = "300";
             // 
             // ucNaziv
             // 

@@ -81,5 +81,10 @@ namespace Ponude
         {
             openChildForm(new AzurirajFormu(Ponuda,iform));
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ZahtjeviZaRezervacijom(iform, Ponuda));
+        }
     }
 }

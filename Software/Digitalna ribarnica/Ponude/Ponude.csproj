@@ -71,11 +71,24 @@
     <Compile Include="UCUrediPonude.Designer.cs">
       <DependentUpon>UCUrediPonude.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCZahtjev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCZahtjev.Designer.cs">
+      <DependentUpon>UCZahtjev.cs</DependentUpon>
+    </Compile>
     <Compile Include="UrediPonudu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UrediPonudu.Designer.cs">
       <DependentUpon>UrediPonudu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zahtjev.cs" />
+    <Compile Include="ZahtjeviZaRezervacijom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZahtjeviZaRezervacijom.Designer.cs">
+      <DependentUpon>ZahtjeviZaRezervacijom.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -91,8 +104,14 @@
     <EmbeddedResource Include="UCUrediPonude.resx">
       <DependentUpon>UCUrediPonude.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCZahtjev.resx">
+      <DependentUpon>UCZahtjev.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UrediPonudu.resx">
       <DependentUpon>UrediPonudu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZahtjeviZaRezervacijom.resx">
+      <DependentUpon>ZahtjeviZaRezervacijom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
