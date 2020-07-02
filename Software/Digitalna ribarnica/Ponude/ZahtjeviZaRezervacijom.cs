@@ -37,6 +37,8 @@ namespace Ponude
                 zahtjev.Max = item.Max;
                 zahtjev.Fotografija = item.Fotografija;
                 zahtjev.BrojSatiDana = item.BrojSatiDana;
+                if (item.Kolicina > int.Parse(item.Max))
+                    zahtjev.nedozvoljenaPonuda();
                 this.flowLayoutPanel1.Controls.Add(zahtjev.PrikazUC);
                 this.Controls.Remove(zahtjev.PrikazUC);
             }

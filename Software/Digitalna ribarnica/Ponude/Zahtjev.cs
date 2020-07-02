@@ -76,6 +76,13 @@ namespace Ponude
 			}
 		}
 
+		public void nedozvoljenaPonuda()
+		{
+			PrikazUC.ucPrihvati.Enabled = false;
+			PrikazUC.ucMax.BackColor = Color.DarkRed;
+			PrikazUC.ucKolicina.BackColor = Color.DarkRed;
+		}
+
 
 		public Zahtjev(Iform iform)
 		{		

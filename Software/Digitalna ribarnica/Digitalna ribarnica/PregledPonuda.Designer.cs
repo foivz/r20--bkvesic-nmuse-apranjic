@@ -43,6 +43,8 @@
             this.txtMin = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnKreiraj = new System.Windows.Forms.Button();
+            this.cmbRibe = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +95,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbRibe);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.cmbLokacije);
@@ -224,6 +228,27 @@
             this.btnKreiraj.UseVisualStyleBackColor = true;
             this.btnKreiraj.Click += new System.EventHandler(this.btnKreiraj_Click);
             // 
+            // cmbRibe
+            // 
+            this.cmbRibe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
+            this.cmbRibe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.cmbRibe.FormattingEnabled = true;
+            this.cmbRibe.Location = new System.Drawing.Point(20, 43);
+            this.cmbRibe.Name = "cmbRibe";
+            this.cmbRibe.Size = new System.Drawing.Size(121, 21);
+            this.cmbRibe.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(141)))), ((int)(((byte)(134)))));
+            this.label5.Location = new System.Drawing.Point(16, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 20);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Ribe";
+            // 
             // PregledPonuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,5 +284,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         public System.Windows.Forms.Button btnKreiraj;
+        private System.Windows.Forms.ComboBox cmbRibe;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -263,6 +263,12 @@ namespace Ponude
                 rezultat.Close();
             return _zahtjevi;
         }
+
+        public static void AzurirajZahtjeveNakonBrisanja(Iform nova,int id)
+        {
+            string sqlUpit = $"UPDATE zahtjevi set status = 0 WHERE id_ponuda={id};";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
     }
 
 

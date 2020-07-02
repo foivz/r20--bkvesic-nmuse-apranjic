@@ -38,6 +38,7 @@ namespace Ponude
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             PonudeRepozitory.ObrisiPonudu(int.Parse(Ponuda.ID));
+            PonudeRepozitory.AzurirajZahtjeveNakonBrisanja(iform, int.Parse(Ponuda.ID));
             Close();
             zatvoriForme();
             

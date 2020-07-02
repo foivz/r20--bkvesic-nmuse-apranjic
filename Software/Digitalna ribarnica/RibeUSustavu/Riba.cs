@@ -24,5 +24,15 @@ namespace RibeUSustavu
         {
             return Naziv;
         }
+
+        public Riba()
+        {
+
+        }
+
+        public Riba(string naziv)
+        {
+            Naziv = naziv;
+        }
     }
 }

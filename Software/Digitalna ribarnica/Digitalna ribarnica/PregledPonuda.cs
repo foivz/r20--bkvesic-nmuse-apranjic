@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Ponude;
 using Lokacije;
 using INSform;
+using RibeUSustavu;
+
 namespace Digitalna_ribarnica
 {
     public partial class PregledPonuda : Form
@@ -95,6 +97,7 @@ namespace Digitalna_ribarnica
         private void btnSortiraj_Click(object sender, EventArgs e)
         {
             List<Ponuda> svePonude = PonudeRepozitory.DohvatiPonude(Iform);
+            /*
             string lokacije = cmbLokacije.SelectedItem.ToString();
             double cijenaMin = -1;
             double cijenaMax = -1;
@@ -179,11 +182,190 @@ namespace Digitalna_ribarnica
                     ObrisiPonude();
                     DodajPonude(result, Iform);
                 }
+                
+            }
+            */
+            string lokacije = cmbLokacije.SelectedItem.ToString();
+            string ribe = cmbRibe.SelectedItem.ToString();
+            double cijenaMin = -1;
+            double cijenaMax = -1;
+            bool radioButtonAscending = radioButton1.Checked;
+            bool radioButtonDescending = radioButton2.Checked;
+            if (txtMin.Text != "")
+                cijenaMin = double.Parse(txtMin.Text);
+            if (txtMax.Text != "")
+                cijenaMax = double.Parse(txtMax.Text);
+            if (lokacije != null && cijenaMax != -1 && cijenaMin != -1 && ribe != null)
+            {
+                if (radioButtonAscending && lokacije != "Sve lokacije" && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije && ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax && ponude.Naziv == ribe
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (radioButtonAscending && lokacije != "Sve lokacije" && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije && ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonAscending && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax && ponude.Naziv == ribe
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonAscending && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonDescending && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax && ponude.Naziv == ribe
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonDescending && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije != "Sve lokacije" && radioButtonDescending && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax && ponude.Naziv == ribe && ponude.Lokacija == lokacije
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije != "Sve lokacije" && radioButtonDescending && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax && ponude.Lokacija == lokacije
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije && ponude.Cijena >= cijenaMin && ponude.Cijena <= cijenaMax && ponude.Naziv == ribe
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+            }
+            else if (lokacije != null && (cijenaMin == -1 || cijenaMax == -1))
+            {
+                if (radioButtonAscending && lokacije != "Sve lokacije" && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije && ponude.Naziv == ribe
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (radioButtonAscending && lokacije != "Sve lokacije" && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonAscending && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Naziv == ribe
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonAscending && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 orderby ponude.Cijena ascending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonDescending && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Naziv == ribe
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije == "Sve lokacije" && radioButtonDescending && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije != "Sve lokacije" && radioButtonDescending && ribe != "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Naziv == ribe && ponude.Lokacija == lokacije
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else if (lokacije != "Sve lokacije" && radioButtonDescending && ribe == "Sve ribe")
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
+                else
+                {
+                    var result = from ponude in svePonude
+                                 where ponude.Lokacija == lokacije && ponude.Naziv == ribe
+                                 orderby ponude.Cijena descending
+                                 select ponude;
+                    ObrisiPonude();
+                    DodajPonude(result, Iform);
+                }
             }
         }
 
         private void PregledPonuda_Load(object sender, EventArgs e)
         {
+            /*
             List<Lokacije.Lokacije> lokacije = new List<Lokacije.Lokacije>();
             lokacije.Add(new Lokacije.Lokacije("Sve lokacije"));    
             foreach (var item in LokacijeRepozitory.dohvatiLokacije())
@@ -192,6 +374,17 @@ namespace Digitalna_ribarnica
             }
           
             cmbLokacije.DataSource = lokacije;
+            */
+            List<Riba> ribe = new List<Riba>();
+            ribe = RibeRepository.DohvatiNaziveRibe();
+            List<Riba> sortiraneRibe = ribe.OrderBy(o => o.Naziv).ToList();
+            sortiraneRibe.Insert(0, new Riba("Sve ribe"));
+            List<Lokacije.Lokacije> lokacije = new List<Lokacije.Lokacije>();
+            lokacije = LokacijeRepozitory.dohvatiLokacije();
+            List<Lokacije.Lokacije> sortiraneLokacije = lokacije.OrderBy(o => o.Naziv).ToList();
+            sortiraneLokacije.Insert(0, new Lokacije.Lokacije("Sve lokacije"));
+            cmbRibe.DataSource = sortiraneRibe;
+            cmbLokacije.DataSource = sortiraneLokacije;
             if (Iform.autentifikator.AktivanKorisnik != null)
                 btnKreiraj.Visible = true;
             else
