@@ -312,5 +312,10 @@ namespace Digitalna_ribarnica
             if (radioButton2.Checked == true)
                 radioButton1.Checked = false;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
