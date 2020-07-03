@@ -20,6 +20,7 @@ namespace Ponude
         public Panel panelStranice { get; set; }
 
         public int IDKorisnika { get; set; }
+        public int IDponude { get; set; }
         public UCZahtjev(Iform novo)
         {
             InitializeComponent();
@@ -50,6 +51,47 @@ namespace Ponude
         private void button2_Click(object sender, EventArgs e)
         {
             openChildForm(new OcjeneKorisnika(iform,zahtjev.IDKORISNIKA));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            UrediPonudu form = Application.OpenForms.OfType<UrediPonudu>().FirstOrDefault();
+            if (form != null)
+                form.zatvoriForme();
+        }
+
+        private void ucOdbaci_Click(object sender, EventArgs e)
+        {
+            PonudeRepozitory.OdbaciZahtjev(iform, zahtjev.ID);
+            zatvoriForme();
+        }
+
+        public void zatvoriForme()
+        {
+            FormCollection fc = Application.OpenForms;
+            List<Form> aktivne = new List<Form>();
+            foreach (Form frm in fc)
+            {
+                if (frm.Name != "formPocetna" && frm.Name!= "PregledPonuda")
+                {
+                    //frm.Close();
+                    aktivne.Add(frm);
+                }
+            }
+
+            foreach (var item in aktivne)
+            {
+                item.Close();
+            }
+        }
+
+        private void ucPrihvati_Click(object sender, EventArgs e)
+        {
+            PonudeRepozitory.OdbaciZahtjev(iform, zahtjev.ID);
+            PonudeRepozitory.KreirajRezervaciju(iform, zahtjev, zahtjev.IDPONUDE);
+            PonudeRepozitory.AzurirajPonuduKolicine(iform, zahtjev, zahtjev.IDPONUDE);
+            zatvoriForme();
         }
     }
 }

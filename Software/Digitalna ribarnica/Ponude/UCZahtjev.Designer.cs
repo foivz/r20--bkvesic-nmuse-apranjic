@@ -42,7 +42,7 @@
             this.ucFotografija = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ucOdbaci = new System.Windows.Forms.Button();
             this.ucPrihvati = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
@@ -63,7 +63,7 @@
             this.groupBox1.Controls.Add(this.ucFotografija);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.ucOdbaci);
             this.groupBox1.Controls.Add(this.ucPrihvati);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
@@ -206,19 +206,21 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Odustani";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button1
+            // ucOdbaci
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
-            this.button1.Location = new System.Drawing.Point(95, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Odbaci";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ucOdbaci.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.ucOdbaci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ucOdbaci.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ucOdbaci.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.ucOdbaci.Location = new System.Drawing.Point(95, 146);
+            this.ucOdbaci.Name = "ucOdbaci";
+            this.ucOdbaci.Size = new System.Drawing.Size(76, 40);
+            this.ucOdbaci.TabIndex = 3;
+            this.ucOdbaci.Text = "Odbaci";
+            this.ucOdbaci.UseVisualStyleBackColor = true;
+            this.ucOdbaci.Click += new System.EventHandler(this.ucOdbaci_Click);
             // 
             // ucPrihvati
             // 
@@ -232,6 +234,7 @@
             this.ucPrihvati.TabIndex = 3;
             this.ucPrihvati.Text = "Prihvati";
             this.ucPrihvati.UseVisualStyleBackColor = true;
+            this.ucPrihvati.Click += new System.EventHandler(this.ucPrihvati_Click);
             // 
             // UCZahtjev
             // 
@@ -252,7 +255,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ucOdbaci;
         public System.Windows.Forms.Label ucSati;
         public System.Windows.Forms.Label ucKolicina;
         public System.Windows.Forms.Label ucIme;

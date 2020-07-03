@@ -20,6 +20,7 @@ namespace Ponude
         public ZahtjeviZaRezervacijom(Iform novi,Ponuda ponuda)
         {
             InitializeComponent();
+            ObrisiPonude();
             zahtjevi = PonudeRepozitory.DohvatiZahtjeve(novi,int.Parse(ponuda.ID));
             DodajPonude(zahtjevi, novi);
             Iform = novi;
@@ -39,6 +40,7 @@ namespace Ponude
                 zahtjev.Fotografija = item.Fotografija;
                 zahtjev.BrojSatiDana = item.BrojSatiDana;
                 zahtjev.IDKORISNIKA = item.IDKORISNIKA;
+                zahtjev.IDPONUDE = item.IDPONUDE;
                 if (item.Kolicina > int.Parse(item.Max))
                     zahtjev.nedozvoljenaPonuda();
                 this.flowLayoutPanel1.Controls.Add(zahtjev.PrikazUC);

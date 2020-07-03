@@ -20,7 +20,9 @@ namespace Ponude
 		private string ime;
 		private string lokacija;
 		private int IDKorisnika;
+	
 		int zastava = 0;
+
 
 		public int IDKORISNIKA
 		{

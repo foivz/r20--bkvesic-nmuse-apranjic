@@ -70,6 +70,7 @@ namespace Ponude
                 ponuda.Ime = item["ime"] + " " + item["prezime"];
                 ponuda.Lokacija = item["lokacija"].ToString();
                 ponuda.IDKORISNIKA = int.Parse(item["id_korisnik"].ToString());
+              
                 _ponude.Add(ponuda);
             }
             if(rezultat!=null)
@@ -226,7 +227,7 @@ namespace Ponude
             Iform = nova;
             _zahtjevi.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"SELECT zahtjevi.id_korisnik, korisnici.slika, korisnici.ime, korisnici.prezime, zahtjevi.kolicina, ponude.kolicina AS MAX, ponude.trajanje_rezervacije_u_satima, zahtjevi.id_zahtjev FROM korisnici, zahtjevi, ponude WHERE korisnici.id_korisnik = zahtjevi.id_korisnik AND ponude.id_ponuda = zahtjevi.id_ponuda AND ponude.id_ponuda = {id} AND zahtjevi.status = 1 AND ponude.status = 1");
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT zahtjevi.id_korisnik,zahtjevi.id_ponuda, korisnici.slika, korisnici.ime, korisnici.prezime, zahtjevi.kolicina, ponude.kolicina AS MAX, ponude.trajanje_rezervacije_u_satima, zahtjevi.id_zahtjev FROM korisnici, zahtjevi, ponude WHERE korisnici.id_korisnik = zahtjevi.id_korisnik AND ponude.id_ponuda = zahtjevi.id_ponuda AND ponude.id_ponuda = {id} AND zahtjevi.status = 1 AND ponude.status = 1");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)
@@ -259,6 +260,7 @@ namespace Ponude
                 zahtjev.Max = item["MAX"].ToString();
                 zahtjev.BrojSatiDana = item["trajanje_rezervacije_u_satima"].ToString();
                 zahtjev.ID = int.Parse(item["id_zahtjev"].ToString());
+                zahtjev.IDPONUDE= int.Parse(item["id_ponuda"].ToString());
                 _zahtjevi.Add(zahtjev);
             }
             if (rezultat != null)
@@ -271,6 +273,29 @@ namespace Ponude
             string sqlUpit = $"UPDATE zahtjevi set status = 0 WHERE id_ponuda={id};";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
+
+        public static void OdbaciZahtjev(Iform nova, int id)
+        {
+            string sqlUpit = $"UPDATE zahtjevi set status = 0 WHERE id_zahtjev={id};";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+        public static void KreirajRezervaciju(Iform nova, Zahtjev zahtjev,int idPonude)
+        {
+            var parameters = new Dictionary<string, object>();
+            parameters.Add("@datum", DateTime.Now);
+            parameters.Add("@kolicina", zahtjev.Kolicina);
+            parameters.Add("@idKupca", zahtjev.IDKORISNIKA);
+            parameters.Add("@idPonude", idPonude);
+            parameters.Add("@tip", 1);
+            DB.Instance.ExecuteParamQuery("INSERT INTO [rezervacije]([datum_i_vrijeme], [kolicina], [id_kupac], [id_ponuda], [id_tip_statusa]) VALUES((@datum), (@kolicina), (@idKupca), (@idPonude), (@tip)); ", parameters);
+        }
+
+        public static void AzurirajPonuduKolicine(Iform nova, Zahtjev zahtjev, int idPonude)
+        {
+            string sqlUpit = $"UPDATE ponude SET kolicina=kolicina-{zahtjev.Kolicina} WHERE id_ponuda={idPonude};";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
     }
 
 
