@@ -226,7 +226,7 @@ namespace Ponude
             Iform = nova;
             _zahtjevi.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"SELECT korisnici.slika, korisnici.ime, korisnici.prezime, zahtjevi.kolicina, ponude.kolicina AS MAX, ponude.trajanje_rezervacije_u_satima, zahtjevi.id_zahtjev FROM korisnici, zahtjevi, ponude WHERE korisnici.id_korisnik = zahtjevi.id_korisnik AND ponude.id_ponuda = zahtjevi.id_ponuda AND ponude.id_ponuda = {id} AND zahtjevi.status = 1 AND ponude.status = 1");
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT zahtjevi.id_korisnik, korisnici.slika, korisnici.ime, korisnici.prezime, zahtjevi.kolicina, ponude.kolicina AS MAX, ponude.trajanje_rezervacije_u_satima, zahtjevi.id_zahtjev FROM korisnici, zahtjevi, ponude WHERE korisnici.id_korisnik = zahtjevi.id_korisnik AND ponude.id_ponuda = zahtjevi.id_ponuda AND ponude.id_ponuda = {id} AND zahtjevi.status = 1 AND ponude.status = 1");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)
@@ -253,6 +253,7 @@ namespace Ponude
                 {
                     zahtjev.Fotografija = null;
                 }
+                zahtjev.IDKORISNIKA =int.Parse(item["id_korisnik"].ToString());
                 zahtjev.Ime = item["ime"] + " " + item["prezime"];
                 zahtjev.Kolicina = int.Parse(item["kolicina"].ToString());
                 zahtjev.Max = item["MAX"].ToString();

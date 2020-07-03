@@ -20,7 +20,7 @@ namespace Ocjene
             Iform = nova;
             _ocjene.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"SELECT korisnici.slika as profilna, ocjene.id_ocjena, ocjene.komentar, ocjene.ocjena FROM korisnici,ocjene WHERE korisnici.id_korisnik = ocjene.tko_ocjenjuje");
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT korisnici.slika as profilna, ocjene.id_ocjena, ocjene.komentar, ocjene.ocjena FROM korisnici,ocjene WHERE korisnici.id_korisnik = ocjene.tko_ocjenjuje AND ocjene.koga_ocjenjuje={id}");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)

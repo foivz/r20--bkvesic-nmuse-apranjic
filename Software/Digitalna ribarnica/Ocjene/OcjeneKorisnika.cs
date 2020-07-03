@@ -15,11 +15,13 @@ namespace Ocjene
     {
         public List<Ocjena> ocjene = new List<Ocjena>();
         Iform Iform;
-        public OcjeneKorisnika(Iform nova)
+        public OcjeneKorisnika(Iform nova,int id)
         {
             InitializeComponent();
             Iform = nova;
-            ocjene = OcjeneRepozitory.DohvatiOcjene(nova,KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
+            //ocjene = OcjeneRepozitory.DohvatiOcjene(nova,KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
+            ocjene = OcjeneRepozitory.DohvatiOcjene(nova, id);
+            ObrisiPonude();
             DodajPonude(ocjene, nova);
         }
 
@@ -36,6 +38,23 @@ namespace Ocjene
                 ocjena.SlikaOcjene = item.SlikaOcjene;
                 this.flowLayoutPanel1.Controls.Add(ocjena.PrikazUC);
                 this.Controls.Remove(ocjena.PrikazUC);
+            }
+        }
+
+
+        private void ObrisiPonude()
+        {
+            List<int> index = new List<int>();
+            int brojac = 0;
+            foreach (UCOcjena item in flowLayoutPanel1.Controls)
+            {
+                index.Add(flowLayoutPanel1.Controls.GetChildIndex(item));
+            }
+
+            foreach (var item in index)
+            {
+                flowLayoutPanel1.Controls.RemoveAt(item - brojac);
+                brojac++;
             }
         }
     }

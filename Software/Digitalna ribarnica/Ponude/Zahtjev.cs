@@ -17,7 +17,7 @@ namespace Ponude
 		private string ime;
 		private string max;
 		private int Id;
-
+		private int IDKorisnika;
 		public int ID
 		{
 			get { return Id; }
@@ -25,6 +25,16 @@ namespace Ponude
 			{
 				Id = value;
 				PrikazUC.ucID.Text = Id.ToString();
+			}
+		}
+
+		public int IDKORISNIKA
+		{
+			get {return IDKorisnika; } 
+			set
+			{
+				IDKorisnika = value;
+				PrikazUC.IDKorisnika = IDKorisnika;
 			}
 		}
 		public string Max

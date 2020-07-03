@@ -18,6 +18,8 @@ namespace Ponude
         Iform iform;
         public Form Trenutna { get; set; }
         public Panel panelStranice { get; set; }
+
+        public int IDKorisnika { get; set; }
         public UCZahtjev(Iform novo)
         {
             InitializeComponent();
@@ -47,7 +49,7 @@ namespace Ponude
 
         private void button2_Click(object sender, EventArgs e)
         {
-            openChildForm(new OcjeneKorisnika(iform));
+            openChildForm(new OcjeneKorisnika(iform,zahtjev.IDKORISNIKA));
         }
     }
 }
