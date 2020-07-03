@@ -17,6 +17,8 @@ namespace Ocjene
 
         public Form Trenutna { get; set; }
         public Panel panelStranice { get; set; }
+
+        public float Prosjek { get; set; }
         public UCOcjena(INSform.Iform nova)
         {
             InitializeComponent();

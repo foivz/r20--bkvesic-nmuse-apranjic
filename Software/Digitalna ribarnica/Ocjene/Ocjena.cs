@@ -15,6 +15,17 @@ namespace Ocjene
         private int ocjena;
         private Image profilna;
         private Image slikaOcjene;
+        private float prosjek;
+
+        public float Prosjek
+        {
+            get { return prosjek; }
+            set
+            {
+                prosjek = value;
+                PrikazUC.Prosjek = prosjek;
+            }
+        }
 
         public int ID
         {

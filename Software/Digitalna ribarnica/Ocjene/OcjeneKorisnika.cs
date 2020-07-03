@@ -14,6 +14,7 @@ namespace Ocjene
     public partial class OcjeneKorisnika : Form
     {
         public List<Ocjena> ocjene = new List<Ocjena>();
+        public List<Ocjena> prosjek = new List<Ocjena>();
         Iform Iform;
         public OcjeneKorisnika(Iform nova,int id)
         {
@@ -23,6 +24,22 @@ namespace Ocjene
             ocjene = OcjeneRepozitory.DohvatiOcjene(nova, id);
             ObrisiPonude();
             DodajPonude(ocjene, nova);
+            prosjek = OcjeneRepozitory.DohvatiProsjek(nova, id);
+            foreach (var item in prosjek)
+            {
+                ucOcjenaSlike.Image = item.SlikaOcjene;
+                ucNaziv.Text = item.Prosjek.ToString();
+            }
+            if (ucNaziv.Text == "0")
+            {
+                lblObavijest.Text = "Korisnik još nema ocjena!";
+                lblObavijest.Visible = true;
+            }
+            else
+            {
+                lblObavijest.Visible = false;
+            }
+
         }
 
 
