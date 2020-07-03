@@ -283,7 +283,7 @@ namespace Ponude
         public static void KreirajRezervaciju(Iform nova, Zahtjev zahtjev,int idPonude)
         {
             var parameters = new Dictionary<string, object>();
-            parameters.Add("@datum", DateTime.Now);
+            parameters.Add("@datum", DateTime.Now.AddHours(double.Parse(zahtjev.BrojSatiDana)));
             parameters.Add("@kolicina", zahtjev.Kolicina);
             parameters.Add("@idKupca", zahtjev.IDKORISNIKA);
             parameters.Add("@idPonude", idPonude);
