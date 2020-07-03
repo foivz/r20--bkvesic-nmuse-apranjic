@@ -127,6 +127,10 @@
       <Project>{681cb769-455e-4801-9865-cf031aefb695}</Project>
       <Name>Lokacije</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ocjene\Ocjene.csproj">
+      <Project>{63ba02d3-4700-4262-a7b3-7597fa12a168}</Project>
+      <Name>Ocjene</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prijava\Prijava.csproj">
       <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
       <Name>Prijava</Name>

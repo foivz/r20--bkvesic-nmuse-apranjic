@@ -8,27 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using INSform;
-using Ocjene;
-
-namespace Ponude
+namespace Ocjene
 {
-    public partial class UCZahtjev : UserControl
+    public partial class UCOcjena : UserControl
     {
-        private Zahtjev zahtjev = null;
-        Iform iform;
+        private Ocjena ocjena = null;
+        INSform.Iform Iform;
+
         public Form Trenutna { get; set; }
         public Panel panelStranice { get; set; }
-        public UCZahtjev(Iform novo)
+        public UCOcjena(INSform.Iform nova)
         {
             InitializeComponent();
-            iform = novo;
-            Trenutna = iform.nova;
-            panelStranice = iform.panel;
+            Iform = nova;
+            Trenutna = Iform.nova;
+            panelStranice = Iform.panel;
         }
 
-        public void LoadPonuda(Zahtjev zahtjev)
+        public void LoadPonuda(Ocjena ocjena)
         {
-            this.zahtjev = zahtjev;
+            this.ocjena = ocjena;
         }
 
         public void openChildForm(Form childForm)
@@ -43,11 +42,6 @@ namespace Ponude
             panelStranice.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            openChildForm(new OcjeneKorisnika(iform));
         }
     }
 }
