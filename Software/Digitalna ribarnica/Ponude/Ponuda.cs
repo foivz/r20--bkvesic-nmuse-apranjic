@@ -19,7 +19,26 @@ namespace Ponude
 		private string id;
 		private string ime;
 		private string lokacija;
+		private int IDKorisnika;
 		int zastava = 0;
+
+		public int IDKORISNIKA
+		{
+			get { return IDKorisnika; }
+			set
+			{
+				if (zastava == 1)
+				{
+					IDKorisnika = value;
+					PrikazUC.IDkorisnika = IDKorisnika;
+				}
+				else
+				{
+					IDKorisnika = value;
+					PrikaziUrediPonudeUC.IDKorisnika = IDKorisnika;
+				}
+			}
+		}
 		public string Lokacija
 		{
 			get { return lokacija; }

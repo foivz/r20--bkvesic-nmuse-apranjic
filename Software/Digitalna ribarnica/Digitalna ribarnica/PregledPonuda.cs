@@ -73,6 +73,7 @@ namespace Digitalna_ribarnica
                 ponuda.Cijena = item.Cijena;
                 ponuda.Ime = item.Ime;
                 ponuda.Lokacija = item.Lokacija;
+                ponuda.IDKORISNIKA = item.IDKORISNIKA;
                 this.flowLayoutPanel1.Controls.Add(ponuda.PrikazUC);
                 this.Controls.Remove(ponuda.PrikazUC);
             }

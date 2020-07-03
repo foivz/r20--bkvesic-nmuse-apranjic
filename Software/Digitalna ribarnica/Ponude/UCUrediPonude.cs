@@ -17,6 +17,7 @@ namespace Ponude
 
         public Form Trenutna { get; set; }
         public Panel panelStranice { get; set; }
+        public int IDKorisnika { get; set; }
         public UCUrediPonude(Iform nova)
         {
             InitializeComponent();

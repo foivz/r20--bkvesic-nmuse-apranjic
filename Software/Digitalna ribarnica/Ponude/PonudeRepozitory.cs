@@ -69,6 +69,7 @@ namespace Ponude
                 ponuda.Cijena = float.Parse(item["cijena"].ToString());
                 ponuda.Ime = item["ime"] + " " + item["prezime"];
                 ponuda.Lokacija = item["lokacija"].ToString();
+                ponuda.IDKORISNIKA = int.Parse(item["id_korisnik"].ToString());
                 _ponude.Add(ponuda);
             }
             if(rezultat!=null)

@@ -43,6 +43,11 @@ namespace Ponude
                 hSbKolicina.Value = 1;
                 txtKolicina.Text = hSbKolicina.Value.ToString();
                 hSbKolicina.SmallChange = 1;
+
+                if (KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik) == Ponuda.IDKORISNIKA)
+                    buttonRezerviraj.Enabled = false;
+                else
+                    buttonRezerviraj.Enabled = true;
             }
             else
             {
