@@ -90,6 +90,7 @@ namespace Ponude
         {
             PonudeRepozitory.OdbaciZahtjev(iform, zahtjev.ID);
             PonudeRepozitory.KreirajRezervaciju(iform, zahtjev, zahtjev.IDPONUDE);
+            PonudeRepozitory.ObrisiZahtjev(iform, zahtjev);
             PonudeRepozitory.AzurirajPonuduKolicine(iform, zahtjev, zahtjev.IDPONUDE);
             zatvoriForme();
         }

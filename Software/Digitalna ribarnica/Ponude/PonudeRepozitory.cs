@@ -219,7 +219,8 @@ namespace Ponude
             parameters.Add("@idponuda", idPonuda);
             parameters.Add("@kolicina", kolicina);
             parameters.Add("@datum", DateTime.Now);
-            DB.Instance.ExecuteParamQuery("UPDATE [zahtjevi] SET [kolicina] = (@kolicina), datum_vrijeme = (@datum) WHERE [id_korisnik] = (@idKorisnika) AND [id_ponuda] = (@idponuda);", parameters);
+            parameters.Add("@status", 1);
+            DB.Instance.ExecuteParamQuery("UPDATE [zahtjevi] SET [kolicina] = (@kolicina), datum_vrijeme = (@datum), status = (@status) WHERE [id_korisnik] = (@idKorisnika) AND [id_ponuda] = (@idponuda);", parameters);
         }
 
         public static List<Zahtjev> DohvatiZahtjeve(Iform nova,int id)
@@ -295,6 +296,13 @@ namespace Ponude
             string sqlUpit = $"UPDATE ponude SET kolicina=kolicina-{zahtjev.Kolicina} WHERE id_ponuda={idPonude};";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
+
+        public static void ObrisiZahtjev(Iform nova, Zahtjev zahtjev)
+        {
+            string sqlUpit = $"delete from zahtjevi where id_zahtjev={zahtjev.ID}";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
 
     }
 
