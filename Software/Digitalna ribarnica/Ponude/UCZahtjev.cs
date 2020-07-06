@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using INSform;
 using Ocjene;
-
+using Prijava;
 namespace Ponude
 {
     public partial class UCZahtjev : UserControl
@@ -92,6 +92,12 @@ namespace Ponude
             PonudeRepozitory.KreirajRezervaciju(iform, zahtjev, zahtjev.IDPONUDE);
             PonudeRepozitory.ObrisiZahtjev(iform, zahtjev);
             PonudeRepozitory.AzurirajPonuduKolicine(iform, zahtjev, zahtjev.IDPONUDE);
+            List<string> mailovi = new List<string>();
+            mailovi.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik)));
+            mailovi.Add(KorisnikRepository.DohvatiEmailKorisnika(IDKorisnika));
+            Korisnik kupac = KorisnikRepository.DohvatiKorisnikaPoIDU(IDKorisnika);
+            Korisnik ponuditelj = KorisnikRepository.DohvatiKorisnikaPoIDU(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik));
+            openChildForm(new Izvjesce(mailovi,kupac,ponuditelj,zahtjev));
             zatvoriForme();
         }
     }

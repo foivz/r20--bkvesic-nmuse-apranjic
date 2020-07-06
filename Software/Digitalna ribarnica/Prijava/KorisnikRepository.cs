@@ -68,7 +68,38 @@ namespace Prijava
             }
             return id;
         }
-        
+
+        public static string DohvatiEmailKorisnika(int id)
+        {
+            string emailKorisnika = "";
+            string sqlUpit = $"SELECT email FROM korisnici WHERE id_korisnik='{id}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    emailKorisnika = (dr["email"].ToString());
+                }
+                dr.Close();
+            }
+            return emailKorisnika;
+        }
+
+        public static Korisnik DohvatiKorisnikaPoIDU(int id)
+        {
+            Korisnik korisnik = new Korisnik();
+            string sqlUpit = $"select * from korisnici where id_korisnik='{id}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    korisnik = DohvatiKorisnika(dr);
+                }
+                dr.Close();
+            }
+            return korisnik;
+        }
 
         public static int Spremi(Korisnik korisnik)
         {

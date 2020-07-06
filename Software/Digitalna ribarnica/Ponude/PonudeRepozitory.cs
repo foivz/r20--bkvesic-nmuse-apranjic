@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -77,7 +78,6 @@ namespace Ponude
                 rezultat.Close();
             return _ponude;
         }
-
 
         public static List<Ponuda> DohvatiPonudePoID(Iform nova,int id)
         {
@@ -164,6 +164,30 @@ namespace Ponude
             }
             rezultat.Close();
             return opis;
+        }
+
+        public static PonudeIzvjesca DohvatiPonuduIzvjesca(int id)
+        {
+            var rezultat = $"select ribe.naziv, ribe.mjerna_jedinica, ponude.cijena from ribe, ponude where ponude.id_ponuda = {id} and ponude.id_riba=ribe.id_riba";
+            PonudeIzvjesca ponuda=null;
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(rezultat);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    string mjerna = "";
+                    string naziv = (dr["naziv"].ToString());
+                    if (dr["mjerna_jedinica"].ToString() == "1")
+                        mjerna = "kom";
+                    else
+                        mjerna = "kg";
+                    double cijena = double.Parse(dr["cijena"].ToString());
+                    ponuda = new PonudeIzvjesca(naziv, cijena, mjerna);
+                }
+                dr.Close();
+            }
+            dr.Close();
+            return ponuda;
         }
 
 
@@ -268,6 +292,8 @@ namespace Ponude
                 rezultat.Close();
             return _zahtjevi;
         }
+
+
 
         public static void AzurirajZahtjeveNakonBrisanja(Iform nova,int id)
         {
