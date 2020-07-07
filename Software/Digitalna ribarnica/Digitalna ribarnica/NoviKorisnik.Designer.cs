@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTip = new System.Windows.Forms.Label();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.cmbTip = new System.Windows.Forms.ComboBox();
@@ -68,7 +68,7 @@
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblTip);
             this.groupBox1.Controls.Add(this.txtIme);
             this.groupBox1.Controls.Add(this.txtPrezime);
             this.groupBox1.Controls.Add(this.cmbTip);
@@ -100,15 +100,15 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Ime";
             // 
-            // label1
+            // lblTip
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.label1.Location = new System.Drawing.Point(28, 307);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Tip korisnika";
+            this.lblTip.AutoSize = true;
+            this.lblTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.lblTip.Location = new System.Drawing.Point(28, 307);
+            this.lblTip.Name = "lblTip";
+            this.lblTip.Size = new System.Drawing.Size(67, 13);
+            this.lblTip.TabIndex = 18;
+            this.lblTip.Text = "Tip korisnika";
             // 
             // txtIme
             // 
@@ -313,7 +313,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label lblTip;
         private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.TextBox txtPrezime;
         public System.Windows.Forms.ComboBox cmbTip;
