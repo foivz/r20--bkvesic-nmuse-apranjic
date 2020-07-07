@@ -17,6 +17,7 @@ namespace Ponude
 
         public static List<Zahtjev> _zahtjevi = new List<Zahtjev>();
         public static List<Rezervacija> _rezervacije = new List<Rezervacija>();
+        public static List<Rezervacija> _rezervacije1 = new List<Rezervacija>();
         static Iform Iform;
         public static List<Ponuda> DohvatiPonude(Iform nova)
         {
@@ -335,7 +336,7 @@ namespace Ponude
             Iform = nova;
             _rezervacije.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.*,ponude.cijena, rezervacije.id_rezervacija, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba");
+            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.*,ponude.cijena, rezervacije.id_rezervacija, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and rezervacije.id_tip_statusa=1");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)
@@ -395,7 +396,7 @@ namespace Ponude
             Iform = nova;
             _rezervacije.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"select  ribe.*, rezervacije.id_rezervacija, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina, ponude.cijena from rezervacije, ribe, korisnici, lokacije, ponude where korisnici.id_korisnik = rezervacije.id_kupac and rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba");
+            var rezultat = DB.Instance.DohvatiDataReader($"select  ribe.*, rezervacije.id_rezervacija,korisnici.id_korisnik, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina, ponude.cijena from rezervacije, ribe, korisnici, lokacije, ponude where korisnici.id_korisnik = rezervacije.id_kupac and rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and rezervacije.id_tip_statusa=1");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)
@@ -443,6 +444,7 @@ namespace Ponude
                 rezervacija.Cijena = float.Parse(item["cijena"].ToString());
                 rezervacija.Ime = item["ime"] + " " + item["prezime"];
                 rezervacija.Lokacija = item["lokacija"].ToString();
+                rezervacija.IDkupca =int.Parse( item["id_korisnik"].ToString());
                 _rezervacije.Add(rezervacija);
             }
             if (rezultat != null)
@@ -450,7 +452,143 @@ namespace Ponude
             return _rezervacije;
         }
 
+        public static List<Rezervacija> GotoveRezervacije(Iform nova, int id)
+        {
+            Iform = nova;
+            _rezervacije.Clear();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.naziv, ribe.mjerna_jedinica, rezervacije.id_rezervacija, korisnici.id_korisnik, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, rezervacije.kolicina, ponude.cijena, rezervacije.id_tip_statusa from rezervacije, ribe, korisnici, lokacije, ponude where korisnici.id_korisnik = rezervacije.id_kupac and rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and(rezervacije.id_tip_statusa = 2 or rezervacije.id_tip_statusa = 3 or rezervacije.id_tip_statusa = 4)");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
 
+                Rezervacija rezervacija = new Rezervacija(nova);
+
+                rezervacija.ID = int.Parse(item["id_rezervacija"].ToString());
+                rezervacija.Naziv = item["naziv"].ToString();
+                int mjerna = int.Parse(item["mjerna_jedinica"].ToString());
+                if (mjerna == 0)
+                    rezervacija.Mjerna = "kg";
+                else
+                    rezervacija.Mjerna = "kom";
+                rezervacija.Kolicina = int.Parse(item["kolicina"].ToString());
+                rezervacija.Cijena = float.Parse(item["cijena"].ToString());
+                rezervacija.Ime = item["ime"] + " " + item["prezime"];
+                rezervacija.Lokacija = item["lokacija"].ToString();
+                rezervacija.IDkupca = int.Parse(item["id_korisnik"].ToString());
+                _rezervacije.Add(rezervacija);
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return _rezervacije;
+        }
+
+        public static List<Rezervacija> GotoveRezeracijePonuditelj(Iform nova, int id)
+        {
+            Iform = nova;
+            _rezervacije1.Clear();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.naziv, ribe.mjerna_jedinica, rezervacije.id_rezervacija,korisnici.id_korisnik, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, ponude.cijena, rezervacije.kolicina, rezervacije.id_tip_statusa from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and(rezervacije.id_tip_statusa = 2 or rezervacije.id_tip_statusa = 3 or rezervacije.id_tip_statusa = 4)");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
+
+                Rezervacija rezervacija = new Rezervacija(nova);
+
+                rezervacija.ID = int.Parse(item["id_rezervacija"].ToString());
+                rezervacija.Naziv = item["naziv"].ToString();
+                int mjerna = int.Parse(item["mjerna_jedinica"].ToString());
+                if (mjerna == 0)
+                    rezervacija.Mjerna = "kg";
+                else
+                    rezervacija.Mjerna = "kom";
+                rezervacija.Kolicina = int.Parse(item["kolicina"].ToString());
+                rezervacija.Cijena = float.Parse(item["cijena"].ToString());
+                rezervacija.Ime = item["ime"] + " " + item["prezime"];
+                rezervacija.Lokacija = item["lokacija"].ToString();
+                rezervacija.IDkupca = int.Parse(item["id_korisnik"].ToString());
+                _rezervacije1.Add(rezervacija);
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return _rezervacije1;
+        }
+
+        public static void RezervacijaDovrsena(Iform nova, int id)
+        {
+            string sqlUpit = $"update rezervacije set id_tip_statusa=3 where id_rezervacija={id}";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+        public static void RezervacijaBlokirana(Iform nova, int id)
+        {
+            string sqlUpit = $"update rezervacije set id_tip_statusa=2 where id_rezervacija={id}";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        public static void UnesiOcjenu(Iform nova, int ocjena,string komentar, int tkoocjenjuje,int kogaocjenjuje, int idrezervacije)
+        {
+            string sqlUpit = $"insert into ocjene(ocjena, komentar, tko_ocjenjuje, koga_ocjenjuje, id_rezervacije)values('{ocjena}','{komentar}','{tkoocjenjuje}','{kogaocjenjuje}','{idrezervacije}')";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        public static void AzurirajOcjenu(Iform nova, int ocjena, string komentar, int idocjene)
+        {
+            string sqlUpit = $"update ocjene set ocjena='{ocjena}', komentar='{komentar}' where id_ocjena='{idocjene}'";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        public static Ocjena ProvjeriOcjene(Iform nova, int tkoocjenjuje, int kogaocjenjuje, int idrezervacije)
+        {
+            Ocjena ocjena = new Ocjena();
+            ocjena.Id = -1;
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            string sqlUpit = $"select * from ocjene where tko_ocjenjuje='{tkoocjenjuje}' and koga_ocjenjuje='{kogaocjenjuje}' and id_rezervacije='{idrezervacije}';";
+            var rezultat = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
+                ocjena.Id = int.Parse(item["id_ocjena"].ToString());
+                ocjena.Komentar = item["komentar"].ToString();
+                ocjena.ocjena = int.Parse(item["ocjena"].ToString()); 
+
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return ocjena;
+        }
     }
 
 

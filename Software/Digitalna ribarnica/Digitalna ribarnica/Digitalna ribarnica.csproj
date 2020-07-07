@@ -224,6 +224,10 @@
       <Project>{681cb769-455e-4801-9865-cf031aefb695}</Project>
       <Name>Lokacije</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ocjene\Ocjene.csproj">
+      <Project>{63ba02d3-4700-4262-a7b3-7597fa12a168}</Project>
+      <Name>Ocjene</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ponude\Ponude.csproj">
       <Project>{1fb0c138-1351-49c3-a94c-8f80978c17d6}</Project>
       <Name>Ponude</Name>

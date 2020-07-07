@@ -20,6 +20,17 @@ namespace Ponude
 		private string lokacija;
 		private string ime;
 		private string kupac;
+		private int IDKUPCA;
+
+		public int IDkupca
+		{
+			get { return IDKUPCA; }
+			set
+			{
+				IDKUPCA = value;
+				PrikazUC.IDKupca = IDKUPCA;
+			}
+		}
 		public string Ime
 		{
 			get { return ime; }

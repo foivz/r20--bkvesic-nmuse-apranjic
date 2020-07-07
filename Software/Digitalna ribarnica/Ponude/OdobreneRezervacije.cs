@@ -41,6 +41,7 @@ namespace Ponude
                 rezervacija.Lokacija = item.Lokacija;
                 rezervacija.Kupac = "Kupac";
                 rezervacija.GotovaRezervacija();
+                rezervacija.IDkupca = item.IDkupca;
                 this.flowLayoutPanel1.Controls.Add(rezervacija.PrikazUC);
                 this.Controls.Remove(rezervacija.PrikazUC);
             }

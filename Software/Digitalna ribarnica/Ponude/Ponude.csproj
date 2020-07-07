@@ -82,6 +82,19 @@
     <Compile Include="MojeRezervacije.Designer.cs">
       <DependentUpon>MojeRezervacije.cs</DependentUpon>
     </Compile>
+    <Compile Include="Neocijenjeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Neocijenjeni.Designer.cs">
+      <DependentUpon>Neocijenjeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OcijeniKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OcijeniKorisnika.Designer.cs">
+      <DependentUpon>OcijeniKorisnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ocjena.cs" />
     <Compile Include="OdobreneRezervacije.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +163,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MojeRezervacije.resx">
       <DependentUpon>MojeRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Neocijenjeni.resx">
+      <DependentUpon>Neocijenjeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OcijeniKorisnika.resx">
+      <DependentUpon>OcijeniKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OdobreneRezervacije.resx">
       <DependentUpon>OdobreneRezervacije.cs</DependentUpon>

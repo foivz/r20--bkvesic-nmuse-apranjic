@@ -1,13 +1,13 @@
 ﻿namespace Ocjene
 {
-    partial class UCOcjena
+    partial class MojeOcjene
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,71 +20,73 @@
             base.Dispose(disposing);
         }
 
-        #region Component Designer generated code
+        #region Windows Form Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtbxOpis = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ucID = new System.Windows.Forms.Label();
+            this.lblObavijest = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ucNaziv = new System.Windows.Forms.Label();
             this.ucOcjenaSlike = new System.Windows.Forms.PictureBox();
-            this.ucProfilna = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucOcjenaSlike)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucProfilna)).BeginInit();
             this.SuspendLayout();
-            // 
-            // rtbxOpis
-            // 
-            this.rtbxOpis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.rtbxOpis.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.rtbxOpis.Location = new System.Drawing.Point(82, 47);
-            this.rtbxOpis.Name = "rtbxOpis";
-            this.rtbxOpis.ReadOnly = true;
-            this.rtbxOpis.Size = new System.Drawing.Size(412, 39);
-            this.rtbxOpis.TabIndex = 4;
-            this.rtbxOpis.Text = "";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.ucID);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.ucNaziv);
-            this.groupBox1.Controls.Add(this.ucOcjenaSlike);
-            this.groupBox1.Controls.Add(this.ucProfilna);
-            this.groupBox1.Location = new System.Drawing.Point(3, 2);
+            this.groupBox1.Controls.Add(this.lblObavijest);
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 35);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(497, 89);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.Size = new System.Drawing.Size(931, 427);
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // ucID
+            // lblObavijest
             // 
-            this.ucID.AutoSize = true;
-            this.ucID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.ucID.Location = new System.Drawing.Point(456, 9);
-            this.ucID.Name = "ucID";
-            this.ucID.Size = new System.Drawing.Size(35, 13);
-            this.ucID.TabIndex = 3;
-            this.ucID.Text = "label1";
+            this.lblObavijest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblObavijest.AutoSize = true;
+            this.lblObavijest.Font = new System.Drawing.Font("Open Sans Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblObavijest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
+            this.lblObavijest.Location = new System.Drawing.Point(377, 24);
+            this.lblObavijest.Name = "lblObavijest";
+            this.lblObavijest.Size = new System.Drawing.Size(0, 47);
+            this.lblObavijest.TabIndex = 5;
+            this.lblObavijest.Visible = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.ucNaziv);
+            this.groupBox2.Controls.Add(this.ucOcjenaSlike);
+            this.groupBox2.Location = new System.Drawing.Point(16, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(307, 52);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.label2.Location = new System.Drawing.Point(329, 14);
+            this.label2.Location = new System.Drawing.Point(222, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 24);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 3;
             this.label2.Text = "5";
             // 
             // label1
@@ -92,10 +94,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.label1.Location = new System.Drawing.Point(307, 14);
+            this.label1.Location = new System.Drawing.Point(200, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 24);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 4;
             this.label1.Text = "/";
             // 
             // ucNaziv
@@ -103,55 +105,57 @@
             this.ucNaziv.AutoSize = true;
             this.ucNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ucNaziv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.ucNaziv.Location = new System.Drawing.Point(241, 14);
+            this.ucNaziv.Location = new System.Drawing.Point(173, 19);
             this.ucNaziv.Name = "ucNaziv";
             this.ucNaziv.Size = new System.Drawing.Size(21, 24);
-            this.ucNaziv.TabIndex = 2;
+            this.ucNaziv.TabIndex = 5;
             this.ucNaziv.Text = "5";
             // 
             // ucOcjenaSlike
             // 
-            this.ucOcjenaSlike.Location = new System.Drawing.Point(80, 11);
+            this.ucOcjenaSlike.Location = new System.Drawing.Point(6, 19);
             this.ucOcjenaSlike.Name = "ucOcjenaSlike";
             this.ucOcjenaSlike.Size = new System.Drawing.Size(155, 27);
             this.ucOcjenaSlike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ucOcjenaSlike.TabIndex = 1;
+            this.ucOcjenaSlike.TabIndex = 2;
             this.ucOcjenaSlike.TabStop = false;
             // 
-            // ucProfilna
+            // flowLayoutPanel1
             // 
-            this.ucProfilna.Location = new System.Drawing.Point(6, 9);
-            this.ucProfilna.Name = "ucProfilna";
-            this.ucProfilna.Size = new System.Drawing.Size(67, 74);
-            this.ucProfilna.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ucProfilna.TabIndex = 0;
-            this.ucProfilna.TabStop = false;
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(16, 79);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(700, 300);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(694, 300);
+            this.flowLayoutPanel1.TabIndex = 3;
             // 
-            // UCOcjena
+            // MojeOcjene
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.rtbxOpis);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.ClientSize = new System.Drawing.Size(1047, 496);
             this.Controls.Add(this.groupBox1);
-            this.Name = "UCOcjena";
-            this.Size = new System.Drawing.Size(504, 94);
+            this.Name = "MojeOcjene";
+            this.Text = "MojeOcjene";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucOcjenaSlike)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ucProfilna)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.RichTextBox rtbxOpis;
         private System.Windows.Forms.GroupBox groupBox1;
-        public System.Windows.Forms.Label ucID;
+        public System.Windows.Forms.Label lblObavijest;
+        private System.Windows.Forms.GroupBox groupBox2;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label ucNaziv;
         public System.Windows.Forms.PictureBox ucOcjenaSlike;
-        public System.Windows.Forms.PictureBox ucProfilna;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

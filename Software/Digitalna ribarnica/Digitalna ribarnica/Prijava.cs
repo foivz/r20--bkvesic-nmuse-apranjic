@@ -29,13 +29,14 @@ namespace Digitalna_ribarnica
         public Button MojeRezervacije;
         public Button MojePonude;
         public Button OdobreneRezervacije;
+        public Button Neocijenjen;
         //bool focus = false;
         public Prijava()
         {
             InitializeComponent();
         }
 
-        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe,Button lokacija,Button mojeRezervacije, Button mojePonude, Button Odobrene)
+        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe,Button lokacija,Button mojeRezervacije, Button mojePonude, Button Odobrene, Button Neocijenjen)
         {
             InitializeComponent();
             label_prijava = label;
@@ -51,6 +52,7 @@ namespace Digitalna_ribarnica
             MojeRezervacije = mojeRezervacije;
             MojePonude = mojePonude;
             OdobreneRezervacije = Odobrene;
+            this.Neocijenjen = Neocijenjen;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -100,6 +102,7 @@ namespace Digitalna_ribarnica
                             MojeRezervacije.Visible = true;
                             MojePonude.Visible = true;
                             OdobreneRezervacije.Visible = true;
+                            Neocijenjen.Visible = true;
                             postaviSlikuProfila();
                             Close();
                             break;
@@ -116,6 +119,8 @@ namespace Digitalna_ribarnica
                             MojeRezervacije.Visible = true;
                             MojePonude.Visible = true;
                             OdobreneRezervacije.Visible = true;
+                            Neocijenjen.Visible = true;
+
                             postaviSlikuProfila();
                             Close();
                             break;
@@ -132,6 +137,8 @@ namespace Digitalna_ribarnica
                             MojeRezervacije.Visible = true;
                             MojePonude.Visible = true;
                             OdobreneRezervacije.Visible = true;
+                            Neocijenjen.Visible = true;
+
                             postaviSlikuProfila();
                             Close();
                             break;

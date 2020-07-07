@@ -48,6 +48,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnOdobrene = new System.Windows.Forms.Button();
             this.btnMojeRezervacije = new System.Windows.Forms.Button();
             this.btnMojePonude = new System.Windows.Forms.Button();
             this.btnRibe = new System.Windows.Forms.Button();
@@ -59,7 +60,7 @@
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
-            this.btnOdobrene = new System.Windows.Forms.Button();
+            this.btnNeocijenjen = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
@@ -286,6 +287,7 @@
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.btnNeocijenjen);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.btnRibe);
@@ -311,6 +313,22 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(251, 141);
             this.panel7.TabIndex = 2;
+            // 
+            // btnOdobrene
+            // 
+            this.btnOdobrene.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOdobrene.FlatAppearance.BorderSize = 0;
+            this.btnOdobrene.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOdobrene.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdobrene.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.btnOdobrene.Location = new System.Drawing.Point(0, 102);
+            this.btnOdobrene.Name = "btnOdobrene";
+            this.btnOdobrene.Size = new System.Drawing.Size(251, 33);
+            this.btnOdobrene.TabIndex = 3;
+            this.btnOdobrene.Text = "Odobrene Rezervacije";
+            this.btnOdobrene.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnOdobrene.UseVisualStyleBackColor = true;
+            this.btnOdobrene.Click += new System.EventHandler(this.btnOdobrene_Click);
             // 
             // btnMojeRezervacije
             // 
@@ -403,9 +421,10 @@
             this.buttonNovosti.Name = "buttonNovosti";
             this.buttonNovosti.Size = new System.Drawing.Size(251, 45);
             this.buttonNovosti.TabIndex = 0;
-            this.buttonNovosti.Text = "Novosti";
+            this.buttonNovosti.Text = "Moje ocjene";
             this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNovosti.UseVisualStyleBackColor = true;
+            this.buttonNovosti.Click += new System.EventHandler(this.buttonNovosti_Click_1);
             // 
             // Profilna
             // 
@@ -459,21 +478,22 @@
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
-            // btnOdobrene
+            // btnNeocijenjen
             // 
-            this.btnOdobrene.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOdobrene.FlatAppearance.BorderSize = 0;
-            this.btnOdobrene.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdobrene.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnOdobrene.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.btnOdobrene.Location = new System.Drawing.Point(0, 102);
-            this.btnOdobrene.Name = "btnOdobrene";
-            this.btnOdobrene.Size = new System.Drawing.Size(251, 33);
-            this.btnOdobrene.TabIndex = 3;
-            this.btnOdobrene.Text = "Odobrene Rezervacije";
-            this.btnOdobrene.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnOdobrene.UseVisualStyleBackColor = true;
-            this.btnOdobrene.Click += new System.EventHandler(this.btnOdobrene_Click);
+            this.btnNeocijenjen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNeocijenjen.FlatAppearance.BorderSize = 0;
+            this.btnNeocijenjen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNeocijenjen.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNeocijenjen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.btnNeocijenjen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNeocijenjen.Location = new System.Drawing.Point(0, 276);
+            this.btnNeocijenjen.Name = "btnNeocijenjen";
+            this.btnNeocijenjen.Size = new System.Drawing.Size(251, 45);
+            this.btnNeocijenjen.TabIndex = 3;
+            this.btnNeocijenjen.Text = "Završene rezervacije";
+            this.btnNeocijenjen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNeocijenjen.UseVisualStyleBackColor = true;
+            this.btnNeocijenjen.Click += new System.EventHandler(this.btnNeocijenjen_Click);
             // 
             // formPocetna
             // 
@@ -538,6 +558,7 @@
         private System.Windows.Forms.Button btnMojePonude;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btnOdobrene;
+        private System.Windows.Forms.Button btnNeocijenjen;
     }
 }
 

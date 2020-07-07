@@ -1,4 +1,6 @@
-﻿using System;
+﻿using INSform;
+using Prijava;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,28 +9,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using INSform;
-using Prijava;
+
 namespace Ocjene
 {
-    public partial class OcjeneKorisnika : Form
+    public partial class MojeOcjene : Form
     {
         public List<Ocjena> ocjene = new List<Ocjena>();
         public List<Ocjena> prosjek = new List<Ocjena>();
-        Iform Iform;
-        public OcjeneKorisnika(Iform nova,int id)
+        Iform iform;
+        public MojeOcjene(Iform nova)
         {
             InitializeComponent();
-            Iform = nova;
-            //ocjene = OcjeneRepozitory.DohvatiOcjene(nova,KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
-            ocjene = OcjeneRepozitory.DohvatiOcjene(nova, id);
+            iform = nova;
+
+            ocjene = OcjeneRepozitory.DohvatiOcjene(nova, KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik));
             ObrisiPonude();
             DodajPonude(ocjene, nova);
-            prosjek = OcjeneRepozitory.DohvatiProsjek(nova, id);
-            
+            prosjek = OcjeneRepozitory.DohvatiProsjek(nova, KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik));
+
             foreach (var item in prosjek)
             {
-                
+
                 ucOcjenaSlike.Image = item.SlikaOcjene;
                 ucNaziv.Text = Math.Round(double.Parse(item.Prosjek.ToString()), 1).ToString();
             }
@@ -41,7 +42,6 @@ namespace Ocjene
             {
                 lblObavijest.Visible = false;
             }
-
         }
 
 
@@ -49,7 +49,7 @@ namespace Ocjene
         {
             foreach (var item in ocjene)
             {
-                Ocjena ocjena = new Ocjena(Iform);
+                Ocjena ocjena = new Ocjena(iform);
                 ocjena.Komentar = item.Komentar;
                 ocjena.Ocjenaa = item.Ocjenaa;
                 ocjena.ID = item.ID;

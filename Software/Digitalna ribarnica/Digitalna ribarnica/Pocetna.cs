@@ -12,6 +12,7 @@ using System.Threading;
 using Prijava;
 using Baza;
 using INSform;
+using Ocjene;
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form, Iform
@@ -49,6 +50,7 @@ namespace Digitalna_ribarnica
             btnMojePonude.Visible = false;
             btnMojeRezervacije.Visible = false;
             btnOdobrene.Visible = false;
+            btnNeocijenjen.Visible = false;
         }
      
 
@@ -79,7 +81,7 @@ namespace Digitalna_ribarnica
             */
             zatvoriForme();
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene,btnNeocijenjen));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -99,6 +101,7 @@ namespace Digitalna_ribarnica
             btnMojePonude.Visible = false;
             btnMojeRezervacije.Visible = false;
             btnOdobrene.Visible = false;
+            btnNeocijenjen.Visible = false;
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
@@ -225,6 +228,16 @@ namespace Digitalna_ribarnica
         private void btnOdobrene_Click(object sender, EventArgs e)
         {
             openChildForm(new Ponude.OdobreneRezervacije(this));
+        }
+
+        private void buttonNovosti_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new MojeOcjene(this));
+        }
+
+        private void btnNeocijenjen_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Ocjene.Neocijenjeni(this));
         }
     }
 }

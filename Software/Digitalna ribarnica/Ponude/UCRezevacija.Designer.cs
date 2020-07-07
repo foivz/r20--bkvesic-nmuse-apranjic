@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDetalji = new System.Windows.Forms.Button();
-            this.ucFotografija = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ucNaziv = new System.Windows.Forms.Label();
+            this.ucID = new System.Windows.Forms.Label();
+            this.ucLokacija = new System.Windows.Forms.Label();
+            this.ucPonuditelj = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.ucKupac = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ucMjerna = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ucKolicina = new System.Windows.Forms.Label();
             this.ucCijena = new System.Windows.Forms.Label();
-            this.ucLokacija = new System.Windows.Forms.Label();
-            this.ucPonuditelj = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.ucKupac = new System.Windows.Forms.Label();
-            this.ucID = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ucNaziv = new System.Windows.Forms.Label();
+            this.ucFotografija = new System.Windows.Forms.PictureBox();
             this.btnPreuzeto = new System.Windows.Forms.Button();
+            this.btnDetalji = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
             this.SuspendLayout();
@@ -73,48 +73,55 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // btnDetalji
+            // ucID
             // 
-            this.btnDetalji.FlatAppearance.BorderSize = 0;
-            this.btnDetalji.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDetalji.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDetalji.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.btnDetalji.Location = new System.Drawing.Point(6, 247);
-            this.btnDetalji.Name = "btnDetalji";
-            this.btnDetalji.Size = new System.Drawing.Size(200, 34);
-            this.btnDetalji.TabIndex = 5;
-            this.btnDetalji.Text = "Otkaži";
-            this.btnDetalji.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDetalji.UseVisualStyleBackColor = true;
+            this.ucID.AutoSize = true;
+            this.ucID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
+            this.ucID.Location = new System.Drawing.Point(6, 16);
+            this.ucID.Name = "ucID";
+            this.ucID.Size = new System.Drawing.Size(35, 13);
+            this.ucID.TabIndex = 21;
+            this.ucID.Text = "label4";
             // 
-            // ucFotografija
+            // ucLokacija
             // 
-            this.ucFotografija.Location = new System.Drawing.Point(44, 19);
-            this.ucFotografija.Name = "ucFotografija";
-            this.ucFotografija.Size = new System.Drawing.Size(114, 87);
-            this.ucFotografija.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ucFotografija.TabIndex = 6;
-            this.ucFotografija.TabStop = false;
+            this.ucLokacija.AutoSize = true;
+            this.ucLokacija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
+            this.ucLokacija.Location = new System.Drawing.Point(101, 192);
+            this.ucLokacija.Name = "ucLokacija";
+            this.ucLokacija.Size = new System.Drawing.Size(35, 13);
+            this.ucLokacija.TabIndex = 20;
+            this.ucLokacija.Text = "label7";
             // 
-            // label3
+            // ucPonuditelj
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.label3.Location = new System.Drawing.Point(41, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Naziv:";
+            this.ucPonuditelj.AutoSize = true;
+            this.ucPonuditelj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
+            this.ucPonuditelj.Location = new System.Drawing.Point(101, 172);
+            this.ucPonuditelj.Name = "ucPonuditelj";
+            this.ucPonuditelj.Size = new System.Drawing.Size(35, 13);
+            this.ucPonuditelj.TabIndex = 19;
+            this.ucPonuditelj.Text = "label6";
             // 
-            // ucNaziv
+            // label5
             // 
-            this.ucNaziv.AutoSize = true;
-            this.ucNaziv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.ucNaziv.Location = new System.Drawing.Point(91, 109);
-            this.ucNaziv.Name = "ucNaziv";
-            this.ucNaziv.Size = new System.Drawing.Size(35, 13);
-            this.ucNaziv.TabIndex = 7;
-            this.ucNaziv.Text = "label1";
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
+            this.label5.Location = new System.Drawing.Point(41, 192);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Lokacija:";
+            // 
+            // ucKupac
+            // 
+            this.ucKupac.AutoSize = true;
+            this.ucKupac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
+            this.ucKupac.Location = new System.Drawing.Point(41, 173);
+            this.ucKupac.Name = "ucKupac";
+            this.ucKupac.Size = new System.Drawing.Size(56, 13);
+            this.ucKupac.TabIndex = 18;
+            this.ucKupac.Text = "Ponuditelj:";
             // 
             // label6
             // 
@@ -176,55 +183,34 @@
             this.ucCijena.TabIndex = 12;
             this.ucCijena.Text = "label1";
             // 
-            // ucLokacija
+            // label3
             // 
-            this.ucLokacija.AutoSize = true;
-            this.ucLokacija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
-            this.ucLokacija.Location = new System.Drawing.Point(101, 192);
-            this.ucLokacija.Name = "ucLokacija";
-            this.ucLokacija.Size = new System.Drawing.Size(35, 13);
-            this.ucLokacija.TabIndex = 20;
-            this.ucLokacija.Text = "label7";
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.label3.Location = new System.Drawing.Point(41, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Naziv:";
             // 
-            // ucPonuditelj
+            // ucNaziv
             // 
-            this.ucPonuditelj.AutoSize = true;
-            this.ucPonuditelj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
-            this.ucPonuditelj.Location = new System.Drawing.Point(101, 172);
-            this.ucPonuditelj.Name = "ucPonuditelj";
-            this.ucPonuditelj.Size = new System.Drawing.Size(35, 13);
-            this.ucPonuditelj.TabIndex = 19;
-            this.ucPonuditelj.Text = "label6";
+            this.ucNaziv.AutoSize = true;
+            this.ucNaziv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.ucNaziv.Location = new System.Drawing.Point(91, 109);
+            this.ucNaziv.Name = "ucNaziv";
+            this.ucNaziv.Size = new System.Drawing.Size(35, 13);
+            this.ucNaziv.TabIndex = 7;
+            this.ucNaziv.Text = "label1";
             // 
-            // label5
+            // ucFotografija
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
-            this.label5.Location = new System.Drawing.Point(41, 192);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Lokacija:";
-            // 
-            // ucKupac
-            // 
-            this.ucKupac.AutoSize = true;
-            this.ucKupac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
-            this.ucKupac.Location = new System.Drawing.Point(41, 173);
-            this.ucKupac.Name = "ucKupac";
-            this.ucKupac.Size = new System.Drawing.Size(56, 13);
-            this.ucKupac.TabIndex = 18;
-            this.ucKupac.Text = "Ponuditelj:";
-            // 
-            // ucID
-            // 
-            this.ucID.AutoSize = true;
-            this.ucID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(101)))), ((int)(((byte)(101)))));
-            this.ucID.Location = new System.Drawing.Point(6, 16);
-            this.ucID.Name = "ucID";
-            this.ucID.Size = new System.Drawing.Size(35, 13);
-            this.ucID.TabIndex = 21;
-            this.ucID.Text = "label4";
+            this.ucFotografija.Location = new System.Drawing.Point(44, 19);
+            this.ucFotografija.Name = "ucFotografija";
+            this.ucFotografija.Size = new System.Drawing.Size(114, 87);
+            this.ucFotografija.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ucFotografija.TabIndex = 6;
+            this.ucFotografija.TabStop = false;
             // 
             // btnPreuzeto
             // 
@@ -239,6 +225,22 @@
             this.btnPreuzeto.Text = "Preuzeto";
             this.btnPreuzeto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPreuzeto.UseVisualStyleBackColor = true;
+            this.btnPreuzeto.Click += new System.EventHandler(this.btnPreuzeto_Click);
+            // 
+            // btnDetalji
+            // 
+            this.btnDetalji.FlatAppearance.BorderSize = 0;
+            this.btnDetalji.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalji.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetalji.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.btnDetalji.Location = new System.Drawing.Point(6, 247);
+            this.btnDetalji.Name = "btnDetalji";
+            this.btnDetalji.Size = new System.Drawing.Size(200, 34);
+            this.btnDetalji.TabIndex = 5;
+            this.btnDetalji.Text = "Otkaži";
+            this.btnDetalji.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDetalji.UseVisualStyleBackColor = true;
+            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
             // UCRezevacija
             // 
