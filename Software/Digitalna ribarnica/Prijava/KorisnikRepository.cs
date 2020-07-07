@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -51,6 +52,32 @@ namespace Prijava
                 dr.Close();     //DataReader treba obavezno zatvoriti nakon uporabe.
             }
             return lista;
+        }
+
+        public static Image DohvatiProfilnu(int id)
+        {
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT * FROM korisnici WHERE id_korisnik='{id}';");
+            foreach (DbDataRecord item in rezultat)
+            {
+                var row = new Dictionary<string, object>();
+                for (int i = 0; i < item.FieldCount; i++)
+                {
+                    row.Add(item.GetName(i), item[i]);
+                }
+                returnMe.Add(row);
+            }
+            Image image = null;
+            foreach (var item in returnMe)
+            {
+                if (item["slika"].ToString() != "")
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                    image = Image.FromStream(ms);
+                }
+            }
+            rezultat.Close();
+            return image;
         }
 
         public static int DohvatiIdKorisnika(string korime)

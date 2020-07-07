@@ -85,6 +85,12 @@
     <Compile Include="Pocetna.Designer.cs">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopisKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopisKorisnika.Designer.cs">
+      <DependentUpon>PopisKorisnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="PregledPonuda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pocetna.resx">
       <DependentUpon>Pocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopisKorisnika.resx">
+      <DependentUpon>PopisKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PregledPonuda.resx">
       <DependentUpon>PregledPonuda.cs</DependentUpon>

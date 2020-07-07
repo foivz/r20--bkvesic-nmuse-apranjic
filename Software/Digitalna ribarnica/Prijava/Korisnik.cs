@@ -5,19 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 using System.IO;
+using System.ComponentModel;
+
 namespace Prijava
 {
     public class Korisnik
     {
+        [DisplayName("ID korisnika")]
         public int ID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
+
+        [DisplayName("Korisničko ime")]
         public string KorIme { get; set; }
 
         public string Adresa { get; set; }
 
         public string Mjesto { get; set; }
 
+        [DisplayName("Broj mobitela")]
         public string BrojMobitela { get; set; }
         public string Lozinka { get; set; }
 
@@ -26,8 +32,10 @@ namespace Prijava
         public string Email { get; set; }
 
         public int Status { get; set; }
-        public DateTime DatumRodenja { get; set; }
 
+        [DisplayName("Datum rođenja")]
+        public DateTime DatumRodenja { get; set; }
+        [DisplayName("Profilna slika")]
         public Image ProfilnaSlika { get; set; }
         public Korisnik()
         {
