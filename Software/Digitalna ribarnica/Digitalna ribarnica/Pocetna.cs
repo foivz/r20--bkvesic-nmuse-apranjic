@@ -23,7 +23,7 @@ namespace Digitalna_ribarnica
         bool podizbronik = true;
 
         bool podizbornikPonude = true;
-
+        bool podizbornikPonude1 = true;
         public formPocetna()
         {
             InitializeComponent();
@@ -48,6 +48,7 @@ namespace Digitalna_ribarnica
             panel7.Visible = false;
             btnMojePonude.Visible = false;
             btnMojeRezervacije.Visible = false;
+            btnOdobrene.Visible = false;
         }
      
 
@@ -78,7 +79,7 @@ namespace Digitalna_ribarnica
             */
             zatvoriForme();
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -97,6 +98,7 @@ namespace Digitalna_ribarnica
             btnLokacija.Visible = false;
             btnMojePonude.Visible = false;
             btnMojeRezervacije.Visible = false;
+            btnOdobrene.Visible = false;
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
@@ -203,6 +205,26 @@ namespace Digitalna_ribarnica
         private void btnMojePonude_Click(object sender, EventArgs e)
         {
             openChildForm(new MojePonude(this));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            zatvoriForme();
+        }
+
+        private void btnMojeRezervacije_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Ponude.MojeRezervacije(this));
+        }
+
+        private void buttonNovosti_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOdobrene_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Ponude.OdobreneRezervacije(this));
         }
     }
 }

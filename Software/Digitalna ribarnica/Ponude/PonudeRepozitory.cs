@@ -16,6 +16,7 @@ namespace Ponude
         public static List<Ponuda> _ponude = new List<Ponuda>();
 
         public static List<Zahtjev> _zahtjevi = new List<Zahtjev>();
+        public static List<Rezervacija> _rezervacije = new List<Rezervacija>();
         static Iform Iform;
         public static List<Ponuda> DohvatiPonude(Iform nova)
         {
@@ -327,6 +328,126 @@ namespace Ponude
         {
             string sqlUpit = $"delete from zahtjevi where id_zahtjev={zahtjev.ID}";
             DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        public static List<Rezervacija> DohvatiRezervacije(Iform nova,int id)
+        {
+            Iform = nova;
+            _rezervacije.Clear();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.*,ponude.cijena, rezervacije.id_rezervacija, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
+
+                Rezervacija rezervacija = new Rezervacija(nova);
+
+                try
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["dodatna_fotografija"]);
+                    rezervacija.Fotografija = Image.FromStream(ms);
+                }
+                catch (Exception)
+                {
+
+                    try
+                    {
+                        MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                        rezervacija.Fotografija = Image.FromStream(ms);
+                    }
+                    catch (Exception)
+                    {
+                        rezervacija.Fotografija = null;
+                    }
+                }
+
+                rezervacija.ID = int.Parse(item["id_rezervacija"].ToString());
+                rezervacija.Naziv = item["naziv"].ToString();
+                int mjerna = int.Parse(item["mjerna_jedinica"].ToString());
+                if (mjerna == 0)
+                    rezervacija.Mjerna = "kg";
+                else
+                    rezervacija.Mjerna = "kom";
+                rezervacija.Kolicina = int.Parse(item["kolicina"].ToString());
+                rezervacija.Cijena = float.Parse(item["cijena"].ToString());
+                rezervacija.Ime = item["ime"] + " " + item["prezime"];
+                rezervacija.Lokacija = item["lokacija"].ToString();
+                _rezervacije.Add(rezervacija);
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return _rezervacije;
+        }
+
+        public static List<Rezervacija> DohvatiOdobreneRezervacije(Iform nova, int id)
+        {
+            Iform = nova;
+            _rezervacije.Clear();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"select  ribe.*, rezervacije.id_rezervacija, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina, ponude.cijena from rezervacije, ribe, korisnici, lokacije, ponude where korisnici.id_korisnik = rezervacije.id_kupac and rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
+
+                Rezervacija rezervacija = new Rezervacija(nova);
+
+                try
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["dodatna_fotografija"]);
+                    rezervacija.Fotografija = Image.FromStream(ms);
+                }
+                catch (Exception)
+                {
+
+                    try
+                    {
+                        MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                        rezervacija.Fotografija = Image.FromStream(ms);
+                    }
+                    catch (Exception)
+                    {
+                        rezervacija.Fotografija = null;
+                    }
+                }
+
+                rezervacija.ID = int.Parse(item["id_rezervacija"].ToString());
+                rezervacija.Naziv = item["naziv"].ToString();
+                int mjerna = int.Parse(item["mjerna_jedinica"].ToString());
+                if (mjerna == 0)
+                    rezervacija.Mjerna = "kg";
+                else
+                    rezervacija.Mjerna = "kom";
+                rezervacija.Kolicina = int.Parse(item["kolicina"].ToString());
+                rezervacija.Cijena = float.Parse(item["cijena"].ToString());
+                rezervacija.Ime = item["ime"] + " " + item["prezime"];
+                rezervacija.Lokacija = item["lokacija"].ToString();
+                _rezervacije.Add(rezervacija);
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return _rezervacije;
         }
 
 

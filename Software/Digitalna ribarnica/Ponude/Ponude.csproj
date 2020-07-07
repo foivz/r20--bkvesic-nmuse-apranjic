@@ -76,6 +76,18 @@
     </Compile>
     <Compile Include="Mail.cs" />
     <Compile Include="MailConfig.cs" />
+    <Compile Include="MojeRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MojeRezervacije.Designer.cs">
+      <DependentUpon>MojeRezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OdobreneRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OdobreneRezervacije.Designer.cs">
+      <DependentUpon>OdobreneRezervacije.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ponuda.cs" />
     <Compile Include="PonudeIzvjesca.cs" />
     <Compile Include="PonudeRepozitory.cs" />
@@ -86,12 +98,19 @@
     <Compile Include="DetaljiPonude.Designer.cs">
       <DependentUpon>DetaljiPonude.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rezervacija.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UCPonuda.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCPonuda.Designer.cs">
       <DependentUpon>UCPonuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCRezevacija.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCRezevacija.Designer.cs">
+      <DependentUpon>UCRezevacija.cs</DependentUpon>
     </Compile>
     <Compile Include="UCUrediPonude.cs">
       <SubType>UserControl</SubType>
@@ -129,9 +148,18 @@
     <EmbeddedResource Include="Izvjesce.resx">
       <DependentUpon>Izvjesce.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MojeRezervacije.resx">
+      <DependentUpon>MojeRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OdobreneRezervacije.resx">
+      <DependentUpon>OdobreneRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rezervacija.rdlc" />
     <EmbeddedResource Include="UCPonuda.resx">
       <DependentUpon>UCPonuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCRezevacija.resx">
+      <DependentUpon>UCRezevacija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCUrediPonude.resx">
       <DependentUpon>UCUrediPonude.cs</DependentUpon>
