@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using INSform;
-
+using Prijava;
 namespace Ponude
 {
     public partial class UCRezevacija : UserControl
@@ -68,14 +68,31 @@ namespace Ponude
         {
             PonudeRepozitory.RezervacijaDovrsena(Iform, rezervacija.ID);
             //zatvoriForme();
-            openChildForm(new OcijeniKorisnika(Iform,rezervacija));
+            List<string> email = new List<string>();
+            email.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik)));
+            email.Add(KorisnikRepository.DohvatiEmailKorisnika(IDKupca));
+            Mail mail = new Mail(email);
+            mail.Text = "Poštovani\nKorisnik " + Iform.autentifikator.AktivanKorisnik + " je potvrdio da je rezervacija dovršena. Molimo ocijenite korisnika!\nLijep pozdrav!";
+            mail.Title = "Rezervacija dovršena";
+            mail.RequireAutentication = true;
+            mail.Send();
+            openChildForm(new OcijeniKorisnika(Iform, rezervacija));
         }
 
         private void btnDetalji_Click(object sender, EventArgs e)
         {
             PonudeRepozitory.RezervacijaBlokirana(Iform, rezervacija.ID);
-            //zatvoriForme();
+           
             //openChildForm(new OcijeniKorisnika(Iform));
+            List<string> email = new List<string>();
+            email.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik)));
+            email.Add(KorisnikRepository.DohvatiEmailKorisnika(IDKupca));
+            Mail mail = new Mail(email);
+            mail.Text = "Poštovani\nKorisnik " + Iform.autentifikator.AktivanKorisnik + " je otkazao rezervaciju. Molimo ocijenite korisnika!\nLijep pozdrav!";
+            mail.Title = "Rezervacija dovršena";
+            mail.RequireAutentication = true;
+            mail.Send();
+            zatvoriForme();
         }
     }
 }

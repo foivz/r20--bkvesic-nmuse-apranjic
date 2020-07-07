@@ -148,8 +148,14 @@ namespace Prijava
 
         public static int Obrisi(Korisnik korisnik)
         {
-            string sqlDelete = "DELETE FROM korisnici WHERE Id = " + korisnik.ID;
+            string sqlDelete = "DELETE FROM korisnici WHERE id_korisnik = " + korisnik.ID;
             return DB.Instance.IzvrsiUpit(sqlDelete);
+        }
+
+        public static int BlokirajKorisnika(int id, int uloga)
+        {
+            string sqlUpit = $"update korisnici set id_tip_korisnika='{uloga}' where id_korisnik='{id}'; ";
+            return DB.Instance.IzvrsiUpit(sqlUpit);
         }
     }
 }

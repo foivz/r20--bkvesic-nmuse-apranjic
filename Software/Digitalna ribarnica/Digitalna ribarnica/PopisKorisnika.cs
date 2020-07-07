@@ -51,6 +51,13 @@ namespace Digitalna_ribarnica
             {
                 item.ProfilnaSlika = KorisnikRepository.DohvatiProfilnu(item.ID);
             }
+            Korisnik aktivni = new Korisnik();
+            foreach (var item in korisnici)
+            {
+                if(item.ID==KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik))
+                    aktivni = item;
+            }
+            korisnici.Remove(aktivni);
             dataGridView1.DataSource = korisnici;
             kalibrirajSlike();
         }
@@ -98,6 +105,60 @@ namespace Digitalna_ribarnica
                 dataGridView1.DataSource = result;
                 kalibrirajSlike();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Korisnik korisnik = dataGridView1.CurrentRow.DataBoundItem as Korisnik;
+            if (korisnik != null)
+            {
+                KorisnikRepository.Obrisi(korisnik);
+            }
+            notifyIcon1.ShowBalloonTip(1000, "Obrisan korisnik", "Uspješno ste obrisali korisnika", ToolTipIcon.Info);
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+                form.openChildForm(new PopisKorisnika(iform));
+        }
+
+        private void btnOcijeniKupca_Click(object sender, EventArgs e)
+        {
+            Korisnik korisnik = dataGridView1.CurrentRow.DataBoundItem as Korisnik;
+            if (korisnik != null)
+            {
+                KorisnikRepository.BlokirajKorisnika(korisnik.ID,4);
+            }
+            notifyIcon1.ShowBalloonTip(1000, "Blokiran korisnik", "Uspješno ste blokirali korisnika", ToolTipIcon.Info);
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+                form.openChildForm(new PopisKorisnika(iform));
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Korisnik korisnik = dataGridView1.CurrentRow.DataBoundItem as Korisnik;
+            if (korisnik != null)
+            {
+                KorisnikRepository.BlokirajKorisnika(korisnik.ID, 2);
+            }
+            notifyIcon1.ShowBalloonTip(1000, "Odblokiran korisnik", "Uspješno ste odblokirali korisnika", ToolTipIcon.Info);
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+                form.openChildForm(new PopisKorisnika(iform));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null)
+                form.openChildForm(new NoviKorisnik(iform));
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Korisnik korisnik = dataGridView1.CurrentRow.DataBoundItem as Korisnik;
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            if (form != null && korisnik!=null)
+                form.openChildForm(new NoviKorisnik(iform,korisnik));
         }
     }
 }
