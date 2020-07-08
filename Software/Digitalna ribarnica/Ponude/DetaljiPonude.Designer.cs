@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetaljiPonude));
             this.pbxSlika = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ucLokacija = new System.Windows.Forms.Label();
@@ -43,6 +45,10 @@
             this.ucCijena = new System.Windows.Forms.Label();
             this.ucNaziv = new System.Windows.Forms.Label();
             this.rtbxOpis = new System.Windows.Forms.RichTextBox();
+            this.hSbKolicina = new System.Windows.Forms.HScrollBar();
+            this.txtKolicina = new System.Windows.Forms.TextBox();
+            this.buttonRezerviraj = new System.Windows.Forms.Button();
+            this.notifyRezerviraj = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSlika)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +64,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonRezerviraj);
+            this.groupBox1.Controls.Add(this.txtKolicina);
+            this.groupBox1.Controls.Add(this.hSbKolicina);
             this.groupBox1.Controls.Add(this.ucLokacija);
             this.groupBox1.Controls.Add(this.ucPonuditelj);
             this.groupBox1.Controls.Add(this.ucMjerna);
@@ -221,6 +230,44 @@
             this.rtbxOpis.TabIndex = 1;
             this.rtbxOpis.Text = "";
             // 
+            // hSbKolicina
+            // 
+            this.hSbKolicina.Location = new System.Drawing.Point(25, 324);
+            this.hSbKolicina.Name = "hSbKolicina";
+            this.hSbKolicina.Size = new System.Drawing.Size(185, 19);
+            this.hSbKolicina.TabIndex = 21;
+            this.hSbKolicina.Value = 10;
+            this.hSbKolicina.ValueChanged += new System.EventHandler(this.hSbKolicina_ValueChanged);
+            // 
+            // txtKolicina
+            // 
+            this.txtKolicina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.txtKolicina.ForeColor = System.Drawing.Color.White;
+            this.txtKolicina.Location = new System.Drawing.Point(232, 322);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(52, 20);
+            this.txtKolicina.TabIndex = 22;
+            // 
+            // buttonRezerviraj
+            // 
+            this.buttonRezerviraj.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonRezerviraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRezerviraj.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRezerviraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.buttonRezerviraj.Location = new System.Drawing.Point(313, 310);
+            this.buttonRezerviraj.Name = "buttonRezerviraj";
+            this.buttonRezerviraj.Size = new System.Drawing.Size(191, 40);
+            this.buttonRezerviraj.TabIndex = 23;
+            this.buttonRezerviraj.Text = "Rezerviraj";
+            this.buttonRezerviraj.UseVisualStyleBackColor = true;
+            this.buttonRezerviraj.Click += new System.EventHandler(this.buttonRezerviraj_Click);
+            // 
+            // notifyRezerviraj
+            // 
+            this.notifyRezerviraj.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyRezerviraj.Icon")));
+            this.notifyRezerviraj.Text = "notifyIcon1";
+            this.notifyRezerviraj.Visible = true;
+            // 
             // DetaljiPonude
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +278,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "DetaljiPonude";
             this.Text = "Test";
+            this.Load += new System.EventHandler(this.DetaljiPonude_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxSlika)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -255,5 +303,9 @@
         public System.Windows.Forms.Label ucCijena;
         public System.Windows.Forms.Label ucNaziv;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtKolicina;
+        private System.Windows.Forms.HScrollBar hSbKolicina;
+        private System.Windows.Forms.Button buttonRezerviraj;
+        private System.Windows.Forms.NotifyIcon notifyRezerviraj;
     }
 }

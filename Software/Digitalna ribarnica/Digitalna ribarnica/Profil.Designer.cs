@@ -33,6 +33,7 @@
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnDodajSliku = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUredi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,7 @@
             this.btnSpremi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSpremi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
-            this.btnSpremi.Location = new System.Drawing.Point(261, 343);
+            this.btnSpremi.Location = new System.Drawing.Point(120, 343);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(102, 40);
             this.btnSpremi.TabIndex = 3;
@@ -71,7 +72,7 @@
             this.btnDodajSliku.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDodajSliku.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajSliku.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
-            this.btnDodajSliku.Location = new System.Drawing.Point(63, 343);
+            this.btnDodajSliku.Location = new System.Drawing.Point(6, 343);
             this.btnDodajSliku.Name = "btnDodajSliku";
             this.btnDodajSliku.Size = new System.Drawing.Size(108, 40);
             this.btnDodajSliku.TabIndex = 3;
@@ -81,6 +82,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUredi);
             this.groupBox1.Controls.Add(this.btnSpremi);
             this.groupBox1.Controls.Add(this.btnDodajSliku);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -89,6 +91,20 @@
             this.groupBox1.Size = new System.Drawing.Size(427, 398);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // btnUredi
+            // 
+            this.btnUredi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnUredi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUredi.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUredi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.btnUredi.Location = new System.Drawing.Point(239, 343);
+            this.btnUredi.Name = "btnUredi";
+            this.btnUredi.Size = new System.Drawing.Size(157, 40);
+            this.btnUredi.TabIndex = 3;
+            this.btnUredi.Text = "Dodatne postavke";
+            this.btnUredi.UseVisualStyleBackColor = true;
+            this.btnUredi.Click += new System.EventHandler(this.btnUredi_Click);
             // 
             // Profil
             // 
@@ -113,5 +129,6 @@
         private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnDodajSliku;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnUredi;
     }
 }

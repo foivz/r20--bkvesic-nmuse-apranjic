@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ponude", "Ponude\Ponude.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INSform", "INSform\INSform.csproj", "{7A77EA37-D108-414A-ABF4-B04CD1517D2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocjene", "Ocjene\Ocjene.csproj", "{63BA02D3-4700-4262-A7B3-7597FA12A168}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{7A77EA37-D108-414A-ABF4-B04CD1517D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A77EA37-D108-414A-ABF4-B04CD1517D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A77EA37-D108-414A-ABF4-B04CD1517D2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BA02D3-4700-4262-A7B3-7597FA12A168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BA02D3-4700-4262-A7B3-7597FA12A168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BA02D3-4700-4262-A7B3-7597FA12A168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BA02D3-4700-4262-A7B3-7597FA12A168}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

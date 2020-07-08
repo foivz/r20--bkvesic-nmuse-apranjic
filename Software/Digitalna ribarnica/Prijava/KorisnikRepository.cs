@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -52,7 +53,111 @@ namespace Prijava
             }
             return lista;
         }
-        
+
+        public static Image DohvatiProfilnu(int id)
+        {
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"SELECT * FROM korisnici WHERE id_korisnik='{id}';");
+            foreach (DbDataRecord item in rezultat)
+            {
+                var row = new Dictionary<string, object>();
+                for (int i = 0; i < item.FieldCount; i++)
+                {
+                    row.Add(item.GetName(i), item[i]);
+                }
+                returnMe.Add(row);
+            }
+            Image image = null;
+            foreach (var item in returnMe)
+            {
+                if (item["slika"].ToString() != "")
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                    image = Image.FromStream(ms);
+                }
+            }
+            rezultat.Close();
+            return image;
+        }
+
+        public static int DohvatiIdKorisnika(string korime)
+        {
+            int id = 0;
+            string sqlUpit = $"SELECT id_korisnik FROM korisnici WHERE korisnicko_ime='{korime}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    id = int.Parse(dr["id_korisnik"].ToString());
+                }
+                dr.Close(); 
+            }
+            return id;
+        }
+
+        public static int ProvjeriKorIme(string korime, string aktivni)
+        {
+            int id = 0;
+            string sqlUpit = $"SELECT id_korisnik FROM korisnici WHERE korisnicko_ime='{korime}' AND korisnicko_ime<>'{aktivni}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    id = int.Parse(dr["id_korisnik"].ToString());
+                }
+                dr.Close();
+            }
+            return id;
+        }
+
+        public static int ProvjeriEmail(string email,string korime)
+        {
+            int id = 0;
+            string sqlUpit = $"SELECT id_korisnik FROM korisnici WHERE email='{email}' AND korisnicko_ime<>'{korime}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    id = int.Parse(dr["id_korisnik"].ToString());
+                }
+                dr.Close();
+            }
+            return id;
+        }
+        public static string DohvatiEmailKorisnika(int id)
+        {
+            string emailKorisnika = "";
+            string sqlUpit = $"SELECT email FROM korisnici WHERE id_korisnik='{id}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    emailKorisnika = (dr["email"].ToString());
+                }
+                dr.Close();
+            }
+            return emailKorisnika;
+        }
+
+        public static Korisnik DohvatiKorisnikaPoIDU(int id)
+        {
+            Korisnik korisnik = new Korisnik();
+            string sqlUpit = $"select * from korisnici where id_korisnik='{id}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    korisnik = DohvatiKorisnika(dr);
+                }
+                dr.Close();
+            }
+            return korisnik;
+        }
 
         public static int Spremi(Korisnik korisnik)
         {
@@ -74,8 +179,14 @@ namespace Prijava
 
         public static int Obrisi(Korisnik korisnik)
         {
-            string sqlDelete = "DELETE FROM korisnici WHERE Id = " + korisnik.ID;
+            string sqlDelete = "DELETE FROM korisnici WHERE id_korisnik = " + korisnik.ID;
             return DB.Instance.IzvrsiUpit(sqlDelete);
+        }
+
+        public static int BlokirajKorisnika(int id, int uloga)
+        {
+            string sqlUpit = $"update korisnici set id_tip_korisnika='{uloga}' where id_korisnik='{id}'; ";
+            return DB.Instance.IzvrsiUpit(sqlUpit);
         }
     }
 }

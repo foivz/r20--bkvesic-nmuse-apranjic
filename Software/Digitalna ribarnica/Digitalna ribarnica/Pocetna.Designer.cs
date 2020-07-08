@@ -47,20 +47,29 @@
             this.buttonPonude = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnKorisnici = new System.Windows.Forms.Button();
+            this.btnNeocijenjen = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnOdobrene = new System.Windows.Forms.Button();
+            this.btnMojeRezervacije = new System.Windows.Forms.Button();
+            this.btnMojePonude = new System.Windows.Forms.Button();
             this.btnRibe = new System.Windows.Forms.Button();
             this.btnLokacija = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.buttonNovosti = new System.Windows.Forms.Button();
             this.Profilna = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
+            this.btnPredefinirane = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panelStranice.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -232,13 +241,14 @@
             // 
             // button4
             // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(230)))), ((int)(((byte)(164)))));
-            this.button4.Location = new System.Drawing.Point(-2, 551);
+            this.button4.Location = new System.Drawing.Point(0, 492);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(250, 45);
+            this.button4.Size = new System.Drawing.Size(251, 45);
             this.button4.TabIndex = 0;
             this.button4.Text = "Help";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -246,43 +256,50 @@
             // 
             // buttonPonude
             // 
+            this.buttonPonude.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPonude.FlatAppearance.BorderSize = 0;
             this.buttonPonude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPonude.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonPonude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(151)))), ((int)(((byte)(138)))));
-            this.buttonPonude.Location = new System.Drawing.Point(0, 140);
+            this.buttonPonude.Location = new System.Drawing.Point(0, 69);
             this.buttonPonude.Name = "buttonPonude";
-            this.buttonPonude.Size = new System.Drawing.Size(250, 45);
+            this.buttonPonude.Size = new System.Drawing.Size(251, 33);
             this.buttonPonude.TabIndex = 0;
-            this.buttonPonude.Text = "Ponude";
+            this.buttonPonude.Text = "Sve ponude";
             this.buttonPonude.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonPonude.UseVisualStyleBackColor = true;
             this.buttonPonude.Click += new System.EventHandler(this.buttonPonude_Click);
             // 
             // button2
             // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(0, 89);
+            this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 45);
+            this.button2.Size = new System.Drawing.Size(251, 45);
             this.button2.TabIndex = 0;
             this.button2.Text = "Početna";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // panel4
             // 
             this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.btnPredefinirane);
+            this.panel4.Controls.Add(this.btnKorisnici);
+            this.panel4.Controls.Add(this.btnNeocijenjen);
+            this.panel4.Controls.Add(this.panel7);
             this.panel4.Controls.Add(this.button4);
             this.panel4.Controls.Add(this.btnRibe);
             this.panel4.Controls.Add(this.btnLokacija);
+            this.panel4.Controls.Add(this.button8);
             this.panel4.Controls.Add(this.buttonNovosti);
             this.panel4.Controls.Add(this.Profilna);
-            this.panel4.Controls.Add(this.buttonPonude);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 89);
@@ -290,15 +307,112 @@
             this.panel4.Size = new System.Drawing.Size(251, 672);
             this.panel4.TabIndex = 2;
             // 
+            // btnKorisnici
+            // 
+            this.btnKorisnici.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnKorisnici.FlatAppearance.BorderSize = 0;
+            this.btnKorisnici.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKorisnici.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKorisnici.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.btnKorisnici.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnKorisnici.Location = new System.Drawing.Point(0, 447);
+            this.btnKorisnici.Name = "btnKorisnici";
+            this.btnKorisnici.Size = new System.Drawing.Size(251, 45);
+            this.btnKorisnici.TabIndex = 4;
+            this.btnKorisnici.Text = "Korisnici";
+            this.btnKorisnici.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnKorisnici.UseVisualStyleBackColor = true;
+            this.btnKorisnici.Click += new System.EventHandler(this.btnKorisnici_Click);
+            // 
+            // btnNeocijenjen
+            // 
+            this.btnNeocijenjen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNeocijenjen.FlatAppearance.BorderSize = 0;
+            this.btnNeocijenjen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNeocijenjen.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNeocijenjen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.btnNeocijenjen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNeocijenjen.Location = new System.Drawing.Point(0, 276);
+            this.btnNeocijenjen.Name = "btnNeocijenjen";
+            this.btnNeocijenjen.Size = new System.Drawing.Size(251, 45);
+            this.btnNeocijenjen.TabIndex = 3;
+            this.btnNeocijenjen.Text = "Završene rezervacije";
+            this.btnNeocijenjen.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNeocijenjen.UseVisualStyleBackColor = true;
+            this.btnNeocijenjen.Click += new System.EventHandler(this.btnNeocijenjen_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btnOdobrene);
+            this.panel7.Controls.Add(this.buttonPonude);
+            this.panel7.Controls.Add(this.btnMojeRezervacije);
+            this.panel7.Controls.Add(this.btnMojePonude);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 135);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(251, 141);
+            this.panel7.TabIndex = 2;
+            // 
+            // btnOdobrene
+            // 
+            this.btnOdobrene.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOdobrene.FlatAppearance.BorderSize = 0;
+            this.btnOdobrene.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOdobrene.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdobrene.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.btnOdobrene.Location = new System.Drawing.Point(0, 102);
+            this.btnOdobrene.Name = "btnOdobrene";
+            this.btnOdobrene.Size = new System.Drawing.Size(251, 33);
+            this.btnOdobrene.TabIndex = 3;
+            this.btnOdobrene.Text = "Odobrene Rezervacije";
+            this.btnOdobrene.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnOdobrene.UseVisualStyleBackColor = true;
+            this.btnOdobrene.Click += new System.EventHandler(this.btnOdobrene_Click);
+            // 
+            // btnMojeRezervacije
+            // 
+            this.btnMojeRezervacije.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMojeRezervacije.FlatAppearance.BorderSize = 0;
+            this.btnMojeRezervacije.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMojeRezervacije.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnMojeRezervacije.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.btnMojeRezervacije.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMojeRezervacije.Location = new System.Drawing.Point(0, 32);
+            this.btnMojeRezervacije.Name = "btnMojeRezervacije";
+            this.btnMojeRezervacije.Size = new System.Drawing.Size(251, 37);
+            this.btnMojeRezervacije.TabIndex = 0;
+            this.btnMojeRezervacije.Text = "Moje rezervacije";
+            this.btnMojeRezervacije.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMojeRezervacije.UseVisualStyleBackColor = true;
+            this.btnMojeRezervacije.Click += new System.EventHandler(this.btnMojeRezervacije_Click);
+            // 
+            // btnMojePonude
+            // 
+            this.btnMojePonude.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMojePonude.FlatAppearance.BorderSize = 0;
+            this.btnMojePonude.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMojePonude.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnMojePonude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
+            this.btnMojePonude.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMojePonude.Location = new System.Drawing.Point(0, 0);
+            this.btnMojePonude.Name = "btnMojePonude";
+            this.btnMojePonude.Size = new System.Drawing.Size(251, 32);
+            this.btnMojePonude.TabIndex = 0;
+            this.btnMojePonude.Text = "Moje Ponude";
+            this.btnMojePonude.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMojePonude.UseVisualStyleBackColor = true;
+            this.btnMojePonude.Click += new System.EventHandler(this.btnMojePonude_Click);
+            // 
             // btnRibe
             // 
+            this.btnRibe.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnRibe.FlatAppearance.BorderSize = 0;
             this.btnRibe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRibe.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRibe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(190)))), ((int)(((byte)(151)))));
-            this.btnRibe.Location = new System.Drawing.Point(1, 444);
+            this.btnRibe.Location = new System.Drawing.Point(0, 537);
             this.btnRibe.Name = "btnRibe";
-            this.btnRibe.Size = new System.Drawing.Size(250, 45);
+            this.btnRibe.Size = new System.Drawing.Size(251, 45);
             this.btnRibe.TabIndex = 0;
             this.btnRibe.Text = "Ribe u sustavu";
             this.btnRibe.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -307,42 +421,62 @@
             // 
             // btnLokacija
             // 
+            this.btnLokacija.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnLokacija.FlatAppearance.BorderSize = 0;
             this.btnLokacija.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLokacija.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnLokacija.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(176)))), ((int)(((byte)(146)))));
-            this.btnLokacija.Location = new System.Drawing.Point(1, 393);
+            this.btnLokacija.Location = new System.Drawing.Point(0, 582);
             this.btnLokacija.Name = "btnLokacija";
-            this.btnLokacija.Size = new System.Drawing.Size(250, 45);
+            this.btnLokacija.Size = new System.Drawing.Size(251, 45);
             this.btnLokacija.TabIndex = 0;
             this.btnLokacija.Text = "Lokacije";
             this.btnLokacija.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLokacija.UseVisualStyleBackColor = true;
             this.btnLokacija.Click += new System.EventHandler(this.btnLokacija_Click);
             // 
+            // button8
+            // 
+            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.button8.Location = new System.Drawing.Point(0, 90);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(251, 45);
+            this.button8.TabIndex = 0;
+            this.button8.Text = "Ponude";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // buttonNovosti
             // 
+            this.buttonNovosti.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonNovosti.FlatAppearance.BorderSize = 0;
             this.buttonNovosti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovosti.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.buttonNovosti.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.buttonNovosti.Location = new System.Drawing.Point(-3, 191);
+            this.buttonNovosti.Location = new System.Drawing.Point(0, 45);
             this.buttonNovosti.Name = "buttonNovosti";
-            this.buttonNovosti.Size = new System.Drawing.Size(250, 45);
+            this.buttonNovosti.Size = new System.Drawing.Size(251, 45);
             this.buttonNovosti.TabIndex = 0;
-            this.buttonNovosti.Text = "Novosti";
+            this.buttonNovosti.Text = "Moje ocjene";
             this.buttonNovosti.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonNovosti.UseVisualStyleBackColor = true;
+            this.buttonNovosti.Click += new System.EventHandler(this.buttonNovosti_Click_1);
             // 
             // Profilna
             // 
+            this.Profilna.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Profilna.FlatAppearance.BorderSize = 0;
             this.Profilna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Profilna.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.Profilna.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(210)))), ((int)(((byte)(157)))));
-            this.Profilna.Location = new System.Drawing.Point(1, 495);
+            this.Profilna.Location = new System.Drawing.Point(0, 627);
             this.Profilna.Name = "Profilna";
-            this.Profilna.Size = new System.Drawing.Size(250, 45);
+            this.Profilna.Size = new System.Drawing.Size(251, 45);
             this.Profilna.TabIndex = 0;
             this.Profilna.Text = "Korisnički račun";
             this.Profilna.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -386,6 +520,22 @@
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
+            // btnPredefinirane
+            // 
+            this.btnPredefinirane.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnPredefinirane.FlatAppearance.BorderSize = 0;
+            this.btnPredefinirane.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPredefinirane.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPredefinirane.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(230)))), ((int)(((byte)(164)))));
+            this.btnPredefinirane.Location = new System.Drawing.Point(0, 402);
+            this.btnPredefinirane.Name = "btnPredefinirane";
+            this.btnPredefinirane.Size = new System.Drawing.Size(251, 45);
+            this.btnPredefinirane.TabIndex = 5;
+            this.btnPredefinirane.Text = "Predefinirane postavke";
+            this.btnPredefinirane.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPredefinirane.UseVisualStyleBackColor = true;
+            this.btnPredefinirane.Click += new System.EventHandler(this.btnPredefinirane_Click);
+            // 
             // formPocetna
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -410,6 +560,7 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxProfilna)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panelStranice.ResumeLayout(false);
             this.panelStranice.PerformLayout();
             this.ResumeLayout(false);
@@ -443,6 +594,14 @@
         private System.Windows.Forms.Button btnRibe;
         private System.Windows.Forms.Button btnLokacija;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnMojeRezervacije;
+        private System.Windows.Forms.Button btnMojePonude;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnOdobrene;
+        private System.Windows.Forms.Button btnNeocijenjen;
+        private System.Windows.Forms.Button btnKorisnici;
+        private System.Windows.Forms.Button btnPredefinirane;
     }
 }
 

@@ -12,14 +12,19 @@ using System.Threading;
 using Prijava;
 using Baza;
 using INSform;
+using Ocjene;
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form, Iform
     {
-        Autentifikator autentifikator;
+        public Autentifikator autentifikator { get; set; }
         public Form nova { get; set; }
         public Panel panel { get; set; }
         public Form activeForm = null;
+        bool podizbronik = true;
+
+        bool podizbornikPonude = true;
+        bool podizbornikPonude1 = true;
         public formPocetna()
         {
             InitializeComponent();
@@ -41,6 +46,13 @@ namespace Digitalna_ribarnica
             btnRibe.Visible = false;
             btnLokacija.Visible = false;
             buttonOdjava.ForeColor = Color.FromArgb(4, 136, 133);
+            panel7.Visible = false;
+            btnMojePonude.Visible = false;
+            btnMojeRezervacije.Visible = false;
+            btnOdobrene.Visible = false;
+            btnNeocijenjen.Visible = false;
+            btnKorisnici.Visible = false;
+            btnPredefinirane.Visible = false;
         }
      
 
@@ -48,14 +60,14 @@ namespace Digitalna_ribarnica
 
         public void openChildForm(Form childForm)
         {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
+            if (nova != null)
+                nova.Close();
+            nova = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelStranice.Controls.Add(childForm);
-            panelStranice.Tag = childForm;
+            panel.Controls.Add(childForm);
+            panel.Tag = childForm;
             childForm.BringToFront();
             if(childForm!=null)
                 childForm.Show();
@@ -69,8 +81,9 @@ namespace Digitalna_ribarnica
             prijava.ShowDialog();
             pocetna.ShowDialog();
             */
+            zatvoriForme();
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene,btnNeocijenjen,btnKorisnici,btnPredefinirane));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -87,9 +100,37 @@ namespace Digitalna_ribarnica
             pbxProfilna.Visible = false;
             btnRibe.Visible = false;
             btnLokacija.Visible = false;
+            btnMojePonude.Visible = false;
+            btnMojeRezervacije.Visible = false;
+            btnOdobrene.Visible = false;
+            btnNeocijenjen.Visible = false;
+            btnKorisnici.Visible = false;
+            btnPredefinirane.Visible = false;
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
+            autentifikator.AktivanKorisnik = null;
+            zatvoriForme();
+
+        }
+
+        public void zatvoriForme()
+        {
+            FormCollection fc = Application.OpenForms;
+            List<Form> aktivne = new List<Form>();
+            foreach (Form frm in fc)
+            {
+                if (frm.Name != "formPocetna")
+                {
+                    //frm.Close();
+                    aktivne.Add(frm);
+                }
+            }
+
+            foreach (var item in aktivne)
+            {
+                item.Close();
+            }
         }
 
         private void timerPocetna_Tick(object sender, EventArgs e)
@@ -115,6 +156,7 @@ namespace Digitalna_ribarnica
 
         private void buttonRegistracija_Click(object sender, EventArgs e)
         {
+            zatvoriForme();
             openChildForm(new Registracija(autentifikator));
         }
 
@@ -151,6 +193,65 @@ namespace Digitalna_ribarnica
         private void buttonPonude_Click(object sender, EventArgs e)
         {
             openChildForm(new PregledPonuda(this));
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (podizbornikPonude)
+            {
+                panel7.Visible = true;
+                podizbornikPonude = false;
+            }
+            else
+            {
+                panel7.Visible = false;
+                podizbornikPonude = true;
+            }
+        }
+
+        private void btnMojePonude_Click(object sender, EventArgs e)
+        {
+            openChildForm(new MojePonude(this));
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            zatvoriForme();
+        }
+
+        private void btnMojeRezervacije_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Ponude.MojeRezervacije(this));
+        }
+
+        private void buttonNovosti_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOdobrene_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Ponude.OdobreneRezervacije(this));
+        }
+
+        private void buttonNovosti_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new MojeOcjene(this));
+        }
+
+        private void btnNeocijenjen_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Ocjene.Neocijenjeni(this));
+        }
+
+        private void btnKorisnici_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PopisKorisnika(this));
+        }
+
+        private void btnPredefinirane_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PromijeniPredefiniranePostavke(this));
         }
     }
 }

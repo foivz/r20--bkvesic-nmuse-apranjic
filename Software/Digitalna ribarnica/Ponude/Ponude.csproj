@@ -32,6 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -44,8 +62,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AzurirajFormu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AzurirajFormu.Designer.cs">
+      <DependentUpon>AzurirajFormu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Izvjesce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Izvjesce.Designer.cs">
+      <DependentUpon>Izvjesce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mail.cs" />
+    <Compile Include="MailConfig.cs" />
+    <Compile Include="MojeRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MojeRezervacije.Designer.cs">
+      <DependentUpon>MojeRezervacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Neocijenjeni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Neocijenjeni.Designer.cs">
+      <DependentUpon>Neocijenjeni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OcijeniKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OcijeniKorisnika.Designer.cs">
+      <DependentUpon>OcijeniKorisnika.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ocjena.cs" />
+    <Compile Include="OdobreneRezervacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OdobreneRezervacije.Designer.cs">
+      <DependentUpon>OdobreneRezervacije.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ponuda.cs" />
+    <Compile Include="PonudeIzvjesca.cs" />
     <Compile Include="PonudeRepozitory.cs" />
+    <Compile Include="PredefiniranePostavke.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DetaljiPonude.cs">
       <SubType>Form</SubType>
@@ -53,19 +112,86 @@
     <Compile Include="DetaljiPonude.Designer.cs">
       <DependentUpon>DetaljiPonude.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rezervacija.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UCPonuda.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCPonuda.Designer.cs">
       <DependentUpon>UCPonuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCRezevacija.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCRezevacija.Designer.cs">
+      <DependentUpon>UCRezevacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCUrediPonude.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCUrediPonude.Designer.cs">
+      <DependentUpon>UCUrediPonude.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCZahtjev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCZahtjev.Designer.cs">
+      <DependentUpon>UCZahtjev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UrediPonudu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UrediPonudu.Designer.cs">
+      <DependentUpon>UrediPonudu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Zahtjev.cs" />
+    <Compile Include="ZahtjeviZaRezervacijom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZahtjeviZaRezervacijom.Designer.cs">
+      <DependentUpon>ZahtjeviZaRezervacijom.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AzurirajFormu.resx">
+      <DependentUpon>AzurirajFormu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetaljiPonude.resx">
       <DependentUpon>DetaljiPonude.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Izvjesce.resx">
+      <DependentUpon>Izvjesce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MojeRezervacije.resx">
+      <DependentUpon>MojeRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Neocijenjeni.resx">
+      <DependentUpon>Neocijenjeni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OcijeniKorisnika.resx">
+      <DependentUpon>OcijeniKorisnika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OdobreneRezervacije.resx">
+      <DependentUpon>OdobreneRezervacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rezervacija.rdlc" />
     <EmbeddedResource Include="UCPonuda.resx">
       <DependentUpon>UCPonuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCRezevacija.resx">
+      <DependentUpon>UCRezevacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCUrediPonude.resx">
+      <DependentUpon>UCUrediPonude.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCZahtjev.resx">
+      <DependentUpon>UCZahtjev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UrediPonudu.resx">
+      <DependentUpon>UrediPonudu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZahtjeviZaRezervacijom.resx">
+      <DependentUpon>ZahtjeviZaRezervacijom.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +203,32 @@
       <Project>{7a77ea37-d108-414a-abf4-b04cd1517d2e}</Project>
       <Name>INSform</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Lokacije\Lokacije.csproj">
+      <Project>{681cb769-455e-4801-9865-cf031aefb695}</Project>
+      <Name>Lokacije</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ocjene\Ocjene.csproj">
+      <Project>{63ba02d3-4700-4262-a7b3-7597fa12a168}</Project>
+      <Name>Ocjene</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Prijava\Prijava.csproj">
+      <Project>{c404d9ae-55c8-4acb-9932-3d198bb005b7}</Project>
+      <Name>Prijava</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RibeUSustavu\RibeUSustavu.csproj">
+      <Project>{b61fbbe0-0c61-4edf-98ad-cd502c2b699c}</Project>
+      <Name>RibeUSustavu</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

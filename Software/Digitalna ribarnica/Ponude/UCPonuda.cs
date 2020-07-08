@@ -17,6 +17,8 @@ namespace Ponude
 
         public Form Trenutna { get; set; }
         public Panel panelStranice { get; set; }
+
+        public int IDkorisnika { get; set; }
         public UCPonuda(Iform novo)
         {
             InitializeComponent();
@@ -46,7 +48,7 @@ namespace Ponude
 
         private void btnDetalji_Click(object sender, EventArgs e)
         {
-            openChildForm(new DetaljiPonude(ponuda));
+            openChildForm(new DetaljiPonude(ponuda, Iform));
         }
     }
 }

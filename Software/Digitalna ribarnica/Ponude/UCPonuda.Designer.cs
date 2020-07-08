@@ -67,7 +67,7 @@
             this.groupBox1.Controls.Add(this.ucNaziv);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(241, 269);
+            this.groupBox1.Size = new System.Drawing.Size(201, 269);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
@@ -179,7 +179,7 @@
             this.btnDetalji.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
             this.btnDetalji.Location = new System.Drawing.Point(5, 229);
             this.btnDetalji.Name = "btnDetalji";
-            this.btnDetalji.Size = new System.Drawing.Size(230, 34);
+            this.btnDetalji.Size = new System.Drawing.Size(190, 34);
             this.btnDetalji.TabIndex = 4;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -231,7 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "UCPonuda";
-            this.Size = new System.Drawing.Size(247, 275);
+            this.Size = new System.Drawing.Size(213, 275);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).EndInit();

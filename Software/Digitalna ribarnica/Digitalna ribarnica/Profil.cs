@@ -144,5 +144,13 @@ namespace Digitalna_ribarnica
             }
             */
         }
+
+        private void btnUredi_Click(object sender, EventArgs e)
+        {
+            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+            Korisnik korisnik = KorisnikRepository.DohvatiKorisnikaPoIDU(KorisnikRepository.DohvatiIdKorisnika(Autentifikator.AktivanKorisnik));
+            if (form != null)
+                form.openChildForm(new NoviKorisnik(korisnik,Autentifikator));
+        }
     }
 }
