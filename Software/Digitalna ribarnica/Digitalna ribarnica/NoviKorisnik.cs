@@ -120,7 +120,10 @@ namespace Digitalna_ribarnica
 
                         if (Korisnik != null)
                         {
-                            Autentifikator.AktivanKorisnik = txtKorIme.Text;
+                            if (Iform == null)
+                            {
+                                Autentifikator.AktivanKorisnik = txtKorIme.Text;
+                            }
                             parameters.Add("@id", Korisnik.ID);
                             DB.Instance.ExecuteParamQuery("UPDATE [korisnici] set [ime] = (@ime), [prezime] = (@prezime), [email] = (@email), [korisnicko_ime] = (@korime), [broj_mobitela] = (@broj), [lozinka] = (@lozinka), [adresa] = (@adresa), [mjesto] = (@mjesto), [id_tip_korisnika] = (@tip), [id_status]=(@status) where [id_korisnik] = (@id)", parameters);
 
