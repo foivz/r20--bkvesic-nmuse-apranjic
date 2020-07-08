@@ -57,9 +57,31 @@ namespace Digitalna_ribarnica
                 if(item.ID==KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik))
                     aktivni = item;
             }
+
+
+            PrikazUlogaIStatusa(korisnici);
             korisnici.Remove(aktivni);
             dataGridView1.DataSource = korisnici;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[10].Visible = false;
             kalibrirajSlike();
+        }
+
+        public void PrikazUlogaIStatusa(IEnumerable<Korisnik> korisnici)
+        {
+            foreach (var item in korisnici)
+            {
+                if (item.Status == 1)
+                    item.NazivStatusa = "Aktivan";
+                else
+                    item.NazivStatusa = "Neaktivan";
+                if (item.Tip == 1)
+                    item.ULOGA = "Admin";
+                else if (item.Tip == 2)
+                    item.ULOGA = "Korisnik";
+                else
+                    item.ULOGA = "Blokiran";
+            }
         }
 
         public void kalibrirajSlike()
@@ -83,7 +105,8 @@ namespace Digitalna_ribarnica
                     var result = from korisnik in korisnici
                                  where korisnik.ID == broj || korisnik.KorIme.Contains(broj.ToString()) || korisnik.Status == broj || korisnik.Mjesto.Contains(broj.ToString()) || korisnik.Tip == broj || korisnik.Lozinka.Contains(broj.ToString()) || korisnik.BrojMobitela.Contains(broj.ToString()) || korisnik.Email.Contains(broj.ToString()) || korisnik.DatumRodenja.ToString().Contains(broj.ToString()) || korisnik.Adresa.Contains(broj.ToString())
                                  select korisnik;
-
+                    PrikazUlogaIStatusa(result);
+                    dataGridView1.DataSource = null;
                     dataGridView1.DataSource = result.ToList();
                     kalibrirajSlike();
                 }
@@ -92,6 +115,8 @@ namespace Digitalna_ribarnica
                     var result = from korisnik in korisnici
                                  where korisnik.Ime.ToLower().Contains(filter) || korisnik.KorIme.ToLower().Contains(filter) || korisnik.Prezime.ToLower().Contains(filter) || korisnik.Email.ToLower().Contains(filter) || korisnik.Lozinka.ToLower().Contains(filter) || korisnik.Mjesto.ToLower().Contains(filter) || korisnik.Adresa.ToLower().Contains(filter)
                                  select korisnik;
+                    PrikazUlogaIStatusa(result);
+                    dataGridView1.DataSource = null;
                     dataGridView1.DataSource = result.ToList();
                     kalibrirajSlike();
                 }
@@ -101,6 +126,7 @@ namespace Digitalna_ribarnica
             {
                 var result = from korisnik in korisnici
                              select korisnik;
+                PrikazUlogaIStatusa(result);
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = result;
                 kalibrirajSlike();

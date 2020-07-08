@@ -37,6 +37,13 @@ namespace Prijava
         public DateTime DatumRodenja { get; set; }
         [DisplayName("Profilna slika")]
         public Image ProfilnaSlika { get; set; }
+        [DisplayName("Status korisnika")]
+        public string NazivStatusa { get; set; }
+        [DisplayName("Uloga korisnika")]
+        public string ULOGA { get; set; }
+
+
+
         public Korisnik()
         {
 
