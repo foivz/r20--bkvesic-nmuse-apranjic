@@ -96,6 +96,37 @@ namespace Prijava
             return id;
         }
 
+        public static int ProvjeriKorIme(string korime, string aktivni)
+        {
+            int id = 0;
+            string sqlUpit = $"SELECT id_korisnik FROM korisnici WHERE korisnicko_ime='{korime}' AND korisnicko_ime<>'{aktivni}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    id = int.Parse(dr["id_korisnik"].ToString());
+                }
+                dr.Close();
+            }
+            return id;
+        }
+
+        public static int ProvjeriEmail(string email,string korime)
+        {
+            int id = 0;
+            string sqlUpit = $"SELECT id_korisnik FROM korisnici WHERE email='{email}' AND korisnicko_ime<>'{korime}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    id = int.Parse(dr["id_korisnik"].ToString());
+                }
+                dr.Close();
+            }
+            return id;
+        }
         public static string DohvatiEmailKorisnika(int id)
         {
             string emailKorisnika = "";

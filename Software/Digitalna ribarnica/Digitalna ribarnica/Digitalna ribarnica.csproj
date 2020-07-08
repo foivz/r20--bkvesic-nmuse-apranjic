@@ -122,6 +122,12 @@
     <Compile Include="PromijeniLozinku.Designer.cs">
       <DependentUpon>PromijeniLozinku.cs</DependentUpon>
     </Compile>
+    <Compile Include="PromijeniPredefiniranePostavke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PromijeniPredefiniranePostavke.Designer.cs">
+      <DependentUpon>PromijeniPredefiniranePostavke.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registracija.cs">
       <SubType>Form</SubType>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PromijeniLozinku.resx">
       <DependentUpon>PromijeniLozinku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PromijeniPredefiniranePostavke.resx">
+      <DependentUpon>PromijeniPredefiniranePostavke.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

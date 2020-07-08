@@ -589,6 +589,41 @@ namespace Ponude
                 rezultat.Close();
             return ocjena;
         }
+
+        public static PredefiniranePostavke PredefiniranePostavke()
+        {
+            PredefiniranePostavke predefiniranePostavke = new PredefiniranePostavke();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            string sqlUpit = $"select * from postavke;";
+            var rezultat = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
+                predefiniranePostavke.Cijena = float.Parse(item["min_cijena"].ToString());
+                predefiniranePostavke.Kolicina = int.Parse(item["min_kolicina"].ToString());
+
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return predefiniranePostavke;
+        }
+
+        public static void AzurirajPredefirniranePostavke(float cijena, int kolicina)
+        {
+            string sqlUpit = $"update postavke set min_cijena={cijena}, min_kolicina={kolicina}";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
     }
 
 

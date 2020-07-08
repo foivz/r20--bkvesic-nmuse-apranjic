@@ -150,7 +150,7 @@ namespace Digitalna_ribarnica
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             Korisnik korisnik = KorisnikRepository.DohvatiKorisnikaPoIDU(KorisnikRepository.DohvatiIdKorisnika(Autentifikator.AktivanKorisnik));
             if (form != null)
-                form.openChildForm(new NoviKorisnik(korisnik));
+                form.openChildForm(new NoviKorisnik(korisnik,Autentifikator));
         }
     }
 }

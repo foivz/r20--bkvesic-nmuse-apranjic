@@ -31,13 +31,14 @@ namespace Digitalna_ribarnica
         public Button OdobreneRezervacije;
         public Button Neocijenjen;
         public Button Korisnici;
+        public Button Predefinirane;
         //bool focus = false;
         public Prijava()
         {
             InitializeComponent();
         }
 
-        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe,Button lokacija,Button mojeRezervacije, Button mojePonude, Button Odobrene, Button Neocijenjen,Button btnKorisnici)
+        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe,Button lokacija,Button mojeRezervacije, Button mojePonude, Button Odobrene, Button Neocijenjen,Button btnKorisnici,Button predefinirane)
         {
             InitializeComponent();
             label_prijava = label;
@@ -55,6 +56,7 @@ namespace Digitalna_ribarnica
             OdobreneRezervacije = Odobrene;
             this.Neocijenjen = Neocijenjen;
             this.Korisnici = btnKorisnici;
+            Predefinirane = predefinirane;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -106,6 +108,7 @@ namespace Digitalna_ribarnica
                             OdobreneRezervacije.Visible = true;
                             Neocijenjen.Visible = true;
                             Korisnici.Visible = true;
+                            Predefinirane.Visible = true;
                             postaviSlikuProfila();
                             Close();
                             break;

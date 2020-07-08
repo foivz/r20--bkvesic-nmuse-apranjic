@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Baza;
 using INSform;
 using Prijava;
+using Registracija;
 namespace Digitalna_ribarnica
 {
     public partial class NoviKorisnik : Form
@@ -19,6 +20,8 @@ namespace Digitalna_ribarnica
         Iform Iform = null;
         Image defaultSlika;
         Korisnik Korisnik = null;
+        public string TrenutnoKorIme = "";
+        Autentifikator Autentifikator = null;
         public NoviKorisnik(Iform novi)
         {
             InitializeComponent();
@@ -32,11 +35,12 @@ namespace Digitalna_ribarnica
             Korisnik = korisnik;
         }
 
-        public NoviKorisnik(Korisnik korisnik)
+        public NoviKorisnik(Korisnik korisnik,Autentifikator autentifikator)
         {
             InitializeComponent();
             Iform = null;
             Korisnik = korisnik;
+            Autentifikator = autentifikator;
         }
 
         public void dohhvatiDefaultSliku()
@@ -71,41 +75,75 @@ namespace Digitalna_ribarnica
             dohhvatiDefaultSliku();
             defaultSlika.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 
-
-            string hash = BCrypt.Net.BCrypt.HashPassword(txtLozinka.Text, BCrypt.Net.BCrypt.GenerateSalt(12));
-            parameters.Add("@ime", txtIme.Text);
-            parameters.Add("@prezime", txtPrezime.Text);
-            parameters.Add("@email", txtEmail.Text);
-            parameters.Add("@korime", txtKorIme.Text);
-            parameters.Add("@broj", txtMob.Text);
-            parameters.Add("@datum", DateTime.Now);
-            parameters.Add("@lozinka", hash);
-            parameters.Add("@adresa", txtadresa.Text);
-            parameters.Add("@mjesto", txtMjesto.Text);
-            if(Korisnik==null)
-                parameters.Add("@slika", ms.ToArray());
-            if (Iform != null)
+            if (KorisnikRepository.ProvjeriKorIme(txtKorIme.Text,TrenutnoKorIme) != 0)
             {
-                if (cmbTip.SelectedItem.ToString() == "Admin")
-                    parameters.Add("@tip", 1);
+                notifyIcon1.ShowBalloonTip(1000, "Korisničko ime", "Korisnik s tim korisničkim imenom postoji", ToolTipIcon.Warning);
+                return;
+            }
+            else
+            {
+                if (KorisnikRepository.ProvjeriEmail(txtEmail.Text,TrenutnoKorIme) != 0)
+                {
+                    notifyIcon1.ShowBalloonTip(1000, "Email", "Takav mail je već registriran", ToolTipIcon.Warning);
+                    return;
+                }
                 else
-                    parameters.Add("@tip", 2);
-            }
-            else
-                parameters.Add("@tip", Korisnik.Tip);
-            parameters.Add("@status", 2);
+                {
+                    try
+                    {
+                        AutentifikacijaRegistracije autentifikacijaRegistracije = new AutentifikacijaRegistracije(txtIme.Text, txtPrezime.Text, txtKorIme.Text, txtadresa.Text, txtMjesto.Text, txtMob.Text, txtEmail.Text, txtLozinka.Text, txtLozinka.Text);
+                        Autentifikator autentifikator = new Autentifikator();
+                        autentifikator.provjeriKorisnika(txtKorIme.Text);
+                        autentifikator.provjeriKorisnika2(txtKorIme.Text);
+                        string hash = BCrypt.Net.BCrypt.HashPassword(txtLozinka.Text, BCrypt.Net.BCrypt.GenerateSalt(12));
+                        parameters.Add("@ime", txtIme.Text);
+                        parameters.Add("@prezime", txtPrezime.Text);
+                        parameters.Add("@email", txtEmail.Text);
+                        parameters.Add("@korime", txtKorIme.Text);
+                        parameters.Add("@broj", txtMob.Text);
+                        parameters.Add("@datum", DateTime.Now);
+                        parameters.Add("@lozinka", hash);
+                        parameters.Add("@adresa", txtadresa.Text);
+                        parameters.Add("@mjesto", txtMjesto.Text);
+                        if (Korisnik == null)
+                            parameters.Add("@slika", ms.ToArray());
+                        if (Iform != null)
+                        {
+                            if (cmbTip.SelectedItem.ToString() == "Admin")
+                                parameters.Add("@tip", 1);
+                            else
+                                parameters.Add("@tip", 2);
+                        }
+                        else
+                            parameters.Add("@tip", Korisnik.Tip);
+                        parameters.Add("@status", 2);
 
-            if (Korisnik != null)
-            {
-                parameters.Add("@id", Korisnik.ID);
-                DB.Instance.ExecuteParamQuery("UPDATE [korisnici] set [ime] = (@ime), [prezime] = (@prezime), [email] = (@email), [korisnicko_ime] = (@korime), [broj_mobitela] = (@broj), [lozinka] = (@lozinka), [adresa] = (@adresa), [mjesto] = (@mjesto), [id_tip_korisnika] = (@tip), [id_status]=(@status) where [id_korisnik] = (@id)", parameters);
-           
+                        if (Korisnik != null)
+                        {
+                            Autentifikator.AktivanKorisnik = txtKorIme.Text;
+                            parameters.Add("@id", Korisnik.ID);
+                            DB.Instance.ExecuteParamQuery("UPDATE [korisnici] set [ime] = (@ime), [prezime] = (@prezime), [email] = (@email), [korisnicko_ime] = (@korime), [broj_mobitela] = (@broj), [lozinka] = (@lozinka), [adresa] = (@adresa), [mjesto] = (@mjesto), [id_tip_korisnika] = (@tip), [id_status]=(@status) where [id_korisnik] = (@id)", parameters);
+
+                        }
+                        else
+                            DB.Instance.ExecuteParamQuery("INSERT INTO [korisnici] ([ime], [prezime], [email], [korisnicko_ime], [broj_mobitela], [datum_rodenja], [lozinka], [adresa], [mjesto], [slika], [id_tip_korisnika], [id_status]) VALUES((@ime), (@prezime), (@email), (@korime), (@broj), (@datum), (@lozinka), (@adresa), (@mjesto), (@slika), (@tip), (@status));", parameters);
+
+                        formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+                        if (form != null)
+                            form.zatvoriForme();
+                    }
+                    catch (RegistrationException ex)
+                    {
+                        notifyIcon1.ShowBalloonTip(1000, "Registracija", ex.Poruka, ToolTipIcon.Warning);
+                    }
+                    catch (PrijavaException ex)
+                    {
+                        //MessageBox.Show(ex.Poruka);
+                        notifyIcon1.ShowBalloonTip(1000, "Registracija", ex.Poruka, ToolTipIcon.Warning);
+                    }
+
+                }
             }
-            else
-                DB.Instance.ExecuteParamQuery("INSERT INTO [korisnici] ([ime], [prezime], [email], [korisnicko_ime], [broj_mobitela], [datum_rodenja], [lozinka], [adresa], [mjesto], [slika], [id_tip_korisnika], [id_status]) VALUES((@ime), (@prezime), (@email), (@korime), (@broj), (@datum), (@lozinka), (@adresa), (@mjesto), (@slika), (@tip), (@status));", parameters);
-            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
-            if (form != null)
-                form.zatvoriForme();
         }
 
         private void NoviKorisnik_Load(object sender, EventArgs e)
@@ -125,6 +163,7 @@ namespace Digitalna_ribarnica
                 txtMjesto.Text = Korisnik.Mjesto;
                 txtMob.Text = Korisnik.BrojMobitela;
                 txtPrezime.Text = Korisnik.Prezime;
+                TrenutnoKorIme = txtKorIme.Text;
                 if (Korisnik.Tip == 1)
                     cmbTip.SelectedIndex = 0;
                 else
@@ -143,6 +182,7 @@ namespace Digitalna_ribarnica
                 txtMjesto.Text = Korisnik.Mjesto;
                 txtMob.Text = Korisnik.BrojMobitela;
                 txtPrezime.Text = Korisnik.Prezime;
+                TrenutnoKorIme = txtKorIme.Text;
             }
             else
             {

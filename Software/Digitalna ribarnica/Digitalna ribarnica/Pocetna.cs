@@ -52,6 +52,7 @@ namespace Digitalna_ribarnica
             btnOdobrene.Visible = false;
             btnNeocijenjen.Visible = false;
             btnKorisnici.Visible = false;
+            btnPredefinirane.Visible = false;
         }
      
 
@@ -82,7 +83,7 @@ namespace Digitalna_ribarnica
             */
             zatvoriForme();
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene,btnNeocijenjen,btnKorisnici));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene,btnNeocijenjen,btnKorisnici,btnPredefinirane));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -104,6 +105,7 @@ namespace Digitalna_ribarnica
             btnOdobrene.Visible = false;
             btnNeocijenjen.Visible = false;
             btnKorisnici.Visible = false;
+            btnPredefinirane.Visible = false;
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
@@ -245,6 +247,11 @@ namespace Digitalna_ribarnica
         private void btnKorisnici_Click(object sender, EventArgs e)
         {
             openChildForm(new PopisKorisnika(this));
+        }
+
+        private void btnPredefinirane_Click(object sender, EventArgs e)
+        {
+            openChildForm(new PromijeniPredefiniranePostavke(this));
         }
     }
 }

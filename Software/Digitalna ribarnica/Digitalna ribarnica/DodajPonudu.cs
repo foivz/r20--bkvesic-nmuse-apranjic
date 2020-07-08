@@ -14,7 +14,7 @@ using Baza;
 using INSform;
 using Prijava;
 using System.Data.SqlClient;
-
+using Ponude;
 namespace Digitalna_ribarnica
 {
     public partial class DodajPonudu : Form
@@ -84,15 +84,34 @@ namespace Digitalna_ribarnica
         {
             MemoryStream ms = new MemoryStream();
             var photo = pictureBox1.Image;
-
+            PredefiniranePostavke predefiniranePostavke = new PredefiniranePostavke();
+            predefiniranePostavke = PonudeRepozitory.PredefiniranePostavke();
             var parameters = new Dictionary<string, object>();
             if (float.TryParse(txtCijena.Text, out float cijena))
-                parameters.Add("@cijena",cijena);
+            {
+                if (cijena >= predefiniranePostavke.Cijena)
+                    parameters.Add("@cijena", cijena);
+                else
+                {
+                    MessageBox.Show("Minimalna cijena iznosi " + predefiniranePostavke.Cijena);
+                    notifyPonuda.ShowBalloonTip(1000, "Krivo unesena cijena", "Minimalna cijena iznosi " + predefiniranePostavke.Cijena, ToolTipIcon.Warning);
+                    return;
+                }
+            }
             else
                 MessageBox.Show("Niste unije broj kod cijene");
 
             if (int.TryParse(txtKolicina.Text, out int kolicina))
-                parameters.Add("@kolicina", kolicina);
+            {
+                if (kolicina >= predefiniranePostavke.Kolicina)
+                    parameters.Add("@kolicina", kolicina);
+                else
+                {
+                    MessageBox.Show("Minimalna količina iznosi " + predefiniranePostavke.Kolicina);
+                    notifyPonuda.ShowBalloonTip(1000, "Krivo unesena količina", "Minimalna količina iznosi " + predefiniranePostavke.Kolicina, ToolTipIcon.Warning);
+                    return;
+                }
+            }
             else
                 MessageBox.Show("Niste unijeli broj kod količine");
 
