@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dnevnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dnevnik.Designer.cs">
+      <DependentUpon>Dnevnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajLokacije.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     <Compile Include="ZaboravljenaLozinkaEmail.Designer.cs">
       <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dnevnik.resx">
+      <DependentUpon>Dnevnik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajLokacije.resx">
       <DependentUpon>DodajLokacije.cs</DependentUpon>
     </EmbeddedResource>

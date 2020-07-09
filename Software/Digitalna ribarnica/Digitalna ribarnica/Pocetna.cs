@@ -13,6 +13,8 @@ using Prijava;
 using Baza;
 using INSform;
 using Ocjene;
+using Ponude;
+
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form, Iform
@@ -53,6 +55,8 @@ namespace Digitalna_ribarnica
             btnNeocijenjen.Visible = false;
             btnKorisnici.Visible = false;
             btnPredefinirane.Visible = false;
+            btnChat.Visible = false;
+            btnDnevnik.Visible = false;
         }
      
 
@@ -83,7 +87,7 @@ namespace Digitalna_ribarnica
             */
             zatvoriForme();
             labelOdjava.Visible = false;
-            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene,btnNeocijenjen,btnKorisnici,btnPredefinirane));
+            openChildForm(new Prijava(lblUsername,button1,buttonOdjava,buttonNovosti,buttonRegistracija,autentifikator,Profilna,pbxProfilna,btnRibe,btnLokacija,btnMojeRezervacije,btnMojePonude,btnOdobrene,btnNeocijenjen,btnKorisnici,btnPredefinirane,btnDnevnik,btnChat));
         }
 
         private void buttonOdjava_Click(object sender, EventArgs e)
@@ -106,6 +110,10 @@ namespace Digitalna_ribarnica
             btnNeocijenjen.Visible = false;
             btnKorisnici.Visible = false;
             btnPredefinirane.Visible = false;
+            btnChat.Visible = false;
+            btnDnevnik.Visible = false;
+            KorisnikRepository.NeaktivanKorisnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik));
+            PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik), "Korisnik " + autentifikator.AktivanKorisnik + " se odjavio", 2);
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
                 activeForm.Close();
@@ -171,6 +179,8 @@ namespace Digitalna_ribarnica
 
         private void formPocetna_FormClosing(object sender, FormClosingEventArgs e)
         {
+            PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik), "Korisnik " + autentifikator.AktivanKorisnik + " se odjavio", 2);
+            KorisnikRepository.NeaktivanKorisnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik));
             DB.Instance.CloseConnection();
             //MessageBox.Show("Konekcija na bazu zatvorena!");
         }
@@ -182,12 +192,12 @@ namespace Digitalna_ribarnica
 
         private void btnRibe_Click(object sender, EventArgs e)
         {
-            openChildForm(new RibeUSustavu());
+            openChildForm(new RibeUSustavu(this));
         }
 
         private void btnLokacija_Click(object sender, EventArgs e)
         {
-            openChildForm(new DodajLokacije());
+            openChildForm(new DodajLokacije(this));
         }
 
         private void buttonPonude_Click(object sender, EventArgs e)
@@ -252,6 +262,11 @@ namespace Digitalna_ribarnica
         private void btnPredefinirane_Click(object sender, EventArgs e)
         {
             openChildForm(new PromijeniPredefiniranePostavke(this));
+        }
+
+        private void btnDnevnik_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Dnevnik(this));
         }
     }
 }

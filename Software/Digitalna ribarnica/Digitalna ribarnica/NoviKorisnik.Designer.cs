@@ -52,11 +52,13 @@
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnKreiraj = new System.Windows.Forms.Button();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lblCapsLock = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCapsLock);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtadresa);
@@ -79,7 +81,7 @@
             this.groupBox1.Controls.Add(this.btnKreiraj);
             this.groupBox1.Location = new System.Drawing.Point(295, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(246, 397);
+            this.groupBox1.Size = new System.Drawing.Size(281, 453);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -261,7 +263,7 @@
             this.btnOdustani.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdustani.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdustani.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
-            this.btnOdustani.Location = new System.Drawing.Point(131, 342);
+            this.btnOdustani.Location = new System.Drawing.Point(148, 398);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(102, 40);
             this.btnOdustani.TabIndex = 9;
@@ -275,7 +277,7 @@
             this.btnKreiraj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKreiraj.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnKreiraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
-            this.btnKreiraj.Location = new System.Drawing.Point(23, 342);
+            this.btnKreiraj.Location = new System.Drawing.Point(40, 398);
             this.btnKreiraj.Name = "btnKreiraj";
             this.btnKreiraj.Size = new System.Drawing.Size(102, 40);
             this.btnKreiraj.TabIndex = 9;
@@ -288,6 +290,20 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
+            // 
+            // lblCapsLock
+            // 
+            this.lblCapsLock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCapsLock.AutoSize = true;
+            this.lblCapsLock.Font = new System.Drawing.Font("Open Sans Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblCapsLock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
+            this.lblCapsLock.Location = new System.Drawing.Point(66, 335);
+            this.lblCapsLock.Name = "lblCapsLock";
+            this.lblCapsLock.Size = new System.Drawing.Size(0, 47);
+            this.lblCapsLock.TabIndex = 3;
+            this.lblCapsLock.Visible = false;
             // 
             // NoviKorisnik
             // 
@@ -329,5 +345,6 @@
         public System.Windows.Forms.Button btnKreiraj;
         public System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        public System.Windows.Forms.Label lblCapsLock;
     }
 }

@@ -126,11 +126,16 @@ namespace Digitalna_ribarnica
                             }
                             parameters.Add("@id", Korisnik.ID);
                             DB.Instance.ExecuteParamQuery("UPDATE [korisnici] set [ime] = (@ime), [prezime] = (@prezime), [email] = (@email), [korisnicko_ime] = (@korime), [broj_mobitela] = (@broj), [lozinka] = (@lozinka), [adresa] = (@adresa), [mjesto] = (@mjesto), [id_tip_korisnika] = (@tip), [id_status]=(@status) where [id_korisnik] = (@id)", parameters);
-
+                            if(Autentifikator!=null)
+                                KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Autentifikator.AktivanKorisnik), "Korisnik " + Autentifikator.AktivanKorisnik + " je ažurirao korisnika " + txtKorIme.Text, 9);
+                            else
+                                KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je ažurirao korisnika " + txtKorIme.Text, 9);
                         }
                         else
+                        {
                             DB.Instance.ExecuteParamQuery("INSERT INTO [korisnici] ([ime], [prezime], [email], [korisnicko_ime], [broj_mobitela], [datum_rodenja], [lozinka], [adresa], [mjesto], [slika], [id_tip_korisnika], [id_status]) VALUES((@ime), (@prezime), (@email), (@korime), (@broj), (@datum), (@lozinka), (@adresa), (@mjesto), (@slika), (@tip), (@status));", parameters);
-
+                            KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je registrirao korisnika " + txtKorIme.Text, 8);
+                        }
                         formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                         if (form != null)
                             form.zatvoriForme();
@@ -151,6 +156,18 @@ namespace Digitalna_ribarnica
 
         private void NoviKorisnik_Load(object sender, EventArgs e)
         {
+
+            txtLozinka.PasswordChar = '\u25CF';
+
+            if (Control.IsKeyLocked(Keys.CapsLock))
+            {
+                lblCapsLock.Text = "Uključeno je pisanje VELIKIM SLOVIMA!";
+                lblCapsLock.Visible = true;
+            }
+            else
+            {
+                lblCapsLock.Visible = false;
+            }
             List<string> tipovi = new List<string>() { "Admin", "Korisnik" };
             cmbTip.DataSource = tipovi;
             if (Korisnik != null && Iform !=null)

@@ -12,6 +12,7 @@ using Prijava;
 using System.Data.Common;
 using System.IO;
 using Baza;
+using Ponude;
 namespace Digitalna_ribarnica
 {
     public partial class Prijava : Form
@@ -32,13 +33,15 @@ namespace Digitalna_ribarnica
         public Button Neocijenjen;
         public Button Korisnici;
         public Button Predefinirane;
+        public Button Dnevnik;
+        public Button Chat;
         //bool focus = false;
         public Prijava()
         {
             InitializeComponent();
         }
 
-        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe,Button lokacija,Button mojeRezervacije, Button mojePonude, Button Odobrene, Button Neocijenjen,Button btnKorisnici,Button predefinirane)
+        public Prijava(Label label,Button prijava, Button odjava,Button novosti,Button registracija,Autentifikator korisnici,Button Korisnicki_racun,PictureBox profilnaSlika,Button ribe,Button lokacija,Button mojeRezervacije, Button mojePonude, Button Odobrene, Button Neocijenjen,Button btnKorisnici,Button predefinirane,Button dnevnik,Button chat)
         {
             InitializeComponent();
             label_prijava = label;
@@ -57,6 +60,8 @@ namespace Digitalna_ribarnica
             this.Neocijenjen = Neocijenjen;
             this.Korisnici = btnKorisnici;
             Predefinirane = predefinirane;
+            Dnevnik = dnevnik;
+            Chat = chat;
         }
 
         private void btnOdustani_Click(object sender, EventArgs e)
@@ -88,6 +93,8 @@ namespace Digitalna_ribarnica
                         notifyPrijava.ShowBalloonTip(1000, "Prijava", "Vaš račun je blokiran", ToolTipIcon.Error);
                     }
                     */
+                    PonudeRepozitory.IDRezervacijeZaProvjeruRoka();
+                    PonudeRepozitory.IDRezervacijeZaProvjeruRoka();
                     switch (autentifikator.tipKorisnika(txtKorIme.Text))
                     {
                         case 1:
@@ -95,6 +102,8 @@ namespace Digitalna_ribarnica
                             notifyPrijava.ShowBalloonTip(1000, "Prijava", "Uspješna prijava ADMIN", ToolTipIcon.Info);
                             label_prijava.Text = "Dobro došli " + txtKorIme.Text;
                             autentifikator.AktivanKorisnik = txtKorIme.Text;
+                            KorisnikRepository.AktivanKorisnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik));
+                            PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik), "Korisnik " + autentifikator.AktivanKorisnik + " se prijavio", 1);
                             //MessageBox.Show(autentifikator.AktivanKorisnik);
                             prijava_prijava.Visible = false;
                             odjava_prijava.Visible = true;
@@ -109,6 +118,8 @@ namespace Digitalna_ribarnica
                             Neocijenjen.Visible = true;
                             Korisnici.Visible = true;
                             Predefinirane.Visible = true;
+                            Dnevnik.Visible = true;
+                            Chat.Visible = true;
                             postaviSlikuProfila();
                             Close();
                             break;
@@ -117,6 +128,8 @@ namespace Digitalna_ribarnica
                             notifyPrijava.ShowBalloonTip(1000, "Prijava", "Uspješna prijava KORISNIK", ToolTipIcon.Info);
                             label_prijava.Text = "Dobro došli " + txtKorIme.Text;
                             autentifikator.AktivanKorisnik = txtKorIme.Text;
+                            KorisnikRepository.AktivanKorisnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik));
+                            PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik), "Korisnik " + autentifikator.AktivanKorisnik + " se prijavio", 1);
                             prijava_prijava.Visible = false;
                             odjava_prijava.Visible = true;
                             novosti.Visible = true;
@@ -126,7 +139,7 @@ namespace Digitalna_ribarnica
                             MojePonude.Visible = true;
                             OdobreneRezervacije.Visible = true;
                             Neocijenjen.Visible = true;
-
+                            Chat.Visible = true;
                             postaviSlikuProfila();
                             Close();
                             break;
@@ -135,6 +148,8 @@ namespace Digitalna_ribarnica
                             notifyPrijava.ShowBalloonTip(1000, "Prijava", "Uspješna prijava KUPAC", ToolTipIcon.Info);
                             label_prijava.Text = "Dobro došli " + txtKorIme.Text;
                             autentifikator.AktivanKorisnik = txtKorIme.Text;
+                            KorisnikRepository.AktivanKorisnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik));
+                            PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik), "Korisnik " + autentifikator.AktivanKorisnik + " se prijavio", 1);
                             prijava_prijava.Visible = false;
                             odjava_prijava.Visible = true;
                             novosti.Visible = true;
@@ -144,7 +159,7 @@ namespace Digitalna_ribarnica
                             MojePonude.Visible = true;
                             OdobreneRezervacije.Visible = true;
                             Neocijenjen.Visible = true;
-
+                            Chat.Visible = true;
                             postaviSlikuProfila();
                             Close();
                             break;

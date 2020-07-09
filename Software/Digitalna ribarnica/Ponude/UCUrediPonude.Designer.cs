@@ -44,12 +44,15 @@
             this.ucKolicina = new System.Windows.Forms.Label();
             this.ucCijena = new System.Windows.Forms.Label();
             this.ucNaziv = new System.Windows.Forms.Label();
+            this.ucZnacka = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ucZnacka);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.ucLokacija);
             this.groupBox1.Controls.Add(this.ucPonuditelj);
@@ -225,6 +228,15 @@
             this.ucNaziv.TabIndex = 0;
             this.ucNaziv.Text = "label1";
             // 
+            // ucZnacka
+            // 
+            this.ucZnacka.Location = new System.Drawing.Point(9, 35);
+            this.ucZnacka.Name = "ucZnacka";
+            this.ucZnacka.Size = new System.Drawing.Size(30, 35);
+            this.ucZnacka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ucZnacka.TabIndex = 12;
+            this.ucZnacka.TabStop = false;
+            // 
             // UCUrediPonude
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +247,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +270,6 @@
         public System.Windows.Forms.Label ucKolicina;
         public System.Windows.Forms.Label ucCijena;
         public System.Windows.Forms.Label ucNaziv;
+        public System.Windows.Forms.PictureBox ucZnacka;
     }
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using INSform;
 using Ponude;
+using Prijava;
+
 namespace Digitalna_ribarnica
 {
     public partial class PromijeniPredefiniranePostavke : Form
@@ -44,6 +46,7 @@ namespace Digitalna_ribarnica
                 float cijena = float.Parse(txtCijena.Text);
                 int kolicina = int.Parse(txtKolicina.Text);
                 PonudeRepozitory.AzurirajPredefirniranePostavke(cijena, kolicina);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je promijenio predefinirane postavke za ponude", 15);
             }
             else
             {

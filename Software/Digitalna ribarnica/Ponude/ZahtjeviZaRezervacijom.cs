@@ -41,6 +41,8 @@ namespace Ponude
                 zahtjev.BrojSatiDana = item.BrojSatiDana;
                 zahtjev.IDKORISNIKA = item.IDKORISNIKA;
                 zahtjev.IDPONUDE = item.IDPONUDE;
+                if(item.Znacka!=null)
+                    zahtjev.Znacka = item.Znacka;
                 if (item.Kolicina > int.Parse(item.Max))
                     zahtjev.nedozvoljenaPonuda();
                 this.flowLayoutPanel1.Controls.Add(zahtjev.PrikazUC);

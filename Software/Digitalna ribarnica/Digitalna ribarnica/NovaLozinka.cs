@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Prijava;
 using Baza;
+using Ponude;
+
 namespace Digitalna_ribarnica
 {
     public partial class NovaLozinka : Form
@@ -43,6 +45,7 @@ namespace Digitalna_ribarnica
                     {
                         //autentifikator.findKorisnik(Email).Lozinka = txtLozinka.Text;
                         KorisnikRepository.PromjeniLozinku(txtLozinka.Text, Email);
+                        KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIDpoEmailu(Email).ID, "Korisnik " + KorisnikRepository.DohvatiIDpoEmailu(Email).KorIme + " je promijenio lozinku ", 24);
                         formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                         if (form != null)
                         {

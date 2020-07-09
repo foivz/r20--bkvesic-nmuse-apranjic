@@ -68,6 +68,7 @@
     <Compile Include="AzurirajFormu.Designer.cs">
       <DependentUpon>AzurirajFormu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dnevnik.cs" />
     <Compile Include="Izvjesce.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +115,7 @@
     </Compile>
     <Compile Include="Rezervacija.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TipoviRadnje.cs" />
     <Compile Include="UCPonuda.cs">
       <SubType>UserControl</SubType>
     </Compile>

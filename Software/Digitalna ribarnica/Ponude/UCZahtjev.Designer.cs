@@ -44,12 +44,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.ucOdbaci = new System.Windows.Forms.Button();
             this.ucPrihvati = new System.Windows.Forms.Button();
+            this.ucZnacka = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ucZnacka);
             this.groupBox1.Controls.Add(this.ucSati);
             this.groupBox1.Controls.Add(this.ucKolicina);
             this.groupBox1.Controls.Add(this.ucIme);
@@ -175,7 +178,7 @@
             // 
             this.ucFotografija.Location = new System.Drawing.Point(6, 19);
             this.ucFotografija.Name = "ucFotografija";
-            this.ucFotografija.Size = new System.Drawing.Size(117, 124);
+            this.ucFotografija.Size = new System.Drawing.Size(93, 79);
             this.ucFotografija.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ucFotografija.TabIndex = 4;
             this.ucFotografija.TabStop = false;
@@ -236,6 +239,15 @@
             this.ucPrihvati.UseVisualStyleBackColor = true;
             this.ucPrihvati.Click += new System.EventHandler(this.ucPrihvati_Click);
             // 
+            // ucZnacka
+            // 
+            this.ucZnacka.Location = new System.Drawing.Point(7, 104);
+            this.ucZnacka.Name = "ucZnacka";
+            this.ucZnacka.Size = new System.Drawing.Size(52, 36);
+            this.ucZnacka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ucZnacka.TabIndex = 6;
+            this.ucZnacka.TabStop = false;
+            // 
             // UCZahtjev
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +258,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -268,5 +281,6 @@
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label ucID;
         public System.Windows.Forms.Button ucPrihvati;
+        public System.Windows.Forms.PictureBox ucZnacka;
     }
 }

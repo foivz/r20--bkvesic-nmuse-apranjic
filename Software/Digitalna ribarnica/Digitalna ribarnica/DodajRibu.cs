@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using RibeUSustavu;
 using Baza;
 using System.Data.Common;
+using INSform;
+using Ponude;
+using Prijava;
 
 namespace Digitalna_ribarnica
 {
@@ -19,15 +22,18 @@ namespace Digitalna_ribarnica
         string extension;
         Riba Riba;
         Image defaultSlika;
-        public DodajRibu()
+        Iform Iform;
+        public DodajRibu(Iform novo)
         {
             InitializeComponent();
+            Iform = novo;
         }
 
-        public DodajRibu(Riba riba)
+        public DodajRibu(Riba riba, Iform novo)
         {
             InitializeComponent();
             Riba = riba;
+            Iform = novo;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -36,7 +42,7 @@ namespace Digitalna_ribarnica
             if (form != null)
             {
                 notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Odustali ste od dodavanja/ažuriranja ribe", ToolTipIcon.Info);
-                form.openChildForm(new RibeUSustavu());
+                form.openChildForm(new RibeUSustavu(Iform));
             }
             Close();
         }
@@ -121,6 +127,7 @@ namespace Digitalna_ribarnica
                     parametersAzuriranje.Add("@mjerna_jedinica", 1);
                 parametersAzuriranje.Add("@id_riba", Riba.id);
                 RibeRepository.AzurirajRibu(parametersAzuriranje);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je ažurirao ribu: " + textBox1.Text +" s ID-om "+Riba.id, 17);
                 notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Uspješno ste ažurirali ribu!", ToolTipIcon.Info);
             }
             else
@@ -154,12 +161,13 @@ namespace Digitalna_ribarnica
                 else if (radioButton2.Checked == true)
                     parameters.Add("@mjerna_jedinica", 1);
                 RibeRepository.DodajNovuRibu(parameters);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je dodao novu ribu: "+ textBox1.Text, 16);
                 notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Uspješno ste dodali ribu!", ToolTipIcon.Info);
             }
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
             {
-                form.openChildForm(new RibeUSustavu());
+                form.openChildForm(new RibeUSustavu(Iform));
             }
             Close();
         }
