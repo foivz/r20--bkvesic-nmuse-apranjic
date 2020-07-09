@@ -19,6 +19,7 @@ namespace Ponude
 		private int Id;
 		private int IDKorisnika;
 		private int IDPonude;
+		private Image znacka;
 		public int ID
 		{
 			get { return Id; }
@@ -84,6 +85,16 @@ namespace Ponude
 			{
 				fotografija = value;
 				PrikazUC.ucFotografija.Image = fotografija;
+			}
+		}
+
+		public Image Znacka
+		{
+			get { return znacka; }
+			set
+			{
+				znacka = value;
+				PrikazUC.ucZnacka.Image = znacka;
 			}
 		}
 

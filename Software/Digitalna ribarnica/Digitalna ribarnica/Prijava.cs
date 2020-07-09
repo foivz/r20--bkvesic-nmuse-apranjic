@@ -12,6 +12,7 @@ using Prijava;
 using System.Data.Common;
 using System.IO;
 using Baza;
+using Ponude;
 namespace Digitalna_ribarnica
 {
     public partial class Prijava : Form
@@ -88,6 +89,8 @@ namespace Digitalna_ribarnica
                         notifyPrijava.ShowBalloonTip(1000, "Prijava", "Vaš račun je blokiran", ToolTipIcon.Error);
                     }
                     */
+                    PonudeRepozitory.IDRezervacijeZaProvjeruRoka();
+                    PonudeRepozitory.IDRezervacijeZaProvjeruRoka();
                     switch (autentifikator.tipKorisnika(txtKorIme.Text))
                     {
                         case 1:

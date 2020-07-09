@@ -37,6 +37,8 @@ namespace Ponude
                     returnMe.Add(row);
                 }
             }
+            if (rezultat != null)
+                rezultat.Close();
             foreach (var item in returnMe)
             {
                 
@@ -73,11 +75,11 @@ namespace Ponude
                 ponuda.Ime = item["ime"] + " " + item["prezime"];
                 ponuda.Lokacija = item["lokacija"].ToString();
                 ponuda.IDKORISNIKA = int.Parse(item["id_korisnik"].ToString());
-              
+                if (DohvatiSlikuZnackePonuditelja(ponuda.IDKORISNIKA) != null)
+                    ponuda.Znacka = DohvatiSlikuZnackePonuditelja(ponuda.IDKORISNIKA);
                 _ponude.Add(ponuda);
             }
-            if(rezultat!=null)
-                rezultat.Close();
+          
             return _ponude;
         }
 
@@ -103,6 +105,8 @@ namespace Ponude
                     returnMe.Add(row);
                 }
             }
+            if (rezultat != null)
+                rezultat.Close();
             foreach (var item in returnMe)
             {
 
@@ -138,11 +142,48 @@ namespace Ponude
                 ponuda.Cijena = float.Parse(item["cijena"].ToString());
                 ponuda.Ime = item["ime"] + " " + item["prezime"];
                 ponuda.Lokacija = item["lokacija"].ToString();
+                if (DohvatiSlikuZnackePonuditelja(int.Parse(item["id_korisnik"].ToString())) != null)
+                    ponuda.Znacka = DohvatiSlikuZnackePonuditelja(int.Parse(item["id_korisnik"].ToString()));
                 _ponude.Add(ponuda);
+            }
+           
+            return _ponude;
+        }
+
+        public static Image DohvatiSlikuZnackePonuditelja(int id)
+        {
+            Image znacka = null;
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"select slikeZnackePonuditelj.slika from slikeZnackePonuditelj, korisnici, imaju_znacku_ponuditelj where slikeZnackePonuditelj.id_Znacke = imaju_znacku_ponuditelj.id_znacke and imaju_znacku_ponuditelj.id_korisnik = korisnici.id_korisnik and korisnici.id_korisnik = {id}");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
+
+                try
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                    znacka = Image.FromStream(ms);
+                }
+                catch (Exception)
+                {
+                    znacka = null;
+                }
+
             }
             if (rezultat != null)
                 rezultat.Close();
-            return _ponude;
+            return znacka;
         }
 
 
@@ -210,6 +251,35 @@ namespace Ponude
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
 
+        public static void IDRezervacijeZaProvjeruRoka()
+        {
+            var rezultat = DB.Instance.DohvatiDataReader($"select id_rezervacija FROM rezervacije");
+            int id = 0;
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            foreach (DbDataRecord item in rezultat)
+            {
+                var row = new Dictionary<string, object>();
+                for (int i = 0; i < item.FieldCount; i++)
+                {
+                    row.Add(item.GetName(i), item[i]);
+                }
+                returnMe.Add(row);
+            }
+            rezultat.Close();
+            foreach (var item in returnMe)
+            {
+                id =int.Parse(item["id_rezervacija"].ToString());
+                ProvjeriRokRezervacija(id);
+            }
+          
+        }
+
+        private static void ProvjeriRokRezervacija(int id)
+        {
+            string sqlUpit = $"update rezervacije set kolicina=kolicina+0 where id_rezervacija={id};";
+            DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
         public static int ProvjeriKorisnikaIZahtjev(int idKorisnika, int idPonuda)
         {
             int id = 0;
@@ -267,6 +337,8 @@ namespace Ponude
                     returnMe.Add(row);
                 }
             }
+            if (rezultat != null)
+                rezultat.Close();
             foreach (var item in returnMe)
             {
 
@@ -281,6 +353,7 @@ namespace Ponude
                 {
                     zahtjev.Fotografija = null;
                 }
+               
                 zahtjev.IDKORISNIKA =int.Parse(item["id_korisnik"].ToString());
                 zahtjev.Ime = item["ime"] + " " + item["prezime"];
                 zahtjev.Kolicina = int.Parse(item["kolicina"].ToString());
@@ -288,14 +361,49 @@ namespace Ponude
                 zahtjev.BrojSatiDana = item["trajanje_rezervacije_u_satima"].ToString();
                 zahtjev.ID = int.Parse(item["id_zahtjev"].ToString());
                 zahtjev.IDPONUDE= int.Parse(item["id_ponuda"].ToString());
+                if (DohvatiSlikuZnackeKupca(zahtjev.IDKORISNIKA) != null)
+                    zahtjev.Znacka = DohvatiSlikuZnackeKupca(zahtjev.IDKORISNIKA);
                 _zahtjevi.Add(zahtjev);
             }
-            if (rezultat != null)
-                rezultat.Close();
+       
             return _zahtjevi;
         }
 
+        public static Image DohvatiSlikuZnackeKupca(int id)
+        {
+            Image znacka = null;
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            var rezultat = DB.Instance.DohvatiDataReader($"select slikeZnackeKupac.slika from slikeZnackeKupac, korisnici, imaju_znacku_kupac where slikeZnackeKupac.id_Znacke = imaju_znacku_kupac.id_znacke and imaju_znacku_kupac.id_korisnik = korisnici.id_korisnik and korisnici.id_korisnik = {id}");
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            foreach (var item in returnMe)
+            {
 
+                try
+                {
+                    MemoryStream ms = new MemoryStream((byte[])item["slika"]);
+                    znacka = Image.FromStream(ms);
+                }
+                catch (Exception)
+                {
+                    znacka = null;
+                }
+
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            return znacka;
+        }
 
         public static void AzurirajZahtjeveNakonBrisanja(Iform nova,int id)
         {
@@ -457,7 +565,7 @@ namespace Ponude
             Iform = nova;
             _rezervacije.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.naziv, ribe.mjerna_jedinica, rezervacije.id_rezervacija, korisnici.id_korisnik, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, rezervacije.kolicina, ponude.cijena, rezervacije.id_tip_statusa from rezervacije, ribe, korisnici, lokacije, ponude where korisnici.id_korisnik = rezervacije.id_kupac and rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and(rezervacije.id_tip_statusa = 2 or rezervacije.id_tip_statusa = 3 or rezervacije.id_tip_statusa = 4)");
+            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.naziv, ribe.mjerna_jedinica,rezervacije.datum_i_vrijeme, rezervacije.id_rezervacija, korisnici.id_korisnik, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, rezervacije.kolicina, ponude.cijena, rezervacije.id_tip_statusa from rezervacije, ribe, korisnici, lokacije, ponude where korisnici.id_korisnik = rezervacije.id_kupac and rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and(rezervacije.id_tip_statusa = 2 or rezervacije.id_tip_statusa = 3 or rezervacije.id_tip_statusa = 4)");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)
@@ -487,6 +595,7 @@ namespace Ponude
                 rezervacija.Ime = item["ime"] + " " + item["prezime"];
                 rezervacija.Lokacija = item["lokacija"].ToString();
                 rezervacija.IDkupca = int.Parse(item["id_korisnik"].ToString());
+                rezervacija.Datum = DateTime.Parse(item["datum_i_vrijeme"].ToString());
                 _rezervacije.Add(rezervacija);
             }
             if (rezultat != null)
@@ -499,7 +608,7 @@ namespace Ponude
             Iform = nova;
             _rezervacije1.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.naziv, ribe.mjerna_jedinica, rezervacije.id_rezervacija,korisnici.id_korisnik, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, ponude.cijena, rezervacije.kolicina, rezervacije.id_tip_statusa from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and(rezervacije.id_tip_statusa = 2 or rezervacije.id_tip_statusa = 3 or rezervacije.id_tip_statusa = 4)");
+            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.naziv, ribe.mjerna_jedinica,rezervacije.datum_i_vrijeme, rezervacije.id_rezervacija,korisnici.id_korisnik, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, ponude.cijena, rezervacije.kolicina, rezervacije.id_tip_statusa from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and(rezervacije.id_tip_statusa = 2 or rezervacije.id_tip_statusa = 3 or rezervacije.id_tip_statusa = 4)");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)
@@ -529,6 +638,7 @@ namespace Ponude
                 rezervacija.Ime = item["ime"] + " " + item["prezime"];
                 rezervacija.Lokacija = item["lokacija"].ToString();
                 rezervacija.IDkupca = int.Parse(item["id_korisnik"].ToString());
+                rezervacija.Datum = DateTime.Parse(item["datum_i_vrijeme"].ToString());
                 _rezervacije1.Add(rezervacija);
             }
             if (rezultat != null)

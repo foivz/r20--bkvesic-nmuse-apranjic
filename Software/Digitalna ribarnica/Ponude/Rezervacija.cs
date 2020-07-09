@@ -21,7 +21,9 @@ namespace Ponude
 		private string ime;
 		private string kupac;
 		private int IDKUPCA;
+		private DateTime datum;
 
+	
 		public int IDkupca
 		{
 			get { return IDKUPCA; }
@@ -126,6 +128,15 @@ namespace Ponude
 				PrikazUC.btnPreuzeto.Visible = true;
 			else
 				PrikazUC.btnPreuzeto.Visible = false;
+		}
+
+		public DateTime Datum
+		{
+			get { return datum; }
+			set
+			{
+				datum = value;
+			}
 		}
 
 		public Rezervacija(Iform iform)

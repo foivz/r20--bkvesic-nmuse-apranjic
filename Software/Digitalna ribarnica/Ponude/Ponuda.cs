@@ -20,7 +20,7 @@ namespace Ponude
 		private string ime;
 		private string lokacija;
 		private int IDKorisnika;
-	
+		private Image znacka;
 		int zastava = 0;
 
 
@@ -179,6 +179,24 @@ namespace Ponude
 				{
 					fotografija = value;
 					PrikaziUrediPonudeUC.ucFotografija.Image = fotografija;
+				}
+			}
+		}
+
+		public Image Znacka
+		{
+			get { return znacka; }
+			set
+			{
+				if (zastava == 1)
+				{
+					znacka = value;
+					PrikazUC.ucZnacka.Image = znacka;
+				}
+				else
+				{
+					znacka = value;
+					PrikaziUrediPonudeUC.ucZnacka.Image = znacka;
 				}
 			}
 		}
