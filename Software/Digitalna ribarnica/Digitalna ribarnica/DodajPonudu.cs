@@ -32,8 +32,18 @@ namespace Digitalna_ribarnica
             checkBox1.Checked = false;
             pictureBox1.Visible = false;
             btnUcitaj.Visible = false;
+            /*
             cmbLokacija.DataSource = LokacijeRepozitory.dohvatiLokacije();
             cmbRiba.DataSource = RibeRepository.DohvatiNaziveRibe();
+            */
+            List<Riba> ribe = new List<Riba>();
+            ribe = RibeRepository.DohvatiNaziveRibe();
+            List<Riba> sortiraneRibe = ribe.OrderBy(o => o.Naziv).ToList();
+            List<Lokacije.Lokacije> lokacije = new List<Lokacije.Lokacije>();
+            lokacije = LokacijeRepozitory.dohvatiLokacije();
+            List<Lokacije.Lokacije> sortiraneLokacije = lokacije.OrderBy(o => o.Naziv).ToList();
+            cmbRiba.DataSource = sortiraneRibe;
+            cmbLokacija.DataSource = sortiraneLokacije;
             Riba riba = cmbRiba.SelectedValue as Riba;
             lblMjerna.Text = riba.MjernaJedinica;
         }
