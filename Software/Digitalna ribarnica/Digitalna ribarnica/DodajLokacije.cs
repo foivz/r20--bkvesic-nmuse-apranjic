@@ -8,14 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lokacije;
+using Ponude;
+using Prijava;
+using INSform;
 namespace Digitalna_ribarnica
 {
     public partial class DodajLokacije : Form
     {
         private bool azuriraj = false;
-        public DodajLokacije()
+        Iform Iform;
+        public DodajLokacije(Iform iform)
         {
             InitializeComponent();
+            Iform=iform;
         }
 
         private void DodajLokacije_Load(object sender, EventArgs e)
@@ -37,6 +42,7 @@ namespace Digitalna_ribarnica
             if (txtDodaj.Text.ToString() != "")
             {
                 LokacijeRepozitory.dodajLokacij(txtDodaj.Text);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je dodao lokaciju: " + txtDodaj.Text, 19);
                 notifyLokacija.ShowBalloonTip(1000, "Lokacije u sustavu", "Uspješno ste dodali novu lokaciju!", ToolTipIcon.Info);
             }
             Osjezi();
@@ -54,6 +60,7 @@ namespace Digitalna_ribarnica
             if (odabranaLokacija != null)
             {
                 LokacijeRepozitory.obrisiLokaciju(odabranaLokacija);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je obrisao lokaciju: " + odabranaLokacija.Naziv + " s ID:" + odabranaLokacija.id, 21);
                 notifyLokacija.ShowBalloonTip(1000, "Lokacije u sustavu", "Uspješno ste obrisali odabranu lokaciju!", ToolTipIcon.Info);
             }
             Osjezi();
@@ -67,6 +74,7 @@ namespace Digitalna_ribarnica
             {
                 azuriraj = true;
                 LokacijeRepozitory.azurirajLokaciju(odabranaLokacija,txtDodaj.Text);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je ažurirao lokaciju s ID: "+ odabranaLokacija.id+ " i nazivom: " + odabranaLokacija.Naziv +" na "+txtDodaj.Text, 20);
             }
             else
             {

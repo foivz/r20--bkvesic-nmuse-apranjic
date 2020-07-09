@@ -159,6 +159,21 @@ namespace Prijava
             return korisnik;
         }
 
+        public static Korisnik DohvatiIDpoEmailu(string email)
+        {
+            Korisnik korisnik = new Korisnik();
+            string sqlUpit = $"select * from korisnici where email='{email}';";
+            SqlDataReader dr = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    korisnik = DohvatiKorisnika(dr);
+                }
+                dr.Close();
+            }
+            return korisnik;
+        }
         public static int Spremi(Korisnik korisnik)
         {
             string sqlUpit = "";
@@ -187,6 +202,28 @@ namespace Prijava
         {
             string sqlUpit = $"update korisnici set id_tip_korisnika='{uloga}' where id_korisnik='{id}'; ";
             return DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        public static int AktivanKorisnik(int id)
+        {
+            string sqlUpit = $"update korisnici set id_status=1 where id_korisnik='{id}'; ";
+            return DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        public static int NeaktivanKorisnik(int id)
+        {
+            string sqlUpit = $"update korisnici set id_status=2 where id_korisnik='{id}'; ";
+            return DB.Instance.IzvrsiUpit(sqlUpit);
+        }
+
+        public static void UnesiUDnevnik(int id, string opis, int idTipRadnje)
+        {
+            var parameters = new Dictionary<string, object>();
+            parameters.Add("@datum", DateTime.Now);
+            parameters.Add("@opisRadnje", opis);
+            parameters.Add("@idKorisnik", id);
+            parameters.Add("@idTip", idTipRadnje);
+            DB.Instance.ExecuteParamQuery("insert into [dnevnik]([datum_i_vrijeme_radnje], [radnja], [id_korisnik], [id_tip_radnje]) values((@datum), (@opisRadnje), (@idKorisnik), (@idTip)); ", parameters);
         }
     }
 }

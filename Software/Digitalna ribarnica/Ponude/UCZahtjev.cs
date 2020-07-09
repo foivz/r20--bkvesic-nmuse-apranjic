@@ -64,6 +64,7 @@ namespace Ponude
         private void ucOdbaci_Click(object sender, EventArgs e)
         {
             PonudeRepozitory.OdbaciZahtjev(iform, zahtjev.ID);
+            KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je odbacio zahtjev za rezervacijom ponude " + zahtjev.IDPONUDE + " na količinu " + zahtjev.Kolicina, 12);
             zatvoriForme();
         }
 
@@ -92,6 +93,7 @@ namespace Ponude
             PonudeRepozitory.KreirajRezervaciju(iform, zahtjev, zahtjev.IDPONUDE);
             PonudeRepozitory.ObrisiZahtjev(iform, zahtjev);
             PonudeRepozitory.AzurirajPonuduKolicine(iform, zahtjev, zahtjev.IDPONUDE);
+            KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je prihvatio zahtjev za rezervacijom ponude "+zahtjev.IDPONUDE+" na količinu " + zahtjev.Kolicina, 11);
             List<string> mailovi = new List<string>();
             mailovi.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik)));
             mailovi.Add(KorisnikRepository.DohvatiEmailKorisnika(IDKorisnika));

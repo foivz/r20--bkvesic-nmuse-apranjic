@@ -84,12 +84,19 @@ namespace Baza
 
         public int ExecuteParamQuery(string query, Dictionary<string, object> parameters)
         {
-            SqlCommand command = new SqlCommand(query,Connection);
-            foreach (var item in parameters)
+            try
             {
-                command.Parameters.AddWithValue(item.Key, item.Value);
+                SqlCommand command = new SqlCommand(query, Connection);
+                foreach (var item in parameters)
+                {
+                    command.Parameters.AddWithValue(item.Key, item.Value);
+                }
+                return (int)command.ExecuteNonQuery();
             }
-            return (int)command.ExecuteNonQuery();
+            catch (Exception)
+            {
+                return -1;
+            }  
         }
     }
 }

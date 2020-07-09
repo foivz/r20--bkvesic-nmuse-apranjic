@@ -139,6 +139,8 @@ namespace Digitalna_ribarnica
             if (korisnik != null)
             {
                 KorisnikRepository.Obrisi(korisnik);
+                KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je obrisao korisnika " + korisnik.Ime + " " + korisnik.Prezime + "(" + korisnik.KorIme + ")", 27);
+
             }
             notifyIcon1.ShowBalloonTip(1000, "Obrisan korisnik", "Uspješno ste obrisali korisnika", ToolTipIcon.Info);
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
@@ -152,6 +154,8 @@ namespace Digitalna_ribarnica
             if (korisnik != null)
             {
                 KorisnikRepository.BlokirajKorisnika(korisnik.ID,4);
+                KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je blokirao korisnika " + korisnik.Ime + " " + korisnik.Prezime + "(" + korisnik.KorIme + ")", 6);
+
             }
             notifyIcon1.ShowBalloonTip(1000, "Blokiran korisnik", "Uspješno ste blokirali korisnika", ToolTipIcon.Info);
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
@@ -166,6 +170,7 @@ namespace Digitalna_ribarnica
             {
                 KorisnikRepository.BlokirajKorisnika(korisnik.ID, 2);
             }
+            KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je odblokirao korisnika " + korisnik.Ime + " " + korisnik.Prezime + "(" + korisnik.KorIme + ")", 7);
             notifyIcon1.ShowBalloonTip(1000, "Odblokiran korisnik", "Uspješno ste odblokirali korisnika", ToolTipIcon.Info);
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)

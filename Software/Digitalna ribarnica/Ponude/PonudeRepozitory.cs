@@ -237,12 +237,12 @@ namespace Ponude
         public static void UnesiZahtjevZaRezervaciju(int idKorisnika, int idPonuda, int kolicina)
         {
             string sqlUpit = "";
-            var parameters = new Dictionary<string, object>();
-            parameters.Add("@idKorisnika", idKorisnika);
-            parameters.Add("@idponuda", idPonuda);
-            parameters.Add("@kolicina", kolicina);
-            parameters.Add("@datum", DateTime.Now);
-            DB.Instance.ExecuteParamQuery("INSERT INTO [zahtjevi] ([id_korisnik], [id_ponuda], [kolicina], [datum_vrijeme]) VALUES((@idKorisnika), (@idponuda), (@kolicina), (@datum));", parameters);
+            var parameters1 = new Dictionary<string, object>();
+            parameters1.Add("@idKorisnika", idKorisnika);
+            parameters1.Add("@idponuda", idPonuda);
+            parameters1.Add("@kolicina", kolicina);
+            parameters1.Add("@datum", DateTime.Now);
+            DB.Instance.ExecuteParamQuery("INSERT INTO [zahtjevi] ([id_korisnik], [id_ponuda], [kolicina], [datum_vrijeme]) VALUES((@idKorisnika), (@idponuda), (@kolicina), (@datum));", parameters1);
         }
 
         public static void ObrisiPonudu(int id)
@@ -734,6 +734,83 @@ namespace Ponude
             string sqlUpit = $"update postavke set min_cijena={cijena}, min_kolicina={kolicina}";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
+
+
+        public static List<Dnevnik> DohvatiZapiseDnevnika()
+        {
+            List<Dnevnik> _sviZapisi = new List<Dnevnik>();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            string sqlUpit = $"select * from dnevnik;";
+            var rezultat = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            foreach (var item in returnMe)
+            {
+                Dnevnik dnevnik = new Dnevnik();
+                dnevnik.DatumRadnje = DateTime.Parse(item["datum_i_vrijeme_radnje"].ToString());
+                dnevnik.Radnja = item["radnja"].ToString();
+                if(item["id_korisnik"]!=DBNull.Value)
+                    dnevnik.IDkorisnik = int.Parse(item["id_korisnik"].ToString());
+                dnevnik.IDTipRadnje= int.Parse(item["id_tip_radnje"].ToString());
+                _sviZapisi.Add(dnevnik);
+            }
+           
+            return _sviZapisi;
+        }
+
+        public static List<TipoviRadnje> DohvatiTipoveRadnji()
+        {
+            List<TipoviRadnje> _sviZapisi = new List<TipoviRadnje>();
+            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
+            string sqlUpit = $"select * from tipovi_radnje;";
+            var rezultat = DB.Instance.DohvatiDataReader(sqlUpit);
+            if (rezultat != null)
+            {
+                foreach (DbDataRecord item in rezultat)
+                {
+                    var row = new Dictionary<string, object>();
+                    for (int i = 0; i < item.FieldCount; i++)
+                    {
+                        row.Add(item.GetName(i), item[i]);
+                    }
+                    returnMe.Add(row);
+                }
+            }
+            if (rezultat != null)
+                rezultat.Close();
+            foreach (var item in returnMe)
+            {
+                TipoviRadnje tip = new TipoviRadnje();
+                tip.ID= int.Parse(item["id_tip_radnje"].ToString());
+                tip.Naziv = item["naziv"].ToString();
+                _sviZapisi.Add(tip);
+            }
+
+            return _sviZapisi;
+        }
+
+        public static void UnesiUDnevnik(int id, string opis,int idTipRadnje)
+        {
+            var parameters = new Dictionary<string, object>();
+            parameters.Add("@datum", DateTime.Now);
+            parameters.Add("@opisRadnje", opis);
+            parameters.Add("@idKorisnik", id);
+            parameters.Add("@idTip", idTipRadnje);
+            DB.Instance.ExecuteParamQuery("insert into [dnevnik]([datum_i_vrijeme_radnje], [radnja], [id_korisnik], [id_tip_radnje]) values((@datum), (@opisRadnje), (@idKorisnik), (@idTip)); ", parameters);
+        }
+
     }
 
 

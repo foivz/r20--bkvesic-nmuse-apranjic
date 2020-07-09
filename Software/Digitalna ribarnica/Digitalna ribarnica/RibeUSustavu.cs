@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RibeUSustavu;
+using INSform;
+using Prijava;
+using Ponude;
+
 namespace Digitalna_ribarnica
 {
     public partial class RibeUSustavu : Form
     {
-        public RibeUSustavu()
+        Iform Iform;
+        public RibeUSustavu(Iform iform)
         {
             InitializeComponent();
+            Iform = iform;
         }
 
         private void RibeUSustavu_Load(object sender, EventArgs e)
@@ -42,7 +48,7 @@ namespace Digitalna_ribarnica
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
             {
-                form.openChildForm(new DodajRibu());
+                form.openChildForm(new DodajRibu(Iform));
             }
         }
 
@@ -52,7 +58,7 @@ namespace Digitalna_ribarnica
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
             {
-                form.openChildForm(new DodajRibu(riba));
+                form.openChildForm(new DodajRibu(riba,Iform));
             }
         }
 
@@ -62,12 +68,13 @@ namespace Digitalna_ribarnica
             if (riba != null)
             {
                 RibeRepository.ObrisiRibu(riba);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je obrisao ribu: " + riba.Naziv + " s ID-om " + riba.id, 18);
             }
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
             {
                 notifyRiba.ShowBalloonTip(1000, "Ribe u sustavu", "Uspješno ste obrisali ribu!", ToolTipIcon.Info);
-                form.openChildForm(new RibeUSustavu());
+                form.openChildForm(new RibeUSustavu(Iform));
             }
         }
 

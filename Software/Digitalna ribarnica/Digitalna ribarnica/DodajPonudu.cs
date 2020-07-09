@@ -168,6 +168,7 @@ namespace Digitalna_ribarnica
                     DB.Instance.ExecuteParamQuery("INSERT INTO [ponude]([cijena], [kolicina], [opis], [trajanje_rezervacije_u_satima], [dodatna_fotografija], [id_riba], [id_lokacija], [id_korisnik]) VALUES((@cijena), (@kolicina), (@opis), (@sati), (@slika), (@idriba), (@idlokacija), (@idkorisnika)); ", parameters);
                 else
                     DB.Instance.ExecuteParamQuery("INSERT INTO [ponude]([cijena], [kolicina], [opis], [trajanje_rezervacije_u_satima], [id_riba], [id_lokacija], [id_korisnik]) VALUES((@cijena), (@kolicina), (@opis), (@sati), (@idriba), (@idlokacija), (@idkorisnika)); ", parameters);
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je kreirao ponudu ribe: "+cmbRiba.SelectedItem, 4);
                 notifyPonuda.ShowBalloonTip(1000, "Kreiranje ponude", "Uspješno ste kreirali ponudu", ToolTipIcon.Info);
                 formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                 if (form != null)

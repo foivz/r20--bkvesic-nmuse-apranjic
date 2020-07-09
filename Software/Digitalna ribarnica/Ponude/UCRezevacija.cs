@@ -68,6 +68,7 @@ namespace Ponude
         {
             PonudeRepozitory.RezervacijaDovrsena(Iform, rezervacija.ID);
             //zatvoriForme();
+            KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je proglasio rezervaciju " + rezervacija.ID + " izvšenom", 14);
             List<string> email = new List<string>();
             email.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik)));
             email.Add(KorisnikRepository.DohvatiEmailKorisnika(IDKupca));
@@ -82,7 +83,7 @@ namespace Ponude
         private void btnDetalji_Click(object sender, EventArgs e)
         {
             PonudeRepozitory.RezervacijaBlokirana(Iform, rezervacija.ID);
-           
+            KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je otkazao rezervaciju " + rezervacija.ID + " na količinu " + rezervacija.Kolicina +" kod ponude " + rezervacija.Ime, 13);
             //openChildForm(new OcijeniKorisnika(Iform));
             List<string> email = new List<string>();
             email.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik)));

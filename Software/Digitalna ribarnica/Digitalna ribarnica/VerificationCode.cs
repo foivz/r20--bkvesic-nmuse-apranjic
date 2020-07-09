@@ -14,7 +14,7 @@ using Registracija;
 using Baza;
 using System.IO;
 using System.Data.Common;
-
+using Ponude;
 namespace Digitalna_ribarnica
 {
     public partial class VerificationCode : Form
@@ -110,7 +110,8 @@ namespace Digitalna_ribarnica
                         parameters.Add("@status", 2);
                         DB.Instance.ExecuteParamQuery("INSERT INTO [korisnici] ([ime], [prezime], [email], [korisnicko_ime], [broj_mobitela], [datum_rodenja], [lozinka], [adresa], [mjesto], [slika], [id_tip_korisnika], [id_status]) VALUES((@ime), (@prezime), (@email), (@korime), (@broj), (@datum), (@lozinka), (@adresa), (@mjesto), (@slika), (@tip), (@status));", parameters);
 
-
+                        int idKorisnika=KorisnikRepository.DohvatiIdKorisnika(korisnik.KorIme);
+                        PonudeRepozitory.UnesiUDnevnik(idKorisnika, "Korisnik " + korisnik.KorIme + " se registrirao", 3);
                         formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                         if (form != null)
                         {
@@ -194,7 +195,7 @@ namespace Digitalna_ribarnica
             timerLabel.Stop();
         }
 
-        //Ovaj dio ispod služi za fokusiranje pojedinih textboxova prilikom unosa pojedinog broja za verifikaciju koda
+        //Ovaj dio ispod služi za fokusiranje pojedinih ova prilikom unosa pojedinog broja za verifikaciju koda
 
         private void textBoxCode1_TextChanged(object sender, EventArgs e)
         {

@@ -71,11 +71,13 @@ namespace Ponude
             if ((PonudeRepozitory.ProvjeriKorisnikaIZahtjev(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), int.Parse(Ponuda.ID))) == 0)
             {
                 PonudeRepozitory.UnesiZahtjevZaRezervaciju(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), int.Parse(Ponuda.ID), int.Parse(txtKolicina.Text));
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je poslao zahtjev za ponudu " + Ponuda.ID, 5);
                 notifyRezerviraj.ShowBalloonTip(1000, "Zahtjev za rezervacijom", "Uspješno ste kreirali zahtjev za rezervacijom", ToolTipIcon.Info);
             } 
             else
             {
                 PonudeRepozitory.AzurirajZahtjev(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), int.Parse(Ponuda.ID), int.Parse(txtKolicina.Text));
+                PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je ažurirao zahtjev za ponudu " + Ponuda.ID, 25);
                 notifyRezerviraj.ShowBalloonTip(1000, "Zahtjev za rezervacijom", "Uspješno ste ažurirali zahtjev za rezervacijom", ToolTipIcon.Info);
             }
             Close();

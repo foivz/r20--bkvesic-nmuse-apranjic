@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using INSform;
 using Ponude;
+using Prijava;
+
 namespace Ponude
 {
     public partial class UrediPonudu : Form
@@ -39,6 +41,7 @@ namespace Ponude
         {
             PonudeRepozitory.ObrisiPonudu(int.Parse(Ponuda.ID));
             PonudeRepozitory.AzurirajZahtjeveNakonBrisanja(iform, int.Parse(Ponuda.ID));
+            PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je obrisao ponudu s ID: " + Ponuda.ID, 23);
             Close();
             zatvoriForme();
             
