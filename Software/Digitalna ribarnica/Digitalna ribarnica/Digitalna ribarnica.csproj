@@ -227,6 +227,9 @@
     <EmbeddedResource Include="ZaboravljenaLozinkaEmail.resx">
       <DependentUpon>ZaboravljenaLozinkaEmail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Help\digitalna_ribarnica.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

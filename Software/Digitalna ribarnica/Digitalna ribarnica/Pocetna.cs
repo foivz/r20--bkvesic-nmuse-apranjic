@@ -15,6 +15,8 @@ using INSform;
 using Ocjene;
 using Ponude;
 using Chat;
+using System.IO;
+
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form, Iform
@@ -57,6 +59,7 @@ namespace Digitalna_ribarnica
             btnPredefinirane.Visible = false;
             btnChat.Visible = false;
             btnDnevnik.Visible = false;
+            helpProvider1.HelpNamespace =  Directory.GetCurrentDirectory() + "\\Help\\digitalna_ribarnica.chm";
         }
      
 

@@ -598,7 +598,8 @@
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "C:\\Users\\aaa\\Downloads\\digitalna_ribarnica\\digitalna_ribarnica.chm";
+            this.helpProvider1.HelpNamespace = "C:\\Users\\bozok\\Documents\\r20--bkvesic-nmuse-apranjic\\Software\\Digitalna ribarnica" +
+    "\\Digitalna ribarnica\\Help\\digitalna_ribarnica.chm";
             // 
             // formPocetna
             // 
