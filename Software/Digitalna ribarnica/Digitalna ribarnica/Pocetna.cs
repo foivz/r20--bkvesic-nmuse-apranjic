@@ -14,7 +14,7 @@ using Baza;
 using INSform;
 using Ocjene;
 using Ponude;
-
+using Chat;
 namespace Digitalna_ribarnica
 {
     public partial class formPocetna : Form, Iform
@@ -267,6 +267,11 @@ namespace Digitalna_ribarnica
         private void btnDnevnik_Click(object sender, EventArgs e)
         {
             openChildForm(new Dnevnik(this));
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Chat.Chat(this));
         }
     }
 }

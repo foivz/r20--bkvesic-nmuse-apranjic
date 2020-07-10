@@ -252,6 +252,10 @@
       <Project>{995435a5-41eb-4598-8db3-31f7deb18cd7}</Project>
       <Name>Baza</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Chat\Chat.csproj">
+      <Project>{33f0165b-e052-4c91-a77d-2de05a597a66}</Project>
+      <Name>Chat</Name>
+    </ProjectReference>
     <ProjectReference Include="..\INSform\INSform.csproj">
       <Project>{7a77ea37-d108-414a-abf4-b04cd1517d2e}</Project>
       <Name>INSform</Name>
