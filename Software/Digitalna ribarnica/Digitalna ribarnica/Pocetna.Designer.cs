@@ -65,6 +65,7 @@
             this.panelStranice = new System.Windows.Forms.Panel();
             this.labelOdjava = new System.Windows.Forms.Label();
             this.timerPocetna = new System.Windows.Forms.Timer(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLogo)).BeginInit();
@@ -595,6 +596,10 @@
             this.timerPocetna.Interval = 1000;
             this.timerPocetna.Tick += new System.EventHandler(this.timerPocetna_Tick);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\aaa\\Downloads\\digitalna_ribarnica\\digitalna_ribarnica.chm";
+            // 
             // formPocetna
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -608,6 +613,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formPocetna";
+            this.helpProvider1.SetShowHelp(this, true);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digitalna ribarnica";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formPocetna_FormClosing);
@@ -663,6 +669,7 @@
         private System.Windows.Forms.Button btnPredefinirane;
         private System.Windows.Forms.Button btnChat;
         private System.Windows.Forms.Button btnDnevnik;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 
