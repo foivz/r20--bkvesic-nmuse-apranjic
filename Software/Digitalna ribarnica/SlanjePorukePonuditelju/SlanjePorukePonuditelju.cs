@@ -87,7 +87,7 @@ namespace SlanjePorukePonuditelju
             {
                 List<string> mailovi = new List<string>();
                 mailovi.Add(KorisnikRepository.DohvatiEmailKorisnika(IDPrimatelja));
-                Mail mail = new Mail(mailovi);
+                Mails mail = new Mails(mailovi);
                 Korisnik korisnik = KorisnikRepository.DohvatiKorisnikaPoIDU(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
                 mail.Title = "Korisnik " + korisnik.Ime + " " + korisnik.Prezime + " Vam šalje poruku!";
                 mail.Text = lblSadrzajPoruke.Text;
@@ -95,7 +95,7 @@ namespace SlanjePorukePonuditelju
                 mail.Send();
                 mailovi.Clear();
                 mailovi.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik)));
-                Mail mail1 = new Mail(mailovi);
+                Mails mail1 = new Mails(mailovi);
                 Korisnik korisnik1 = KorisnikRepository.DohvatiKorisnikaPoIDU(IDPrimatelja);
                 mail.Title = "Poslali ste korisniku " + korisnik1.Ime + " " + korisnik1.Prezime + " poruku!";
                 mail.Text = lblSadrzajPoruke.Text;

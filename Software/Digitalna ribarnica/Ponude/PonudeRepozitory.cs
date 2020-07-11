@@ -444,7 +444,7 @@ namespace Ponude
             Iform = nova;
             _rezervacije.Clear();
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.*,ponude.cijena, rezervacije.id_rezervacija, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and rezervacije.id_tip_statusa=1");
+            var rezultat = DB.Instance.DohvatiDataReader($"select ribe.*,ponude.cijena, rezervacije.id_rezervacija,korisnici.id_korisnik as kupac, korisnici.ime, korisnici.prezime, lokacije.naziv as lokacija, ponude.dodatna_fotografija, rezervacije.kolicina from rezervacije, ribe, korisnici, lokacije, ponude where rezervacije.id_ponuda = ponude.id_ponuda and ponude.id_korisnik = korisnici.id_korisnik and rezervacije.id_kupac = {id} and ponude.id_lokacija = lokacije.id_lokacija and ponude.id_riba = ribe.id_riba and rezervacije.id_tip_statusa=1");
             if (rezultat != null)
             {
                 foreach (DbDataRecord item in rezultat)
@@ -492,6 +492,7 @@ namespace Ponude
                 rezervacija.Cijena = float.Parse(item["cijena"].ToString());
                 rezervacija.Ime = item["ime"] + " " + item["prezime"];
                 rezervacija.Lokacija = item["lokacija"].ToString();
+                rezervacija.IDkupca= int.Parse(item["kupac"].ToString());
                 _rezervacije.Add(rezervacija);
             }
             if (rezultat != null)

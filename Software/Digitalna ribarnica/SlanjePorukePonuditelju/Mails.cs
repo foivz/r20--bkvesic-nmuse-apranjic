@@ -10,7 +10,7 @@ using System.Net;
 
 namespace Ponude
 {
-    public class Mail
+    public class Mails
     {
         public string Title { get; set; }
         public string Text { get; set; }
@@ -40,7 +40,7 @@ namespace Ponude
 
         #endregion
 
-        public Mail(List<string> mailovi)
+        public Mails(List<string> mailovi)
         {
             To = new List<string>();
             Cc = new List<string>();

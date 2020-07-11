@@ -87,7 +87,8 @@ namespace Ponude
             //openChildForm(new OcijeniKorisnika(Iform));
             List<string> email = new List<string>();
             email.Add(KorisnikRepository.DohvatiEmailKorisnika(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik)));
-            email.Add(KorisnikRepository.DohvatiEmailKorisnika(IDKupca));
+            if(KorisnikRepository.DohvatiEmailKorisnika(IDKupca)!="")
+                email.Add(KorisnikRepository.DohvatiEmailKorisnika(IDKupca));
             Mail mail = new Mail(email);
             mail.Text = "Poštovani\nKorisnik " + Iform.autentifikator.AktivanKorisnik + " je otkazao rezervaciju. Molimo ocijenite korisnika!\nLijep pozdrav!";
             mail.Title = "Rezervacija dovršena";
