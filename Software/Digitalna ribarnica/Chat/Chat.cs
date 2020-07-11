@@ -16,6 +16,7 @@ namespace Chat
     {
         Iform Iform;
         List<Korisnik> korisnici = new List<Korisnik>();
+        List<Korisnik> postojiRazgovorSKorisnikom = new List<Korisnik>();
         int IDPrimatelja = 0;
         public Chat(Iform iform)
         {
@@ -24,7 +25,7 @@ namespace Chat
             ObrisiKontake();
             korisnici = KorisnikRepository.DohvatiSveKorisnike();
             List<int> ostvareRazgovor = ChatRepository.DohvatiKorisnike(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
-            List<Korisnik> postojiRazgovorSKorisnikom = new List<Korisnik>();
+         
             Korisnik aktivan = new Korisnik();
             foreach (var item in korisnici)
             {
@@ -41,8 +42,10 @@ namespace Chat
                         postojiRazgovorSKorisnikom.Add(korisnik);
                 }
             }
-  
-            DodajKorisnika(postojiRazgovorSKorisnikom, Iform);
+            if(Iform.autentifikator.tipKorisnika(iform.autentifikator.AktivanKorisnik)!=1)
+                DodajKorisnika(postojiRazgovorSKorisnikom, Iform);
+            else
+                DodajKorisnika(korisnici, Iform);
 
         }
 
@@ -125,6 +128,10 @@ namespace Chat
             lblSadrzajPoruke.Visible = true;
             btnSalji.Visible = true;
             this.IDPrimatelja = idPrimatelja;
+            System.Windows.Forms.Application.DoEvents();
+
+            flowLayoutPanel2.VerticalScroll.Value = flowLayoutPanel2.VerticalScroll.Maximum;
+            flowLayoutPanel2.PerformLayout();
         }
 
         private void Chat_Load(object sender, EventArgs e)
@@ -169,6 +176,35 @@ namespace Chat
             }
             else
                 notifyIcon1.ShowBalloonTip(1000, "Chat", "Ne možemo poslati praznu poruku", ToolTipIcon.Warning);
+        }
+
+        private void txtFiltriraj_TextChanged(object sender, EventArgs e)
+        {
+            List<Korisnik> aktivniKorisnici = new List<Korisnik>();
+            if (Iform.autentifikator.tipKorisnika(Iform.autentifikator.AktivanKorisnik) != 1)
+                aktivniKorisnici = postojiRazgovorSKorisnikom;
+            else
+                aktivniKorisnici = korisnici;
+
+            string filter = txtFiltriraj.Text.ToLower();
+            if (filter != null)
+            {
+
+                var result = from korisnik in aktivniKorisnici
+                             where korisnik.Ime.ToLower().Contains(filter) || korisnik.Prezime.ToLower().Contains(filter) || (korisnik.Ime.ToLower()+" "+korisnik.Prezime.ToLower()).Contains(filter)
+                             orderby korisnik.Prezime
+                             select korisnik;
+                ObrisiKontake();
+                DodajKorisnika(result, Iform);
+            }
+            else
+            {
+                var result = from korisnik in aktivniKorisnici
+                             orderby korisnik.Prezime
+                             select korisnik;
+                ObrisiKontake();
+                DodajKorisnika(result, Iform);
+            }
         }
     }
 }
