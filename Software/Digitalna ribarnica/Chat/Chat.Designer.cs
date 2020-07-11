@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chat));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelOdjava = new System.Windows.Forms.Label();
+            this.txtFiltriraj = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnSalji = new System.Windows.Forms.Button();
             this.lblSadrzajPoruke = new System.Windows.Forms.RichTextBox();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.txtFiltriraj = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.labelOdjava = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,9 +55,45 @@
             this.groupBox1.Controls.Add(this.flowLayoutPanel1);
             this.groupBox1.Location = new System.Drawing.Point(26, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(915, 574);
+            this.groupBox1.Size = new System.Drawing.Size(915, 554);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // labelOdjava
+            // 
+            this.labelOdjava.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelOdjava.AutoSize = true;
+            this.labelOdjava.Font = new System.Drawing.Font("Open Sans Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelOdjava.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
+            this.labelOdjava.Location = new System.Drawing.Point(87, 16);
+            this.labelOdjava.Name = "labelOdjava";
+            this.labelOdjava.Size = new System.Drawing.Size(164, 47);
+            this.labelOdjava.TabIndex = 13;
+            this.labelOdjava.Text = "Korisnici";
+            this.labelOdjava.Visible = false;
+            // 
+            // txtFiltriraj
+            // 
+            this.txtFiltriraj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
+            this.txtFiltriraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.txtFiltriraj.Location = new System.Drawing.Point(95, 69);
+            this.txtFiltriraj.Name = "txtFiltriraj";
+            this.txtFiltriraj.Size = new System.Drawing.Size(184, 20);
+            this.txtFiltriraj.TabIndex = 12;
+            this.txtFiltriraj.TextChanged += new System.EventHandler(this.txtFiltriraj_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(141)))), ((int)(((byte)(134)))));
+            this.label2.Location = new System.Drawing.Point(46, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Traži";
             // 
             // btnSalji
             // 
@@ -116,42 +152,6 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
-            // 
-            // txtFiltriraj
-            // 
-            this.txtFiltriraj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(50)))), ((int)(((byte)(48)))));
-            this.txtFiltriraj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.txtFiltriraj.Location = new System.Drawing.Point(95, 69);
-            this.txtFiltriraj.Name = "txtFiltriraj";
-            this.txtFiltriraj.Size = new System.Drawing.Size(184, 20);
-            this.txtFiltriraj.TabIndex = 12;
-            this.txtFiltriraj.TextChanged += new System.EventHandler(this.txtFiltriraj_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(141)))), ((int)(((byte)(134)))));
-            this.label2.Location = new System.Drawing.Point(46, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Traži";
-            // 
-            // labelOdjava
-            // 
-            this.labelOdjava.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelOdjava.AutoSize = true;
-            this.labelOdjava.Font = new System.Drawing.Font("Open Sans Semibold", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelOdjava.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(132)))), ((int)(((byte)(121)))));
-            this.labelOdjava.Location = new System.Drawing.Point(87, 16);
-            this.labelOdjava.Name = "labelOdjava";
-            this.labelOdjava.Size = new System.Drawing.Size(164, 47);
-            this.labelOdjava.TabIndex = 13;
-            this.labelOdjava.Text = "Korisnici";
-            this.labelOdjava.Visible = false;
             // 
             // Chat
             // 
