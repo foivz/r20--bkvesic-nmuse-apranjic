@@ -36,7 +36,7 @@ namespace Digitalna_ribarnica
                 Random verificationCode = new Random();
                 int broj = verificationCode.Next(10000, 99999);
                 Code code = new Code(broj);
-                /*
+
                 MailMessage msg = new MailMessage("eribarnica@gmail.com", textEmail.Text, "Digitalna ribarnica", "<br>Vaš kod za promjenu lozinke je: </br>" + broj);
                 msg.IsBodyHtml = true;
                 SmtpClient sc = new SmtpClient("smtp.gmail.com", 587);
@@ -45,30 +45,28 @@ namespace Digitalna_ribarnica
                 sc.Credentials = cre;
                 sc.EnableSsl = true;
                 sc.Send(msg);
-                */
+                /*
                 List<string> mailovi = new List<string>();
                 mailovi.Add(textEmail.Text);
                 Mail mail = new Mail(mailovi);
                 mail.Title = "Digitalna ribarnica";
                 mail.Text = "Vaš kod za promjenu lozinke je: " + broj;
                 mail.RequireAutentication = true;
+
                 mail.Send();
+                */
                 notifyZaboravljenaLozinka.ShowBalloonTip(1000, "Code", "Kod za promjenu lozinke je poslan na Vaš mail!", ToolTipIcon.Info);
 
                 formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
                 if (form != null)
                 {
-                    form.openChildForm(new PromijeniLozinku(Autentifikator, code,textEmail.Text));
+                    form.openChildForm(new PromijeniLozinku(Autentifikator, code, textEmail.Text));
                 }
 
             }
             catch (PrijavaException ex)
             {
                 notifyZaboravljenaLozinka.ShowBalloonTip(1000, "Zaboravljena lozinka", ex.Poruka, ToolTipIcon.Error);
-            }
-            catch (Exception)
-            {
-
             }
         }
     }

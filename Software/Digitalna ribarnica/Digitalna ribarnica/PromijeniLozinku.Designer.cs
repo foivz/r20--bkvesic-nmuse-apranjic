@@ -111,6 +111,7 @@
             // textCode4
             // 
             this.textCode4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(153)))), ((int)(((byte)(106)))));
+            this.textCode4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.textCode4.Location = new System.Drawing.Point(279, 24);
             this.textCode4.MaxLength = 1;
             this.textCode4.Name = "textCode4";
@@ -121,6 +122,7 @@
             // textCode5
             // 
             this.textCode5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(203)))), ((int)(((byte)(132)))));
+            this.textCode5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.textCode5.Location = new System.Drawing.Point(310, 24);
             this.textCode5.MaxLength = 1;
             this.textCode5.Name = "textCode5";
@@ -131,6 +133,7 @@
             // textCode1
             // 
             this.textCode1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(129)))), ((int)(((byte)(124)))));
+            this.textCode1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.textCode1.Location = new System.Drawing.Point(186, 24);
             this.textCode1.MaxLength = 1;
             this.textCode1.Name = "textCode1";
@@ -141,6 +144,7 @@
             // textCode3
             // 
             this.textCode3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(145)))), ((int)(((byte)(112)))));
+            this.textCode3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.textCode3.Location = new System.Drawing.Point(248, 24);
             this.textCode3.MaxLength = 1;
             this.textCode3.Name = "textCode3";
@@ -151,6 +155,7 @@
             // textCode2
             // 
             this.textCode2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(136)))), ((int)(((byte)(119)))));
+            this.textCode2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(249)))), ((int)(((byte)(233)))));
             this.textCode2.Location = new System.Drawing.Point(217, 24);
             this.textCode2.MaxLength = 1;
             this.textCode2.Name = "textCode2";
