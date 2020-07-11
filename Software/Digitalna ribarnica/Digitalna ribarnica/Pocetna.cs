@@ -25,10 +25,8 @@ namespace Digitalna_ribarnica
         public Form nova { get; set; }
         public Panel panel { get; set; }
         public Form activeForm = null;
-        bool podizbronik = true;
 
         bool podizbornikPonude = true;
-        bool podizbornikPonude1 = true;
         public formPocetna()
         {
             InitializeComponent();
@@ -275,6 +273,13 @@ namespace Digitalna_ribarnica
         private void btnChat_Click(object sender, EventArgs e)
         {
             openChildForm(new Chat.Chat(this));
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Process procesHelp = new Process();
+            procesHelp.StartInfo.FileName = Directory.GetCurrentDirectory() + "\\Help\\digitalna_ribarnica.chm";
+            procesHelp.Start();
         }
     }
 }
