@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using INSform;
+using Prijava;
+
 namespace Ponude
 {
     public class Ponuda
@@ -207,6 +209,14 @@ namespace Ponude
 			PrikazUC.LoadPonuda(this);
 		}
 		*/
+
+		public void ProvjeraKontaktiranjaSamogSebe(Iform Iform)
+		{
+			if (IDKORISNIKA == KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik))
+				PrikazUC.btnKontaktirajKupca.Visible = false;
+			else
+				PrikazUC.btnKontaktirajKupca.Visible = true;
+		}
 		public Ponuda(Iform iform, int i=1)
 		{
 			zastava = i;
@@ -214,6 +224,7 @@ namespace Ponude
 			{
 				PrikazUC = new UCPonuda(iform);
 				PrikazUC.LoadPonuda(this);
+				
 			}
 			else
 			{

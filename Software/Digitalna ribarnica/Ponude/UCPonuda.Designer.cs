@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ucZnacka = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ucLokacija = new System.Windows.Forms.Label();
             this.ucPonuditelj = new System.Windows.Forms.Label();
@@ -44,14 +45,15 @@
             this.ucKolicina = new System.Windows.Forms.Label();
             this.ucCijena = new System.Windows.Forms.Label();
             this.ucNaziv = new System.Windows.Forms.Label();
-            this.ucZnacka = new System.Windows.Forms.PictureBox();
+            this.btnKontaktirajKupca = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnKontaktirajKupca);
             this.groupBox1.Controls.Add(this.ucZnacka);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.ucLokacija);
@@ -70,9 +72,18 @@
             this.groupBox1.Controls.Add(this.ucNaziv);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(201, 269);
+            this.groupBox1.Size = new System.Drawing.Size(207, 310);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // ucZnacka
+            // 
+            this.ucZnacka.Location = new System.Drawing.Point(6, 35);
+            this.ucZnacka.Name = "ucZnacka";
+            this.ucZnacka.Size = new System.Drawing.Size(30, 35);
+            this.ucZnacka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ucZnacka.TabIndex = 11;
+            this.ucZnacka.TabStop = false;
             // 
             // label6
             // 
@@ -180,7 +191,7 @@
             this.btnDetalji.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalji.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetalji.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.btnDetalji.Location = new System.Drawing.Point(5, 229);
+            this.btnDetalji.Location = new System.Drawing.Point(9, 270);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(190, 34);
             this.btnDetalji.TabIndex = 4;
@@ -228,14 +239,20 @@
             this.ucNaziv.TabIndex = 0;
             this.ucNaziv.Text = "label1";
             // 
-            // ucZnacka
+            // btnKontaktirajKupca
             // 
-            this.ucZnacka.Location = new System.Drawing.Point(6, 35);
-            this.ucZnacka.Name = "ucZnacka";
-            this.ucZnacka.Size = new System.Drawing.Size(30, 35);
-            this.ucZnacka.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.ucZnacka.TabIndex = 11;
-            this.ucZnacka.TabStop = false;
+            this.btnKontaktirajKupca.FlatAppearance.BorderSize = 0;
+            this.btnKontaktirajKupca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKontaktirajKupca.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKontaktirajKupca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.btnKontaktirajKupca.Location = new System.Drawing.Point(6, 230);
+            this.btnKontaktirajKupca.Name = "btnKontaktirajKupca";
+            this.btnKontaktirajKupca.Size = new System.Drawing.Size(190, 34);
+            this.btnKontaktirajKupca.TabIndex = 12;
+            this.btnKontaktirajKupca.Text = "Kontaktiraj ponuditelja";
+            this.btnKontaktirajKupca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnKontaktirajKupca.UseVisualStyleBackColor = true;
+            this.btnKontaktirajKupca.Click += new System.EventHandler(this.btnKontaktirajKupca_Click);
             // 
             // UCPonuda
             // 
@@ -243,11 +260,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "UCPonuda";
-            this.Size = new System.Drawing.Size(213, 275);
+            this.Size = new System.Drawing.Size(212, 316);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,5 +288,6 @@
         public System.Windows.Forms.Label ucPonuditelj;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.PictureBox ucZnacka;
+        public System.Windows.Forms.Button btnKontaktirajKupca;
     }
 }

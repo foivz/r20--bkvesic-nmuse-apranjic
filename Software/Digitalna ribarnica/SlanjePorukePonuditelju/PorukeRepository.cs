@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chat
+namespace SlanjePorukePonuditelju
 {
-    public static class ChatRepository
+    public class PorukeRepository
     {
         public static List<PorukeIzBaze> DohvatiPoruke(int idAktivan, int idPrimatelj)
         {
@@ -17,7 +17,7 @@ namespace Chat
             foreach (DbDataRecord item in rezultat)
             {
                 var row = new Dictionary<string, object>();
-                for (int i = 0; i<item.FieldCount; i++)
+                for (int i = 0; i < item.FieldCount; i++)
                 {
                     row.Add(item.GetName(i), item[i]);
                 }
@@ -36,7 +36,7 @@ namespace Chat
             return _poruke;
         }
 
-        public static int DodajRazgovor(int idPrimatelj,int idPosiljate)
+        public static int DodajRazgovor(int idPrimatelj, int idPosiljate)
         {
             string sqlUpit = "";
             sqlUpit = $"insert into razgovori(korisnik1, korisnik2) values({idPrimatelj},{idPosiljate})";
@@ -66,43 +66,14 @@ namespace Chat
                     IDRazgovora = int.Parse(item["id_razgovora"].ToString());
                 }
             }
- 
+
             return IDRazgovora;
         }
 
-        public static List<int> DohvatiKorisnike(int idAktivan)
-        {
-            List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
-            List<int> chatKorisnici = new List<int>();
-            var rezultat = DB.Instance.DohvatiDataReader($"select korisnik1, korisnik2 from razgovori where korisnik1={idAktivan} or korisnik2={idAktivan}");
-            foreach (DbDataRecord item in rezultat)
-            {
-                var row = new Dictionary<string, object>();
-                for (int i = 0; i < item.FieldCount; i++)
-                {
-                    row.Add(item.GetName(i), item[i]);
-                }
-                returnMe.Add(row);
-            }
-            rezultat.Close();
-            if (returnMe != null)
-            {
-                foreach (var item in returnMe)
-                {
-                    if (int.Parse(item["korisnik1"].ToString()) != idAktivan)
-                        chatKorisnici.Add(int.Parse(item["korisnik1"].ToString()));
-                    if (int.Parse(item["korisnik2"].ToString()) != idAktivan)
-                        chatKorisnici.Add(int.Parse(item["korisnik2"].ToString()));
-                }
-            }
-
-            return chatKorisnici;
-        }
-
-        public static void UnesiPoruku(string sadrzaj,int posiljatelj,int idRazgovora)
+        public static void UnesiPoruku(string sadrzaj, int posiljatelj, int idRazgovora)
         {
             var parameters = new Dictionary<string, object>();
-            
+
             parameters.Add("@sadrzaj", sadrzaj);
             parameters.Add("@datum", DateTime.Now);
             parameters.Add("@posiljatelj", posiljatelj);

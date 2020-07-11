@@ -8,33 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using INSform;
-using Prijava;
-using SlanjePorukePonuditelju;
-namespace Ponude
-{
-    public partial class UCPonuda : UserControl
-    {
-        private Ponuda ponuda = null;
-        Iform Iform;
 
+namespace SlanjePorukePonuditelju
+{
+    public partial class UCPoruka : UserControl
+    {
+        Iform Iform;
+        private Poruka poruka = null;
         public Form Trenutna { get; set; }
         public Panel panelStranice { get; set; }
 
         public int IDkorisnika { get; set; }
-        public UCPonuda(Iform novo)
+        public UCPoruka(Iform iform)
         {
             InitializeComponent();
-            Iform = novo;
+            Iform = iform;
             Trenutna = Iform.nova;
             panelStranice = Iform.panel;
         }
 
-        public void LoadPonuda(Ponuda ponuda)
+        public void LoadPonuda(Poruka poruka)
         {
-            this.ponuda = ponuda;
- 
+            this.poruka = poruka;
         }
-        
+
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)
@@ -47,16 +44,6 @@ namespace Ponude
             panelStranice.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-
-        private void btnDetalji_Click(object sender, EventArgs e)
-        {
-            openChildForm(new DetaljiPonude(ponuda, Iform));
-        }
-
-        private void btnKontaktirajKupca_Click(object sender, EventArgs e)
-        {
-            openChildForm(new SlanjePorukePonuditelju.SlanjePorukePonuditelju(Iform,IDkorisnika));
         }
     }
 }

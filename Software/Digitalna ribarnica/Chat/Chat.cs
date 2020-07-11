@@ -23,6 +23,8 @@ namespace Chat
             Iform = iform;
             ObrisiKontake();
             korisnici = KorisnikRepository.DohvatiSveKorisnike();
+            List<int> ostvareRazgovor = ChatRepository.DohvatiKorisnike(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
+            List<Korisnik> postojiRazgovorSKorisnikom = new List<Korisnik>();
             Korisnik aktivan = new Korisnik();
             foreach (var item in korisnici)
             {
@@ -31,7 +33,16 @@ namespace Chat
 
             }
             korisnici.Remove(aktivan);
-            DodajKorisnika(korisnici, Iform);
+            foreach (var item in ostvareRazgovor)
+            {
+                foreach (var korisnik in korisnici)
+                {
+                    if (korisnik.ID == item)
+                        postojiRazgovorSKorisnikom.Add(korisnik);
+                }
+            }
+  
+            DodajKorisnika(postojiRazgovorSKorisnikom, Iform);
 
         }
 

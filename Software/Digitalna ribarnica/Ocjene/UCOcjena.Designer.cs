@@ -81,7 +81,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.label2.Location = new System.Drawing.Point(329, 14);
+            this.label2.Location = new System.Drawing.Point(307, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(21, 24);
             this.label2.TabIndex = 2;
@@ -92,7 +92,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
-            this.label1.Location = new System.Drawing.Point(307, 14);
+            this.label1.Location = new System.Drawing.Point(285, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 24);
             this.label1.TabIndex = 2;
@@ -105,9 +105,9 @@
             this.ucNaziv.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(136)))), ((int)(((byte)(133)))));
             this.ucNaziv.Location = new System.Drawing.Point(241, 14);
             this.ucNaziv.Name = "ucNaziv";
-            this.ucNaziv.Size = new System.Drawing.Size(21, 24);
+            this.ucNaziv.Size = new System.Drawing.Size(38, 24);
             this.ucNaziv.TabIndex = 2;
-            this.ucNaziv.Text = "5";
+            this.ucNaziv.Text = "5.5";
             // 
             // ucOcjenaSlike
             // 
