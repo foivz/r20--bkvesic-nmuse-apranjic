@@ -78,8 +78,17 @@ namespace Baza
 
         public int IzvrsiUpit(string sqlUpit)
         {
-            SqlCommand command = new SqlCommand(sqlUpit, Connection);
-            return command.ExecuteNonQuery();
+            try
+            {
+                SqlCommand command = new SqlCommand(sqlUpit, Connection);
+                return command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                //System.Windows.Forms.MessageBox.Show("Nije moguće izbrisati korisnika koji ima kreirane ponude");
+                return 0;
+            }
+       
         }
 
         public int ExecuteParamQuery(string query, Dictionary<string, object> parameters)

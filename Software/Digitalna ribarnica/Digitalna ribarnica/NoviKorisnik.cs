@@ -89,67 +89,74 @@ namespace Digitalna_ribarnica
                 }
                 else
                 {
-                    try
+                    if (txtLozinka.TextLength==0)
                     {
-                        AutentifikacijaRegistracije autentifikacijaRegistracije = new AutentifikacijaRegistracije(txtIme.Text, txtPrezime.Text, txtKorIme.Text, txtadresa.Text, txtMjesto.Text, txtMob.Text, txtEmail.Text, txtLozinka.Text, txtLozinka.Text);
-                        Autentifikator autentifikator = new Autentifikator();
-                        autentifikator.provjeriKorisnika(txtKorIme.Text);
-                        autentifikator.provjeriKorisnika2(txtKorIme.Text);
-                        string hash = BCrypt.Net.BCrypt.HashPassword(txtLozinka.Text, BCrypt.Net.BCrypt.GenerateSalt(12));
-                        parameters.Add("@ime", txtIme.Text);
-                        parameters.Add("@prezime", txtPrezime.Text);
-                        parameters.Add("@email", txtEmail.Text);
-                        parameters.Add("@korime", txtKorIme.Text);
-                        parameters.Add("@broj", txtMob.Text);
-                        parameters.Add("@datum", DateTime.Now);
-                        parameters.Add("@lozinka", hash);
-                        parameters.Add("@adresa", txtadresa.Text);
-                        parameters.Add("@mjesto", txtMjesto.Text);
-                        if (Korisnik == null)
-                            parameters.Add("@slika", ms.ToArray());
-                        if (Iform != null)
+                        notifyIcon1.ShowBalloonTip(1000, "Lozinka", "Unesite lozinku", ToolTipIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        try
                         {
-                            if (cmbTip.SelectedItem.ToString() == "Admin")
-                                parameters.Add("@tip", 1);
-                            else
-                                parameters.Add("@tip", 2);
-                        }
-                        else
-                            parameters.Add("@tip", Korisnik.Tip);
-                        parameters.Add("@status", 2);
-
-                        if (Korisnik != null)
-                        {
-                            if (Iform == null)
+                            AutentifikacijaRegistracije autentifikacijaRegistracije = new AutentifikacijaRegistracije(txtIme.Text, txtPrezime.Text, txtKorIme.Text, txtadresa.Text, txtMjesto.Text, txtMob.Text, txtEmail.Text, txtLozinka.Text, txtLozinka.Text);
+                            Autentifikator autentifikator = new Autentifikator();
+                            autentifikator.provjeriKorisnika(txtKorIme.Text);
+                            autentifikator.provjeriKorisnika2(txtKorIme.Text);
+                            string hash = BCrypt.Net.BCrypt.HashPassword(txtLozinka.Text, BCrypt.Net.BCrypt.GenerateSalt(12));
+                            parameters.Add("@ime", txtIme.Text);
+                            parameters.Add("@prezime", txtPrezime.Text);
+                            parameters.Add("@email", txtEmail.Text);
+                            parameters.Add("@korime", txtKorIme.Text);
+                            parameters.Add("@broj", txtMob.Text);
+                            parameters.Add("@datum", DateTime.Now);
+                            parameters.Add("@lozinka", hash);
+                            parameters.Add("@adresa", txtadresa.Text);
+                            parameters.Add("@mjesto", txtMjesto.Text);
+                            if (Korisnik == null)
+                                parameters.Add("@slika", ms.ToArray());
+                            if (Iform != null)
                             {
-                                Autentifikator.AktivanKorisnik = txtKorIme.Text;
+                                if (cmbTip.SelectedItem.ToString() == "Admin")
+                                    parameters.Add("@tip", 1);
+                                else
+                                    parameters.Add("@tip", 2);
                             }
-                            parameters.Add("@id", Korisnik.ID);
-                            DB.Instance.ExecuteParamQuery("UPDATE [korisnici] set [ime] = (@ime), [prezime] = (@prezime), [email] = (@email), [korisnicko_ime] = (@korime), [broj_mobitela] = (@broj), [lozinka] = (@lozinka), [adresa] = (@adresa), [mjesto] = (@mjesto), [id_tip_korisnika] = (@tip), [id_status]=(@status) where [id_korisnik] = (@id)", parameters);
-                            if(Autentifikator!=null)
-                                KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Autentifikator.AktivanKorisnik), "Korisnik " + Autentifikator.AktivanKorisnik + " je ažurirao korisnika " + txtKorIme.Text, 9);
                             else
-                                KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je ažurirao korisnika " + txtKorIme.Text, 9);
-                        }
-                        else
-                        {
-                            DB.Instance.ExecuteParamQuery("INSERT INTO [korisnici] ([ime], [prezime], [email], [korisnicko_ime], [broj_mobitela], [datum_rodenja], [lozinka], [adresa], [mjesto], [slika], [id_tip_korisnika], [id_status]) VALUES((@ime), (@prezime), (@email), (@korime), (@broj), (@datum), (@lozinka), (@adresa), (@mjesto), (@slika), (@tip), (@status));", parameters);
-                            KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je registrirao korisnika " + txtKorIme.Text, 8);
-                        }
-                        formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
-                        if (form != null)
-                            form.zatvoriForme();
-                    }
-                    catch (RegistrationException ex)
-                    {
-                        notifyIcon1.ShowBalloonTip(1000, "Registracija", ex.Poruka, ToolTipIcon.Warning);
-                    }
-                    catch (PrijavaException ex)
-                    {
-                        //MessageBox.Show(ex.Poruka);
-                        notifyIcon1.ShowBalloonTip(1000, "Registracija", ex.Poruka, ToolTipIcon.Warning);
-                    }
+                                parameters.Add("@tip", Korisnik.Tip);
+                            parameters.Add("@status", 2);
 
+                            if (Korisnik != null)
+                            {
+                                if (Iform == null)
+                                {
+                                    Autentifikator.AktivanKorisnik = txtKorIme.Text;
+                                }
+                                parameters.Add("@id", Korisnik.ID);
+                                DB.Instance.ExecuteParamQuery("UPDATE [korisnici] set [ime] = (@ime), [prezime] = (@prezime), [email] = (@email), [korisnicko_ime] = (@korime), [broj_mobitela] = (@broj), [lozinka] = (@lozinka), [adresa] = (@adresa), [mjesto] = (@mjesto), [id_tip_korisnika] = (@tip), [id_status]=(@status) where [id_korisnik] = (@id)", parameters);
+                                if (Autentifikator != null)
+                                    KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Autentifikator.AktivanKorisnik), "Korisnik " + Autentifikator.AktivanKorisnik + " je ažurirao korisnika " + txtKorIme.Text, 9);
+                                else
+                                    KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je ažurirao korisnika " + txtKorIme.Text, 9);
+                            }
+                            else
+                            {
+                                DB.Instance.ExecuteParamQuery("INSERT INTO [korisnici] ([ime], [prezime], [email], [korisnicko_ime], [broj_mobitela], [datum_rodenja], [lozinka], [adresa], [mjesto], [slika], [id_tip_korisnika], [id_status]) VALUES((@ime), (@prezime), (@email), (@korime), (@broj), (@datum), (@lozinka), (@adresa), (@mjesto), (@slika), (@tip), (@status));", parameters);
+                                KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik), "Korisnik " + Iform.autentifikator.AktivanKorisnik + " je registrirao korisnika " + txtKorIme.Text, 8);
+                            }
+                            formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
+                            if (form != null)
+                                form.zatvoriForme();
+                        }
+                        catch (RegistrationException ex)
+                        {
+                            notifyIcon1.ShowBalloonTip(1000, "Registracija", ex.Poruka, ToolTipIcon.Warning);
+                        }
+                        catch (PrijavaException ex)
+                        {
+                            //MessageBox.Show(ex.Poruka);
+                            notifyIcon1.ShowBalloonTip(1000, "Registracija", ex.Poruka, ToolTipIcon.Warning);
+                        }
+                    }
                 }
             }
         }
@@ -179,7 +186,7 @@ namespace Digitalna_ribarnica
                 txtEmail.Text = Korisnik.Email;
                 txtIme.Text = Korisnik.Ime;
                 txtKorIme.Text = Korisnik.KorIme;
-                txtLozinka.Text = Korisnik.Lozinka;
+                //txtLozinka.Text = Korisnik.Lozinka;
                 txtMjesto.Text = Korisnik.Mjesto;
                 txtMob.Text = Korisnik.BrojMobitela;
                 txtPrezime.Text = Korisnik.Prezime;
@@ -198,7 +205,7 @@ namespace Digitalna_ribarnica
                 txtEmail.Text = Korisnik.Email;
                 txtIme.Text = Korisnik.Ime;
                 txtKorIme.Text = Korisnik.KorIme;
-                txtLozinka.Text = Korisnik.Lozinka;
+                //txtLozinka.Text = Korisnik.Lozinka;
                 txtMjesto.Text = Korisnik.Mjesto;
                 txtMob.Text = Korisnik.BrojMobitela;
                 txtPrezime.Text = Korisnik.Prezime;

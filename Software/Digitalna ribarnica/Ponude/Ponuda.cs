@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using INSform;
+using Prijava;
+
 namespace Ponude
 {
     public class Ponuda
@@ -207,6 +209,25 @@ namespace Ponude
 			PrikazUC.LoadPonuda(this);
 		}
 		*/
+
+		public void ProvjeraKontaktiranjaSamogSebe(Iform Iform)
+		{
+			if (IDKORISNIKA == KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik) && Iform.autentifikator.prijavljen!=0)
+				PrikazUC.btnKontaktirajKupca.Visible = false;
+			else if(Iform.autentifikator.prijavljen != 0)
+				PrikazUC.btnKontaktirajKupca.Visible = true;
+			else if (Iform.autentifikator.prijavljen==0)
+				PrikazUC.btnKontaktirajKupca.Visible = false;
+			
+		}
+
+		public void PostojiUloga(Iform Iform)
+		{
+			if (Iform.autentifikator.prijavljen==0)
+				PrikazUC.btnKontaktirajKupca.Visible = false;
+			else
+				PrikazUC.btnKontaktirajKupca.Visible = true;
+		}
 		public Ponuda(Iform iform, int i=1)
 		{
 			zastava = i;
@@ -214,6 +235,7 @@ namespace Ponude
 			{
 				PrikazUC = new UCPonuda(iform);
 				PrikazUC.LoadPonuda(this);
+				
 			}
 			else
 			{

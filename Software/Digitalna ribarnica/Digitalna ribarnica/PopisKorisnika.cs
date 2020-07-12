@@ -136,13 +136,17 @@ namespace Digitalna_ribarnica
         private void button1_Click(object sender, EventArgs e)
         {
             Korisnik korisnik = dataGridView1.CurrentRow.DataBoundItem as Korisnik;
+            int rezultat = 0;
             if (korisnik != null)
             {
-                KorisnikRepository.Obrisi(korisnik);
+                rezultat=KorisnikRepository.Obrisi(korisnik);
                 KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je obrisao korisnika " + korisnik.Ime + " " + korisnik.Prezime + "(" + korisnik.KorIme + ")", 27);
 
             }
-            notifyIcon1.ShowBalloonTip(1000, "Obrisan korisnik", "Uspješno ste obrisali korisnika", ToolTipIcon.Info);
+            if(rezultat!=0)
+                notifyIcon1.ShowBalloonTip(1000, "Obrisan korisnik", "Uspješno ste obrisali korisnika", ToolTipIcon.Info);
+            else
+                notifyIcon1.ShowBalloonTip(1000, "Greška", "Nije moguće obrisati korisnika koji ima kreirane ponude", ToolTipIcon.Error);
             formPocetna form = Application.OpenForms.OfType<formPocetna>().FirstOrDefault();
             if (form != null)
                 form.openChildForm(new PopisKorisnika(iform));

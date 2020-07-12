@@ -14,6 +14,8 @@ using Baza;
 using INSform;
 using Ocjene;
 using Ponude;
+using Chat;
+using System.IO;
 
 namespace Digitalna_ribarnica
 {
@@ -23,10 +25,8 @@ namespace Digitalna_ribarnica
         public Form nova { get; set; }
         public Panel panel { get; set; }
         public Form activeForm = null;
-        bool podizbronik = true;
 
         bool podizbornikPonude = true;
-        bool podizbornikPonude1 = true;
         public formPocetna()
         {
             InitializeComponent();
@@ -57,6 +57,7 @@ namespace Digitalna_ribarnica
             btnPredefinirane.Visible = false;
             btnChat.Visible = false;
             btnDnevnik.Visible = false;
+            helpProvider1.HelpNamespace =  Directory.GetCurrentDirectory() + "\\Help\\digitalna_ribarnica.chm";
         }
      
 
@@ -113,6 +114,7 @@ namespace Digitalna_ribarnica
             btnChat.Visible = false;
             btnDnevnik.Visible = false;
             KorisnikRepository.NeaktivanKorisnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik));
+            autentifikator.prijavljen = 0;
             PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik), "Korisnik " + autentifikator.AktivanKorisnik + " se odjavio", 2);
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
@@ -267,6 +269,18 @@ namespace Digitalna_ribarnica
         private void btnDnevnik_Click(object sender, EventArgs e)
         {
             openChildForm(new Dnevnik(this));
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Chat.Chat(this));
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Process procesHelp = new Process();
+            procesHelp.StartInfo.FileName = Directory.GetCurrentDirectory() + "\\Help\\digitalna_ribarnica.chm";
+            procesHelp.Start();
         }
     }
 }

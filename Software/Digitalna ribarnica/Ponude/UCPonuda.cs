@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using INSform;
+using Prijava;
+using SlanjePorukePonuditelju;
 namespace Ponude
 {
     public partial class UCPonuda : UserControl
@@ -30,6 +32,7 @@ namespace Ponude
         public void LoadPonuda(Ponuda ponuda)
         {
             this.ponuda = ponuda;
+ 
         }
         
         public void openChildForm(Form childForm)
@@ -49,6 +52,11 @@ namespace Ponude
         private void btnDetalji_Click(object sender, EventArgs e)
         {
             openChildForm(new DetaljiPonude(ponuda, Iform));
+        }
+
+        private void btnKontaktirajKupca_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SlanjePorukePonuditelju.SlanjePorukePonuditelju(Iform,IDkorisnika));
         }
     }
 }

@@ -68,14 +68,30 @@ namespace Ponude
 
         private void buttonRezerviraj_Click(object sender, EventArgs e)
         {
+            List<string> mailovi = new List<string>();
+            mailovi.Add(KorisnikRepository.DohvatiEmailKorisnika(Ponuda.IDKORISNIKA));
             if ((PonudeRepozitory.ProvjeriKorisnikaIZahtjev(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), int.Parse(Ponuda.ID))) == 0)
             {
+                
+
+                Mail mail = new Mail(mailovi);
+                mail.Title = "Zahtjev za rezervacijom";
+                Korisnik korisnik = KorisnikRepository.DohvatiKorisnikaPoIDU(KorisnikRepository.DohvatiIdKorisnika( iform.autentifikator.AktivanKorisnik));
+                mail.Text = "Korisnik " + korisnik.Ime + " " + korisnik.Prezime + " je poslao zahtjev na ponudu " + Ponuda.Naziv + " u količini od " + txtKolicina.Text + " " +Ponuda.Mjerna ;
+                mail.RequireAutentication = true;
+                mail.Send();
                 PonudeRepozitory.UnesiZahtjevZaRezervaciju(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), int.Parse(Ponuda.ID), int.Parse(txtKolicina.Text));
                 PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je poslao zahtjev za ponudu " + Ponuda.ID, 5);
                 notifyRezerviraj.ShowBalloonTip(1000, "Zahtjev za rezervacijom", "Uspješno ste kreirali zahtjev za rezervacijom", ToolTipIcon.Info);
             } 
             else
             {
+                Mail mail = new Mail(mailovi);
+                mail.Title = "Zahtjev za rezervacijom";
+                Korisnik korisnik = KorisnikRepository.DohvatiKorisnikaPoIDU(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik));
+                mail.Text = "Korisnik " + korisnik.Ime + " " + korisnik.Prezime + " je ažurirao zahtjev za ponudu " + Ponuda.Naziv + " u količini od " + txtKolicina.Text + " " + Ponuda.Mjerna;
+                mail.RequireAutentication = true;
+                mail.Send();
                 PonudeRepozitory.AzurirajZahtjev(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), int.Parse(Ponuda.ID), int.Parse(txtKolicina.Text));
                 PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je ažurirao zahtjev za ponudu " + Ponuda.ID, 25);
                 notifyRezerviraj.ShowBalloonTip(1000, "Zahtjev za rezervacijom", "Uspješno ste ažurirali zahtjev za rezervacijom", ToolTipIcon.Info);

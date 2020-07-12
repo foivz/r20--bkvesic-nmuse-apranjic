@@ -12,6 +12,7 @@ namespace Prijava
         public List<Korisnik> registriraniKorisnici { get; set; }
         private Korisnik korisnik;
         public string AktivanKorisnik { get; set; }
+        public int prijavljen { get; set; } = 0;
         public Autentifikator()
         {
 

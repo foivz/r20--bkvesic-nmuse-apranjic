@@ -221,6 +221,10 @@
       <Project>{b61fbbe0-0c61-4edf-98ad-cd502c2b699c}</Project>
       <Name>RibeUSustavu</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SlanjePorukePonuditelju\SlanjePorukePonuditelju.csproj">
+      <Project>{81ee4198-34e9-4855-86c1-1c8523ca7e31}</Project>
+      <Name>SlanjePorukePonuditelju</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
