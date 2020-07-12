@@ -28,7 +28,7 @@ F08 | Kontaktiranje ponuditelja | Registrirani korisnik može kontaktirati ponud
 F09 | Promjena predefiniranih postavki | Administrator može mijenjati neke postavke koje su već sustavom definirane (minimalna količina, minimalna cijena). | Nikola Muše
 F10 | Administracija ponude ribe | Administrator može administrirati ponudu ribe (vrsta, količina, cijena, lokacija). Uređivanje i brisanje ponude. | Nikola Muše, Božo Kvesić
 F11 | Dodavanje kontakt podataka | Ponuditelj može dodati kontakt podatke - broj telefona ili mu se po defaultu postavlja broj telefona kojeg je unio prilikom registracije. | Nikola Muše
-F12 | Dodavanje nove ribe i novih lokacija | Administrator može dodavati fotografije i lokacije ribe. | Nikola Muše
+F12 | Dodavanje nove ribe i novih lokacija | Administrator može dodavati fotografije i lokacije ribe. | Anabela Pranjić
 F13 | Dodavanje i administracija ponude | Ponuditelj može dodati ponudu u kojoj navodi količinu, cijenu, vrstu ribe, lokaciju te po potrebi opis, dodatnu fotografiju i trajanje rezervacije. Ponuditelj nakon dodavanja ponude može ju naknadno uređivati i brisati. | Anabela Pranjić
 F14 | Pregled izvršenih rezervacija | Ponuditelj i kupac mogu pregledati izvršene rezervacije. | Božo Kvesić, Anabela Pranjić
 F15 | Slanje obavijesti ponuditelju | Sustav može poslati ponuditelju obavijest o rezervaciji koje se vide unutar aplikacije. Ako se obavijest ne pročita unutar 30 minuta od slanja, ponuditelj istu obavijest dobiva na mail. | Božo Kvesić
@@ -36,7 +36,7 @@ F16 | Promjena količine dostupne ribe | Sustav mijenja količinu ribe u ponudi 
 F17 | Potvrđivanje preuzimanja ribe | Ponuditelj potvrđuje da je kupac preuzeo ribu. | Anabela Pranjić
 F18 | Značke | Sustav dodjeljuje značke ovisno o povijesti kupnje i prodaje kako bi nagradila vjernost kupca i pouzdanost ponuditelja. | Nikola Muše, Anabela Pranjić
 F19 | Pregled dnevnika | Administrator nakon prijave u aplikaciju ima uvid u radnje zabilježene u dnevniku. | Nikola Muše, Božo Kvesić
-F20 | Korisničke upute | Unutar aplikacije se nalaze upute za korištenje aplikacije kojima se pristupa pritiskom tipke F1 ili odabirom opcije za pomoć. | Anabela Pranjić
+F20 | Korisničke upute | Unutar aplikacije se nalaze upute za korištenje aplikacije kojima se pristupa pritiskom tipke F1 ili odabirom opcije za pomoć. | Nikola Muše
 F21 | Povezivanje na bazu podataka | Baza podataka sadrži korisničke podatke, podatke o ponudama, ribama, lokacijama, rezervacijama, dnevniku rada, ocjenama, značkama i obavijestima. Aplikacija se povezuje na bazu podataka u koju upisuje podatke preuzete iz korisničkog sučelja te preuzima podatke potrebne za popunjavanje ponude poput predefiniranih vrsta riba i lokacija, uloga korisnika i sl. Navedena funkcionalnost zapravo povezuje gotovo sve gore navedene funkcionalnosti. | Nikola Muše, Božo Kvesić, Anabela Pranjić
 
 ## Tehnologije i oprema
