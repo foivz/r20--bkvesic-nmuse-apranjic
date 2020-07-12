@@ -79,6 +79,9 @@ namespace SlanjePorukePonuditelju
             lblSadrzajPoruke.Visible = true;
             btnSalji.Visible = true;
             this.IDPrimatelja = idPrimatelja;
+            System.Windows.Forms.Application.DoEvents();
+            flowLayoutPanel2.VerticalScroll.Value = flowLayoutPanel2.VerticalScroll.Maximum;
+            flowLayoutPanel2.PerformLayout();
         }
 
         private void btnSalji_Click(object sender, EventArgs e)

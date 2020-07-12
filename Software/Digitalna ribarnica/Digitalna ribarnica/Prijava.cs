@@ -95,6 +95,7 @@ namespace Digitalna_ribarnica
                     */
                     PonudeRepozitory.IDRezervacijeZaProvjeruRoka();
                     PonudeRepozitory.IDRezervacijeZaProvjeruRoka();
+                    autentifikator.prijavljen = 1;
                     switch (autentifikator.tipKorisnika(txtKorIme.Text))
                     {
                         case 1:

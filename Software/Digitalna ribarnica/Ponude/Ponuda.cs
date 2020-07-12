@@ -212,7 +212,18 @@ namespace Ponude
 
 		public void ProvjeraKontaktiranjaSamogSebe(Iform Iform)
 		{
-			if (IDKORISNIKA == KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik))
+			if (IDKORISNIKA == KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik) && Iform.autentifikator.prijavljen!=0)
+				PrikazUC.btnKontaktirajKupca.Visible = false;
+			else if(Iform.autentifikator.prijavljen != 0)
+				PrikazUC.btnKontaktirajKupca.Visible = true;
+			else if (Iform.autentifikator.prijavljen==0)
+				PrikazUC.btnKontaktirajKupca.Visible = false;
+			
+		}
+
+		public void PostojiUloga(Iform Iform)
+		{
+			if (Iform.autentifikator.prijavljen==0)
 				PrikazUC.btnKontaktirajKupca.Visible = false;
 			else
 				PrikazUC.btnKontaktirajKupca.Visible = true;

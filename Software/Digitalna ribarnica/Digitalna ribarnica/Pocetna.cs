@@ -114,6 +114,7 @@ namespace Digitalna_ribarnica
             btnChat.Visible = false;
             btnDnevnik.Visible = false;
             KorisnikRepository.NeaktivanKorisnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik));
+            autentifikator.prijavljen = 0;
             PonudeRepozitory.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(autentifikator.AktivanKorisnik), "Korisnik " + autentifikator.AktivanKorisnik + " se odjavio", 2);
             //openChildForm(new Prijava(lblUsername, button1, buttonOdjava, buttonNovosti, buttonRegistracija, autentifikator, Profilna,pbxProfilna));
             if (activeForm != null)
