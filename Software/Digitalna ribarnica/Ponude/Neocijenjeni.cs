@@ -63,6 +63,11 @@ namespace Ocjene
             dataGridView2.DataSource = null;
             dataGridView1.DataSource = Ponude.PonudeRepozitory.GotoveRezervacije(Iform,KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
             dataGridView2.DataSource= Ponude.PonudeRepozitory.GotoveRezeracijePonuditelj(Iform, KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
+
+            if (dataGridView1.RowCount > 0)
+                dataGridView1.Rows[0].Selected = true;
+            if (dataGridView2.RowCount > 0)
+                dataGridView2.Rows[0].Selected = true;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[9].Visible = false;
