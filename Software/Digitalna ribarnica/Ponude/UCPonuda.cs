@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using INSform;
 using Prijava;
 using SlanjePorukePonuditelju;
+using Ocjene;
+
 namespace Ponude
 {
     public partial class UCPonuda : UserControl
@@ -57,6 +59,11 @@ namespace Ponude
         private void btnKontaktirajKupca_Click(object sender, EventArgs e)
         {
             openChildForm(new SlanjePorukePonuditelju.SlanjePorukePonuditelju(Iform,IDkorisnika));
+        }
+
+        private void ucPogledajOcjene_Click(object sender, EventArgs e)
+        {
+            openChildForm(new OcjeneKorisnika(Iform, IDkorisnika));
         }
     }
 }

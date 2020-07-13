@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnKontaktirajKupca = new System.Windows.Forms.Button();
             this.ucZnacka = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ucLokacija = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.ucKolicina = new System.Windows.Forms.Label();
             this.ucCijena = new System.Windows.Forms.Label();
             this.ucNaziv = new System.Windows.Forms.Label();
-            this.btnKontaktirajKupca = new System.Windows.Forms.Button();
+            this.ucPogledajOcjene = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ucFotografija)).BeginInit();
@@ -53,6 +54,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.ucPogledajOcjene);
             this.groupBox1.Controls.Add(this.btnKontaktirajKupca);
             this.groupBox1.Controls.Add(this.ucZnacka);
             this.groupBox1.Controls.Add(this.label6);
@@ -72,9 +74,24 @@
             this.groupBox1.Controls.Add(this.ucNaziv);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(207, 310);
+            this.groupBox1.Size = new System.Drawing.Size(207, 342);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
+            // 
+            // btnKontaktirajKupca
+            // 
+            this.btnKontaktirajKupca.FlatAppearance.BorderSize = 0;
+            this.btnKontaktirajKupca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKontaktirajKupca.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKontaktirajKupca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.btnKontaktirajKupca.Location = new System.Drawing.Point(6, 230);
+            this.btnKontaktirajKupca.Name = "btnKontaktirajKupca";
+            this.btnKontaktirajKupca.Size = new System.Drawing.Size(190, 34);
+            this.btnKontaktirajKupca.TabIndex = 12;
+            this.btnKontaktirajKupca.Text = "Kontaktiraj ponuditelja";
+            this.btnKontaktirajKupca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnKontaktirajKupca.UseVisualStyleBackColor = true;
+            this.btnKontaktirajKupca.Click += new System.EventHandler(this.btnKontaktirajKupca_Click);
             // 
             // ucZnacka
             // 
@@ -191,7 +208,7 @@
             this.btnDetalji.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalji.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetalji.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.btnDetalji.Location = new System.Drawing.Point(9, 270);
+            this.btnDetalji.Location = new System.Drawing.Point(9, 302);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(190, 34);
             this.btnDetalji.TabIndex = 4;
@@ -239,20 +256,20 @@
             this.ucNaziv.TabIndex = 0;
             this.ucNaziv.Text = "label1";
             // 
-            // btnKontaktirajKupca
+            // ucPogledajOcjene
             // 
-            this.btnKontaktirajKupca.FlatAppearance.BorderSize = 0;
-            this.btnKontaktirajKupca.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKontaktirajKupca.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnKontaktirajKupca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
-            this.btnKontaktirajKupca.Location = new System.Drawing.Point(6, 230);
-            this.btnKontaktirajKupca.Name = "btnKontaktirajKupca";
-            this.btnKontaktirajKupca.Size = new System.Drawing.Size(190, 34);
-            this.btnKontaktirajKupca.TabIndex = 12;
-            this.btnKontaktirajKupca.Text = "Kontaktiraj ponuditelja";
-            this.btnKontaktirajKupca.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnKontaktirajKupca.UseVisualStyleBackColor = true;
-            this.btnKontaktirajKupca.Click += new System.EventHandler(this.btnKontaktirajKupca_Click);
+            this.ucPogledajOcjene.FlatAppearance.BorderSize = 0;
+            this.ucPogledajOcjene.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ucPogledajOcjene.Font = new System.Drawing.Font("Open Sans Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ucPogledajOcjene.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(161)))), ((int)(((byte)(141)))));
+            this.ucPogledajOcjene.Location = new System.Drawing.Point(6, 262);
+            this.ucPogledajOcjene.Name = "ucPogledajOcjene";
+            this.ucPogledajOcjene.Size = new System.Drawing.Size(190, 34);
+            this.ucPogledajOcjene.TabIndex = 13;
+            this.ucPogledajOcjene.Text = "Pogledaj ocjene";
+            this.ucPogledajOcjene.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.ucPogledajOcjene.UseVisualStyleBackColor = true;
+            this.ucPogledajOcjene.Click += new System.EventHandler(this.ucPogledajOcjene_Click);
             // 
             // UCPonuda
             // 
@@ -260,7 +277,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox1);
             this.Name = "UCPonuda";
-            this.Size = new System.Drawing.Size(212, 316);
+            this.Size = new System.Drawing.Size(215, 348);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ucZnacka)).EndInit();
@@ -289,5 +306,6 @@
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.PictureBox ucZnacka;
         public System.Windows.Forms.Button btnKontaktirajKupca;
+        public System.Windows.Forms.Button ucPogledajOcjene;
     }
 }

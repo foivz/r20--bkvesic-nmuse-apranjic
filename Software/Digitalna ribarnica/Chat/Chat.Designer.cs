@@ -105,7 +105,7 @@
             this.btnSalji.Name = "btnSalji";
             this.btnSalji.Size = new System.Drawing.Size(80, 69);
             this.btnSalji.TabIndex = 10;
-            this.btnSalji.Text = "Šalji";
+            this.btnSalji.Text = "Pošalji";
             this.btnSalji.UseVisualStyleBackColor = true;
             this.btnSalji.Click += new System.EventHandler(this.btnSalji_Click);
             // 
