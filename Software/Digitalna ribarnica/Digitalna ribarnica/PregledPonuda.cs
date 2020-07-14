@@ -59,7 +59,11 @@ namespace Digitalna_ribarnica
                 DodajPonude(result,Iform);
             }
         }
-
+        /// <summary>
+        /// Metoda koja dodaje userControle ponuda u panel
+        /// </summary>
+        /// <param name="ponude">Lista ponuda koju želimo prikazati</param>
+        /// <param name="iform"></param>
         private void DodajPonude(IEnumerable<Ponuda> ponude, Iform iform)
         {
             foreach (var item in ponude)
@@ -81,7 +85,9 @@ namespace Digitalna_ribarnica
                 this.Controls.Remove(ponuda.PrikazUC);
             }
         }
-
+        /// <summary>
+        /// Brisanje svih ponuda iz panela
+        /// </summary>
         private void ObrisiPonude()
         {
             List<int> index = new List<int>();

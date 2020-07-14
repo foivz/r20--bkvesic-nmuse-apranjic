@@ -28,7 +28,11 @@ namespace Digitalna_ribarnica
             DodajPonude(ponude, novi);
             Iform = novi;
         }
-
+        /// <summary>
+        /// Metoda koja dodaje ponude preko userControle na panel
+        /// </summary>
+        /// <param name="ponude">Lista svih ponuda</param>
+        /// <param name="iform"></param>
 
         private void DodajPonude(IEnumerable<Ponuda> ponude, Iform iform)
         {
@@ -102,6 +106,10 @@ namespace Digitalna_ribarnica
                 DodajPonude(result, Iform);
             }
         }
+
+        /// <summary>
+        /// Metoda koja briše ponude iz panela prikaza ponuda
+        /// </summary>
         private void ObrisiPonude()
         {
             List<int> index = new List<int>();

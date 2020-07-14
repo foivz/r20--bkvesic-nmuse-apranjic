@@ -42,7 +42,9 @@ namespace Digitalna_ribarnica
             Korisnik = korisnik;
             Autentifikator = autentifikator;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća defaultnu sliku korisnika ako ne postoji u bazi
+        /// </summary>
         public void dohhvatiDefaultSliku()
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();

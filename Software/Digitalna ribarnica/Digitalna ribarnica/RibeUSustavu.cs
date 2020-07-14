@@ -112,6 +112,9 @@ namespace Digitalna_ribarnica
                 kalibrirajSlike();
             }
         }
+        /// <summary>
+        /// Slike se prikazuju cijele u Zoom načinu kako bi svi pixeli bili vidljivi na maloj rezoluciji
+        /// </summary>
 
         public void kalibrirajSlike()
         {

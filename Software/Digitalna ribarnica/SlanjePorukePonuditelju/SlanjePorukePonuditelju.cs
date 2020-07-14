@@ -31,12 +31,18 @@ namespace SlanjePorukePonuditelju
             lblNaziv.Text = KorisnikRepository.DohvatiKorisnikaPoIDU(IDPonuditelja).Ime + " " + KorisnikRepository.DohvatiKorisnikaPoIDU(IDPonuditelja).Prezime;
             PrikaziPorukue(IDPonuditelja);
         }
-
+        /// <summary>
+        /// Metoda koja briše poruke iz panela
+        /// </summary>
         public void ObrisiPoruke()
         {
             flowLayoutPanel2.Controls.Clear();
         }
-
+        /// <summary>
+        /// Metoda koja dodaje sve poruke u panel
+        /// </summary>
+        /// <param name="poruke">Lista poruka</param>
+        /// <param name="iform"></param>
         private void DodajPoruke(IEnumerable<PorukeIzBaze> poruke, Iform iform)
         {
             foreach (var item in poruke)
@@ -69,7 +75,10 @@ namespace SlanjePorukePonuditelju
                 }
             }
         }
-
+        /// <summary>
+        /// Metoda koja upravlja procesom dodavanje i brisanja poruka između dva korisnika
+        /// </summary>
+        /// <param name="idPrimatelja">ID korisnika primatelja</param>
         public void PrikaziPorukue(int idPrimatelja)
         {
             int Posiljatelj = KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik);

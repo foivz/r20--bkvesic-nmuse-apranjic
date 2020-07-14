@@ -99,6 +99,10 @@ namespace Digitalna_ribarnica
                 SakrijStupce();
             }
         }
+
+        /// <summary>
+        /// Metoda koja sakriva stupce koji sadrža složeni tip podataka
+        /// </summary>
         private void SakrijStupce()
         {
             dataGridView1.Columns[0].Width = 500;

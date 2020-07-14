@@ -61,7 +61,10 @@ namespace Digitalna_ribarnica
         }
      
 
-    
+        /// <summary>
+        /// Metoda koja otvara novu formu u panelu te zatvara trenutno aktivnu
+        /// </summary>
+        /// <param name="childForm"></param>
 
         public void openChildForm(Form childForm)
         {
@@ -123,7 +126,9 @@ namespace Digitalna_ribarnica
             zatvoriForme();
 
         }
-
+        /// <summary>
+        /// Metoda koja zatvara sve forme osim početne
+        /// </summary>
         public void zatvoriForme()
         {
             FormCollection fc = Application.OpenForms;

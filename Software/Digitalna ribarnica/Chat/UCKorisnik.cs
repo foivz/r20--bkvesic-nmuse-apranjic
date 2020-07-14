@@ -27,12 +27,18 @@ namespace Chat
             Iform = iform;
         }
 
-
+        /// <summary>
+        /// Metoda koja UCKorisnik dodijeljuje svojstva
+        /// </summary>
+        /// <param name="korisnik"></param>
         public void LoadPonuda(User korisnik)
         {
             this.Korisnik = korisnik;
         }
-
+        /// <summary>
+        /// Zatvaranje trenutne forme te otvaranje nove forme u panelu
+        /// </summary>
+        /// <param name="childForm">Trenutno aktivna forma koja će se zatvoriti</param>
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)

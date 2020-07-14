@@ -47,7 +47,9 @@ namespace Digitalna_ribarnica
             }
             Osjezi();
         }
-
+        /// <summary>
+        /// Metoda koja osvježava datagrid lokacije
+        /// </summary>
         private void Osjezi()
         {
             dgvLokacije.DataSource = null;

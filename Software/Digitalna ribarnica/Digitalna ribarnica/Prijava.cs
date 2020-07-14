@@ -182,6 +182,10 @@ namespace Digitalna_ribarnica
             }
             
         }
+
+        /// <summary>
+        /// Metoda koja postavlja profilnu sliku korisnika kod prijave korisnika
+        /// </summary>
         public void postaviSlikuProfila()
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();

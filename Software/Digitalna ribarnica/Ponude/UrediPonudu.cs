@@ -47,7 +47,9 @@ namespace Ponude
             
 
         }
-
+        /// <summary>
+        /// Metoda koja zatvara sve forme osim početne
+        /// </summary>
         public void zatvoriForme()
         {
             FormCollection fc = Application.OpenForms;

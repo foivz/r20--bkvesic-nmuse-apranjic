@@ -19,6 +19,11 @@ namespace Ponude
         public static List<Rezervacija> _rezervacije = new List<Rezervacija>();
         public static List<Rezervacija> _rezervacije1 = new List<Rezervacija>();
         static Iform Iform;
+        /// <summary>
+        /// Metoda koja dohvaća sve ponude iz baze
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <returns></returns>
         public static List<Ponuda> DohvatiPonude(Iform nova)
         {
             Iform = nova;
@@ -82,7 +87,12 @@ namespace Ponude
           
             return _ponude;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća sve ponude koje je kreirao određeni korisnik kreirao
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<Ponuda> DohvatiPonudePoID(Iform nova,int id)
         {
             Iform = nova;
@@ -149,7 +159,11 @@ namespace Ponude
            
             return _ponude;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća sliku značke za pojedinog ponuditelja
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Image DohvatiSlikuZnackePonuditelja(int id)
         {
             Image znacka = null;
@@ -186,7 +200,11 @@ namespace Ponude
             return znacka;
         }
 
-
+        /// <summary>
+        /// Metoda koja dohvaća opis ponude po ID-u ponude
+        /// </summary>
+        /// <param name="id">ID ponude</param>
+        /// <returns></returns>
         public static string DohvatiOpisPonude(int id)
         {
             var rezultat = DB.Instance.DohvatiDataReader($"select ponude.opis FROM ponude WHERE ponude.id_ponuda={id}");
@@ -208,7 +226,11 @@ namespace Ponude
             rezultat.Close();
             return opis;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća podatke potrebne na prikazu izvjesca rezervacije
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static PonudeIzvjesca DohvatiPonuduIzvjesca(int id)
         {
             var rezultat = $"select ribe.naziv, ribe.mjerna_jedinica, ponude.cijena from ribe, ponude where ponude.id_ponuda = {id} and ponude.id_riba=ribe.id_riba";
@@ -232,11 +254,15 @@ namespace Ponude
             dr.Close();
             return ponuda;
         }
-
+        /// <summary>
+        /// Metoda koja kreiraja zahtjev u bazi
+        /// </summary>
+        /// <param name="idKorisnika">ID korisnika koji je kreirao zahtjev</param>
+        /// <param name="idPonuda">ID ponude</param>
+        /// <param name="kolicina">Količina ribe koja se planira rezervirati</param>
 
         public static void UnesiZahtjevZaRezervaciju(int idKorisnika, int idPonuda, int kolicina)
         {
-            string sqlUpit = "";
             var parameters1 = new Dictionary<string, object>();
             parameters1.Add("@idKorisnika", idKorisnika);
             parameters1.Add("@idponuda", idPonuda);
@@ -244,13 +270,18 @@ namespace Ponude
             parameters1.Add("@datum", DateTime.Now);
             DB.Instance.ExecuteParamQuery("INSERT INTO [zahtjevi] ([id_korisnik], [id_ponuda], [kolicina], [datum_vrijeme]) VALUES((@idKorisnika), (@idponuda), (@kolicina), (@datum));", parameters1);
         }
-
+        /// <summary>
+        /// Metoda koja briše ponudu iz baze
+        /// </summary>
+        /// <param name="id"></param>
         public static void ObrisiPonudu(int id)
         {
             string sqlUpit = $"DELETE FROM ponude WHERE id_ponuda={id};";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća id rezervacija
+        /// </summary>
         public static void IDRezervacijeZaProvjeruRoka()
         {
             var rezultat = DB.Instance.DohvatiDataReader($"select id_rezervacija FROM rezervacije");
@@ -273,13 +304,21 @@ namespace Ponude
             }
           
         }
-
+        /// <summary>
+        /// Metoda koja služi za pokretanje triggera za provjeru roka rezervacije
+        /// </summary>
+        /// <param name="id"></param>
         private static void ProvjeriRokRezervacija(int id)
         {
             string sqlUpit = $"update rezervacije set kolicina=kolicina+0 where id_rezervacija={id};";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća zahtjeve za korisnika po ponudi
+        /// </summary>
+        /// <param name="idKorisnika">ID korisnika</param>
+        /// <param name="idPonuda">ID ponude</param>
+        /// <returns></returns>
         public static int ProvjeriKorisnikaIZahtjev(int idKorisnika, int idPonuda)
         {
             int id = 0;
@@ -306,10 +345,14 @@ namespace Ponude
             return id;
         }
 
-
+        /// <summary>
+        /// Metoda koja ažurira zahtjev
+        /// </summary>
+        /// <param name="idKorisnika">ID korisnika</param>
+        /// <param name="idPonuda">ID ponude</param>
+        /// <param name="kolicina">Nova količina</param>
         public static void AzurirajZahtjev(int idKorisnika, int idPonuda, int kolicina)
         {
-            string sqlUpit = "";
             var parameters = new Dictionary<string, object>();
             parameters.Add("@idKorisnika", idKorisnika);
             parameters.Add("@idponuda", idPonuda);
@@ -318,7 +361,12 @@ namespace Ponude
             parameters.Add("@status", 1);
             DB.Instance.ExecuteParamQuery("UPDATE [zahtjevi] SET [kolicina] = (@kolicina), datum_vrijeme = (@datum), status = (@status) WHERE [id_korisnik] = (@idKorisnika) AND [id_ponuda] = (@idponuda);", parameters);
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća sve zahtjeve
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<Zahtjev> DohvatiZahtjeve(Iform nova,int id)
         {
             Iform = nova;
@@ -368,7 +416,11 @@ namespace Ponude
        
             return _zahtjevi;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća slike značke kupca
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static Image DohvatiSlikuZnackeKupca(int id)
         {
             Image znacka = null;
@@ -404,18 +456,32 @@ namespace Ponude
                 rezultat.Close();
             return znacka;
         }
-
+        /// <summary>
+        /// Stavljanje zahtjeva da nije aktivan
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID zahtjeva</param>
         public static void AzurirajZahtjeveNakonBrisanja(Iform nova,int id)
         {
             string sqlUpit = $"UPDATE zahtjevi set status = 0 WHERE id_ponuda={id};";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Odbijanje zahtjeva
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID zahtjeva</param>
         public static void OdbaciZahtjev(Iform nova, int id)
         {
             string sqlUpit = $"UPDATE zahtjevi set status = 0 WHERE id_zahtjev={id};";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
+        /// <summary>
+        /// Metoda koja kreira rezervaciju na osnovi poslanog zahtjeva
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="zahtjev">Zahtjev na osnovi kojeg se kreira rezervacija</param>
+        /// <param name="idPonude">ID ponude</param>
         public static void KreirajRezervaciju(Iform nova, Zahtjev zahtjev,int idPonude)
         {
             var parameters = new Dictionary<string, object>();
@@ -426,19 +492,33 @@ namespace Ponude
             parameters.Add("@tip", 1);
             DB.Instance.ExecuteParamQuery("INSERT INTO [rezervacije]([datum_i_vrijeme], [kolicina], [id_kupac], [id_ponuda], [id_tip_statusa]) VALUES((@datum), (@kolicina), (@idKupca), (@idPonude), (@tip)); ", parameters);
         }
-
+        /// <summary>
+        /// Ažuriranje ponude količine nakon rezerviranja ponude
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="zahtjev">Zahtjev na osnovi kojeg se kreira rezervacija</param>
+        /// <param name="idPonude">ID ponude gdje ćemo smanjiti količinu</param>
         public static void AzurirajPonuduKolicine(Iform nova, Zahtjev zahtjev, int idPonude)
         {
             string sqlUpit = $"UPDATE ponude SET kolicina=kolicina-{zahtjev.Kolicina} WHERE id_ponuda={idPonude};";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja briše zahtjev
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="zahtjev">Zahtjev koji želimo obrisati</param>
         public static void ObrisiZahtjev(Iform nova, Zahtjev zahtjev)
         {
             string sqlUpit = $"delete from zahtjevi where id_zahtjev={zahtjev.ID}";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća sve rezeracije pojedinog korisnika
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID korisnika za kojeg dohvaćamo rezervacije</param>
+        /// <returns></returns>
         public static List<Rezervacija> DohvatiRezervacije(Iform nova,int id)
         {
             Iform = nova;
@@ -499,7 +579,12 @@ namespace Ponude
                 rezultat.Close();
             return _rezervacije;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća odobrene rezervacije
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID korisnika za kojega se dohvaćaju</param>
+        /// <returns></returns>
         public static List<Rezervacija> DohvatiOdobreneRezervacije(Iform nova, int id)
         {
             Iform = nova;
@@ -560,7 +645,12 @@ namespace Ponude
                 rezultat.Close();
             return _rezervacije;
         }
-
+        /// <summary>
+        /// Dohvaća sve gotove rezervacije
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID korisnika</param>
+        /// <returns></returns>
         public static List<Rezervacija> GotoveRezervacije(Iform nova, int id)
         {
             Iform = nova;
@@ -603,7 +693,12 @@ namespace Ponude
                 rezultat.Close();
             return _rezervacije;
         }
-
+        /// <summary>
+        /// Dohvaća sve gotove rezervacije za Ponuditelja
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID korisnika</param>
+        /// <returns></returns>
         public static List<Rezervacija> GotoveRezeracijePonuditelj(Iform nova, int id)
         {
             Iform = nova;
@@ -646,30 +741,60 @@ namespace Ponude
                 rezultat.Close();
             return _rezervacije1;
         }
-
+        /// <summary>
+        /// Metoda koja označava rezervaciju kao završenu
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID rezervacije</param>
         public static void RezervacijaDovrsena(Iform nova, int id)
         {
             string sqlUpit = $"update rezervacije set id_tip_statusa=3 where id_rezervacija={id}";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
+        /// <summary>
+        /// Metoda koja označava rezervaciju kao blokiranu
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID korisnika</param>
         public static void RezervacijaBlokirana(Iform nova, int id)
         {
             string sqlUpit = $"update rezervacije set id_tip_statusa=2 where id_rezervacija={id}";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Unesi ocjenu u bazu
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="ocjena">Ocjena 1-5</param>
+        /// <param name="komentar">Komentar na ocjenu</param>
+        /// <param name="tkoocjenjuje">ID korisnika tko ocjenjuje</param>
+        /// <param name="kogaocjenjuje">ID korisnika koga ocjenjuje</param>
+        /// <param name="idrezervacije">ID rezervacije na koju se ocjena odnosi</param>
         public static void UnesiOcjenu(Iform nova, int ocjena,string komentar, int tkoocjenjuje,int kogaocjenjuje, int idrezervacije)
         {
             string sqlUpit = $"insert into ocjene(ocjena, komentar, tko_ocjenjuje, koga_ocjenjuje, id_rezervacije)values('{ocjena}','{komentar}','{tkoocjenjuje}','{kogaocjenjuje}','{idrezervacije}')";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja ažurira ocjenu
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="ocjena">Ocjena 1-5</param>
+        /// <param name="komentar">Komentar na ocjenu</param>
+        /// <param name="idocjene">ID ocjene koja se ažurira</param>
         public static void AzurirajOcjenu(Iform nova, int ocjena, string komentar, int idocjene)
         {
             string sqlUpit = $"update ocjene set ocjena='{ocjena}', komentar='{komentar}' where id_ocjena='{idocjene}'";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Dohvaćanje ocjena 
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="tkoocjenjuje">ID ocjenjivača</param>
+        /// <param name="kogaocjenjuje">ID korisnika</param>
+        /// <param name="idrezervacije">ID rezervacije</param>
+        /// <returns></returns>
         public static Ocjena ProvjeriOcjene(Iform nova, int tkoocjenjuje, int kogaocjenjuje, int idrezervacije)
         {
             Ocjena ocjena = new Ocjena();
@@ -700,7 +825,10 @@ namespace Ponude
                 rezultat.Close();
             return ocjena;
         }
-
+        /// <summary>
+        /// Dohvaćanje predefiniranih postavki za korisnika
+        /// </summary>
+        /// <returns></returns>
         public static PredefiniranePostavke PredefiniranePostavke()
         {
             PredefiniranePostavke predefiniranePostavke = new PredefiniranePostavke();
@@ -729,14 +857,21 @@ namespace Ponude
                 rezultat.Close();
             return predefiniranePostavke;
         }
-
+        /// <summary>
+        /// Ažuriranje predefiniranih postavki
+        /// </summary>
+        /// <param name="cijena">Nova cijena</param>
+        /// <param name="kolicina">Nova količina</param>
         public static void AzurirajPredefirniranePostavke(float cijena, int kolicina)
         {
             string sqlUpit = $"update postavke set min_cijena={cijena}, min_kolicina={kolicina}";
             DB.Instance.IzvrsiUpit(sqlUpit);
         }
 
-
+        /// <summary>
+        /// Dohvaćanje svih zapisa dnevnika
+        /// </summary>
+        /// <returns></returns>
         public static List<Dnevnik> DohvatiZapiseDnevnika()
         {
             List<Dnevnik> _sviZapisi = new List<Dnevnik>();
@@ -770,7 +905,10 @@ namespace Ponude
            
             return _sviZapisi;
         }
-
+        /// <summary>
+        /// Dohvaćanje svih tipova radnje za dnevnik
+        /// </summary>
+        /// <returns></returns>
         public static List<TipoviRadnje> DohvatiTipoveRadnji()
         {
             List<TipoviRadnje> _sviZapisi = new List<TipoviRadnje>();
@@ -801,7 +939,12 @@ namespace Ponude
 
             return _sviZapisi;
         }
-
+        /// <summary>
+        /// Unos aktivnosti u dnevnik
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="opis">Opis radnje</param>
+        /// <param name="idTipRadnje">Tip radnje</param>
         public static void UnesiUDnevnik(int id, string opis,int idTipRadnje)
         {
             var parameters = new Dictionary<string, object>();

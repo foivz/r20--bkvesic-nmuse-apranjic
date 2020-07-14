@@ -15,6 +15,12 @@ namespace Ocjene
     {
         public static List<Ocjena> _ocjene = new List<Ocjena>();
         static Iform Iform;
+        /// <summary>
+        /// Metoda koja dohvaća sve ocjene te podatke potrebne za prikaz userControle ocjena
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static List<Ocjena> DohvatiOcjene(Iform nova,int id)
         {
             Iform = nova;
@@ -87,7 +93,12 @@ namespace Ocjene
  
             return _ocjene;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća prosjek ocjena za pojedinog korisnika
+        /// </summary>
+        /// <param name="nova"></param>
+        /// <param name="id">ID korisnika kojemu želimo dohvatiti prosjek</param>
+        /// <returns></returns>
         public static List<Ocjena> DohvatiProsjek(Iform nova, int id)
         {
             Iform = nova;

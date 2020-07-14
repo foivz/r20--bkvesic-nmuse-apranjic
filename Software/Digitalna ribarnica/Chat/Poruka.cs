@@ -18,6 +18,10 @@ namespace Chat
 		private int idkorisnik;
 		int zastava = 0;
 
+		/// <summary>
+		/// ID korisnika kojemu poruka pripada
+		/// </summary>
+
 		public int IDKORISNIKA
 		{
 			get { return idkorisnik; }
@@ -36,6 +40,9 @@ namespace Chat
 
 			}
 		}
+		/// <summary>
+		/// Datum slanja poruke
+		/// </summary>
 
 		public DateTime Datum
 		{
@@ -56,6 +63,10 @@ namespace Chat
 			}
 		}
 
+		/// <summary>
+		/// Profilna slika pošiljatelja
+		/// </summary>
+
 		public Image Profilna
 		{
 			get { return profilna; }
@@ -73,7 +84,9 @@ namespace Chat
 				}
 			}
 		}
-
+		/// <summary>
+		/// Sadržaj poruke
+		/// </summary>
 		public string Opis
 		{
 			get { return sadrzaj; }
@@ -92,7 +105,11 @@ namespace Chat
 			}
 		}
 
-
+		/// <summary>
+		/// Konstruktor koji kreira poruku te ju prikazuje kao user kontrolu
+		/// </summary>
+		/// <param name="iform"></param>
+		/// <param name="i"></param>
 		public Poruka(Iform iform, int i=-1)
 		{
 			zastava = i;

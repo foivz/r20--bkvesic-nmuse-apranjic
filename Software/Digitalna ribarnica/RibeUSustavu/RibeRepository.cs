@@ -13,11 +13,18 @@ namespace RibeUSustavu
     {
         public static List<Riba> _ribe { get; set; } = new List<Riba>();
 
+        /// <summary>
+        /// Metoda koja dodaje novu ribu u bazu
+        /// </summary>
+        /// <param name="parameters"></param>
         public static void DodajNovuRibu(Dictionary<string, object> parameters)
         {
             DB.Instance.ExecuteParamQuery("INSERT INTO [ribe] ([naziv], [slika], [mjerna_jedinica]) VALUES ((@naziv), (@slika), (@mjerna_jedinica));", parameters);
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća sve ribe iz baze
+        /// </summary>
+        /// <returns></returns>
         public static List<Riba> DohvatiRibe()
         {
             
@@ -54,7 +61,10 @@ namespace RibeUSustavu
             rezultat.Close();
             return _ribe;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća sve naziva riba iz baze
+        /// </summary>
+        /// <returns></returns>
         public static List<Riba> DohvatiNaziveRibe()
         {
 
@@ -86,12 +96,18 @@ namespace RibeUSustavu
             rezultat.Close();
             return _ribe;
         }
-
+        /// <summary>
+        /// Metoda koja ažurira ribu
+        /// </summary>
+        /// <param name="parameters"></param>
         public static void AzurirajRibu(Dictionary<string, object> parameters)
         {
             DB.Instance.ExecuteParamQuery("UPDATE [ribe] SET [naziv] = (@naziv), [slika] = (@slika), [mjerna_jedinica] = (@mjerna_jedinica) WHERE [id_riba] =(@id_riba); ", parameters);
         }
-
+        /// <summary>
+        /// Metoda koja briše poslanu ribu
+        /// </summary>
+        /// <param name="riba">Riba koja se briše iz baze</param>
         public static void ObrisiRibu(Riba riba)
         {
             DB.Instance.IzvrsiUpit($"DELETE FROM ribe WHERE id_riba ={riba.id};");

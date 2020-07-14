@@ -89,7 +89,10 @@ namespace Ocjene
             this.dataGridView2.RowHeadersDefaultCellStyle.BackColor = Color.FromArgb(41, 44, 51);
             this.dataGridView2.RowHeadersDefaultCellStyle.ForeColor = Color.FromArgb(66, 230, 164);
         }
-
+        /// <summary>
+        /// Metoda koja zatvara trenutno aktivnu formu te otvara novu
+        /// </summary>
+        /// <param name="childForm">Novo poslana forma</param>
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)

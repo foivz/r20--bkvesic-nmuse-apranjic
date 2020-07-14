@@ -49,7 +49,9 @@ namespace Ponude
             From = MailConfig.Username;
             To = mailovi;
         }
-
+        /// <summary>
+        /// Metoda koja šalje mail
+        /// </summary>
         public void Send()
         {
             var client = new SmtpClient
@@ -90,17 +92,23 @@ namespace Ponude
             if (DeleteFilesAfterSend)
                 AttachmentFiles.ForEach(DeleteFile);
         }
-
+        /// <summary>
+        /// Metoda koja dodaje listu mailova 
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="mailAddressCollection"></param>
         private void AddDestinataryToList(IEnumerable<string> from,
            ICollection<MailAddress> mailAddressCollection)
         {
             foreach (var destinatary in from)
                 mailAddressCollection.Add(new MailAddress(destinatary, destinatary));
         }
-
+        /// <summary>
+        /// Metoda koja briše fileove (pdf) u sljedećem REBOOTU
+        /// </summary>
+        /// <param name="filepath"></param>
         private void DeleteFile(string filepath)
         {
-            // this should delete the file in the next reboot, not now.
             MoveFileEx(filepath, null, MoveFileFlags.MOVEFILE_DELAY_UNTIL_REBOOT);
         }
     }

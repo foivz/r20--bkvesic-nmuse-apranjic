@@ -57,6 +57,12 @@ namespace Ponude
             mail.RequireAutentication = true;
             mail.Send();
         }
+
+        /// <summary>
+        /// Metoda koja pretvara Report u pdf
+        /// </summary>
+        /// <param name="reportName">Naziv pdf-a</param>
+        /// <returns></returns>
         private string ExportReportToPDF(string reportName)
         {
             string deviceInfo = "<DeviceInfo>" +

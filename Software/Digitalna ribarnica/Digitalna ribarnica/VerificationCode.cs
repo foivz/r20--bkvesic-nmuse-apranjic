@@ -136,7 +136,9 @@ namespace Digitalna_ribarnica
                 notifyVerification.ShowBalloonTip(1000, "Registration", "Unijeli ste krivi kod!!!", ToolTipIcon.Error);
             }
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća default-nu sliku iz baze
+        /// </summary>
         public void dohhvatiDefaultSliku()
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();

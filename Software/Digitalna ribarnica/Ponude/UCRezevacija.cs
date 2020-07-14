@@ -25,12 +25,18 @@ namespace Ponude
             Trenutna = Iform.nova;
             panelStranice = Iform.panel;
         }
-
+        /// <summary>
+        /// Metoda koja UCKorisnik dodijeljuje svojstva
+        /// </summary>
+        /// <param name="rezervacija"></param>
         public void LoadPonuda(Rezervacija rezervacija)
         {
             this.rezervacija = rezervacija;
         }
-
+        /// <summary>
+        /// Zatvaranje trenutne forme te otvaranje nove forme u panelu
+        /// </summary>
+        /// <param name="childForm">Trenutno aktivna forma koja će se zatvoriti</param>
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)
@@ -44,7 +50,9 @@ namespace Ponude
             childForm.BringToFront();
             childForm.Show();
         }
-
+        /// <summary>
+        /// Metoda koja zatvara sve forme osim pocetne
+        /// </summary>
         public void zatvoriForme()
         {
             FormCollection fc = Application.OpenForms;

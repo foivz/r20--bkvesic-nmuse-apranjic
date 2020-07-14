@@ -26,7 +26,11 @@ namespace Ponude
             Iform = novi;
             this.ponuda = ponuda;
         }
-
+        /// <summary>
+        /// Metoda koja dodaje userControle zahtjeva u panel
+        /// </summary>
+        /// <param name="zahtjevi">Lista zahtjeva</param>
+        /// <param name="iform"></param>
 
         private void DodajPonude(IEnumerable<Zahtjev> zahtjevi, Iform iform)
         {
@@ -83,6 +87,10 @@ namespace Ponude
                 DodajPonude(result, Iform);
             }
         }
+
+        /// <summary>
+        /// Metoda koja briše sve zahtjeve iz panela
+        /// </summary>
         private void ObrisiPonude()
         {
             List<int> index = new List<int>();
