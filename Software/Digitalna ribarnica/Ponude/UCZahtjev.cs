@@ -12,6 +12,9 @@ using Ocjene;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class UCZahtjev : UserControl
     {
         private Zahtjev zahtjev = null;
@@ -28,12 +31,18 @@ namespace Ponude
             Trenutna = iform.nova;
             panelStranice = iform.panel;
         }
-
+        /// <summary>
+        /// Metoda koja UCKorisnik dodijeljuje svojstva
+        /// </summary>
+        /// <param name="zahtjev"></param>
         public void LoadPonuda(Zahtjev zahtjev)
         {
             this.zahtjev = zahtjev;
         }
-
+        /// <summary>
+        /// Zatvaranje trenutne forme te otvaranje nove forme u panelu
+        /// </summary>
+        /// <param name="childForm">Trenutno aktivna forma koja će se zatvoriti</param>
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)
@@ -67,7 +76,9 @@ namespace Ponude
             KorisnikRepository.UnesiUDnevnik(KorisnikRepository.DohvatiIdKorisnika(iform.autentifikator.AktivanKorisnik), "Korisnik " + iform.autentifikator.AktivanKorisnik + " je odbacio zahtjev za rezervacijom ponude " + zahtjev.IDPONUDE + " na količinu " + zahtjev.Kolicina, 12);
             zatvoriForme();
         }
-
+        /// <summary>
+        /// Metoda koja zatvara sve forme osim početne
+        /// </summary>
         public void zatvoriForme()
         {
             FormCollection fc = Application.OpenForms;

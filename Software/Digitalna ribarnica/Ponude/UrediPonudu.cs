@@ -13,6 +13,9 @@ using Prijava;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class UrediPonudu : Form
     {
         Ponuda Ponuda;
@@ -47,7 +50,9 @@ namespace Ponude
             
 
         }
-
+        /// <summary>
+        /// Metoda koja zatvara sve forme osim početne
+        /// </summary>
         public void zatvoriForme()
         {
             FormCollection fc = Application.OpenForms;

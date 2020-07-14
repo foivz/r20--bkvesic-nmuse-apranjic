@@ -8,8 +8,17 @@ using System.Threading.Tasks;
 
 namespace Chat
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public static class ChatRepository
     {
+        /// <summary>
+        /// Metoda koje dohvaća sve poruke između dva korisnika
+        /// </summary>
+        /// <param name="idAktivan">ID trenutno aktivnog korisnika</param>
+        /// <param name="idPrimatelj">ID korisnika s kojim želimo dohvatiti poruke</param>
+        /// <returns></returns>
         public static List<PorukeIzBaze> DohvatiPoruke(int idAktivan, int idPrimatelj)
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
@@ -35,6 +44,12 @@ namespace Chat
             }
             return _poruke;
         }
+        /// <summary>
+        /// Metoda koja dodaje novi razgovor u bazu
+        /// </summary>
+        /// <param name="idPrimatelj">ID prvog korisnika</param>
+        /// <param name="idPosiljate">ID drugog korisnika</param>
+        /// <returns></returns>
 
         public static int DodajRazgovor(int idPrimatelj,int idPosiljate)
         {
@@ -43,6 +58,12 @@ namespace Chat
             int insertUBazu = DB.Instance.IzvrsiUpit(sqlUpit);
             return insertUBazu;
         }
+        /// <summary>
+        /// Metoda koja dohvaća razgovor između dva korisnika
+        /// </summary>
+        /// <param name="idPrimatelj">ID prvog korisnika</param>
+        /// <param name="idPosiljate">ID drugog korisnika</param>
+        /// <returns></returns>
 
         public static int DohvatiRazgovor(int idPrimatelj, int idPosiljate)
         {
@@ -69,7 +90,11 @@ namespace Chat
  
             return IDRazgovora;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća sve korisnike koji su sudjelovali u razgovoru s korisnikom čiji ID pošaljemo
+        /// </summary>
+        /// <param name="idAktivan">ID korisnika</param>
+        /// <returns></returns>
         public static List<int> DohvatiKorisnike(int idAktivan)
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
@@ -98,7 +123,12 @@ namespace Chat
 
             return chatKorisnici;
         }
-
+        /// <summary>
+        /// Metoda koja unosi novu poruku u bazu
+        /// </summary>
+        /// <param name="sadrzaj">Sadržaj poruke</param>
+        /// <param name="posiljatelj">ID pošiljatelja</param>
+        /// <param name="idRazgovora">ID razgovora kojem poruka pripada</param>
         public static void UnesiPoruku(string sadrzaj,int posiljatelj,int idRazgovora)
         {
             var parameters = new Dictionary<string, object>();

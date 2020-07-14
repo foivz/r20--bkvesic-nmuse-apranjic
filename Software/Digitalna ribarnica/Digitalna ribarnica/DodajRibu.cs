@@ -17,6 +17,9 @@ using Prijava;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class DodajRibu : Form
     {
         string extension;
@@ -171,6 +174,9 @@ namespace Digitalna_ribarnica
             }
             Close();
         }
+        /// <summary>
+        /// Metoda koja dohvaća defaultnu sliku ribe iz baze
+        /// </summary>
         public void dohhvatiDefaultSliku()
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();

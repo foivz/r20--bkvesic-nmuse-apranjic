@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Registracija
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class AutentifikacijaRegistracije
     {
         public string Ime { get; set; }
@@ -98,7 +101,11 @@ namespace Registracija
             }
 
         }
-
+        /// <summary>
+        /// Metoda koja provjerava da ime i prezime ne sadrže brojčane vrijednosti
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
         public bool IsNameSurnameValid(string name)
         {
             bool IsNumeric;
@@ -118,7 +125,11 @@ namespace Registracija
             }
             return true;
         }
-
+        /// <summary>
+        /// Metoda koja provjerava ispravnost emaila
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
         public bool IsValidEmail(string email)
         {
             try
@@ -131,7 +142,12 @@ namespace Registracija
                 return false;
             }
         }
-
+        /// <summary>
+        /// Metoda koja provjerava sličnost lozinke i ponovljene lozinke
+        /// </summary>
+        /// <param name="pass"></param>
+        /// <param name="passAccept"></param>
+        /// <returns></returns>
         public bool IsPasswordsSame(string pass,string passAccept)
         {
             if (pass == passAccept)
@@ -139,7 +155,11 @@ namespace Registracija
             else
                 return false;
         }
-        
+        /// <summary>
+        /// Metoda koja provjerava ispravnost unesenog mobilnog broja
+        /// </summary>
+        /// <param name="brojMobitela">String moblilnog broja</param>
+        /// <returns></returns>
         public bool IsMobilePhoneCorrect(string brojMobitela)
         {
             if (brojMobitela.Length < 15 && brojMobitela.Length>7)

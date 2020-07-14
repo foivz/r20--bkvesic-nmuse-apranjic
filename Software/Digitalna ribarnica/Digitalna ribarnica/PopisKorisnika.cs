@@ -11,6 +11,9 @@ using INSform;
 using Prijava;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class PopisKorisnika : Form
     {
         Iform iform;
@@ -66,7 +69,10 @@ namespace Digitalna_ribarnica
             dataGridView1.Columns[10].Visible = false;
             kalibrirajSlike();
         }
-
+        /// <summary>
+        /// Prikaz statusa korisnika u datagrid-u korisnici
+        /// </summary>
+        /// <param name="korisnici"></param>
         public void PrikazUlogaIStatusa(IEnumerable<Korisnik> korisnici)
         {
             foreach (var item in korisnici)
@@ -83,7 +89,9 @@ namespace Digitalna_ribarnica
                     item.ULOGA = "Blokiran";
             }
         }
-
+        /// <summary>
+        /// Slike se prikazuju cijele u Zoom načinu kako bi svi pixeli bili vidljivi na maloj rezoluciji
+        /// </summary>
         public void kalibrirajSlike()
         {
             for (int i = 0; i < dataGridView1.Columns.Count; i++)

@@ -12,6 +12,10 @@ using System.Windows.Forms;
 
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class MojeOcjene : Form
     {
         public List<Ocjena> ocjene = new List<Ocjena>();
@@ -44,7 +48,11 @@ namespace Ocjene
             }
         }
 
-
+        /// <summary>
+        /// Metoda koja dodaje userControlu ocjena u panel ocjena
+        /// </summary>
+        /// <param name="ocjene">Lista ocjena</param>
+        /// <param name="iform"></param>
         private void DodajPonude(IEnumerable<Ocjena> ocjene, Iform iform)
         {
             foreach (var item in ocjene)
@@ -60,7 +68,9 @@ namespace Ocjene
             }
         }
 
-
+        /// <summary>
+        /// Metoda koja briše ocjene iz panela
+        /// </summary>
         private void ObrisiPonude()
         {
             List<int> index = new List<int>();

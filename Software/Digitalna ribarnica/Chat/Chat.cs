@@ -12,6 +12,9 @@ using Prijava;
 using Ponude;
 namespace Chat
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class Chat : Form
     {
         Iform Iform;
@@ -49,6 +52,12 @@ namespace Chat
 
         }
 
+        /// <summary>
+        /// Metoda koja prikazuje sve korisnike preko user controla na panelu
+        /// </summary>
+        /// <param name="korisnici">Lista korisnika koju želimo prikazati</param>
+        /// <param name="iform"></param>
+
         private void DodajKorisnika(IEnumerable<Korisnik> korisnici, Iform iform)
         {
             foreach (var item in korisnici)
@@ -62,6 +71,10 @@ namespace Chat
                 this.Controls.Remove(user.PrikazUC);
             }
         }
+
+        /// <summary>
+        /// Brisanje svih korisnika iz panela
+        /// </summary>
 
         private void ObrisiKontake()
         {
@@ -79,13 +92,19 @@ namespace Chat
             }
         }
 
-
+        /// <summary>
+        /// Brisanje svih poruka iz panela
+        /// </summary>
 
         public void ObrisiPoruke()
         {
             flowLayoutPanel2.Controls.Clear();
         }
-
+        /// <summary>
+        /// Dodavanje poruka u panel između dva korisnika
+        /// </summary>
+        /// <param name="poruke">Lista poruka</param>
+        /// <param name="iform"></param>
         private void DodajPoruke(IEnumerable<PorukeIzBaze> poruke, Iform iform)
         {
             foreach (var item in poruke)
@@ -118,6 +137,10 @@ namespace Chat
                 }
             }
         }
+        /// <summary>
+        /// Metoda koja obrađuje cijeli proces odabira korisnika, brisanja starih poruka te dodavanja poruka s novim korisnikom
+        /// </summary>
+        /// <param name="idPrimatelja">ID korisnika s kojim želimo vidjeti poruke</param>
 
         public void PrikaziPorukue(int idPrimatelja)
         {
@@ -133,6 +156,7 @@ namespace Chat
             flowLayoutPanel2.VerticalScroll.Value = flowLayoutPanel2.VerticalScroll.Maximum;
             flowLayoutPanel2.PerformLayout();
         }
+
 
         private void Chat_Load(object sender, EventArgs e)
         {

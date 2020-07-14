@@ -10,9 +10,16 @@ using System.Threading.Tasks;
 using Baza;
 namespace Prijava
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public class KorisnikRepository
     {
-        
+        /// <summary>
+        /// Metoda koja dohvaća sva svojstva korisnika osim profilne slike
+        /// </summary>
+        /// <param name="dr"></param>
+        /// <returns></returns>
         public static Korisnik DohvatiKorisnika(SqlDataReader dr)
         {
             Korisnik korisnik = null;
@@ -36,7 +43,10 @@ namespace Prijava
             return korisnik;
         }
 
-
+        /// <summary>
+        /// Metoda koja dohvaća sve korisnike iz baze
+        /// </summary>
+        /// <returns></returns>
         public static List<Korisnik> DohvatiSveKorisnike()
         {
             List<Korisnik> lista = new List<Korisnik>();
@@ -53,7 +63,11 @@ namespace Prijava
             }
             return lista;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća profilnu sliku za korisnika s ID-om
+        /// </summary>
+        /// <param name="id">ID korisnika</param>
+        /// <returns></returns>
         public static Image DohvatiProfilnu(int id)
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
@@ -79,7 +93,11 @@ namespace Prijava
             rezultat.Close();
             return image;
         }
-
+        /// <summary>
+        /// Dohvaćanje slike statusa aktivan/neaktivan ovisno o ID statusa
+        /// </summary>
+        /// <param name="id">ID statusa</param>
+        /// <returns></returns>
         public static Image DohvatiSlikuStatusa(int id)
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
@@ -105,7 +123,11 @@ namespace Prijava
             rezultat.Close();
             return image;
         }
-
+        /// <summary>
+        /// Dohvaćanje ID-korisnika po korisničkom imenu
+        /// </summary>
+        /// <param name="korime">Korisničko ime</param>
+        /// <returns></returns>
         public static int DohvatiIdKorisnika(string korime)
         {
             int id = 0;
@@ -121,7 +143,12 @@ namespace Prijava
             }
             return id;
         }
-
+        /// <summary>
+        /// Provjera korisničkog imena aktivnog korisnika i korisnika kojega želim provjeriti
+        /// </summary>
+        /// <param name="korime">Korisničko ime korisnika kojeg želimo provjeriti</param>
+        /// <param name="aktivni">Korisničko ime trenutno aktivnog korisnika</param>
+        /// <returns></returns>
         public static int ProvjeriKorIme(string korime, string aktivni)
         {
             int id = 0;
@@ -137,7 +164,12 @@ namespace Prijava
             }
             return id;
         }
-
+        /// <summary>
+        /// Provjera postojanja korisnika s emailom i korisničkim imenom
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="korime"></param>
+        /// <returns></returns>
         public static int ProvjeriEmail(string email,string korime)
         {
             int id = 0;
@@ -153,6 +185,11 @@ namespace Prijava
             }
             return id;
         }
+        /// <summary>
+        /// Dohvaćanje emaila korisnika po ID-u korisnika
+        /// </summary>
+        /// <param name="id">ID korisnika</param>
+        /// <returns></returns>
         public static string DohvatiEmailKorisnika(int id)
         {
             string emailKorisnika = "";
@@ -168,7 +205,11 @@ namespace Prijava
             }
             return emailKorisnika;
         }
-
+        /// <summary>
+        /// Dohvaćanje korisnika i svih njegovih svojstava osim profilne po ID-u
+        /// </summary>
+        /// <param name="id">ID korisnika</param>
+        /// <returns></returns>
         public static Korisnik DohvatiKorisnikaPoIDU(int id)
         {
             Korisnik korisnik = new Korisnik();
@@ -184,7 +225,11 @@ namespace Prijava
             }
             return korisnik;
         }
-
+        /// <summary>
+        /// Dohvaćanje ID korisnika po mailu
+        /// </summary>
+        /// <param name="email">Email korisnika</param>
+        /// <returns></returns>
         public static Korisnik DohvatiIDpoEmailu(string email)
         {
             Korisnik korisnik = new Korisnik();
@@ -200,6 +245,11 @@ namespace Prijava
             }
             return korisnik;
         }
+        /// <summary>
+        /// Spremanje korisnika neParametarski način
+        /// </summary>
+        /// <param name="korisnik"></param>
+        /// <returns></returns>
         public static int Spremi(Korisnik korisnik)
         {
             string sqlUpit = "";
@@ -210,38 +260,65 @@ namespace Prijava
             int insertUBazu= DB.Instance.IzvrsiUpit(sqlUpit);
             return insertUBazu;
         }
-
+        /// <summary>
+        /// Metoda koja ažurira lozinku po emailu
+        /// </summary>
+        /// <param name="lozinka">Nova lozinka koja nije kriptirana</param>
+        /// <param name="email">Email korisnika</param>
+        /// <returns></returns>
         public static int PromjeniLozinku(string lozinka,string email)
         {
             string hash = BCrypt.Net.BCrypt.HashPassword(lozinka, BCrypt.Net.BCrypt.GenerateSalt(12));
             string sqlUpit = $"UPDATE korisnici SET lozinka = '{hash}' WHERE email = '{email}'; ";
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja briše korisnika iz baze
+        /// </summary>
+        /// <param name="korisnik">Korisnik kojeg brišemo</param>
+        /// <returns></returns>
         public static int Obrisi(Korisnik korisnik)
         {
             string sqlDelete = "DELETE FROM korisnici WHERE id_korisnik = " + korisnik.ID;
             return DB.Instance.IzvrsiUpit(sqlDelete);
         }
-
+        /// <summary>
+        /// Metoda koja blokira korisnika 
+        /// </summary>
+        /// <param name="id">ID korisnika</param>
+        /// <param name="uloga">Uloga blokiranog korisnika je različita od registriranih korisnika</param>
+        /// <returns></returns>
         public static int BlokirajKorisnika(int id, int uloga)
         {
             string sqlUpit = $"update korisnici set id_tip_korisnika='{uloga}' where id_korisnik='{id}'; ";
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja postavlja da je korisnik aktivan
+        /// </summary>
+        /// <param name="id">ID korisnika</param>
+        /// <returns></returns>
         public static int AktivanKorisnik(int id)
         {
             string sqlUpit = $"update korisnici set id_status=1 where id_korisnik='{id}'; ";
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja postavlja da je korisnik neaktivan
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public static int NeaktivanKorisnik(int id)
         {
             string sqlUpit = $"update korisnici set id_status=2 where id_korisnik='{id}'; ";
             return DB.Instance.IzvrsiUpit(sqlUpit);
         }
-
+        /// <summary>
+        /// Metoda koja unosi u dnevnik opis i tip radnje
+        /// </summary>
+        /// <param name="id">ID aktivnog korisnika</param>
+        /// <param name="opis">Opis radnje</param>
+        /// <param name="idTipRadnje">Tip radnje</param>
         public static void UnesiUDnevnik(int id, string opis, int idTipRadnje)
         {
             var parameters = new Dictionary<string, object>();

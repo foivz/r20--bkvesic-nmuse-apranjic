@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class OcijeniKorisnika : Form
     {
         Iform Iform;

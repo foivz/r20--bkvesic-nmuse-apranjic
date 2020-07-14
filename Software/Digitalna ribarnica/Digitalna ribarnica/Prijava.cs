@@ -15,6 +15,9 @@ using Baza;
 using Ponude;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Prijava : Form
     {
         public Label label_prijava;
@@ -182,6 +185,10 @@ namespace Digitalna_ribarnica
             }
             
         }
+
+        /// <summary>
+        /// Metoda koja postavlja profilnu sliku korisnika kod prijave korisnika
+        /// </summary>
         public void postaviSlikuProfila()
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();

@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace Ponude
 {
-    public class Zahtjev
+	/// <summary>
+	/// Author: Nikola Muše
+	/// </summary>
+	public class Zahtjev
     {
 		public UCZahtjev PrikazUC = null;
 		private Image fotografija;

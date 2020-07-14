@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class MojeRezervacije : Form
     {
         List<Rezervacija> rezervacije = new List<Rezervacija>();
@@ -23,7 +26,11 @@ namespace Ponude
             rezervacije = PonudeRepozitory.DohvatiRezervacije(Iform, KorisnikRepository.DohvatiIdKorisnika(Iform.autentifikator.AktivanKorisnik));
             DodajPonude(rezervacije, Iform);
         }
-
+        /// <summary>
+        /// Metoda koja dodaje userControle rezervacija u panel
+        /// </summary>
+        /// <param name="rezervacije"></param>
+        /// <param name="iform"></param>
         private void DodajPonude(IEnumerable<Rezervacija> rezervacije, Iform iform)
         {
             foreach (var item in rezervacije)
@@ -44,7 +51,9 @@ namespace Ponude
                 this.Controls.Remove(rezervacija.PrikazUC);
             }
         }
-
+        /// <summary>
+        /// Metoda koja briše sve rezervacije iz panela
+        /// </summary>
         private void ObrisiRezervacije()
         {
             List<int> index = new List<int>();

@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using INSform;
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class UCOcjena : UserControl
     {
         private Ocjena ocjena = null;
@@ -26,12 +30,18 @@ namespace Ocjene
             Trenutna = Iform.nova;
             panelStranice = Iform.panel;
         }
-
+        /// <summary>
+        /// Metoda koja UCOcjena dodijeljuje svojstva
+        /// </summary>
+        /// <param name="ocjena"></param>
         public void LoadPonuda(Ocjena ocjena)
         {
             this.ocjena = ocjena;
         }
-
+        /// <summary>
+        /// Zatvaranje trenutne forme te otvaranje nove forme u panelu
+        /// </summary>
+        /// <param name="childForm">Trenutno aktivna forma koja će se zatvoriti</param>
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)

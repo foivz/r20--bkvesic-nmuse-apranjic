@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using INSform;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class UCUrediPonude : UserControl
     {
         private Ponuda ponuda = null;
@@ -25,12 +28,18 @@ namespace Ponude
             Trenutna = Iform.nova;
             panelStranice = Iform.panel;
         }
-
+        /// <summary>
+        /// Metoda koja UCKorisnik dodijeljuje svojstva
+        /// </summary>
+        /// <param name="ponuda"></param>
         public void LoadPonuda(Ponuda ponuda)
         {
             this.ponuda = ponuda;
         }
-
+        /// <summary>
+        /// Zatvaranje trenutne forme te otvaranje nove forme u panelu
+        /// </summary>
+        /// <param name="childForm">Trenutno aktivna forma koja će se zatvoriti</param>
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)

@@ -14,6 +14,9 @@ using Ponude;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class RibeUSustavu : Form
     {
         Iform Iform;
@@ -112,6 +115,9 @@ namespace Digitalna_ribarnica
                 kalibrirajSlike();
             }
         }
+        /// <summary>
+        /// Slike se prikazuju cijele u Zoom načinu kako bi svi pixeli bili vidljivi na maloj rezoluciji
+        /// </summary>
 
         public void kalibrirajSlike()
         {

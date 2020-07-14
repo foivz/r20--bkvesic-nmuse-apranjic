@@ -12,6 +12,10 @@ using Ponude;
 using Prijava;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Dnevnik : Form
     {
         Iform Iform;
@@ -99,6 +103,10 @@ namespace Digitalna_ribarnica
                 SakrijStupce();
             }
         }
+
+        /// <summary>
+        /// Metoda koja sakriva stupce koji sadrža složeni tip podataka
+        /// </summary>
         private void SakrijStupce()
         {
             dataGridView1.Columns[0].Width = 500;

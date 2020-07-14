@@ -13,6 +13,9 @@ using Prijava;
 using INSform;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class DodajLokacije : Form
     {
         private bool azuriraj = false;
@@ -47,7 +50,9 @@ namespace Digitalna_ribarnica
             }
             Osjezi();
         }
-
+        /// <summary>
+        /// Metoda koja osvježava datagrid lokacije
+        /// </summary>
         private void Osjezi()
         {
             dgvLokacije.DataSource = null;

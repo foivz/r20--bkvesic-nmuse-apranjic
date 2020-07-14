@@ -11,6 +11,9 @@ using INSform;
 
 namespace SlanjePorukePonuditelju
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class UCPoruka : UserControl
     {
         Iform Iform;
@@ -26,12 +29,18 @@ namespace SlanjePorukePonuditelju
             Trenutna = Iform.nova;
             panelStranice = Iform.panel;
         }
-
+        /// <summary>
+        /// Metoda koja UCPoruka dodijeljuje svojstva
+        /// </summary>
+        /// <param name="poruka"></param>
         public void LoadPonuda(Poruka poruka)
         {
             this.poruka = poruka;
         }
-
+        /// <summary>
+        /// Zatvaranje trenutne forme te otvaranje nove forme u panelu
+        /// </summary>
+        /// <param name="childForm">Trenutno aktivna forma koja će se zatvoriti</param>
         public void openChildForm(Form childForm)
         {
             if (Trenutna != null)

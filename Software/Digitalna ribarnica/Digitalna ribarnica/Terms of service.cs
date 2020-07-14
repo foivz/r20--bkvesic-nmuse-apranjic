@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Terms_of_service : Form
     {
         public bool Prihvaceni;

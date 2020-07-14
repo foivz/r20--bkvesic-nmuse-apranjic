@@ -12,6 +12,9 @@ using System.Windows.Forms;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Izvjesce : Form
     {
         List<string> mailovi = new List<string>();
@@ -57,6 +60,12 @@ namespace Ponude
             mail.RequireAutentication = true;
             mail.Send();
         }
+
+        /// <summary>
+        /// Metoda koja pretvara Report u pdf
+        /// </summary>
+        /// <param name="reportName">Naziv pdf-a</param>
+        /// <returns></returns>
         private string ExportReportToPDF(string reportName)
         {
             string deviceInfo = "<DeviceInfo>" +

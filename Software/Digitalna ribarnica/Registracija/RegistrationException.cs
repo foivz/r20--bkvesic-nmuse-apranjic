@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Registracija
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class RegistrationException:Exception
     {
         public string Poruka { get; set; }

@@ -8,8 +8,18 @@ using System.Threading.Tasks;
 
 namespace SlanjePorukePonuditelju
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public class PorukeRepository
     {
+        /// <summary>
+        /// Metoda koje dohvaća sve poruke između dva korisnika
+        /// </summary>
+        /// <param name="idAktivan">ID trenutno aktivnog korisnika</param>
+        /// <param name="idPrimatelj">ID korisnika s kojim želimo dohvatiti poruke</param>
+        /// <returns></returns>
         public static List<PorukeIzBaze> DohvatiPoruke(int idAktivan, int idPrimatelj)
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
@@ -35,7 +45,12 @@ namespace SlanjePorukePonuditelju
             }
             return _poruke;
         }
-
+        /// <summary>
+        /// Metoda koja dodaje novi razgovor u bazu
+        /// </summary>
+        /// <param name="idPrimatelj">ID prvog korisnika</param>
+        /// <param name="idPosiljate">ID drugog korisnika</param>
+        /// <returns></returns>
         public static int DodajRazgovor(int idPrimatelj, int idPosiljate)
         {
             string sqlUpit = "";
@@ -43,7 +58,12 @@ namespace SlanjePorukePonuditelju
             int insertUBazu = DB.Instance.IzvrsiUpit(sqlUpit);
             return insertUBazu;
         }
-
+        /// <summary>
+        /// Metoda koja dohvaća razgovor između dva korisnika
+        /// </summary>
+        /// <param name="idPrimatelj">ID prvog korisnika</param>
+        /// <param name="idPosiljate">ID drugog korisnika</param>
+        /// <returns></returns>
         public static int DohvatiRazgovor(int idPrimatelj, int idPosiljate)
         {
             List<Dictionary<string, object>> returnMe = new List<Dictionary<string, object>>();
@@ -69,7 +89,12 @@ namespace SlanjePorukePonuditelju
 
             return IDRazgovora;
         }
-
+        /// <summary>
+        /// Metoda koja unosi novu poruku u bazu
+        /// </summary>
+        /// <param name="sadrzaj">Sadržaj poruke</param>
+        /// <param name="posiljatelj">ID pošiljatelja</param>
+        /// <param name="idRazgovora">ID razgovora kojem poruka pripada</param>
         public static void UnesiPoruku(string sadrzaj, int posiljatelj, int idRazgovora)
         {
             var parameters = new Dictionary<string, object>();

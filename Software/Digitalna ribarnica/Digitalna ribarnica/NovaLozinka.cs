@@ -13,6 +13,9 @@ using Ponude;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class NovaLozinka : Form
     {
         Autentifikator autentifikator;

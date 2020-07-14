@@ -13,6 +13,9 @@ using Prijava;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class PromijeniPredefiniranePostavke : Form
     {
         Iform Iform;
