@@ -264,7 +264,9 @@
     <Content Include="Help\digitalna_ribarnica.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Digitalna ribarnica_TemporaryKey.pfx" />
+    <Content Include="Digitalna ribarnica_TemporaryKey.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
