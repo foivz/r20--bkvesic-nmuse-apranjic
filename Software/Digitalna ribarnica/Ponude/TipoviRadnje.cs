@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Ponude
 {
-   public class TipoviRadnje
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
+    public class TipoviRadnje
     {
         public int ID { get; set; }
         public string Naziv { get; set; }

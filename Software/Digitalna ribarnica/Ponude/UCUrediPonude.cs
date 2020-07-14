@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using INSform;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class UCUrediPonude : UserControl
     {
         private Ponuda ponuda = null;

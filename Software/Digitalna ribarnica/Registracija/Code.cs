@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Registracija
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public class Code
     {
         public int Broj { get; set; }

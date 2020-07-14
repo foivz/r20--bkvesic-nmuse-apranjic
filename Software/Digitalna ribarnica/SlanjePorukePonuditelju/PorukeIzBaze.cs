@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace SlanjePorukePonuditelju
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public class PorukeIzBaze
     {
         public int ID { get; set; }

@@ -15,6 +15,9 @@ using Baza;
 using Ponude;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Prijava : Form
     {
         public Label label_prijava;

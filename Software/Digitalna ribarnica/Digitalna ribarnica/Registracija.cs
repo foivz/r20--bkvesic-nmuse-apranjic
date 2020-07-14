@@ -14,6 +14,10 @@ using Registracija;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Registracija : Form
     {
         Autentifikator autentifikator;

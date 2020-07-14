@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class ZahtjeviZaRezervacijom : Form
     {
         public List<Zahtjev> zahtjevi = new List<Zahtjev>();

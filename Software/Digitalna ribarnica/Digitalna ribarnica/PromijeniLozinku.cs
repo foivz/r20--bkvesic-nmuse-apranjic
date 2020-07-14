@@ -13,6 +13,9 @@ using Prijava;
 using Registracija;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class PromijeniLozinku : Form
     {
         Autentifikator autentifikator;

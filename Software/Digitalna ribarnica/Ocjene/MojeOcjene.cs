@@ -12,6 +12,10 @@ using System.Windows.Forms;
 
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class MojeOcjene : Form
     {
         public List<Ocjena> ocjene = new List<Ocjena>();

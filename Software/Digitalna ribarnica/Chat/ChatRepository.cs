@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Chat
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public static class ChatRepository
     {
         /// <summary>

@@ -14,6 +14,9 @@ using Prijava;
 using RibeUSustavu;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class MojePonude : Form
     {
         public List<Ponuda> ponude = new List<Ponuda>();

@@ -12,6 +12,10 @@ using Ponude;
 using Prijava;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Dnevnik : Form
     {
         Iform Iform;

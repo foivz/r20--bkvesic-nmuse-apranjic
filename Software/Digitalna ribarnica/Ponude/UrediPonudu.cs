@@ -13,6 +13,9 @@ using Prijava;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class UrediPonudu : Form
     {
         Ponuda Ponuda;

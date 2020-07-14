@@ -12,6 +12,9 @@ using Ponude;
 using Prijava;
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Neocijenjeni : Form
     {
         Iform Iform;

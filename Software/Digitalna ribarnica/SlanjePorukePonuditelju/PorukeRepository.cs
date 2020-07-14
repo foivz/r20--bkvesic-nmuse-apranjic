@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace SlanjePorukePonuditelju
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public class PorukeRepository
     {
         /// <summary>

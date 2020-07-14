@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public class PonudeIzvjesca
     {
 

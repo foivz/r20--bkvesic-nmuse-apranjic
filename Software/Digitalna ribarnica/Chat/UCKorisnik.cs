@@ -11,6 +11,9 @@ using INSform;
 
 namespace Chat
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class UCKorisnik : UserControl
     {
 

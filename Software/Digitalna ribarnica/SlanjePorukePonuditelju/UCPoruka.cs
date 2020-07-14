@@ -11,6 +11,9 @@ using INSform;
 
 namespace SlanjePorukePonuditelju
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class UCPoruka : UserControl
     {
         Iform Iform;

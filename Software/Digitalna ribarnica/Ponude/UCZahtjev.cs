@@ -12,6 +12,9 @@ using Ocjene;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class UCZahtjev : UserControl
     {
         private Zahtjev zahtjev = null;

@@ -8,7 +8,11 @@ using System.Threading.Tasks;
 
 namespace SlanjePorukePonuditelju
 {
-    public class Poruka
+	/// <summary>
+	/// Author: Nikola Muše
+	/// Author: Božo Kvesić
+	/// </summary>
+	public class Poruka
     {
 		public UCPoruka PrikazUC = null;
 		public UCSaljem SaljemUC = null;

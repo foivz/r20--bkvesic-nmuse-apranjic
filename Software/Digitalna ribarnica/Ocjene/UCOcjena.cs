@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using INSform;
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class UCOcjena : UserControl
     {
         private Ocjena ocjena = null;

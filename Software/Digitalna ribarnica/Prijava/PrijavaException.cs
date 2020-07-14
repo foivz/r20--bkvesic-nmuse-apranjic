@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Prijava
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public class PrijavaException:Exception
     {
         public string Poruka { get; set; }

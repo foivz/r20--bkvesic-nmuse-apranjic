@@ -10,6 +10,10 @@ using System.Net;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public class Mails
     {
         public string Title { get; set; }

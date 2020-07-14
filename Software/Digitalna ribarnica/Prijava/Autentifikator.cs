@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Prijava
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public class Autentifikator
     {
         public List<Korisnik> registriraniKorisnici { get; set; }

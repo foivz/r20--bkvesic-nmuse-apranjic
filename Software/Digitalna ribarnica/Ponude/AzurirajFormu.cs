@@ -15,6 +15,10 @@ using Prijava;
 using Baza;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class AzurirajFormu : Form
     {
         Iform Iform;

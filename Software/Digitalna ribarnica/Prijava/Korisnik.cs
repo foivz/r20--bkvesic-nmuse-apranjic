@@ -9,6 +9,9 @@ using System.ComponentModel;
 
 namespace Prijava
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public class Korisnik
     {
         [DisplayName("ID korisnika")]

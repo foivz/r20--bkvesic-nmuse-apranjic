@@ -11,6 +11,9 @@ using INSform;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class UCRezevacija : UserControl
     {
         private Rezervacija rezervacija = null;

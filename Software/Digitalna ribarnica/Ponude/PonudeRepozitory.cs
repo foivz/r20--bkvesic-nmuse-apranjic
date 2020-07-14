@@ -11,6 +11,11 @@ using Baza;
 using INSform;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// Author: Božo Kvesić
+    /// </summary>
     public class PonudeRepozitory
     {
         public static List<Ponuda> _ponude = new List<Ponuda>();

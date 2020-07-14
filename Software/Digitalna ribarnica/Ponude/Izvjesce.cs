@@ -12,6 +12,9 @@ using System.Windows.Forms;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class Izvjesce : Form
     {
         List<string> mailovi = new List<string>();

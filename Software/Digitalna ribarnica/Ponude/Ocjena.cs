@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public class Ocjena
     {
         public int Id { get; set; }

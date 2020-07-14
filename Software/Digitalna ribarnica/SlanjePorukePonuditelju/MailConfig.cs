@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     class MailConfig
     {
         public static string Host { get; set; } = "smtp.gmail.com";

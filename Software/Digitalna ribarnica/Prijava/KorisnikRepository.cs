@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using Baza;
 namespace Prijava
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public class KorisnikRepository
     {
         /// <summary>

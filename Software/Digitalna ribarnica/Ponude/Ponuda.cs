@@ -9,7 +9,10 @@ using Prijava;
 
 namespace Ponude
 {
-    public class Ponuda
+	/// <summary>
+	/// Author: Nikola Muše
+	/// </summary>
+	public class Ponuda
     {
 		public UCPonuda PrikazUC = null;
 		public UCUrediPonude PrikaziUrediPonudeUC = null;

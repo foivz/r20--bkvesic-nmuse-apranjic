@@ -7,6 +7,9 @@ using System.Windows.Forms;
 using Prijava;
 namespace INSform
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public interface Iform
     {
         Form nova { get; set; }

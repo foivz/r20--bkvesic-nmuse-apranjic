@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using Baza;
 namespace RibeUSustavu
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class RibeRepository
     {
         public static List<Riba> _ribe { get; set; } = new List<Riba>();

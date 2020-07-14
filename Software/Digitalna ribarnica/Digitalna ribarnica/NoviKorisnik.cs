@@ -15,6 +15,9 @@ using Prijava;
 using Registracija;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class NoviKorisnik : Form
     {
         Iform Iform = null;

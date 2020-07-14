@@ -11,6 +11,9 @@ using INSform;
 using Prijava;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class PopisKorisnika : Form
     {
         Iform iform;

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Baza;
 namespace Lokacije
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class LokacijeRepozitory
     {
         public static List<Lokacije> _lokacije { get; set; }

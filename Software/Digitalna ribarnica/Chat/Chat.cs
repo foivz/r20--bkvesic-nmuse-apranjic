@@ -12,6 +12,9 @@ using Prijava;
 using Ponude;
 namespace Chat
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public partial class Chat : Form
     {
         Iform Iform;

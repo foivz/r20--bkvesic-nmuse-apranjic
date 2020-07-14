@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class Ocjena
     {
         public UCOcjena PrikazUC = null;

@@ -17,6 +17,10 @@ using System.Data.Common;
 using Ponude;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class VerificationCode : Form
     {
         int code_number;

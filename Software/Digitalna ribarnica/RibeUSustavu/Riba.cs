@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace RibeUSustavu
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class Riba
     {
         [DisplayName("ID ribe")]

@@ -17,6 +17,9 @@ using System.Data.SqlClient;
 using Ponude;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class DodajPonudu : Form
     {
         string extension = "";

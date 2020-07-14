@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace Ponude
 {
-    public class Rezervacija
+	/// <summary>
+	/// Author: Božo Kvesić
+	/// </summary>
+	public class Rezervacija
 	{
 		public UCRezevacija PrikazUC = null;
 		private Image fotografija;

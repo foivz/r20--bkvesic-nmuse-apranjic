@@ -19,6 +19,11 @@ using System.IO;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class formPocetna : Form, Iform
     {
         public Autentifikator autentifikator { get; set; }

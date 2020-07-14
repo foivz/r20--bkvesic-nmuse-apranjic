@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace Chat
 {
-    public class User
+	/// <summary>
+	/// Author: Božo Kvesić
+	/// </summary>
+	public class User
     {
 		public UCKorisnik PrikazUC = null;
 		private string naziv;

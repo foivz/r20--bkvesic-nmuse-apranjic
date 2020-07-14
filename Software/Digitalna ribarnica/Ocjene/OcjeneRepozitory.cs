@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class OcjeneRepozitory
     {
         public static List<Ocjena> _ocjene = new List<Ocjena>();

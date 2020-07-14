@@ -14,6 +14,9 @@ using Ponude;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class RibeUSustavu : Form
     {
         Iform Iform;

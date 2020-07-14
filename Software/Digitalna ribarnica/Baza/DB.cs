@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 
 namespace Baza
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// Author: Božo Kvesić
+    /// </summary>
     public class DB
     {
 

@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using Prijava;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class MojeRezervacije : Form
     {
         List<Rezervacija> rezervacije = new List<Rezervacija>();

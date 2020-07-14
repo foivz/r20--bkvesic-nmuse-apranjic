@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Lokacije
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class Lokacije
     {
         [DisplayName("ID lokacije")]

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Chat
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// </summary>
     public class PorukeIzBaze
     {
         public int ID { get; set; }

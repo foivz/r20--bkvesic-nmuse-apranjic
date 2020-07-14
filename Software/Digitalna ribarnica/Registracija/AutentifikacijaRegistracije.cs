@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Registracija
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public class AutentifikacijaRegistracije
     {
         public string Ime { get; set; }

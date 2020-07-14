@@ -11,6 +11,10 @@ using INSform;
 using Prijava;
 namespace Ocjene
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class OcjeneKorisnika : Form
     {
         public List<Ocjena> ocjene = new List<Ocjena>();

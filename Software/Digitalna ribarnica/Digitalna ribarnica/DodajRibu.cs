@@ -17,6 +17,9 @@ using Prijava;
 
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class DodajRibu : Form
     {
         string extension;

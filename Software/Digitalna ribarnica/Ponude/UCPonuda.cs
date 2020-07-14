@@ -14,6 +14,9 @@ using Ocjene;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class UCPonuda : UserControl
     {
         private Ponuda ponuda = null;

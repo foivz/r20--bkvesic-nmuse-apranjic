@@ -13,6 +13,10 @@ using System.Windows.Forms;
 
 namespace SlanjePorukePonuditelju
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class SlanjePorukePonuditelju : Form
     {
         Iform Iform;

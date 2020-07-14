@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using INSform;
 namespace Chat
 {
+
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class UCSaljem : UserControl
     {
         Iform Iform;

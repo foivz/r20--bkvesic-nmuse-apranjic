@@ -14,6 +14,9 @@ using Registracija;
 using Ponude;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Božo Kvesić
+    /// </summary>
     public partial class ZaboravljenaLozinkaEmail : Form
     {
         Autentifikator Autentifikator;

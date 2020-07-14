@@ -12,6 +12,9 @@ using INSform;
 using Baza;
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class DetaljiPonude : Form
     {
         Ponuda Ponuda;

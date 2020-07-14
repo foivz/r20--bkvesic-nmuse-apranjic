@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Ponude
 {
+    /// <summary>
+    /// Author: Nikola Muše
+    /// Author: Božo Kvesić
+    /// </summary>
     public class Dnevnik
     {
         [DisplayName("Opis radnje")]

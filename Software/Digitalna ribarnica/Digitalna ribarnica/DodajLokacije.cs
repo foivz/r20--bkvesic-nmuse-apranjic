@@ -13,6 +13,9 @@ using Prijava;
 using INSform;
 namespace Digitalna_ribarnica
 {
+    /// <summary>
+    /// Author: Anabela Pranjić
+    /// </summary>
     public partial class DodajLokacije : Form
     {
         private bool azuriraj = false;
